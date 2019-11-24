@@ -13,28 +13,25 @@ using System.Linq;
 
 namespace StorybrewScripts
 {
-    public class Section6 : StoryboardObjectGenerator
+    public class Section7 : StoryboardObjectGenerator
     {
-        [Configurable]
-        public Color4 ThemeColor = Color4.White;
-
         public override void Generate()
         {
             Dialog();
             Background();
             Mission();
             Tochi(255870, 265294);
-            HUD(253462, 283671, 262781, "Mission #5", "Dstorv", "sb/HUD/txt/nameTag/Moecho.png", 4500, "sb/avatars/MoechoProfile.png");
+            HUD(283671, 339380, 290901, "Mission #6", "Strahv", "sb/HUD/txt/nameTag/Heilia.png", 4500, "sb/avatars/HeiliaProfile.png");
         }
 
         public void Background()
         {
-            var bitmap = GetMapsetBitmap("sb/bgs/6/bg.jpg");
-            var bg = GetLayer("Background").CreateSprite("sb/bgs/6/bg.jpg", OsbOrigin.Centre, new Vector2(320, 240));
+            var bitmap = GetMapsetBitmap("sb/bgs/7/bg.jpg");
+            var bg = GetLayer("Background").CreateSprite("sb/bgs/7/bg.jpg", OsbOrigin.Centre, new Vector2(320, 240));
 
-            bg.Scale(247113, 854.0f / bitmap.Width);
-            bg.Fade(247113, 262781, 0, 0.5);
-            bg.Fade(283671, 290901, 0.5, 0);
+            bg.Scale(283671, 854.0f / bitmap.Width);
+            bg.Fade(283671, 290901, 0, 0.3);
+            bg.Fade(331111, 339380, 0.3, 0);
         }
 
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
@@ -45,9 +42,7 @@ namespace StorybrewScripts
         public void Mission()
         {
             // Item Collect
-            var itemcollect = new ItemCollect(this, "sb/avatars/Moecho.png", 0.2f, 2000, 100, 450,
-                                                    "items/artifacts", 0.8f, 410, 460, true,
-                                                    262781, 283671, ThemeColor, 3000, 6500);
+            // var mission = new Mission3(this, startTime, endTime);
         }
 
         public void Dialog()

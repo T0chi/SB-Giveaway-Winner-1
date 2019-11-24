@@ -156,7 +156,7 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] sentence = { "Hope you enjoyed yourself while collecting items!",
                                   "Now it's time for something more fun...",
-                                  "Sword slashing it is!" };
+                                  "Slashing it is! I hope your stamina is good heheh~." };
             var dialog = new DialogManager(this, font, 163962, 170382, "-Tochi", 105, 326, false,
                 fontSize, 1, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);

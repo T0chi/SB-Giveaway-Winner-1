@@ -33,7 +33,7 @@ namespace StorybrewScripts
             Flowers(220447, 247113);
             Background(211525, 247113, 221081);
             Mission(224256, 247113);
-            Tochi(214268, 221716);
+            Tochi(214268, 225526);
             //  sTime,  eTime,  realSTime
             HUD(214268, 247113, 220447, "Mission #4", "Quon", "sb/HUD/txt/nameTag/Dailycare.png", 1000, "sb/avatars/DailycareProfile.png");
         }
@@ -138,12 +138,19 @@ namespace StorybrewScripts
             });
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Hope you enjoyed yourself while collecting items!",
-                                  "Now it's time for something more fun...",
-                                  "Sword slashing it is!" };
-            var dialog = new DialogManager(this, font, 214268, 221716, "-Tochi", 105, 326, false,
+            string[] sentence = { "Whew... That was intense!",
+                                  "It's time for some aim based challenge now.",
+                                  "Hopefully your aim is good enough!" };
+            var dialog = new DialogManager(this, font, 214268, 219754, "-Tochi", 105, 326, false,
                 fontSize, 1, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // DIALOG 2 -----------------------------------------
+            string[] sentence2 = { "Popping balloons is fun, right?",
+                                  "Well, now it's your chance to pop as many as you can!" };
+            var dialog2 = new DialogManager(this, font, 219754, 225526, "-Tochi", 105, 326, false,
+                fontSize, 1, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
         public void Tochi(int startTime, int endTime)
