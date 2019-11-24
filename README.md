@@ -7,19 +7,19 @@ Advanced storyboard for the giveaway winner of my '400 twitter followers full sb
 
 # Info
 Programs used:
-- Storybrew *// for creating every effect (basically whole sb)*
-- Adobe Photoshop *// image editing*
-- Adobe Fireworks *// image editing*
-- PNGGauntlet *// PNG images optimization*
-- Bulk Rename Utility *// bulk rename a group of files in a folder*
-- Sublime Text 3 *// .osb text editor*
+- Storybrew // *for creating every effect (basically whole sb)*
+- Adobe Photoshop // *image editing*
+- Adobe Fireworks // *image editing*
+- PNGGauntlet // *PNG images optimization*
+- Bulk Rename Utility // *bulk rename a group of files in a folder*
+- Sublime Text 3 // *.osb text editor*
 
 Language:
-- C# *// the language used in Storybrew*
+- C# // *the language used in Storybrew*
 
 # Thanks to
 Mappers:
-- Acyl *// giveaway winner*
+- Acyl // *giveaway winner*
 - ScubDomino
 - deadcode
 - Heilia
@@ -31,12 +31,12 @@ Mappers:
 - Pino
 
 Storyboarders:
-- PoNo *// helped with scriptslibrary usage*
-- Damnae *// for creating Storybrew*
-- Kawa *// amazing idea for mission 3*
+- PoNo // *helped with scriptslibrary usage*
+- Damnae // *for creating Storybrew*
+- Kawa // *amazing idea for mission 3*
 
 CV:
-- Noffy *// for being such an amazing voice actor!*
+- Noffy // *for being such an amazing voice actor!*
 
 # Other
 Follow me on Twitter for updates and giveaway announcements @tochiosu, and join these osu! storyboarding servers to learn or get help on storyboading basics!
