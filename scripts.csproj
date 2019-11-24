@@ -59,11 +59,12 @@
     <Compile Include="Section3.cs" />
     <Compile Include="Section4.cs" />
     <Compile Include="Section5.cs" />
+    <Compile Include="Section6.cs" />
     <Compile Include="Vignette.cs" />
     <Compile Include="scriptslibrary/DialogManager.cs" />
     <Compile Include="scriptslibrary/HUD.cs" />
+    <Compile Include="scriptslibrary/ItemCollect.cs" />
     <Compile Include="scriptslibrary/Mission1.cs" />
-    <Compile Include="scriptslibrary/Mission2.cs" />
     <Compile Include="scriptslibrary/Mission4.cs" />
   </ItemGroup>
   <ItemGroup />

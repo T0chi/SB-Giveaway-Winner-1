@@ -1,0 +1,37 @@
+﻿FormatVersion: 6
+Name: "Section6 1"
+Script: "Section6"
+Config:
+  ThemeColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  7723f6dd58be4216b352d5944118f649:
+    Name: "-Tochi"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  4d8811e70c19481d83d2b47dee8a954d:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  5e210b6e86084caab3b37694a42304be:
+    Name: "Avatar"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  9b8552798f6f4d56b992d447237c1ee2:
+    Name: "Items"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  608c7c29b0f24f76be86ef3bff60fe2a:
+    Name: "HUD"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

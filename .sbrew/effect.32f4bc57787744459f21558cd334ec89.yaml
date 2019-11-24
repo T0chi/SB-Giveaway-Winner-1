@@ -2,9 +2,9 @@
 Name: "Section3 1"
 Script: "Section3"
 Config:
-  AvatarColor:
+  ThemeColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.5306141,0.7573808,0.7435746,1"
+    Value: "0.5294118,0.7568628,0.7411765,1"
   PetalColorMin:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.3100402,0.5853745,0.6077465,1"
