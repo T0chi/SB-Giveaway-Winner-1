@@ -36,3 +36,9 @@ Storyboarders:
 
 CV:
 - Noffy
+
+# Other
+Follow me on Twitter for updates and giveaway announcements @tochiosu
+Join these osu! storyboarding servers to learn or get help on storyboading!
+- https://discord.gg/B8NX7YW // osu! storyboarder banquet
+- https://discord.gg/QZjD3yb // -Tochi & PoNo's Coffee Room
