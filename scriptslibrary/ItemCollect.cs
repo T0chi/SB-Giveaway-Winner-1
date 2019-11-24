@@ -14,40 +14,44 @@ public class ItemCollect
 
     private string avatarPath;
     private float avatarScale;
+    private int avatarEndDelay;
     private float startX;
     private float y;
     private string itemsPath;
     private float itemScale;
     private int yMin;
     private int yMax;
+    private bool FrontAndBack;
     private int startTime;
     private int endTime;
     private Color4 ThemeColor;
     private int spawnMin;
     private int spawnMax;
 
-    public ItemCollect(StoryboardObjectGenerator generator, string avatarPath, float avatarScale, float startX, float y, string itemsPath, float itemScale, int yMin, int yMax, int startTime, int endTime, Color4 ThemeColor, int spawnMin, int spawnMax)
+    public ItemCollect(StoryboardObjectGenerator generator, string avatarPath, float avatarScale, int avatarEndDelay, float startX, float y, string itemsPath, float itemScale, int yMin, int yMax, bool FrontAndBack, int startTime, int endTime, Color4 ThemeColor, int spawnMin, int spawnMax)
     {
         this.generator = generator;
 
         this.avatarPath = avatarPath;
         this.avatarScale = avatarScale;
+        this.avatarEndDelay = avatarEndDelay;
         this.startX = startX;
         this.y = y;
         this.itemsPath = itemsPath;
         this.itemScale = itemScale;
         this.yMin = yMin;
         this.yMax = yMax;
+        this.FrontAndBack = FrontAndBack;
         this.startTime = startTime;
         this.endTime = endTime;
         this.ThemeColor = ThemeColor;
         this.spawnMin = spawnMin;
         this.spawnMax = spawnMax;
 
-        Generate(avatarPath, avatarScale, startX, y, itemsPath, itemScale, yMin, yMax, startTime, endTime, ThemeColor, spawnMin, spawnMax);
+        Generate(avatarPath, avatarScale, avatarEndDelay, startX, y, itemsPath, itemScale, yMin, yMax, FrontAndBack, startTime, endTime, ThemeColor, spawnMin, spawnMax);
     }
 
-    public void Generate(string avatarPath, float avatarScale, float startX, float y, string itemsPath, float itemScale, int yMin, int yMax, int startTime, int endTime, Color4 ThemeColor, int spawnMin, int spawnMax)
+    public void Generate(string avatarPath, float avatarScale, int avatarEndDelay, float startX, float y, string itemsPath, float itemScale, int yMin, int yMax, bool FrontAndBack, int startTime, int endTime, Color4 ThemeColor, int spawnMin, int spawnMax)
     {
         // Item Collect
 
@@ -61,11 +65,10 @@ public class ItemCollect
 
         for (var i = sTime; i < eTime; i += itemVelocity)
         {
+            var FlipHVelocity = generator.Random(1, 3);
             var itemDuration = itemVelocity;
             generator.Log(itemDuration.ToString());
 
-            var itemOne = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/1.png", OsbOrigin.Centre);
-            var itemTwo = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/2.png", OsbOrigin.Centre);
             var itemThree = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/3.png", OsbOrigin.Centre);
             var itemFour = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/4.png", OsbOrigin.Centre);
             var itemFive = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/5.png", OsbOrigin.Centre);
@@ -81,51 +84,98 @@ public class ItemCollect
             anyItem.Move(OsbEasing.InOutQuad, i + itemDuration - 500, i + itemDuration + 1300, new Vector2(moveX, moveY), new Vector2(moveX, moveY - 200));
             anyItem.Color(i + itemDuration - 500, i + itemDuration + 1300, ThemeColor, Color4.Red);
 
+            if (i % FlipHVelocity == 1)
+                {
+                    anyItem.FlipH(i, i + itemDuration + 1300);
+                }
+
             var d = (eTime - sTime);
-            var itemDuration2 = (generator.Random(d / 10, d)) + 7000;
+            var itemDuration2 = (generator.Random(d / 10, d));
+            
+            if (FrontAndBack)
+            {
+                var itemOne = generator.GetLayer("ItemsFront").CreateSprite("sb/missions/" + itemsPath + "/" + generator.Random(1, 7) + ".png", OsbOrigin.Centre);
+                var itemTwo = generator.GetLayer("ItemsBack").CreateSprite("sb/missions/" + itemsPath + "/" + generator.Random(1, 7) + ".png", OsbOrigin.Centre);
+                
+                // front
+                itemOne.Color(sTime, ThemeColor);
+                itemOne.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemOne.Fade(sTime, sTime + 500, 0, 1);
+                itemOne.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemOne.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random((int)y, yMax)));
 
-            itemOne.Color(sTime, ThemeColor);
-            itemOne.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
-            itemOne.Fade(sTime, sTime + 500, 0, 1);
-            itemOne.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
-            itemOne.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+                // back
+                itemTwo.Color(sTime, ThemeColor);
+                itemTwo.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemTwo.Fade(sTime, sTime + 500, 0, 1);
+                itemTwo.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemTwo.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, (int)y)));
 
-            itemTwo.Color(sTime, ThemeColor);
-            itemTwo.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
-            itemTwo.Fade(sTime, sTime + 500, 0, 1);
-            itemTwo.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
-            itemTwo.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+                if (i % FlipHVelocity == 1)
+                {
+                    itemOne.FlipH(sTime, sTime + itemDuration2);
+                    itemTwo.FlipH(sTime, sTime + itemDuration2);
+                }
+            }
+            
+            else
+            {
+                var itemOne = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/1.png", OsbOrigin.Centre);
+                var itemTwo = generator.GetLayer("Items").CreateSprite("sb/missions/" + itemsPath + "/2.png", OsbOrigin.Centre);
 
-            itemThree.Color(sTime, ThemeColor);
-            itemThree.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
-            itemThree.Fade(sTime, sTime + 500, 0, 1);
-            itemThree.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
-            itemThree.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+                itemOne.Color(sTime, ThemeColor);
+                itemOne.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemOne.Fade(sTime, sTime + 500, 0, 1);
+                itemOne.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemOne.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
 
-            itemFour.Color(sTime, ThemeColor);
-            itemFour.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
-            itemFour.Fade(sTime, sTime + 500, 0, 1);
-            itemFour.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
-            itemFour.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+                itemTwo.Color(sTime, ThemeColor);
+                itemTwo.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemTwo.Fade(sTime, sTime + 500, 0, 1);
+                itemTwo.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemTwo.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
 
-            itemFive.Color(sTime, ThemeColor);
-            itemFive.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
-            itemFive.Fade(sTime, sTime + 500, 0, 1);
-            itemFive.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
-            itemFive.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+                itemThree.Color(sTime, ThemeColor);
+                itemThree.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemThree.Fade(sTime, sTime + 500, 0, 1);
+                itemThree.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemThree.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
 
-            itemSix.Color(sTime, ThemeColor);
-            itemSix.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
-            itemSix.Fade(sTime, sTime + 500, 0, 1);
-            itemSix.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
-            itemSix.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+                itemFour.Color(sTime, ThemeColor);
+                itemFour.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemFour.Fade(sTime, sTime + 500, 0, 1);
+                itemFour.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemFour.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+
+                itemFive.Color(sTime, ThemeColor);
+                itemFive.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemFive.Fade(sTime, sTime + 500, 0, 1);
+                itemFive.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemFive.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+
+                itemSix.Color(sTime, ThemeColor);
+                itemSix.Scale(sTime, generator.Random(0.3, 0.6) * itemScale);
+                itemSix.Fade(sTime, sTime + 500, 0, 1);
+                itemSix.Fade(sTime + itemDuration2 - 500, sTime + itemDuration2, 1, 0);
+                itemSix.Move(sTime, new Vector2(generator.Random(0, 640), generator.Random(yMin, yMax)));
+
+                if (i % FlipHVelocity == 1)
+                {
+                    itemOne.FlipH(sTime, sTime + itemDuration2); 
+                    itemTwo.FlipH(sTime, sTime + itemDuration2);
+                    itemThree.FlipH(sTime, sTime + itemDuration2);
+                    itemFour.FlipH(sTime, sTime + itemDuration2);
+                    itemFive.FlipH(sTime, sTime + itemDuration2);
+                    itemSix.FlipH(sTime, sTime + itemDuration2);
+                }
+            }
             // ///////////////////////////////////////////////////////////////////////////
 
             // AVATAR
             avatar.Scale(sTime, avatarScale);
             avatar.Color(sTime, ThemeColor);
             avatar.Fade(sTime, sTime + 1000, 0, 1);
-            avatar.Fade(eTime + 4000 - 1000, eTime + 4000, 1, 0);
+            avatar.Fade(eTime + avatarEndDelay - 1000, eTime + avatarEndDelay, 1, 0);
             // avatar hovering
             avatar.StartLoopGroup(sTime, loopAmount);
             avatar.MoveY(OsbEasing.InOutSine, 0, hoverDuration, y, y + 15);

@@ -4,19 +4,19 @@ Script: "Section6"
 Config:
   ThemeColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
+    Value: "0.7246187,0.8202335,0.8344652,1"
   RandomSeed:
     Type: "System.Int32"
-    Value: "0"
+    Value: "7"
     DisplayName: "Random seed"
 Layers:
-  7723f6dd58be4216b352d5944118f649:
-    Name: "-Tochi"
+  4d8811e70c19481d83d2b47dee8a954d:
+    Name: "Background"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  4d8811e70c19481d83d2b47dee8a954d:
-    Name: "Background"
+  9efcdfe85cdd462d88dd0b9dfb090061:
+    Name: "ItemsBack"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
@@ -30,8 +30,18 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  cf410101b2a54bf298deca6fba8f1039:
+    Name: "ItemsFront"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
   608c7c29b0f24f76be86ef3bff60fe2a:
     Name: "HUD"
-    OsbLayer: Background
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  7723f6dd58be4216b352d5944118f649:
+    Name: "-Tochi"
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

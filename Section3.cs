@@ -52,8 +52,8 @@ namespace StorybrewScripts
         public void ItemCollect()
         {
             // Item Collect
-            var itemcollect = new ItemCollect(this, "sb/avatars/Acyl.png", 0.25f, 620, 470,
-                                                    "items", 1, 380, 450,
+            var itemcollect = new ItemCollect(this, "sb/avatars/Acyl.png", 0.25f, 4000, 620, 470,
+                                                    "items", 1, 380, 450, false,
                                                     128262, 157062, ThemeColor, 2000, 6000);
         }
 

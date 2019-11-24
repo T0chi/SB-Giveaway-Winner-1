@@ -22,7 +22,7 @@ namespace StorybrewScripts
         {
             Dialog();
             Background();
-            ItemCollect();
+            Mission();
             Tochi(119905, 137262);
             HUD(253462, 283671, 262781, "Mission #5", "Dstorv", "sb/HUD/txt/nameTag/Moecho.png", 4500, "sb/avatars/MoechoProfile.png");
         }
@@ -42,12 +42,12 @@ namespace StorybrewScripts
             var hud = new HUD(this, startTime, endTime, loadingTextEndtime, mission, songName, nameTag, progressBarDelay, avatar);
         }
 
-        public void ItemCollect()
+        public void Mission()
         {
             // Item Collect
-            var itemcollect = new ItemCollect(this, "sb/avatars/Moecho.png", 0.2f, 100, 440,
-                                                    "items/artifacts", 1f, 380, 450,
-                                                    262781, 283671, ThemeColor, 2500, 6000);
+            var itemcollect = new ItemCollect(this, "sb/avatars/Moecho.png", 0.2f, 8000, 100, 450,
+                                                    "items/artifacts", 0.8f, 410, 460, true,
+                                                    262781, 283671, ThemeColor, 3000, 6500);
         }
 
         public void Dialog()
