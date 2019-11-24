@@ -38,10 +38,19 @@ Storyboarders:
 CV:
 - Noffy // *for being such an amazing voice actor!*
 
-# Other
+# Socials
 Follow me on Twitter for updates and giveaway announcements @tochiosu, and join these osu! storyboarding servers to learn or get help on storyboading basics!
 - https://discord.gg/B8NX7YW // *osu! storyboarder banquet*
 - https://discord.gg/QZjD3yb // *-Tochi & PoNo's Coffee Room*
+
+Subscribe to my youtube channel!
+- https://www.youtube.com/channel/UCyUoC6AP7V8GPKQBDIJoqGQ
+
+My Twitch channel:
+- https://www.twitch.tv/tochi_osu
+
+osu! profile:
+- https://osu.ppy.sh/users/3664366
 
 - **Visit me and PoNo's website! https://pochivisuals.com/**
 - **Giveaways: https://pochivisuals.com/giveaway/**
