@@ -18,20 +18,24 @@ namespace StorybrewScripts
         public override void Generate()
         {
             Dialog();
-            Background();
             Mission();
+            SnowChaos(290896, 301425, 1000);
+            SnowChaos(303310, 311006, 500);
+            Blank(303310, 307237);
             Tochi(255870, 265294);
-            HUD(283671, 339380, 290901, "Mission #6", "Strahv", "sb/HUD/txt/nameTag/Heilia.png", 4500, "sb/avatars/HeiliaProfile.png");
+            HUD(283671, 329854, 290901, "Mission #6", "Strahv", "sb/HUD/txt/nameTag/Heilia.png", 4500, "sb/avatars/HeiliaProfile.png");
         }
 
-        public void Background()
+        public void Blank(int startTime, int endTime)
         {
-            var bitmap = GetMapsetBitmap("sb/bgs/7/bg.jpg");
-            var bg = GetLayer("Background").CreateSprite("sb/bgs/7/bg.jpg", OsbOrigin.Centre, new Vector2(320, 240));
+            // Data for the backgrounds are included in the OsbImport.cs
 
-            bg.Scale(283671, 854.0f / bitmap.Width);
-            bg.Fade(283671, 290901, 0, 0.3);
-            bg.Fade(331111, 339380, 0.3, 0);
+            var bitmap = GetMapsetBitmap("sb/pixel.png");
+            var sprite = GetLayer("Blank").CreateSprite("sb/bgs/7/bg.jpg", OsbOrigin.Centre, new Vector2(320, 240));
+
+            sprite.Scale(startTime, 480.0f / bitmap.Height);
+            sprite.Fade(startTime, endTime, 0.2, 0);
+            sprite.Additive(startTime, endTime);
         }
 
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
@@ -41,8 +45,81 @@ namespace StorybrewScripts
 
         public void Mission()
         {
-            // Item Collect
+        }
+
+        public void SnowChaos(int startTime, int endTime, int FadeTime)
+        {
             // var mission = new Mission3(this, startTime, endTime);
+
+            // Snow chaos
+            var interval = 40;
+            var MinTravelTime = 2000;
+            var MaxTravelTime = 4000;
+
+            for (int i = startTime; i < endTime - MinTravelTime; i += interval)
+            {
+                var sprite = GetLayer("SnowChaos").CreateSprite("sb/missions/7/snow" + Random(1, 3) + ".png", OsbOrigin.Centre);
+                var duration = Random(MinTravelTime, MaxTravelTime);
+                var Fade = Random(0.05, 0.2);
+                var Rotation = Random(-10, 10);
+                var Scale = Random(0.01, 0.3);
+                var RandomScale = Random(Scale / 2, Scale);
+                
+                // sprite.Fade(i, i + 1000, 0, Fade);
+                // sprite.Fade(i + duration - 1000, i + duration, Fade, 0);
+                sprite.ScaleVec(i, i + duration, RandomScale, RandomScale, Random(0, Scale / 6), Random(0, Scale / 6));
+                // sprite.Additive(i, i + duration);
+
+                if (i < endTime - (FadeTime + FadeTime))
+                    {
+                        sprite.Fade(i, i + FadeTime, 0, Fade);
+                        if (i < endTime - duration)
+                        {
+                            sprite.Fade(i + duration - FadeTime, i + duration, Fade, 0);
+                        }
+                        else
+                        {
+                            sprite.Fade(endTime - 10, endTime, Fade, 0);
+                        }
+                    }
+                    else
+                    {
+                        sprite.Fade(i, 0);
+                    }
+
+                var speed = 1000;
+                for (int r = i; r < endTime - MinTravelTime; r += speed)
+                {
+                    sprite.Rotate(r, r + (speed / 2), Rotation / 2, Rotation);
+                    sprite.Rotate(r + (speed / 2), r + speed, Rotation, Rotation);
+                }
+
+                var lastX = Random(-107, 747) - 150;
+                var lastY = Random(0, 480) - 150;
+                var speedMin = 100;
+                var speedMax = 200;
+
+                var rVec = MathHelper.DegreesToRadians(Random(360));
+                var sVec = Random(speedMin, speedMax);
+                var vX = Math.Cos(rVec) * sVec;
+                var vY = Math.Sin(rVec) * sVec;
+
+                var UpdateRate = 1000;
+                for (var t = i; t < i + duration; t += UpdateRate)
+                {
+                    var nextX = lastX + vX;
+                    var nextY = lastY + vY;
+                    Log(vX.ToString());
+
+                    sprite.Move(t, t + UpdateRate, lastX, lastY, nextX, nextY);
+
+                    vX += Random(UpdateRate / 10) * UpdateRate / 1000;
+                    vY += Random(UpdateRate / 10) * UpdateRate / 1000;
+
+                    lastX = (int)nextX;
+                    lastY = (int)nextY;
+                }
+            }
         }
 
         public void Dialog()

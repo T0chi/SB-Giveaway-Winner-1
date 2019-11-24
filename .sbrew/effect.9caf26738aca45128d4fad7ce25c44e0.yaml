@@ -7,11 +7,6 @@ Config:
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  b35ef6bc2ae0494ca94cc3c1470dbaf3:
-    Name: "Background"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
   8711c09cc1d247c18f030e4ca2c128d0:
     Name: "HUD"
     OsbLayer: Foreground
@@ -20,5 +15,15 @@ Layers:
   bdcc13ffa9f64e4f89486ba50ea8f4b8:
     Name: "-Tochi"
     OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  46fdd2e3e8574b88ab1b4b327d158238:
+    Name: "SnowChaos"
+    OsbLayer: Overlay
+    DiffSpecific: No
+    Visible: Yes
+  113143cccca34295ad09a9f4f2f1483b:
+    Name: "Blank"
+    OsbLayer: Overlay
     DiffSpecific: No
     Visible: Yes
