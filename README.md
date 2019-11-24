@@ -12,7 +12,7 @@ Programs used:
 - Adobe Fireworks // *image editing*
 - PNGGauntlet // *PNG images optimization*
 - Bulk Rename Utility // *bulk rename a group of files in a folder*
-- Sublime Text 3 // *.osb text editor*
+- Sublime Text 3 // *used for .osb & .osu file text editor*
 
 Language:
 - C# // *the language used in Storybrew*
