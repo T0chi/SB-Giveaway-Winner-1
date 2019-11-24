@@ -43,9 +43,7 @@ Follow me on Twitter for updates and giveaway announcements @tochiosu, and join 
 - https://discord.gg/B8NX7YW // *osu! storyboarder banquet*
 - https://discord.gg/QZjD3yb // *-Tochi & PoNo's Coffee Room*
 
-Subscribe to my youtube channel!
-- https://www.youtube.com/channel/UCyUoC6AP7V8GPKQBDIJoqGQ
-
 - **Visit me and PoNo's website!** https://pochivisuals.com/
 - **Giveaways:** https://pochivisuals.com/giveaway/
 - **Donate and get exclusive benefits:** https://pochivisuals.com/home/donation/
+- **Subscribe to my youtube channel!** https://www.youtube.com/channel/UCyUoC6AP7V8GPKQBDIJoqGQ
