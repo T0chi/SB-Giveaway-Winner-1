@@ -33,15 +33,15 @@ Mappers:
 Storyboarders:
 - PoNo // *helped with scriptslibrary usage*
 - Damnae // *for creating Storybrew*
-- Kawa // *amazing idea for mission 3*
+- Kawa // *amazing idea for mission #3*
 
 CV:
 - Noffy // *for being such an amazing voice actor!*
 
 # Other
 Follow me on Twitter for updates and giveaway announcements @tochiosu, and join these osu! storyboarding servers to learn or get help on storyboading basics!
-- https://discord.gg/B8NX7YW // osu! storyboarder banquet
-- https://discord.gg/QZjD3yb // -Tochi & PoNo's Coffee Room
+- https://discord.gg/B8NX7YW // *osu! storyboarder banquet*
+- https://discord.gg/QZjD3yb // *-Tochi & PoNo's Coffee Room*
 
 - **Visit me and PoNo's website! https://pochivisuals.com/**
 - **Giveaways: https://pochivisuals.com/giveaway/**
