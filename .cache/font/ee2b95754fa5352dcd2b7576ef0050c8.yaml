@@ -1,0 +1,231 @@
+﻿FontPath: "RUNE.TTF"
+FontSize: 17
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "H"
+    Path: "sb/missions/7/lyrics/0048.png"
+    Hash: "3a9a6d98c9ad40edb2a04c29a51b3a8a"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 13
+    BaseHeight: 25
+    Width: 13
+    Height: 24
+  - Text: "a"
+    Path: "sb/missions/7/lyrics/0061.png"
+    Hash: "8617022e46618f8d83806ee02b86a175"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 9
+    BaseHeight: 25
+    Width: 9
+    Height: 24
+  - Text: "m"
+    Path: "sb/missions/7/lyrics/006d.png"
+    Hash: "2834bdf9b6471a99a98264aa8c3f5297"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 15
+    BaseHeight: 25
+    Width: 15
+    Height: 24
+  - Text: "e"
+    Path: "sb/missions/7/lyrics/0065.png"
+    Hash: "623cfa00c8966928d71f848f21d64766"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 15
+    BaseHeight: 25
+    Width: 15
+    Height: 24
+  - Text: "l"
+    Path: "sb/missions/7/lyrics/006c.png"
+    Hash: "631a3669f3aecbba38c21d2b5bf4fdcf"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 11
+    BaseHeight: 25
+    Width: 11
+    Height: 24
+  - Text: "g"
+    Path: "sb/missions/7/lyrics/0067.png"
+    Hash: "8761a3f0d271eb9bdda9d90d80a5b11c"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 15
+    BaseHeight: 25
+    Width: 15
+    Height: 24
+  - Text: "u"
+    Path: "sb/missions/7/lyrics/0075.png"
+    Hash: "da93b3a5f4cc5aebaede7dbe8f0a6627"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 11
+    BaseHeight: 25
+    Width: 11
+    Height: 24
+  - Text: "i"
+    Path: "sb/missions/7/lyrics/0069.png"
+    Hash: "59248a5c575562cadf4ce9ff9c835897"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 3
+    BaseHeight: 25
+    Width: 3
+    Height: 24
+  - Text: "z"
+    Path: "sb/missions/7/lyrics/007a.png"
+    Hash: "3f034624507a5d6cb361be32307f97c8"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 18
+    BaseHeight: 25
+    Width: 18
+    Height: 24
+  - Text: "r"
+    Path: "sb/missions/7/lyrics/0072.png"
+    Hash: "89ef84fbfb580dca5a9249c981fa7643"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 10
+    BaseHeight: 25
+    Width: 10
+    Height: 24
+  - Text: "E"
+    Path: "sb/missions/7/lyrics/0045.png"
+    Hash: "253f0f96cb98c1403c24f9ba3b68b893"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 15
+    BaseHeight: 25
+    Width: 15
+    Height: 24
+  - Text: "d"
+    Path: "sb/missions/7/lyrics/0064.png"
+    Hash: "059ffd0947020cd8a876e690d1dacfb7"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 24
+    BaseHeight: 25
+    Width: 24
+    Height: 24
+  - Text: "n"
+    Path: "sb/missions/7/lyrics/006e.png"
+    Hash: "4ca0c1a4ea68c0ec43198d20743c5b2a"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 13
+    BaseHeight: 25
+    Width: 13
+    Height: 24
+  - Text: "f"
+    Path: "sb/missions/7/lyrics/0066.png"
+    Hash: "0f3f1a3dc6d3fdc8e296e5f39b98d037"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 15
+    BaseHeight: 25
+    Width: 15
+    Height: 24
+  - Text: "L"
+    Path: "sb/missions/7/lyrics/004c.png"
+    Hash: "97ad855b520c985198e54400670f3cd3"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 11
+    BaseHeight: 25
+    Width: 11
+    Height: 24
+  - Text: "V"
+    Path: "sb/missions/7/lyrics/0056.png"
+    Hash: "1b20f455a785870a7424ca1d4d3da785"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 9
+    BaseHeight: 25
+    Width: 9
+    Height: 24
+  - Text: "["
+    Path: "sb/missions/7/lyrics/005b.png"
+    Hash: "d6cbe22c7a31bc73b05ab5cc4342cf10"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 7
+    BaseHeight: 25
+    Width: 7
+    Height: 21
+  - Text: "S"
+    Path: "sb/missions/7/lyrics/0053.png"
+    Hash: "4382d86efb75e64164b13cb8817e5f80"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 11
+    BaseHeight: 25
+    Width: 11
+    Height: 24
+  - Text: "t"
+    Path: "sb/missions/7/lyrics/0074.png"
+    Hash: "1b5788dcce44087450e8d6d45562f49e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 18
+    BaseHeight: 25
+    Width: 18
+    Height: 24
+  - Text: "h"
+    Path: "sb/missions/7/lyrics/0068.png"
+    Hash: "584c2e9d973cef6082ff6c27780cd786"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 13
+    BaseHeight: 25
+    Width: 13
+    Height: 24
+  - Text: "v"
+    Path: "sb/missions/7/lyrics/0076.png"
+    Hash: "51dc2ee78c53e2f7f4c1e493a6add7eb"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 9
+    BaseHeight: 25
+    Width: 9
+    Height: 24
+  - Text: "]"
+    Path: "sb/missions/7/lyrics/005d.png"
+    Hash: "4926d289f58fc7c650844d3dd126acf0"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 7
+    BaseHeight: 25
+    Width: 7
+    Height: 21
