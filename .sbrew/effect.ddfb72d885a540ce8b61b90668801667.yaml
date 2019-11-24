@@ -1,0 +1,76 @@
+﻿FormatVersion: 6
+Name: "Section5 1"
+Script: "Section5"
+Config:
+  balloonColorMin:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.6848308,0.5605236,0.5605236,1"
+  balloonColorMax:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.6485559,0.5778859,0.5778859,1"
+  AvatarColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.8822115,0.9031267,0.9070151,1"
+  FlowerColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.4574207,0.4696731,0.4717151,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  42eb39f7cac34752bd48da43be27c848:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  cddfe137c907433b9056718e2cb4bb28:
+    Name: "FlowerBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  d4bf59a68c19425cb321297034f29b0c:
+    Name: "BalloonsBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  e45ee317d7c8410ab31b710cbc99bc81:
+    Name: "targetBalloonsBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  73e87c0ec5944dcb9e9ccaa5adb23520:
+    Name: "Arrows"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  cb87a4a80a0747749c47f197a50f3baf:
+    Name: "Avatar"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  1a8a7e2fbc9d46ee9dc5ffc42adb599f:
+    Name: "FlowerFront"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  66ee4c48dd3b4f1d9d0c070d90810a91:
+    Name: "targetBalloonsFront"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  b75e17a3dfc64d2eb380a3af0befedc4:
+    Name: "BalloonsFront"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  9aaad64be8504aff8145c5ba9458fe68:
+    Name: "HUD"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  4443d3e643b84b3abf3a88e48f957b55:
+    Name: "-Tochi"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

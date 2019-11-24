@@ -1,0 +1,65 @@
+﻿FormatVersion: 6
+Name: "Section4 1"
+Script: "Section4"
+Config:
+  wingsColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.5892488,0.6727445,0.7120371,1"
+  NewColorEvery:
+    Type: "System.Boolean"
+    Value: "False"
+  WallColorMin:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.5850745,0.5850745,0.5850745,1"
+  WallColorMax:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  NewColorEvery2:
+    Type: "System.Boolean"
+    Value: "False"
+  WallColorMin2:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.3991652,0.205443,0.205443,1"
+  WallColorMax2:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  aa5f350ad32f4b68bb479dde5698d083:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  532d787fc3694d8b9452003858c0d15d:
+    Name: "Wings"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  027c98aa2a4546c7bd521d64bda0976b:
+    Name: "Avatar"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  05cebb532c564253a727edcc0460dd1c:
+    Name: "Walls"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  7d7f9306b88a40f7ba75e5cbb5a4d33b:
+    Name: "Slashing"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  4a623cb9a04e4aa893362f0f83112ef7:
+    Name: "HUD"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  419daa94aaa4495b8361850908b065e0:
+    Name: "-Tochi"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

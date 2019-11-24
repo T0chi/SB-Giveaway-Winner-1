@@ -1,0 +1,17 @@
+﻿FormatVersion: 6
+Name: "ImportOsb 1"
+Script: "ImportOsb"
+Config:
+  Path:
+    Type: "System.String"
+    Value: "storyboard.osb"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  f3ac6056ab324c55a9c9e6393b6dff7a:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

@@ -1,0 +1,145 @@
+﻿FormatVersion: 6
+Name: "Intro 1"
+Script: "Intro"
+Config:
+  ActiveColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  PassiveColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.2495309,0.2495309,0.2495309,1"
+  TochiTagColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  BoxColorText:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  BoxColorNarratorText:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,0.6543843,0.3559785,1"
+  BoxColorTochi:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  BoxColorOthers:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  BoxColorNarrator:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  TorchGlowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,0.3605128,0.3605128,1"
+  GlowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  OutlineColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,0.7843137"
+  ShadowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  f6fa21895d7d445c98872b7bb7ecba4a:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  2cee4cc813f24ce89d586bbaa7b1d9bf:
+    Name: "Torch - Flames Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  1dc50452433a4291ae902365251fec19:
+    Name: "Torch - Torches Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  8cc75724919645e4b9c8aade79ebbbf4:
+    Name: "Torches - Glow"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  8e56f49691bb47a0935ecf27ba4ca5f8:
+    Name: "Dialog - Box"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  5043eec862244d33990397add471df59:
+    Name: "Credits"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  feb130ca49b7440aa22b5ff1c6566c0e:
+    Name: "Torches - Lightray"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  70c10004c5114060a9468cd586c4a584:
+    Name: "RainBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  04c64c8e96e54f84ac6373f480d01686:
+    Name: "avatarBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  9f934607ff9c485eb55aed6ffd875dce:
+    Name: "ringBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  b61f1f0f1c0b471690cc36fdc514dad7:
+    Name: "splash"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  bb4afe58ab614e3fb6067bb856e9aa6c:
+    Name: "Torch - Flames Front"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  b181052850744dada2e1e7beaa0de8b2:
+    Name: "Torch - Torches Front"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  7e361741990d4a3bb1df33e7307e2c8a:
+    Name: "-Tochi"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  d2ec22aea0ed46f2a9f217f49482f959:
+    Name: "avatarFront"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  638ca758c59240b685c6a4e60e4700ce:
+    Name: "ringFront"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  6160bac76b3643eba7bb18e35a764855:
+    Name: "nameTag"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  229244e85fe54b2f92c0e2534b264ddd:
+    Name: "Dialog - Text"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  02986ec18b104d52acba255d19357d91:
+    Name: "Dialog - Text Narrator"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  f98eac6b28e04bada180adb79639dc28:
+    Name: "RainFront"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

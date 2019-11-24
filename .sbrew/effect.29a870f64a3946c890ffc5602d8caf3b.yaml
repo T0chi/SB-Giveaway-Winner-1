@@ -1,0 +1,95 @@
+﻿FormatVersion: 6
+Name: "IntroParticles 1"
+Script: "IntroParticles"
+Config:
+  ParticlePath:
+    Type: "System.String"
+    Value: "sb/particle.png"
+  ParticleFadeMin:
+    Type: "System.Double"
+    Value: "0.4"
+  ParticleFadeMax:
+    Type: "System.Double"
+    Value: "0.8"
+  RandomParticleFade:
+    Type: "System.Boolean"
+    Value: "True"
+  ParticleOrigin:
+    Type: "System.Int32"
+    Value: "4"
+    AllowedValues:
+      TopLeft: "0"
+      TopCentre: "1"
+      TopRight: "2"
+      CentreLeft: "3"
+      Centre: "4"
+      CentreRight: "5"
+      BottomLeft: "6"
+      BottomCentre: "7"
+      BottomRight: "8"
+  ConnectRadiusMin:
+    Type: "System.Int32"
+    Value: "50"
+  ConnectRadiusMax:
+    Type: "System.Int32"
+    Value: "100"
+  TimeBetweenParticles:
+    Type: "System.Int32"
+    Value: "400"
+  TravelSpeed:
+    Type: "System.Int32"
+    Value: "50"
+  RandomMovement:
+    Type: "System.Boolean"
+    Value: "True"
+  RandomX:
+    Type: "System.Boolean"
+    Value: "False"
+  RandomY:
+    Type: "System.Boolean"
+    Value: "False"
+  FadeTimeIn:
+    Type: "System.Int32"
+    Value: "1000"
+  FadeTimeOut:
+    Type: "System.Int32"
+    Value: "1000"
+  StartScale:
+    Type: "System.Double"
+    Value: "0.03"
+  EndScale:
+    Type: "System.Double"
+    Value: "0.07"
+  RandomScale:
+    Type: "System.Boolean"
+    Value: "True"
+  StartRotation:
+    Type: "System.Double"
+    Value: "-180"
+  EndRotation:
+    Type: "System.Double"
+    Value: "180"
+  RandomRotation:
+    Type: "System.Boolean"
+    Value: "True"
+  ParticleAdditive:
+    Type: "System.Boolean"
+    Value: "False"
+  ParticleColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  b8230ffa31964285a9604913cbc77c5b:
+    Name: "Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  2034f497cceb45779c1a35d97ff48996:
+    Name: "Front"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

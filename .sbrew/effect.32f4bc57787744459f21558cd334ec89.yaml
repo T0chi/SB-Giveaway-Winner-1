@@ -1,0 +1,53 @@
+﻿FormatVersion: 6
+Name: "Section3 1"
+Script: "Section3"
+Config:
+  AvatarColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.5306141,0.7573808,0.7435746,1"
+  PetalColorMin:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.3100402,0.5853745,0.6077465,1"
+  PetalColorMax:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0.5034559,0.5034559,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  de479ee55d7944099d1aa5c6152b3005:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  5b987d2ad4184108a123d18233363386:
+    Name: "Items"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  10bffb08dacd425aa2b5a61ad2062ffd:
+    Name: "PetalsBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  45a0af692ade4ebf8aa74be15666d11d:
+    Name: "Avatar"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  34682533fd9e4eb4b279f38b0d029892:
+    Name: "PetalsFront"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  b64878e5f4a74b798e8ff2e6c68c0489:
+    Name: "HUD"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  811f680ee7d041f586350ec6a00b2fce:
+    Name: "-Tochi"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

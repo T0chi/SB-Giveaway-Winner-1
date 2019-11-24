@@ -1,0 +1,14 @@
+﻿FormatVersion: 6
+Name: "Vignette 1"
+Script: "Vignette"
+Config:
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  b1a8489d8aa94f4486ee8e3b97aab64b:
+    Name: ""
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

@@ -1,0 +1,85 @@
+﻿FormatVersion: 6
+Name: "Section2 1"
+Script: "Section2"
+Config:
+  BoxColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  BoxColorText:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  BoxColorNarrator:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  BoxColorNarratorText:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  GlowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  OutlineColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.1960784,0.1960784,0.1960784,0.7843137"
+  ShadowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,0"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  8c06ceaa039942179adc3650d4bb3e0d:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  c5f70993108443a6986916c8cb578a87:
+    Name: "Clouds"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  d9a9475a69f24f1281adf76098751b56:
+    Name: "Aircraft 3 Front - Smoke"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  b604111aeee9471abd6afaa49ff0c4b6:
+    Name: "Aircraft 3 Front"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  459bef69261a40b385d1d6c85a662b49:
+    Name: "Aircraft 1 & 2 Front - Smoke"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  78ac764d8bfc40419e49a1a9f0b3217f:
+    Name: "Aircraft 1 & 2 Front"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  409a42e735db4ca1a90c56ee6e01afe2:
+    Name: "Laser"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  a7459338a94c4ab2a29e910259c1c260:
+    Name: "Aircraft 3 Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  6a3e81f0771549b0b16aaa572fd5347b:
+    Name: "Aircraft 3 Back - Smoke"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  e56490fa074f4320bb7366c5d2e9edbd:
+    Name: "HUD"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  642ef0f821eb4696b72c67ba48774ed3:
+    Name: "-Tochi"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
