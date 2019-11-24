@@ -46,12 +46,6 @@ Follow me on Twitter for updates and giveaway announcements @tochiosu, and join 
 Subscribe to my youtube channel!
 - https://www.youtube.com/channel/UCyUoC6AP7V8GPKQBDIJoqGQ
 
-My Twitch channel:
-- https://www.twitch.tv/tochi_osu
-
-osu! profile:
-- https://osu.ppy.sh/users/3664366
-
-- **Visit me and PoNo's website! https://pochivisuals.com/**
-- **Giveaways: https://pochivisuals.com/giveaway/**
-- **Donate and get exclusive benefits: https://pochivisuals.com/home/donation/**
+- **Visit me and PoNo's website!** https://pochivisuals.com/
+- **Giveaways:** https://pochivisuals.com/giveaway/
+- **Donate and get exclusive benefits:** https://pochivisuals.com/home/donation/
