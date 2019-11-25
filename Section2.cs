@@ -103,9 +103,9 @@ namespace StorybrewScripts
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "In order to complete this mission you will need to keep your combo!",
-                                   "If you break your combo too many times you will end up losing your",
-                                   "team member for this mission which you must avoid!" };
+            string[] sentence2 = { "Shoot the enemy and try not to miss. If you miss too many times",
+                                   "you will end up with less points so you must do your best.",
+                                   "Good luck fellow player!" };
             var dialog2 = new DialogManager(this, font, 70630, 84571, "-Tochi", 105, 326, false,
                 fontSize, 1, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);

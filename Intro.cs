@@ -331,9 +331,10 @@ namespace StorybrewScripts
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
             
             // DIALOG 4 -----------------------------------------
-            string[] sentence4 = { "All you need to do is to perform well on",
-                                   "each section. That's the only way you will",
-                                   "be able to complete the mission!" };
+            string[] sentence4 = { "Perform well on each section and obtain",
+                                   "as many points as you can. You can only",
+                                   "complete the mission if your total point",
+                                   "score is over 100 at the end." };
             var dialog4 = new DialogManager(this, font, 26322, 37168, "Dialog - Text", 400, 170, true,
                 fontSize, 1, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
