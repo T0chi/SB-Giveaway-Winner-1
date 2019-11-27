@@ -17,75 +17,65 @@ Each mapper had to choose an avatar from the image below in order for me to make
 
 **AVATARS**
 
-1 - Acyl
-
-2 - ScubDomino
-
-3 - deadcode `NONE`
-
-4 - Heilia
-
-5 - Necho
-
-6 - `NONE`
-
-7 - Moecho
-
-8 - 1112
-
-9 - toybot
-
-10 - Dailycare
-
-11 - -[Pino]-
+1. Acyl
+2. ScubDomino
+3. deadcode `NONE`
+4. Heilia
+5. Necho
+6. `NONE`
+7. Moecho
+8. 1112
+9. toybot
+10. Dailycare
+11. -[Pino]-
 
 ------------
 
 
 **COLLAB PARTS**
 
-00:01:399 - Acyl
-01:12:572 - -[Pino]-
-02:08:263 - Acyl
-02:47:640 - ScubDomino
-03:40:447 - Dailycare
-04:15:230 - ~~deadcode~~ moecho
-04:50:902 - Heilia
-05:39:381 - toybot
-06:27:314 - Necho *odds*  || 1112 *evens* ||
-07:13:357 - 1112 *odds*  || Necho *evens* ||
-07:58:193 - 1112 *odds*  || Necho *evens* ||
+- 00:01:399 - Acyl
+- 01:12:572 - -[Pino]-
+- 02:08:263 - Acyl
+- 02:47:640 - ScubDomino
+- 03:40:447 - Dailycare
+- 04:15:230 - ~~deadcode~~ moecho
+- 04:50:902 - Heilia
+- 05:39:381 - toybot
+- 06:27:314 - Necho *odds*  || 1112 *evens* ||
+- 07:13:357 - 1112 *odds*  || Necho *evens* ||
+- 07:58:193 - 1112 *odds*  || Necho *evens* ||
 
 ------------
 
 
 **MISSIONS (quests)**
 
-1 - Intro
-2 - Defeat aircraft
-3 - Collect Items
-4 - Slash the attacking boxes
-5 - Popping balloons with arrows
-6 - Collect Items
-7 - Lyrics stuff
-8 - Aircraft evading
-9 - Necho vs. 1112
+1. Intro
+2. Defeat aircraft
+3. Collect Items
+4. Slash the attacking boxes
+5. Popping balloons with arrows
+6. Collect Items
+7. Lyrics stuff
+8. Aircraft evading
+9. Necho vs. 1112
 
 ------------
 
 **SONG LIST**
 
-1 - Irui
-2 - Ein
-3 - Adaptation Window
-4 - Central Nucleus
-5 - Quon
-6 - Dstorv
-7 - Strahv
-8 - Rhuzerv
-9 - Ordirehv
-10 - 胎降 
-11 - Ehgze
+1. Irui
+2. Ein
+3. Adaptation Window
+4. Central Nucleus
+5. Quon
+6. Dstorv
+7. Strahv
+8. Rhuzerv
+9. Ordirehv
+10. 胎降 
+11. Ehgze
 
 # Info
 Programs used:
