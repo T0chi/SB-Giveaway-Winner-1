@@ -100,7 +100,7 @@ Mappers:
 - 1112
 - toybot
 - Dailycare
-- Pino
+- -[Pino]-
 
 Storyboarders:
 - PoNo // *helped with scriptslibrary usage*
