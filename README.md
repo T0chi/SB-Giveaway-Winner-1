@@ -40,7 +40,7 @@ Each mapper had to choose an avatar from the image below in order for me to make
 - 02:08:263 - Acyl
 - 02:47:640 - ScubDomino
 - 03:40:447 - Dailycare
-- 04:15:230 - ~~deadcode~~ moecho
+- 04:15:230 - ~~deadcode~~ Moecho
 - 04:50:902 - Heilia
 - 05:39:381 - toybot
 - 06:27:314 - Necho *odds*  || 1112 *evens*
