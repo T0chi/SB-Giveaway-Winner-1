@@ -135,14 +135,14 @@ namespace StorybrewScripts
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var fontName = "RUNE.TTF";
+            var fontName = "RUNE.ttf";
             var font = LoadFont("sb/missions/7/lyrics", new FontDescription()
             {
                 FontPath = fontName,
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
+                FontStyle = FontStyle.Regular,
                 TrimTransparency = true,
                 EffectsOnly = false,
                 Debug = false,
@@ -168,7 +168,7 @@ namespace StorybrewScripts
             CreateLyrics(font, Color4.White, "mell guiez arl", fontName, fontSize, 0.5f, new Vector2(320, 330), 292158, 294828);
 
             CreateLyrics(font, Color4.White, "Edzari", fontName, fontSize, 0.5f, new Vector2(320, 330), 295614, 296870);
-            CreateLyrics(font, Color4.White, "Edzari nuilgizz fead", fontName, fontSize, 0.5f, new Vector2(320, 330), 297184, 300169);
+            CreateLyrics(font, Color4.White, "nuilgizz fead", fontName, fontSize, 0.5f, new Vector2(320, 330), 297184, 300169);
 
             CreateLyrics(font, Color4.White, "Ha", fontName, fontSize, 0.5f, new Vector2(320, 330), 300640, 302053);
             CreateLyrics(font, Color4.White, "mell guiez Lell", fontName, fontSize, 0.5f, new Vector2(320, 330), 302210, 304723);
@@ -218,7 +218,7 @@ namespace StorybrewScripts
             CreateLyrics(font, Color4.White, "mell guiez arl", fontName, fontSize, 0.5f, new Vector2(320, 330 + yOffset), 292158, 294828);
 
             CreateLyrics(font, Color4.White, "Edzari", fontName, fontSize, 0.5f, new Vector2(320, 330 + yOffset), 295614, 296870);
-            CreateLyrics(font, Color4.White, "Edzari nuilgizz fead", fontName, fontSize, 0.5f, new Vector2(320, 330 + yOffset), 297184, 300169);
+            CreateLyrics(font, Color4.White, "nuilgizz fead", fontName, fontSize, 0.5f, new Vector2(320, 330 + yOffset), 297184, 300169);
 
             CreateLyrics(font, Color4.White, "Ha", fontName, fontSize, 0.5f, new Vector2(320, 330 + yOffset), 300640, 302053);
             CreateLyrics(font, Color4.White, "mell guiez Lell", fontName, fontSize, 0.5f, new Vector2(320, 330 + yOffset), 302210, 304723);
