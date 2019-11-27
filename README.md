@@ -45,7 +45,7 @@ CV:
 - Noffy // *for being such an amazing voice actor!*
 
 # Socials
-Follow me on Twitter for updates and giveaway announcements @tochiosu, and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
+Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://twitter.com/TochiOsu "@tochiosu"), and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
 
 // *osu! storyboarder banquet*
 
