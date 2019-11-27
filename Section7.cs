@@ -15,9 +15,6 @@ namespace StorybrewScripts
 {
     public class Section7 : StoryboardObjectGenerator
     {
-        [Configurable]
-        public Color4 OHColor = Color4.White;
-
         public override void Generate()
         {
             Dialog();
@@ -136,7 +133,6 @@ namespace StorybrewScripts
                 sprite.Rotate(hitobject.EndTime, endTime + delay + delay2, Rotation, Rotation + Random(-1, 1));
                 sprite.Fade(endTime, endTime + delay + delay2, Fade, 0);
                 sprite.Additive(hitobject.StartTime, endTime + delay + delay2);
-                sprite.Color(hitobject.StartTime, OHColor);
 
                 sprite.MoveX(OsbEasing.InOutQuart, hitobject.StartTime, endTime + delay + delay2, hitobject.PositionAtTime(endTime).X, Random(310, 330));
                 sprite.MoveY(OsbEasing.InOutSine, endTime, endTime + delay + delay2, hitobject.PositionAtTime(endTime).Y, 550);

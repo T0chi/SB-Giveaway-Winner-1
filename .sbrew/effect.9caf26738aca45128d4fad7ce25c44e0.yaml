@@ -2,9 +2,6 @@
 Name: "Section7 1"
 Script: "Section7"
 Config:
-  OHColor:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"

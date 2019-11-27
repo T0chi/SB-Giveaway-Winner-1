@@ -1,0 +1,82 @@
+﻿FormatVersion: 6
+Name: "Section8 1"
+Script: "Section8"
+Config:
+  bgOverlayColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.6485559,0.6485559,0.6485559,1"
+  startColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.3628902,0.3628902,0.3628902,1"
+  ParticleColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.8003473,0.9198151,1,1"
+  SpectrumColor1:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.3215686,0.4078431,0.4156863,1"
+  SpectrumColor2:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.4070045,0.5162009,0.5261278,1"
+  BarCount:
+    Type: "System.Int32"
+    Value: "20"
+  Width:
+    Type: "System.Int32"
+    Value: "400"
+  Rotation:
+    Type: "System.Int32"
+    Value: "-7"
+  LogScale:
+    Type: "System.Single"
+    Value: "5"
+  Position:
+    Type: "OpenTK.Vector2"
+    Value: "250,240"
+  Scale:
+    Type: "OpenTK.Vector2"
+    Value: "0.5,200"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  58556d85255c4692a1569bf186283e18:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  6bb9537ce01a48c59ae639505caebe2b:
+    Name: "Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  c5bb47ce5b354ce9a0c5a09589f9dfca:
+    Name: "Aircraft"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  a7a1c61dda784ecb91eaa91422eadac8:
+    Name: "Spectrum"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  973803a960a64323960de09bbd0dfa19:
+    Name: "bgOverlay"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  c90aa5d8d86348639aa0ff6462bb41ae:
+    Name: "Front"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  281d7900afd04de39ab455278f48736b:
+    Name: "-Tochi"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  09129adef42b4bf39fad65f5949a2dcf:
+    Name: "HUD"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
