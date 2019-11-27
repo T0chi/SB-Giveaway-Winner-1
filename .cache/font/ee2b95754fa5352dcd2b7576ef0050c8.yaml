@@ -1,4 +1,4 @@
-﻿FontPath: "RUNE.TTF"
+﻿FontPath: "RUNE.ttf"
 FontSize: 17
 ColorR: 1
 ColorG: 1
@@ -6,7 +6,7 @@ ColorB: 1
 ColorA: 1
 PaddingX: 0
 PaddingY: 0
-FontStyle: Bold
+FontStyle: Regular
 TrimTransparency: Yes
 EffectsOnly: No
 Debug: No
@@ -33,7 +33,7 @@ Effects:
 Cache:
   - Text: "H"
     Path: "sb/missions/7/lyrics/0048.png"
-    Hash: "3a9a6d98c9ad40edb2a04c29a51b3a8a"
+    Hash: "3a07266dd4f38b9dd4ad431f2af84cc9"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 13
@@ -42,7 +42,7 @@ Cache:
     Height: 24
   - Text: "a"
     Path: "sb/missions/7/lyrics/0061.png"
-    Hash: "8617022e46618f8d83806ee02b86a175"
+    Hash: "a4ef987f7f5ac6ac317fb5e47d8735ad"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 9
@@ -51,7 +51,7 @@ Cache:
     Height: 24
   - Text: "m"
     Path: "sb/missions/7/lyrics/006d.png"
-    Hash: "2834bdf9b6471a99a98264aa8c3f5297"
+    Hash: "d3eda5b0ef65b256dc835af9c3ef426d"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 15
@@ -60,7 +60,7 @@ Cache:
     Height: 24
   - Text: "e"
     Path: "sb/missions/7/lyrics/0065.png"
-    Hash: "623cfa00c8966928d71f848f21d64766"
+    Hash: "bad98c154a5392e32f06e51f98c9413a"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 15
@@ -69,16 +69,16 @@ Cache:
     Height: 24
   - Text: "l"
     Path: "sb/missions/7/lyrics/006c.png"
-    Hash: "631a3669f3aecbba38c21d2b5bf4fdcf"
+    Hash: "b0296bca8c9e1abfcbda94eb38dd01d3"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 11
+    BaseWidth: 10
     BaseHeight: 25
-    Width: 11
+    Width: 10
     Height: 24
   - Text: "g"
     Path: "sb/missions/7/lyrics/0067.png"
-    Hash: "8761a3f0d271eb9bdda9d90d80a5b11c"
+    Hash: "3e24b281cd86ce7c9ceb62c5bbd4aec7"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 15
@@ -87,7 +87,7 @@ Cache:
     Height: 24
   - Text: "u"
     Path: "sb/missions/7/lyrics/0075.png"
-    Hash: "da93b3a5f4cc5aebaede7dbe8f0a6627"
+    Hash: "ffbbc9d02adb0661765dcbe0bcbdd5a2"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 11
@@ -96,7 +96,7 @@ Cache:
     Height: 24
   - Text: "i"
     Path: "sb/missions/7/lyrics/0069.png"
-    Hash: "59248a5c575562cadf4ce9ff9c835897"
+    Hash: "96196578680e53aa9d471707e8e83561"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 3
@@ -105,7 +105,7 @@ Cache:
     Height: 24
   - Text: "z"
     Path: "sb/missions/7/lyrics/007a.png"
-    Hash: "3f034624507a5d6cb361be32307f97c8"
+    Hash: "6f9989534331960890a98a70d829c3ee"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 18
@@ -114,7 +114,7 @@ Cache:
     Height: 24
   - Text: "r"
     Path: "sb/missions/7/lyrics/0072.png"
-    Hash: "89ef84fbfb580dca5a9249c981fa7643"
+    Hash: "d8abec63178c009fdd1263b115c5ce93"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 10
@@ -123,7 +123,7 @@ Cache:
     Height: 24
   - Text: "E"
     Path: "sb/missions/7/lyrics/0045.png"
-    Hash: "253f0f96cb98c1403c24f9ba3b68b893"
+    Hash: "89562c924f85d3a18499d907a6b43077"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 15
@@ -132,52 +132,52 @@ Cache:
     Height: 24
   - Text: "d"
     Path: "sb/missions/7/lyrics/0064.png"
-    Hash: "059ffd0947020cd8a876e690d1dacfb7"
+    Hash: "7c44bbc0917655256dbbf5019c6c5405"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 24
+    BaseWidth: 23
     BaseHeight: 25
-    Width: 24
+    Width: 23
     Height: 24
   - Text: "n"
     Path: "sb/missions/7/lyrics/006e.png"
-    Hash: "4ca0c1a4ea68c0ec43198d20743c5b2a"
+    Hash: "ce3682a484a674fd60566fe5a6837619"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 13
+    BaseWidth: 12
     BaseHeight: 25
-    Width: 13
+    Width: 12
     Height: 24
   - Text: "f"
     Path: "sb/missions/7/lyrics/0066.png"
-    Hash: "0f3f1a3dc6d3fdc8e296e5f39b98d037"
+    Hash: "4bb43de94c3f9a136fee1679f8b86cbc"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 15
+    BaseWidth: 14
     BaseHeight: 25
-    Width: 15
+    Width: 14
     Height: 24
   - Text: "L"
     Path: "sb/missions/7/lyrics/004c.png"
-    Hash: "97ad855b520c985198e54400670f3cd3"
+    Hash: "097f9637aec8153a267e8f8bdd22db9e"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 11
+    BaseWidth: 10
     BaseHeight: 25
-    Width: 11
+    Width: 10
     Height: 24
   - Text: "V"
     Path: "sb/missions/7/lyrics/0056.png"
-    Hash: "1b20f455a785870a7424ca1d4d3da785"
+    Hash: "fe82ce85a118d2efda3cb46faeeba042"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 9
+    BaseWidth: 8
     BaseHeight: 25
-    Width: 9
+    Width: 8
     Height: 24
   - Text: "["
     Path: "sb/missions/7/lyrics/005b.png"
-    Hash: "d6cbe22c7a31bc73b05ab5cc4342cf10"
+    Hash: "1b677b96befa8f45cf9fefc572bdbba8"
     OffsetX: 0
     OffsetY: 4
     BaseWidth: 7
@@ -186,7 +186,7 @@ Cache:
     Height: 21
   - Text: "S"
     Path: "sb/missions/7/lyrics/0053.png"
-    Hash: "4382d86efb75e64164b13cb8817e5f80"
+    Hash: "9296c2b9d41672ae5c504198081f5feb"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 11
@@ -195,7 +195,7 @@ Cache:
     Height: 24
   - Text: "t"
     Path: "sb/missions/7/lyrics/0074.png"
-    Hash: "1b5788dcce44087450e8d6d45562f49e"
+    Hash: "cbc05211ef367180789cc4841ad3dbb8"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 18
@@ -204,7 +204,7 @@ Cache:
     Height: 24
   - Text: "h"
     Path: "sb/missions/7/lyrics/0068.png"
-    Hash: "584c2e9d973cef6082ff6c27780cd786"
+    Hash: "e4502cb14488d061e276191ef1064255"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 13
@@ -213,19 +213,19 @@ Cache:
     Height: 24
   - Text: "v"
     Path: "sb/missions/7/lyrics/0076.png"
-    Hash: "51dc2ee78c53e2f7f4c1e493a6add7eb"
+    Hash: "df318ca6e19a68d61e5d0f2f634d88c8"
     OffsetX: 0
     OffsetY: 0
-    BaseWidth: 9
+    BaseWidth: 8
     BaseHeight: 25
-    Width: 9
+    Width: 8
     Height: 24
   - Text: "]"
     Path: "sb/missions/7/lyrics/005d.png"
-    Hash: "4926d289f58fc7c650844d3dd126acf0"
+    Hash: "d20aa3804ba1a29ed4ea5fbe63101536"
     OffsetX: 0
     OffsetY: 4
     BaseWidth: 7
     BaseHeight: 25
-    Width: 7
+    Width: 6
     Height: 21

@@ -24,6 +24,7 @@ namespace StorybrewScripts
             Lyrics();
             Lyrics2();
             Avatar();
+            SwingingBars(311006, 331111);
             ObjectHighlight(311006, 331111);
             Blank(303310, 307237);
             Tochi(281629, 290425);
@@ -47,6 +48,72 @@ namespace StorybrewScripts
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
         {
             var hud = new HUD(this, startTime, endTime, loadingTextEndtime, mission, songName, nameTag, progressBarDelay, avatar);
+        }
+
+        public void SwingingBars(int startTime, int endTime)
+        {
+            var Width = 700;
+            var yOffset = 20;
+            var barCount = 21;
+            var distance = Width / barCount;
+            var barScale = new Vector2(0.2f, 0.2f);
+            var Beat = Beatmap.GetTimingPointAt(startTime).BeatDuration * 4;
+
+            for (var i = 0; i < barCount; i++)
+            {
+                var position = new Vector2((340 - (Width / 2)) + i * distance, 260);
+                var bar = GetLayer("Swinging Bars").CreateSprite("sb/bar" + Random(1, 3) + ".png", OsbOrigin.Centre);
+                var barFill = GetLayer("Swinging Bars").CreateSprite("sb/bar1.png", OsbOrigin.Centre);
+                
+                bar.MoveX(startTime, position.X);
+                bar.Fade(startTime, startTime + 500, 0, 0.2f);
+                bar.Fade(endTime, endTime + 2000, 0.2f, 0);
+
+                barFill.MoveX(startTime, position.X);
+                barFill.Color(startTime, "#EC4E4E");
+
+                var rotateStart = MathHelper.DegreesToRadians(Random(-180 * 6, -90 * 6));
+                var rotateEnd = MathHelper.DegreesToRadians(Random(90 * 6, 180 * 6));
+                bar.Rotate(startTime - 1000, endTime + 2000, rotateStart, rotateEnd);
+                barFill.Rotate(startTime - 1000, endTime + 2000, rotateStart, rotateEnd);
+
+                // loop stuff
+                var delay = 200;
+                var delay2 = 80;
+                var randomBeatDelay = Random(Beat / 2, Beat);
+                // moveY
+                for (float l = startTime - (delay * barCount); l < endTime - (delay * barCount); l += ((float)Beat * 2))
+                {
+                    bar.MoveY(OsbEasing.InOutSine, l + delay2 * i, l + Beat + delay2 * i, position.Y - yOffset, position.Y + yOffset);
+                    bar.MoveY(OsbEasing.InOutSine, l + Beat + delay2 * i, l + (Beat * 2) + delay2 * i, position.Y + yOffset, position.Y - yOffset);
+
+                    barFill.MoveY(OsbEasing.InOutSine, l + delay2 * i, l + Beat + delay2 * i, position.Y - yOffset, position.Y + yOffset);
+                    barFill.MoveY(OsbEasing.InOutSine, l + Beat + delay2 * i, l + (Beat * 2) + delay2 * i, position.Y + yOffset, position.Y - yOffset);
+                }
+                // scaleVec
+                for (float l = startTime - (delay * barCount); l < endTime; l += ((float)Beat * 2))
+                {
+                    bar.ScaleVec(OsbEasing.InOutSine, l + delay * i, l + randomBeatDelay + delay * i, barScale.X, barScale.Y, -barScale.X, barScale.Y);
+                    bar.ScaleVec(OsbEasing.InOutSine, l + randomBeatDelay + delay * i, l + (Beat * 2) + delay * i, barScale.X, barScale.Y, -barScale.X, barScale.Y);
+                    
+                    barFill.ScaleVec(OsbEasing.InOutSine, l + delay * i, l + randomBeatDelay + delay * i, barScale.X, barScale.Y, -barScale.X, barScale.Y);
+                    barFill.ScaleVec(OsbEasing.InOutSine, l + randomBeatDelay + delay * i, l + (Beat * 2) + delay * i, barScale.X, barScale.Y, -barScale.X, barScale.Y);
+                }
+
+                // bars falling apart at endTime
+                var r = Random(0, 600);
+                bar.MoveY(OsbEasing.In, endTime + r, endTime + r + (barCount * delay2), bar.PositionAt(endTime).Y, Random(480, 520));
+                bar.MoveX(endTime + r, endTime + r + (barCount * delay2), bar.PositionAt(endTime).X, Random(300, 340));
+
+                // bar filling appearing at
+                var delay3 = barCount / 2;
+                for (float f = 315404; f < 325456; f += ((float)Beat) * 4)
+                {
+                    barFill.Fade(f - 100 + delay3 * i, f + delay3 * i, 0, 0.5f);
+                    barFill.Fade(f + 300 + delay3 * i, f + 500 + delay3 * i, 0.5f, 0);
+                    barFill.Additive(f + delay3 * i, f + 500 + delay3 * i);
+                }
+            }
         }
 
         public void ObjectHighlight(int startTime, int endTime)

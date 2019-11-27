@@ -15,13 +15,18 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  8f688eb62b0c425299f8c4832b8bab14:
-    Name: "Avatar"
+  925387c637674c52a7c230913fe270fa:
+    Name: "Swinging Bars"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
   d0687d37478b473b8438a61c4acda618:
     Name: "ObjectHighlight"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  8f688eb62b0c425299f8c4832b8bab14:
+    Name: "Avatar"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
