@@ -9,7 +9,7 @@ Advanced storyboard for the giveaway winner of my '400 twitter followers full sb
 Each mapper had to choose an avatar from the image below in order for me to make the storyboard. The reason is because I wanted each mapper to somehow be included in the storyboard so they are a part of it as well!
 
 ![](https://i.imgur.com/vmmgb4A.jpg)
-*an extra character was added later... (scubdomino's)*
+*an extra character was added later that isn't on the image... (scubdomino's)*
 
 
 ------------
