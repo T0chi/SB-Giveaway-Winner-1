@@ -18,7 +18,7 @@ Each mapper had to choose an avatar from the image below in order for me to make
 **AVATARS**
 
 1. Acyl
-2. ScubDomino
+2. ScubDomino `CHANGED`
 3. deadcode `NONE`
 4. Heilia
 5. Necho
