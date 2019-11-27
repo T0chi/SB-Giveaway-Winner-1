@@ -2,8 +2,9 @@
 - Feryquitous - Songs Compilation (by Acyl)
 - Link: -unsubmitted-
 
-# SB Giveaway Winner #1
-Advanced storyboard for the giveaway winner of my '400 twitter followers full sb giveaway'
+**Previews**
+- https://streamable.com/f1bfx
+- https://streamable.com/30dkh
 
 # Avatars + more
 Each mapper had to choose an avatar from the image below in order for me to make the storyboard. The reason is because I wanted each mapper to somehow be included in the storyboard so they are a part of it as well!
