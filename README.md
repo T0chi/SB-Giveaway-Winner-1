@@ -106,7 +106,7 @@ Mappers:
 Storyboarders:
 - PoNo // *helped with scriptslibrary usage*
 - Damnae // *for creating Storybrew*
-- Kawa // *amazing idea for mission 3.*
+- Kawa // *amazing idea for mission 4.*
 
 CV:
 - Noffy // *for being such an amazing voice actor!*
