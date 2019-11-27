@@ -106,7 +106,7 @@ namespace StorybrewScripts
                 bar.MoveX(endTime + r, endTime + r + (barCount * delay2), bar.PositionAt(endTime).X, Random(300, 340));
 
                 // bar filling appearing at
-                var delay3 = barCount / 2;
+                var delay3 = barCount / 1.3;
                 for (float f = 315404; f < 325456; f += ((float)Beat) * 4)
                 {
                     barFill.Fade(f - 100 + delay3 * i, f + delay3 * i, 0, 0.5f);
