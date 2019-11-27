@@ -42,9 +42,9 @@ Each mapper had to choose an avatar from the image below in order for me to make
 - 04:15:230 - ~~deadcode~~ moecho
 - 04:50:902 - Heilia
 - 05:39:381 - toybot
-- 06:27:314 - Necho *odds*  || 1112 *evens* ||
-- 07:13:357 - 1112 *odds*  || Necho *evens* ||
-- 07:58:193 - 1112 *odds*  || Necho *evens* ||
+- 06:27:314 - Necho *odds*  || 1112 *evens*
+- 07:13:357 - 1112 *odds*  || Necho *evens*
+- 07:58:193 - 1112 *odds*  || Necho *evens*
 
 ------------
 
