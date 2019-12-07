@@ -41,7 +41,152 @@ namespace StorybrewScripts
 
         public void Mission()
         {
+            // INTRO ////////////////////////////////////////////////////////////////////////
+
+            var appearStartTime = 389827;
+            var disappearStartTime = 398622;
+            var endTime = 488992;
+
+            var nechoScale = 0.2;
+            var otosakaScale = 0.2;
+
+            var nechoPosX = 107;
+            var otosakaPosX = 555;
             
+            var necho = GetLayer("Necho - Intro").CreateSprite("sb/avatars/Necho.png", OsbOrigin.Centre);
+            var otosaka = GetLayer("Otosaka-Yu - Intro").CreateSprite("sb/avatars/Otosaka-Yu.png", OsbOrigin.Centre);
+            
+            int speed = 0;
+            for (int i = appearStartTime; i < appearStartTime + 4000; i += speed)
+            {
+                speed += 200;
+
+                necho.ScaleVec(OsbEasing.InOutSine, i, i + (speed / 2), nechoScale, nechoScale, -nechoScale, nechoScale);
+                necho.ScaleVec(OsbEasing.InOutSine, i + (speed / 2), i + speed, -nechoScale, nechoScale, nechoScale, nechoScale);
+                otosaka.ScaleVec(OsbEasing.InOutSine, i, i + (speed / 2), otosakaScale, otosakaScale, -otosakaScale, otosakaScale);
+                otosaka.ScaleVec(OsbEasing.InOutSine, i + (speed / 2), i + speed, -nechoScale, nechoScale, nechoScale, nechoScale);
+            }
+
+            necho.Fade(appearStartTime, appearStartTime + 1500, 0, 1);
+            necho.Fade(endTime, endTime + 1500, 1, 0);
+            necho.Move(OsbEasing.OutSine, appearStartTime, appearStartTime + 4000, -107, 280, nechoPosX, 280);
+            necho.Move(OsbEasing.InOutExpo, disappearStartTime, disappearStartTime + 1500, nechoPosX, 280, 127, 240);
+
+            otosaka.FlipH(appearStartTime, endTime + 1500);
+            otosaka.Fade(appearStartTime, appearStartTime + 1500, 0, 1);
+            otosaka.Fade(endTime, endTime + 1500, 1, 0);
+            otosaka.Move(OsbEasing.OutSine, appearStartTime, appearStartTime + 4000, 747, 200, otosakaPosX, 200);
+            otosaka.Move(OsbEasing.InOutExpo, disappearStartTime, disappearStartTime + 1500, otosakaPosX, 200, 535, 240);
+
+            var nechoTag = GetLayer("VS + Tag").CreateSprite("sb/missions/9/necho.png", OsbOrigin.Centre);
+            var otosakaTag = GetLayer("VS + Tag").CreateSprite("sb/missions/9/otosaka-yu.png", OsbOrigin.Centre);
+
+            var tagStartTime = appearStartTime + 4000;
+            var tagEndTime = disappearStartTime;
+
+            nechoTag.Move(OsbEasing.Out, tagStartTime, tagStartTime + 500, -107 - 20, 400, nechoPosX - 20, 400);
+            nechoTag.Move(tagEndTime, tagEndTime + 500, nechoPosX - 20, 400, -107 - 20, 400);
+            nechoTag.Fade(tagStartTime, tagStartTime + 500, 0, 1);
+            nechoTag.Fade(tagEndTime, tagEndTime + 500, 1, 0);
+            nechoTag.Scale(tagStartTime, nechoScale * 1.5);
+
+            otosakaTag.Move(OsbEasing.Out, tagStartTime, tagStartTime + 500, 747, 280, otosakaPosX, 280);
+            otosakaTag.Move(tagEndTime, tagEndTime + 500, otosakaPosX, 280, 747, 280);
+            otosakaTag.Fade(tagStartTime, tagStartTime + 500, 0, 1);
+            otosakaTag.Fade(tagEndTime, tagEndTime + 500, 1, 0);
+            otosakaTag.Scale(tagStartTime, otosakaScale * 1.5);
+
+            var vs = GetLayer("VS + Tag").CreateSprite("sb/missions/9/vs.png", OsbOrigin.Centre, new Vector2(320, 240));
+            var vs2 = GetLayer("VS + Tag").CreateSprite("sb/missions/9/vs.png", OsbOrigin.Centre, new Vector2(320, 240));
+
+            vs.Fade(appearStartTime, appearStartTime + 5000, 0, 1);
+            vs.Fade(disappearStartTime + 500, disappearStartTime + 1500, 1, 0);
+            vs.Scale(OsbEasing.InBack, appearStartTime, appearStartTime + 5000, 1, 0.4);
+
+            vs2.Fade(OsbEasing.OutSine, appearStartTime + 5000, appearStartTime + 7000, 1, 0);
+            vs2.Scale(OsbEasing.OutSine, appearStartTime + 5000, appearStartTime + 7000, 0.4, 0.7);
+
+            var nechoH1 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h1.png", OsbOrigin.Centre);
+            var nechoH2 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h2.png", OsbOrigin.Centre);
+            var nechoH3 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h3.png", OsbOrigin.Centre);
+            var otosakaH1 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h1.png", OsbOrigin.Centre);
+            var otosakaH2 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h2.png", OsbOrigin.Centre);
+            var otosakaH3 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h3.png", OsbOrigin.Centre);
+            
+            var hudStartTime = appearStartTime + 4000;
+            var hudEndTime = disappearStartTime - 300;
+
+            nechoH1.Scale(hudStartTime, 0.35);
+            nechoH1.Move(hudStartTime, nechoPosX - 20, 280);
+            nechoH1.Additive(hudStartTime, hudEndTime + 500);
+            nechoH1.Rotate(hudStartTime, hudEndTime + 500, Random(-1, 1), Random(1, 2));
+            nechoH1.StartLoopGroup(hudStartTime, 5);
+            nechoH1.Fade(0, 100, 0.5, 0);
+            nechoH1.EndGroup();
+            nechoH1.Fade(hudStartTime + 500, hudEndTime, 0.5, 0.5);
+            nechoH1.StartLoopGroup(hudEndTime, 3);
+            nechoH1.Fade(0, 100, 0.5, 0);
+            nechoH1.EndGroup();
+
+            nechoH2.Scale(hudStartTime, 0.35);
+            nechoH2.Move(hudStartTime, nechoPosX - 20, 280);
+            nechoH2.Additive(hudStartTime, hudEndTime + 500);
+            nechoH2.Rotate(hudStartTime, hudEndTime + 500, Random(1, 2), Random(-1.5, -1));
+            nechoH2.StartLoopGroup(hudStartTime, 5);
+            nechoH2.Fade(0, 100, 0.5, 0);
+            nechoH2.EndGroup();
+            nechoH2.Fade(hudStartTime + 500, hudEndTime, 0.5, 0.5);
+            nechoH2.StartLoopGroup(hudEndTime, 3);
+            nechoH2.Fade(0, 100, 0.5, 0);
+            nechoH2.EndGroup();
+
+            nechoH3.Scale(hudStartTime, 0.35);
+            nechoH3.Move(hudStartTime, nechoPosX - 20, 280);
+            nechoH3.Additive(hudStartTime, hudEndTime + 500);
+            nechoH3.Rotate(hudStartTime, hudEndTime + 500, Random(-1, 1), Random(1, 2));
+            nechoH3.StartLoopGroup(hudStartTime, 5);
+            nechoH3.Fade(0, 100, 0.5, 0);
+            nechoH3.EndGroup();
+            nechoH3.Fade(hudStartTime + 500, hudEndTime, 0.5, 0.5);
+            nechoH3.StartLoopGroup(hudEndTime, 3);
+            nechoH3.Fade(0, 100, 0.5, 0);
+            nechoH3.EndGroup();
+
+            otosakaH1.Scale(hudStartTime, 0.35);
+            otosakaH1.Move(hudStartTime, otosakaPosX, 200);
+            otosakaH1.Additive(hudStartTime, hudEndTime + 500);
+            otosakaH1.Rotate(hudStartTime, hudEndTime + 500, Random(-1, 1), Random(1, 2));
+            otosakaH1.StartLoopGroup(hudStartTime, 5);
+            otosakaH1.Fade(0, 100, 0.5, 0);
+            otosakaH1.EndGroup();
+            otosakaH1.Fade(hudStartTime + 500, hudEndTime, 0.5, 0.5);
+            otosakaH1.StartLoopGroup(hudEndTime, 3);
+            otosakaH1.Fade(0, 100, 0.5, 0);
+            otosakaH1.EndGroup();
+
+            otosakaH2.Scale(hudStartTime, 0.35);
+            otosakaH2.Move(hudStartTime, otosakaPosX, 200);
+            otosakaH2.Additive(hudStartTime, hudEndTime + 500);
+            otosakaH2.Rotate(hudStartTime, hudEndTime + 500, Random(1, 2), Random(-1.5, -1));
+            otosakaH2.StartLoopGroup(hudStartTime, 5);
+            otosakaH2.Fade(0, 100, 0.5, 0);
+            otosakaH2.EndGroup();
+            otosakaH2.Fade(hudStartTime + 500, hudEndTime, 0.5, 0.5);
+            otosakaH2.StartLoopGroup(hudEndTime, 3);
+            otosakaH2.Fade(0, 100, 0.5, 0);
+            otosakaH2.EndGroup();
+
+            otosakaH3.Scale(hudStartTime, 0.35);
+            otosakaH3.Move(hudStartTime, otosakaPosX, 200);
+            otosakaH3.Additive(hudStartTime, hudEndTime + 500);
+            otosakaH3.Rotate(hudStartTime, hudEndTime + 500, Random(-1, 1), Random(1, 2));
+            otosakaH3.StartLoopGroup(hudStartTime, 5);
+            otosakaH3.Fade(0, 100, 0.5, 0);
+            otosakaH3.EndGroup();
+            otosakaH3.Fade(hudStartTime + 500, hudEndTime, 0.5, 0.5);
+            otosakaH3.StartLoopGroup(hudEndTime, 3);
+            otosakaH3.Fade(0, 100, 0.5, 0);
+            otosakaH3.EndGroup();
         }
 
         public void Dialog()
