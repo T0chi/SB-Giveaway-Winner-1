@@ -103,7 +103,8 @@ namespace StorybrewScripts
             vs.Fade(disappearStartTime + 500, disappearStartTime + 1500, 1, 0);
             vs.Scale(OsbEasing.InBack, appearStartTime, appearStartTime + 5000, 1, 0.4);
 
-            vs2.Fade(OsbEasing.OutSine, appearStartTime + 5000, appearStartTime + 7000, 1, 0);
+            vs2.Additive(appearStartTime + 5000, appearStartTime + 7000);
+            vs2.Fade(OsbEasing.OutSine, appearStartTime + 5000, appearStartTime + 7000, 0.5, 0);
             vs2.Scale(OsbEasing.OutSine, appearStartTime + 5000, appearStartTime + 7000, 0.4, 0.7);
 
             var nechoH1 = GetLayer("HUD - Intro").CreateSprite("sb/missions/9/h1.png", OsbOrigin.Centre);
@@ -187,6 +188,54 @@ namespace StorybrewScripts
             otosakaH3.StartLoopGroup(hudEndTime, 3);
             otosakaH3.Fade(0, 100, 0.5, 0);
             otosakaH3.EndGroup();
+
+            // FIGHT ////////////////////////////////////////////////////////////////////////
+            var sTime = disappearStartTime + 2200;
+            var eTime = endTime;
+            var interval = 1500;
+            var Beat = Beatmap.GetTimingPointAt(sTime).BeatDuration;
+            for (double i = sTime; i < eTime - interval; i += interval)
+            {
+                var slashLeft = GetLayer("Slashing").CreateAnimation("sb/missions/3/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
+                var slashRight = GetLayer("Slashing").CreateAnimation("sb/missions/3/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
+
+                var slashDelay = -50;
+                var Speed = Random(10, 15);
+                var Duration = interval / Speed;
+                var spawnDelay = Random(Beat, Beat * 6);
+                var effectDelay = Random(500, 1000);
+                
+                var slashYL = Random(necho.PositionAt(i + slashDelay + Duration).Y - 50, necho.PositionAt(i + slashDelay + Duration).Y + 50);
+                var slashYR = Random(otosaka.PositionAt(i + slashDelay + Duration).Y - 50, otosaka.PositionAt(i + slashDelay + Duration).Y + 50);
+
+                slashLeft.Move(i + slashDelay + Duration, necho.PositionAt(i + slashDelay + Duration));
+                slashRight.Move(i + slashDelay + spawnDelay + Duration, otosaka.PositionAt(i + slashDelay + spawnDelay + Duration));
+                slashLeft.ScaleVec(i + slashDelay + Duration, i + slashDelay + Duration, Random(0.2, 0.4), Random(0.4, 0.6), Random(0.2, 0.4), Random(0.4, 0.6));
+                slashRight.ScaleVec(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + effectDelay, Random(0.2, 0.4), Random(0.4, 0.6), Random(0.2, 0.4), Random(0.4, 0.6));
+                slashLeft.Additive(i + slashDelay + Duration, i + slashDelay + Duration);
+                slashRight.Additive(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + effectDelay);
+                // flip horizontally if it's on the right side
+                if (otosaka.PositionAt(i + slashDelay + spawnDelay + Duration).X > 320)
+                {
+                    slashRight.FlipH(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
+                    slashLeft.FlipH(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
+                }
+                // flip vertically
+                if (necho.PositionAt(i + slashDelay + Duration).Y > slashYL)
+                {
+                    slashLeft.FlipV(i + slashDelay + Duration, i + slashDelay + Duration);
+                }
+                // flip vertically
+                if (otosaka.PositionAt(i + slashDelay + spawnDelay + Duration).Y > slashYR)
+                {
+                    slashRight.FlipV(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
+                }
+                // sound effects
+                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + Duration, 100);
+                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + spawnDelay + Duration, 100);
+
+                interval = Random(1000, 2000);
+            }
         }
 
         public void Dialog()

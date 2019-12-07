@@ -42,3 +42,8 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  2b845970eaa945c99bcaf5eb34482487:
+    Name: "Slashing"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
