@@ -194,10 +194,11 @@ namespace StorybrewScripts
             var eTime = endTime;
             var interval = 1500;
             var Beat = Beatmap.GetTimingPointAt(sTime).BeatDuration;
+            var rotate = MathHelper.DegreesToRadians(90);
             for (double i = sTime; i < eTime - interval; i += interval)
             {
-                var slashLeft = GetLayer("Slashing").CreateAnimation("sb/missions/3/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
-                var slashRight = GetLayer("Slashing").CreateAnimation("sb/missions/3/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
+                var slashLeft = GetLayer("Slashing").CreateAnimation("sb/missions/9/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
+                var slashRight = GetLayer("Slashing").CreateAnimation("sb/missions/9/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
 
                 var slashDelay = -50;
                 var Speed = Random(10, 15);
@@ -205,36 +206,37 @@ namespace StorybrewScripts
                 var spawnDelay = Random(Beat, Beat * 6);
                 var effectDelay = Random(500, 1000);
                 
-                var slashYL = Random(necho.PositionAt(i + slashDelay + Duration).Y - 50, necho.PositionAt(i + slashDelay + Duration).Y + 50);
-                var slashYR = Random(otosaka.PositionAt(i + slashDelay + Duration).Y - 50, otosaka.PositionAt(i + slashDelay + Duration).Y + 50);
+                var slashYL = Random(necho.PositionAt(i + slashDelay + Duration).Y - 100, necho.PositionAt(i + slashDelay + Duration).Y + 100);
+                var slashYR = Random(otosaka.PositionAt(i + slashDelay + Duration).Y - 35, otosaka.PositionAt(i + slashDelay + Duration).Y + 60);
 
-                slashLeft.Move(i + slashDelay + Duration, necho.PositionAt(i + slashDelay + Duration));
+                slashLeft.Rotate(i + slashDelay + Duration, rotate);
+                slashRight.Rotate(i + slashDelay + spawnDelay + Duration, rotate);
+                slashLeft.Move(i + slashDelay + Duration, necho.PositionAt(i + slashDelay + Duration).X - 20, necho.PositionAt(i + slashDelay + Duration).Y);
                 slashRight.Move(i + slashDelay + spawnDelay + Duration, otosaka.PositionAt(i + slashDelay + spawnDelay + Duration));
                 slashLeft.ScaleVec(i + slashDelay + Duration, i + slashDelay + Duration, Random(0.2, 0.4), Random(0.4, 0.6), Random(0.2, 0.4), Random(0.4, 0.6));
                 slashRight.ScaleVec(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + effectDelay, Random(0.2, 0.4), Random(0.4, 0.6), Random(0.2, 0.4), Random(0.4, 0.6));
-                slashLeft.Additive(i + slashDelay + Duration, i + slashDelay + Duration);
+                slashLeft.Additive(i + slashDelay + Duration, i + slashDelay + Duration + effectDelay);
                 slashRight.Additive(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + effectDelay);
-                // flip horizontally if it's on the right side
+                // flip vertically if it's on the right side
                 if (otosaka.PositionAt(i + slashDelay + spawnDelay + Duration).X > 320)
                 {
-                    slashRight.FlipH(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
-                    slashLeft.FlipH(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
+                    slashRight.FlipV(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
                 }
-                // flip vertically
+                // flip horizontally sometimes
                 if (necho.PositionAt(i + slashDelay + Duration).Y > slashYL)
                 {
-                    slashLeft.FlipV(i + slashDelay + Duration, i + slashDelay + Duration);
+                    slashLeft.FlipH(i + slashDelay + Duration, i + slashDelay + Duration);
                 }
-                // flip vertically
+                // flip horizontally sometimes
                 if (otosaka.PositionAt(i + slashDelay + spawnDelay + Duration).Y > slashYR)
                 {
-                    slashRight.FlipV(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
+                    slashRight.FlipH(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration);
                 }
                 // sound effects
                 var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + Duration, 100);
                 var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + spawnDelay + Duration, 100);
 
-                interval = Random(1000, 2000);
+                interval = Random(1000, 3000);
             }
         }
 
