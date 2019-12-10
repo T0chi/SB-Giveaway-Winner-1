@@ -193,10 +193,11 @@ namespace StorybrewScripts
             var sTime = disappearStartTime + 2200;
             var eTime = endTime;
             var interval = 1500;
-            var Beat = Beatmap.GetTimingPointAt(sTime).BeatDuration;
             var rotate = MathHelper.DegreesToRadians(90);
             for (double i = sTime; i < eTime - interval; i += interval)
             {
+                var Beat = Beatmap.GetTimingPointAt((int)i).BeatDuration;
+
                 var slashLeft = GetLayer("Slashing").CreateAnimation("sb/missions/9/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
                 var slashRight = GetLayer("Slashing").CreateAnimation("sb/missions/9/slashAnimation/slash" + Random(1, 3) + "_.jpg", 8, 50, OsbLoopType.LoopOnce, OsbOrigin.Centre);
 
