@@ -2,6 +2,12 @@
 Name: "Section9 1"
 Script: "Section9"
 Config:
+  HitColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,0,0,1"
+  particleColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.3922535,0.8551227,1,1"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
@@ -27,6 +33,11 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  bcb9c06b2c2446749b5f2e4c3219fc75:
+    Name: "Particles Back"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
   980c608e6b554bde92501c1ea8431ca6:
     Name: "Necho - Intro"
     OsbLayer: Background
@@ -44,6 +55,21 @@ Layers:
     Visible: Yes
   2b845970eaa945c99bcaf5eb34482487:
     Name: "Slashing"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  cb202ba0997e409fb825e49a99c237ed:
+    Name: "Damage Numbers"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  1c768f639aad494483035917c0548c18:
+    Name: "Particles Front"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  823c77c0f6064db5a6196129ba8adfb2:
+    Name: "Light"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes

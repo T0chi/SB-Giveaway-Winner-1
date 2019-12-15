@@ -15,11 +15,19 @@ namespace StorybrewScripts
 {
     public class Section9 : StoryboardObjectGenerator
     {
+        [Configurable]
+        public Color4 HitColor = Color4.Red;
+
+        [Configurable]
+        public Color4 particleColor = Color4.White;
+
         public override void Generate()
         {
 		    Dialog();
             Mission();
             Background();
+            Particles();
+            Lights();
             Tochi(333624, 344407);
             HUD(379590, 488992, 387313, "Mission #8", "Ordirehv", "sb/HUD/txt/nameTag/Necho&Otosaka.png", 4500, "sb/avatars/Necho&OtosakaProfile.png");
         }
@@ -37,6 +45,95 @@ namespace StorybrewScripts
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
         {
             var hud = new HUD(this, startTime, endTime, loadingTextEndtime, mission, songName, nameTag, progressBarDelay, avatar);
+        }
+
+        public void Lights()
+        {
+            var startTime = 387313;
+            var endTime = 491092;
+            var duration = 4000;
+
+            var light1 = GetLayer("Light").CreateSprite("sb/light2.png", OsbOrigin.TopCentre);
+            var light2 = GetLayer("Light").CreateSprite("sb/light2.png", OsbOrigin.TopCentre);
+
+            var Rotation = MathHelper.DegreesToRadians(10);
+            
+            light1.Fade(startTime, startTime + 1000, 0, 0.1);
+            light1.Fade(endTime - 1000, endTime, 0.1, 0);
+            light1.StartLoopGroup(startTime, (endTime - startTime) / duration);
+            light1.ScaleVec(0, 0.5, 0.9);
+            light1.Additive(0, duration * 2);
+            light1.Move(0, new Vector2(407, -26));
+            light1.Rotate(OsbEasing.InOutSine, 0, duration, 0, Rotation);
+            light1.Rotate(OsbEasing.InOutSine, duration, duration * 2, Rotation, 0);
+            light1.EndGroup();
+
+            light2.Fade(startTime, startTime + 1000, 0, 0.05);
+            light2.Fade(endTime - 1000, endTime, 0.05, 0);
+            light2.StartLoopGroup(startTime - 1500, (endTime - (startTime - 1500)) / duration);
+            light2.ScaleVec(0, 0.3, 0.5);
+            light2.Additive(0, duration * 2);
+            light2.Move(0, new Vector2(470, 150));
+            light2.Rotate(OsbEasing.InOutSine, 0, duration, 0, Rotation);
+            light2.Rotate(OsbEasing.InOutSine, duration, duration * 2, Rotation, 0);
+            light2.EndGroup();
+        }
+
+        public void Particles()
+        {
+            var startTime = 387313;
+            var endTime = 491092;
+            var timePerParticle = Random(50, 100);
+
+            // blue particles
+            for (var i = startTime; i < endTime; i += timePerParticle)
+            {
+                var duration = Random(5000, 10000);
+                var particleBack = GetLayer("Particles Back").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+                var particleFront = GetLayer("Particles Front").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+
+                var startPos = new Vector2(Random(-107, 747), Random(400, 500));
+                var endPos = new Vector2(startPos.X + Random(-40, 40), Random(260, 360));
+
+                var Fade = Random(0.1, 0.5);
+                var fadeDuration = Random(1000, 2000);
+                var Scale = Random(0.008, 0.05);
+
+                // particles in the back
+                particleBack.Fade(i, i + fadeDuration, 0, Fade);
+                particleBack.Fade(i + duration - fadeDuration, i + duration, Fade, 0);
+                particleBack.Move(i, i + duration, startPos, endPos);
+                particleBack.Color(i, particleColor);
+                particleBack.Scale(i, Scale);
+
+                // particles in the front
+                particleFront.Fade(i, i + fadeDuration, 0, Fade);
+                particleFront.Fade(i + duration - fadeDuration, i + duration, Fade, 0);
+                particleFront.Move(i, i + duration, startPos, endPos);
+                particleFront.Color(i, particleColor);
+                particleFront.Scale(i, Scale);
+            }
+
+            // Light Ray particles
+            var amount = Random(200, 400);
+            for (var i = startTime; i < endTime; i += amount)
+            {
+                var duration = Random(5000, 10000);
+                var lightParticles = GetLayer("Particles Back").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+
+                var startPos = new Vector2(Random(360, 440), Random(0, 20));
+                var endPos = new Vector2(startPos.X + Random(-40, 40), Random(140, 260));
+
+                var Fade = Random(0.1, 0.2);
+                var fadeDuration = Random(1000, 2000);
+                var Scale = Random(0.008, 0.05);
+
+                lightParticles.Fade(i, i + fadeDuration, 0, Fade);
+                lightParticles.Fade(i + duration - fadeDuration, i + duration, Fade, 0);
+                lightParticles.Move(i, i + duration, startPos, endPos);
+                lightParticles.Additive(i, i + duration);
+                lightParticles.Scale(i, Scale);
+            }
         }
 
         public void Mission()
@@ -207,13 +304,22 @@ namespace StorybrewScripts
                 var spawnDelay = Random(Beat, Beat * 6);
                 var effectDelay = Random(500, 1000);
                 
+                var nechoRandomHitPos = Random(-80, -50);
+                var otosakaRandomHitPos = Random(50, 80);
+                var randomDelay = Random(250, 500);
+
+                var nechoCurrentPosX = necho.PositionAt(i + slashDelay + Duration).X;
+                var nechoCurrentPosY = necho.PositionAt(i + slashDelay + Duration).Y;
+                var otosakaCurrentPosX = otosaka.PositionAt(i + slashDelay + spawnDelay + Duration).X;
+                var otosakaCurrentPosY = otosaka.PositionAt(i + slashDelay + spawnDelay + Duration).Y;
+                
                 var slashYL = Random(necho.PositionAt(i + slashDelay + Duration).Y - 100, necho.PositionAt(i + slashDelay + Duration).Y + 100);
                 var slashYR = Random(otosaka.PositionAt(i + slashDelay + Duration).Y - 35, otosaka.PositionAt(i + slashDelay + Duration).Y + 60);
 
                 slashLeft.Rotate(i + slashDelay + Duration, rotate);
                 slashRight.Rotate(i + slashDelay + spawnDelay + Duration, rotate);
-                slashLeft.Move(i + slashDelay + Duration, necho.PositionAt(i + slashDelay + Duration).X - 20, necho.PositionAt(i + slashDelay + Duration).Y);
-                slashRight.Move(i + slashDelay + spawnDelay + Duration, otosaka.PositionAt(i + slashDelay + spawnDelay + Duration));
+                slashLeft.Move(i + slashDelay + Duration, i + slashDelay + Duration + randomDelay, nechoCurrentPosX - 20, nechoCurrentPosY, nechoCurrentPosX - 20 + nechoRandomHitPos, nechoCurrentPosY);
+                slashRight.Move(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + randomDelay, otosakaCurrentPosX, otosakaCurrentPosY, otosakaCurrentPosX + otosakaRandomHitPos, otosakaCurrentPosY);
                 slashLeft.ScaleVec(i + slashDelay + Duration, i + slashDelay + Duration, Random(0.2, 0.4), Random(0.4, 0.6), Random(0.2, 0.4), Random(0.4, 0.6));
                 slashRight.ScaleVec(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + effectDelay, Random(0.2, 0.4), Random(0.4, 0.6), Random(0.2, 0.4), Random(0.4, 0.6));
                 slashLeft.Additive(i + slashDelay + Duration, i + slashDelay + Duration + effectDelay);
@@ -237,7 +343,39 @@ namespace StorybrewScripts
                 var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + Duration, 100);
                 var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + spawnDelay + Duration, 100);
 
-                interval = Random(1000, 3000);
+                interval = Random(1500, 2000);
+
+                // GETTING HIT EFFECT
+                necho.Move(i + slashDelay + Duration, i + slashDelay + Duration + randomDelay, nechoCurrentPosX, nechoCurrentPosY, nechoCurrentPosX + nechoRandomHitPos, nechoCurrentPosY);
+                necho.Move(i + slashDelay + Duration + randomDelay, i + slashDelay + Duration + (randomDelay * 2), nechoCurrentPosX + nechoRandomHitPos, nechoCurrentPosY, nechoCurrentPosX, nechoCurrentPosY);
+                necho.Color(i + slashDelay + Duration, i + slashDelay + Duration + (randomDelay * 2), HitColor, Color4.White);
+                necho.Color(i + slashDelay + Duration - 1, Color4.White);
+                
+                otosaka.Move(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + randomDelay, otosakaCurrentPosX, otosakaCurrentPosY, otosakaCurrentPosX + otosakaRandomHitPos, otosakaCurrentPosY);
+                otosaka.Move(i + slashDelay + spawnDelay + Duration + randomDelay, i + slashDelay + spawnDelay + Duration + (randomDelay * 2), otosakaCurrentPosX + otosakaRandomHitPos, otosakaCurrentPosY, otosakaCurrentPosX, otosakaCurrentPosY);
+                otosaka.Color(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + (randomDelay * 2), HitColor, Color4.White);
+                otosaka.Color(i + slashDelay + spawnDelay + Duration - 1, Color4.White);
+
+                // DAMAGE NUMBERS
+                var nechoDamageSprites = GetLayer("Damage Numbers").CreateSprite("sb/missions/9/damage" + Random(1, 12) + ".png", OsbOrigin.Centre);
+                var otosakaDamageSprites = GetLayer("Damage Numbers").CreateSprite("sb/missions/9/damage" + Random(1, 12) + ".png", OsbOrigin.Centre);
+
+                var nechoDamagePos = new Vector2(nechoCurrentPosX - 20, nechoCurrentPosY - 140);
+                var otosakaDamagePos = new Vector2(otosakaCurrentPosX, otosakaCurrentPosY - 120);
+                var damageDuration = Random(500, 1000);
+
+                var startRotation = MathHelper.DegreesToRadians(0);
+                var endRotation = MathHelper.DegreesToRadians(Random(-30, 30));
+                
+                nechoDamageSprites.Move(OsbEasing.OutSine, i + slashDelay + Duration, i + slashDelay + Duration + damageDuration, nechoDamagePos.X, nechoDamagePos.Y, nechoDamagePos.X + Random(-50, 50), nechoDamagePos.Y - Random(5, 25));
+                nechoDamageSprites.Rotate(OsbEasing.InSine, i + slashDelay + Duration, i + slashDelay + Duration + damageDuration, startRotation, endRotation);
+                nechoDamageSprites.Fade(i + slashDelay + Duration, i + slashDelay + Duration + damageDuration, 1, 0);
+                nechoDamageSprites.Scale(i + slashDelay + Duration, Random(0.2, 0.3));
+
+                otosakaDamageSprites.Move(OsbEasing.OutSine, i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + damageDuration, otosakaDamagePos.X, otosakaDamagePos.Y, otosakaDamagePos.X + Random(-50, 50), otosakaDamagePos.Y - Random(5, 25));
+                otosakaDamageSprites.Rotate(OsbEasing.InSine, i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration, startRotation, endRotation);
+                otosakaDamageSprites.Fade(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + damageDuration, 1, 0);
+                otosakaDamageSprites.Scale(i + slashDelay + spawnDelay + Duration, Random(0.2, 0.3));
             }
         }
 
