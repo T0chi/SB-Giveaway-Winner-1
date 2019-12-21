@@ -1,0 +1,30 @@
+﻿FormatVersion: 6
+Name: "Points 1"
+Script: "Points"
+Config:
+  ColorFail:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,0.1247253,0.1247253,1"
+  ColorPass:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.2529281,1,0.09298491,1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "452424"
+    DisplayName: "Random seed"
+Layers:
+  ce4763201dc149919672483b26cb709f:
+    Name: "-Tochi"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  6cdaf5ba16e04f63ae0e5d86c6ca5979:
+    Name: "Points Fail"
+    OsbLayer: Fail
+    DiffSpecific: No
+    Visible: Yes
+  e8d51c5ee716423199dac90cf8fc1759:
+    Name: "Points Pass"
+    OsbLayer: Pass
+    DiffSpecific: No
+    Visible: Yes

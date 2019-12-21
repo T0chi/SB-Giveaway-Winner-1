@@ -1,0 +1,150 @@
+﻿FontPath: "Microsoft Yi Baiti"
+FontSize: 30
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "7"
+    Path: "sb/points/0037.png"
+    Hash: "b918062e989645743cf62868a58a4a8e"
+    OffsetX: 2
+    OffsetY: 12
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 17
+    Height: 23
+  - Text: "5"
+    Path: "sb/points/0035.png"
+    Hash: "1e729d64c24e5e0f2c44a50c8dfba92f"
+    OffsetX: 2
+    OffsetY: 12
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 17
+    Height: 23
+  - Text: "0"
+    Path: "sb/points/0030.png"
+    Hash: "bc0663771ada342fbd19a8441ac7129c"
+    OffsetX: 1
+    OffsetY: 11
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 19
+    Height: 24
+  - Text: "6"
+    Path: "sb/points/0036.png"
+    Hash: "0f1f213d83d466bcceb8bc02bee86ac5"
+    OffsetX: 2
+    OffsetY: 11
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 17
+    Height: 24
+  - Text: "2"
+    Path: "sb/points/0032.png"
+    Hash: "db2c3f7877f04b19afc4623cc86c6f30"
+    OffsetX: 3
+    OffsetY: 11
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 16
+    Height: 24
+  - Text: "1"
+    Path: "sb/points/0031.png"
+    Hash: "4bd047b1c5656788f6271c4c3364d3a1"
+    OffsetX: 5
+    OffsetY: 12
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 11
+    Height: 23
+  - Text: "3"
+    Path: "sb/points/0033.png"
+    Hash: "99ac6cf79afc6324f651fd6a3dfab04f"
+    OffsetX: 2
+    OffsetY: 11
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 17
+    Height: 24
+  - Text: "9"
+    Path: "sb/points/0039.png"
+    Hash: "8dd3297a13bf4fa881d66f64f7146a43"
+    OffsetX: 2
+    OffsetY: 11
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 17
+    Height: 24
+  - Text: "4"
+    Path: "sb/points/0034.png"
+    Hash: "c6d38518fe051c485db3d1968f37191a"
+    OffsetX: 2
+    OffsetY: 12
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 18
+    Height: 23
+  - Text: "8"
+    Path: "sb/points/0038.png"
+    Hash: "52965bd6b10ddfffe9e939cf3c26371b"
+    OffsetX: 2
+    OffsetY: 11
+    BaseWidth: 22
+    BaseHeight: 41
+    Width: 17
+    Height: 24
+  - Text: "p"
+    Path: "sb/points/0070.png"
+    Hash: "e9630b7cdab4e28f7bb0180af0f0917e"
+    OffsetX: 1
+    OffsetY: 17
+    BaseWidth: 18
+    BaseHeight: 41
+    Width: 16
+    Height: 24
+  - Text: "t"
+    Path: "sb/points/0074.png"
+    Hash: "20ff5af5d51c60a0f9915232bdc9c3cf"
+    OffsetX: 0
+    OffsetY: 14
+    BaseWidth: 10
+    BaseHeight: 41
+    Width: 10
+    Height: 21
+  - Text: "s"
+    Path: "sb/points/0073.png"
+    Hash: "b9f8213d7e0a70105e83e3ef50d342fc"
+    OffsetX: 0
+    OffsetY: 17
+    BaseWidth: 16
+    BaseHeight: 41
+    Width: 16
+    Height: 18

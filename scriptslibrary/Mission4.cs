@@ -41,7 +41,7 @@ public class Mission4
     public void Mission(int StartTime, int EndTime, OsbSprite avatarData, int interval, Color4 balloonColorMin, Color4 balloonColorMax)
     {
         var timeStepBalloon = interval;
-        var Beat = generator.Beatmap.GetControlPointAt(startTime).BeatDuration;
+        var Beat = generator.Beatmap.GetTimingPointAt(startTime).BeatDuration;
 
         // BALLOONS
         for (int time = startTime; time < endTime; time += (timeStepBalloon * 3))

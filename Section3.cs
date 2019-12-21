@@ -97,14 +97,14 @@ namespace StorybrewScripts
                                   "Well, no worry. You will have to do something easier for this section.",
                                   "Which is... to obtain a few items from the ground." };
             var dialog = new DialogManager(this, font, 119905, 131862, "-Tochi", 105, 326, false,
-                fontSize, 1, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Easy right?",
                                    "Good luck, fellow player!" };
             var dialog2 = new DialogManager(this, font, 133662, 137262, "-Tochi", 105, 326, false,
-                fontSize, 1, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 

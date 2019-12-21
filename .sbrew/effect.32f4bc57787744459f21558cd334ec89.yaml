@@ -50,4 +50,4 @@ Layers:
     Name: "-Tochi"
     OsbLayer: Foreground
     DiffSpecific: No
-    Visible: Yes
+    Visible: No

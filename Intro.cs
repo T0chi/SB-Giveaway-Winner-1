@@ -314,20 +314,20 @@ namespace StorybrewScripts
                                   "I have assembled a team for you",
                                   "that will help you complete this map!" };
             var dialog = new DialogManager(this, font, 3245, 10168, "Dialog - Text", 150, 190, true,
-                fontSize, 1, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
             
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Now, have a look!" };
             var dialog2 = new DialogManager(this, font, 10630, 13399, "Dialog - Text", 195, 190, true,
-                fontSize, 1, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence2);
             
             // DIALOG 3 -----------------------------------------
             string[] sentence3 = { "This is your team!",
                                    "Refer to them as 'mappers'" };
             var dialog3 = new DialogManager(this, font, 18476, 25399, "Dialog - Text", 390, 170, true,
-                fontSize, 1, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
             
             // DIALOG 4 -----------------------------------------
@@ -336,7 +336,7 @@ namespace StorybrewScripts
                                    "complete the mission if your total point",
                                    "score is over 100 at the end." };
             var dialog4 = new DialogManager(this, font, 26322, 37168, "Dialog - Text", 400, 170, true,
-                fontSize, 1, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
         }
 
@@ -378,7 +378,7 @@ namespace StorybrewScripts
             string[] sentence = { "Get ready!",
                                   "Your mission is about to begin." };
             var dialog = new DialogManager(this, font, 40630, 48937, "Dialog - Text Narrator", 40, 430, true,
-                fontSize, 1, BoxColorText, true, 0.4f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, BoxColorText, true, 0.4f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.wav",
                 DialogBoxes.Pointer.None, DialogBoxes.Push.Right, sentence);
         }
 

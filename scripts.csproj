@@ -55,6 +55,7 @@
     <Compile Include="ImportOsb.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="IntroParticles.cs" />
+    <Compile Include="Points.cs" />
     <Compile Include="Section2.cs" />
     <Compile Include="Section3.cs" />
     <Compile Include="Section4.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="scriptslibrary/ItemCollect.cs" />
     <Compile Include="scriptslibrary/Mission1.cs" />
     <Compile Include="scriptslibrary/Mission4.cs" />
+    <Compile Include="scriptslibrary/PointSystem.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
