@@ -18,8 +18,26 @@ public class PointSystem
     {
         this.generator = generator;
     }
-    
+
+    // pass
+    public void AddPassPoints(int[] points)
+    {
+        int score = 0;
+        for(int i = 0; i < points.Length; i++)
+            score += points[i] * (1000 / (int)Math.Pow(10, i));
+
+        totalPass += score;
+    }
     public void AddPassPoints(int points) => totalPass += points;
 
+    // fail
+    public void AddFailPoints(int[] points)
+    {
+        int score = 0;
+        for(int i = 0; i < points.Length; i++)
+            score += points[i] * (1000 / (int)Math.Pow(10, i));
+
+        totalFail += score;
+    }
     public void AddFailPoints(int points) => totalFail += points;
 }

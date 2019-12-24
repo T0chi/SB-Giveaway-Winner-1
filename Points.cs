@@ -191,9 +191,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/points-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -1, -1, -1 };
-                int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, randomOnePass };
-                var sum = new PointSystem(this, sectionPoints, empty);
+                // int[] empty = new int[] { -1, -1, -1 };
+                // int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, randomOnePass };
+                // var sum = new PointSystem(this, sectionPoints, empty);
             }
             else if (randomTenPass == 0 && randomOnePass == 0)
             {
@@ -202,9 +202,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -1, -1, -1 };
-                int[] sectionPoints = new int[] { 0, randomHundredPass, 0, 0 };
-                var sum = new PointSystem(this, sectionPoints, empty);
+                // int[] empty = new int[] { -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredPass, 0, 0 };
+                // var sum = new PointSystem(this, sectionPoints, empty);
             }
             else if (randomTenPass == 0)
             {
@@ -213,9 +213,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -1, -1, -1 };
-                int[] sectionPoints = new int[] { 0, randomHundredPass, 0, randomOnePass };
-                var sum = new PointSystem(this, sectionPoints, empty);
+                // int[] empty = new int[] { -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredPass, 0, randomOnePass };
+                // var sum = new PointSystem(this, sectionPoints, empty);
             }
             else if (randomOnePass == 0)
             {
@@ -224,9 +224,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -1, -1, -1 };
-                int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, 0 };
-                var sum = new PointSystem(this, sectionPoints, empty);
+                // int[] empty = new int[] { -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, 0 };
+                // var sum = new PointSystem(this, sectionPoints, empty);
             }
             else if (randomThousandPass == 0)
             {
@@ -235,9 +235,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -1, -1, -1 };
-                int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, randomOnePass };
-                var sum = new PointSystem(this, sectionPoints, empty);
+                // int[] empty = new int[] { -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, randomOnePass };
+                // var sum = new PointSystem(this, sectionPoints, empty);
             }
 
             if (randomThousandPass == 0)
@@ -348,9 +348,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/points-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -11, -11, -11, -11 };
-                int[] sectionPoints = new int[] { randomHundredFail, randomTenFail, randomOneFail };
-                var sum = new PointSystem(this, empty, sectionPoints);
+                // int[] empty = new int[] { -1, -1, -1, -1 };
+                // int[] sectionPoints = new int[] { randomHundredFail, randomTenFail, randomOneFail };
+                // var sum = new PointSystem(this, empty, sectionPoints);
             }
             else if (randomTenFail == 0 && randomOneFail == 0)
             {
@@ -359,9 +359,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -11, -11, -11, -11 };
-                int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
-                var sum = new PointSystem(this, empty, sectionPoints);
+                // int[] empty = new int[] { -1, -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
+                // var sum = new PointSystem(this, empty, sectionPoints);
             }
             else if (randomTenFail == 0)
             {
@@ -370,9 +370,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -11, -11, -11, -11 };
-                int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
-                var sum = new PointSystem(this, empty, sectionPoints);
+                // int[] empty = new int[] { -1, -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
+                // var sum = new PointSystem(this, empty, sectionPoints);
             }
             else if (randomOneFail == 0)
             {
@@ -381,9 +381,9 @@ namespace StorybrewScripts
                     fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
-                int[] empty = new int[] { -11, -11, -11, -11 };
-                int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
-                var sum = new PointSystem(this, empty, sectionPoints);
+                // int[] empty = new int[] { -1, -1, -1, -1 };
+                // int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
+                // var sum = new PointSystem(this, empty, sectionPoints);
             }
 
                 string[] pts2 = { "pts" };   
