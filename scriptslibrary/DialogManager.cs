@@ -27,7 +27,7 @@ public class DialogManager
     private int startTime;
     private int endTime;
     private int fontSize;
-    private string[] sentences;
+    public string[] sentences;
     private float x;
     private float y;
     private string layerText;
