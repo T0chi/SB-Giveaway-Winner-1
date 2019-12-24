@@ -12,15 +12,17 @@ public class PointSystem
 {
     private StoryboardObjectGenerator generator;
 
-    public PointSystem(StoryboardObjectGenerator generator)
+    public PointSystem(StoryboardObjectGenerator generator, int[] totalPoints)
     {
         this.generator = generator;
 
-        Generate();
+        Generate(totalPoints);
     }
 
-    public void Generate()
+    public void Generate(int[] totalPoints)
     {
-        // Point System stuff
+        List<int> TOTAL = new List<int>(totalPoints);
+
+        generator.Log(TOTAL.ToString());
     }
 }

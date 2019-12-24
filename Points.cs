@@ -158,6 +158,9 @@ namespace StorybrewScripts
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/points-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
+
+                int[] totalPoints = { randomThousandPass - 1, randomHundredPass - 1, randomTenPass - 1, randomOnePass - 1 };
+                var sum = new PointSystem(this, totalPoints);
             }
             else if (randomTenPass == 1 && randomOnePass == 1)
             {
@@ -165,6 +168,9 @@ namespace StorybrewScripts
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
+
+                int[] totalPoints = { 0, randomHundredPass - 1, 0, 0 };
+                var sum = new PointSystem(this, totalPoints);
             }
             else if (randomTenPass == 1)
             {
@@ -172,6 +178,9 @@ namespace StorybrewScripts
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
+
+                int[] totalPoints = { 0, randomHundredPass - 1, 0, randomOnePass - 1 };
+                var sum = new PointSystem(this, totalPoints);
             }
             else if (randomOnePass == 1)
             {
@@ -179,6 +188,9 @@ namespace StorybrewScripts
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
+
+                int[] totalPoints = { 0, randomHundredPass - 1, randomTenPass - 1, 0 };
+                var sum = new PointSystem(this, totalPoints);
             }
             else if (randomThousandPass == 1)
             {
@@ -186,6 +198,9 @@ namespace StorybrewScripts
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
+
+                int[] totalPoints = { 0, randomHundredPass - 1, randomTenPass - 1, randomOnePass - 1 };
+                var sum = new PointSystem(this, totalPoints);
             }
 
             if (randomThousandPass == 1)
