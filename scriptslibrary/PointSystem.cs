@@ -12,17 +12,26 @@ public class PointSystem
 {
     private StoryboardObjectGenerator generator;
 
-    public PointSystem(StoryboardObjectGenerator generator, int[] totalPoints)
+    public PointSystem(StoryboardObjectGenerator generator, int[] sectionPoints)
     {
         this.generator = generator;
 
-        Generate(totalPoints);
+        Generate(sectionPoints);
     }
 
-    public void Generate(int[] totalPoints)
+    public void Generate(int[] sectionPoints)
     {
-        List<int> TOTAL = new List<int>(totalPoints);
 
-        generator.Log(TOTAL.ToString());
+        foreach(var point in sectionPoints)
+        {
+            var thousand = sectionPoints[0] * 1000;
+            var hundred = sectionPoints[1] * 100;
+            var ten = sectionPoints[2] * 10;
+            var one = sectionPoints[3];
+
+            var TOTALPOINTS = (thousand + hundred + ten + one);
+
+            generator.Log($"Section Points: {thousand + hundred + ten + one}pts || Total Points: {TOTALPOINTS}pts");
+        }
     }
 }
