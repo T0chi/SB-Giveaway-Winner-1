@@ -4,7 +4,7 @@ Script: "Points"
 Config:
   ColorFail:
     Type: "OpenTK.Graphics.Color4"
-    Value: "1,0.1247253,0.1247253,1"
+    Value: "1,0.4149255,0.4149255,1"
   ColorPass:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.5180976,1,0.4149255,1"
@@ -18,8 +18,13 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  9b6cfb4d71914015ab2d93485ea04d43:
+    Name: "Points Fail"
+    OsbLayer: Fail
+    DiffSpecific: No
+    Visible: Yes
   e8d51c5ee716423199dac90cf8fc1759:
     Name: "Points Pass"
     OsbLayer: Pass
     DiffSpecific: No
-    Visible: Yes
+    Visible: No

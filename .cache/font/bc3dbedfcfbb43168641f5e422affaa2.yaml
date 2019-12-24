@@ -1,12 +1,12 @@
-﻿FontPath: "Microsoft Yi Baiti"
-FontSize: 17
+﻿FontPath: "Verdana"
+FontSize: 18
 ColorR: 1
 ColorG: 1
 ColorB: 1
 ColorA: 1
 PaddingX: 0
 PaddingY: 0
-FontStyle: Bold
+FontStyle: Regular
 TrimTransparency: Yes
 EffectsOnly: No
 Debug: No
@@ -33,163 +33,226 @@ Effects:
 Cache:
   - Text: "Y"
     Path: "sb/points/5/0059.png"
-    Hash: "5719871d9e09c753b129e323fd2231a1"
+    Hash: "5f73fdabbddb345799537e6615139730"
     OffsetX: 0
-    OffsetY: 6
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 14
+    OffsetY: 5
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 15
+    Height: 20
   - Text: "o"
     Path: "sb/points/5/006f.png"
-    Hash: "665b48559a9577d7ce904d1cd8173101"
+    Hash: "6fd2082a04b92bf2bd9d9fd26bb2e6ff"
     OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 11
+    OffsetY: 10
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 15
+    Height: 15
   - Text: "u"
     Path: "sb/points/5/0075.png"
-    Hash: "5f2ddecc5522c3e73cd13b401bfd32e0"
-    OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 11
-  - Text: "g"
-    Path: "sb/points/5/0067.png"
-    Hash: "1871dcfd77a96a2fe0bad5111a4a43e0"
-    OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 14
-  - Text: "a"
-    Path: "sb/points/5/0061.png"
-    Hash: "19c61efd888166aadfb955a96f5d7459"
-    OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 11
-  - Text: "i"
-    Path: "sb/points/5/0069.png"
-    Hash: "c6a8f5acc5b1def2e86cbced83ee7e62"
-    OffsetX: 0
-    OffsetY: 6
-    BaseWidth: 5
-    BaseHeight: 23
-    Width: 5
-    Height: 14
-  - Text: "n"
-    Path: "sb/points/5/006e.png"
-    Hash: "55d8a037bb9c111ddf49bad29bb92099"
-    OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 11
-  - Text: "e"
-    Path: "sb/points/5/0065.png"
-    Hash: "e5997523570b58e1bce3353d52556d92"
-    OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 11
-  - Text: "d"
-    Path: "sb/points/5/0064.png"
-    Hash: "fbb8bfde21eb6a1b50fcd6842bdf80d2"
-    OffsetX: 0
-    OffsetY: 6
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 14
-  - Text: ":"
-    Path: "sb/points/5/003a.png"
-    Hash: "2c74c5d4c8b723d26b9e75d2c0b44613"
+    Hash: "8c1467f93b4f9f777228e75b8b3778f1"
     OffsetX: 1
-    OffsetY: 11
-    BaseWidth: 6
-    BaseHeight: 23
-    Width: 5
-    Height: 9
-  - Text: "0"
-    Path: "sb/points/5/0030.png"
-    Hash: "4fa23f3aff2eacf37a2da835ab045b26"
-    OffsetX: 0
-    OffsetY: 5
-    BaseWidth: 13
-    BaseHeight: 23
+    OffsetY: 10
+    BaseWidth: 16
+    BaseHeight: 30
     Width: 13
     Height: 15
-  - Text: "."
-    Path: "sb/points/5/002e.png"
-    Hash: "779deb222330ac7a58460af245ca431a"
+  - Text: "g"
+    Path: "sb/points/5/0067.png"
+    Hash: "323bb932ab758349be77ead220a7c77f"
+    OffsetX: 0
+    OffsetY: 10
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 14
+    Height: 20
+  - Text: "a"
+    Path: "sb/points/5/0061.png"
+    Hash: "2f016f029b8be9c2b49ba61f02d3773b"
+    OffsetX: 0
+    OffsetY: 10
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 14
+    Height: 15
+  - Text: "i"
+    Path: "sb/points/5/0069.png"
+    Hash: "dd0481dad2fc25924253e940406b0da9"
     OffsetX: 1
-    OffsetY: 16
-    BaseWidth: 6
-    BaseHeight: 23
+    OffsetY: 5
+    BaseWidth: 7
+    BaseHeight: 30
     Width: 5
-    Height: 4
+    Height: 20
+  - Text: "n"
+    Path: "sb/points/5/006e.png"
+    Hash: "1ae0885b517ab82f165141d6281202af"
+    OffsetX: 1
+    OffsetY: 10
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 14
+    Height: 15
+  - Text: "e"
+    Path: "sb/points/5/0065.png"
+    Hash: "3e3b1315c310af299373dd5b44e9932a"
+    OffsetX: 0
+    OffsetY: 10
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 15
+    Height: 15
+  - Text: "d"
+    Path: "sb/points/5/0064.png"
+    Hash: "6ba65c247f28d20e51bbe26a16abcdcc"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 14
+    Height: 21
+  - Text: ":"
+    Path: "sb/points/5/003a.png"
+    Hash: "ccff10a0b7519184dd643db21af67778"
+    OffsetX: 3
+    OffsetY: 10
+    BaseWidth: 11
+    BaseHeight: 30
+    Width: 5
+    Height: 15
   - Text: "9"
     Path: "sb/points/5/0039.png"
-    Hash: "a035ef8d380242ce538d6e53ff2c7662"
-    OffsetX: 1
+    Hash: "7a23a5858b7b76415064fba204eefc89"
+    OffsetX: 0
     OffsetY: 5
-    BaseWidth: 13
-    BaseHeight: 23
-    Width: 11
-    Height: 15
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
   - Text: "5"
     Path: "sb/points/5/0035.png"
-    Hash: "a9327d6c7c7599894011b9031d29907a"
-    OffsetX: 1
-    OffsetY: 6
-    BaseWidth: 13
-    BaseHeight: 23
-    Width: 11
-    Height: 14
-  - Text: "3"
-    Path: "sb/points/5/0033.png"
-    Hash: "d837c3c3b5ab6c57005e7bc651791c7e"
+    Hash: "9c4583a1ad5c3b21b5a59020bedee22a"
     OffsetX: 1
     OffsetY: 5
-    BaseWidth: 13
-    BaseHeight: 23
-    Width: 11
-    Height: 15
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 14
+    Height: 20
+  - Text: "3"
+    Path: "sb/points/5/0033.png"
+    Hash: "365fd9905e63b77e529e6f1bff2469d0"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 14
+    Height: 20
   - Text: "p"
     Path: "sb/points/5/0070.png"
-    Hash: "1c6c162f9f4c87dfc2b4f23cc9924faf"
-    OffsetX: 0
-    OffsetY: 9
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 14
+    Hash: "4f205c0f909d9791363240202e49ae21"
+    OffsetX: 1
+    OffsetY: 10
+    BaseWidth: 15
+    BaseHeight: 30
+    Width: 14
+    Height: 20
   - Text: "t"
     Path: "sb/points/5/0074.png"
-    Hash: "606474ab6dd0a457f7d7921b4e524c75"
+    Hash: "267fab030487d6b1122645874d92f4a7"
     OffsetX: 0
-    OffsetY: 7
-    BaseWidth: 6
-    BaseHeight: 23
-    Width: 6
-    Height: 13
+    OffsetY: 6
+    BaseWidth: 10
+    BaseHeight: 30
+    Width: 10
+    Height: 19
   - Text: "s"
     Path: "sb/points/5/0073.png"
-    Hash: "552e068a65898e4135f7a41bc1a2165c"
+    Hash: "8eb6299b633da2039310cbbe59105e7c"
     OffsetX: 0
-    OffsetY: 9
+    OffsetY: 10
+    BaseWidth: 13
+    BaseHeight: 30
+    Width: 13
+    Height: 15
+  - Text: "2"
+    Path: "sb/points/5/0032.png"
+    Hash: "a6e87ce3b62d6f7174e79015d51b5228"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
+  - Text: "."
+    Path: "sb/points/5/002e.png"
+    Hash: "0766c71e1bc900ab8ad1ed1a59280187"
+    OffsetX: 2
+    OffsetY: 20
     BaseWidth: 9
-    BaseHeight: 23
-    Width: 9
-    Height: 11
+    BaseHeight: 30
+    Width: 5
+    Height: 5
+  - Text: "7"
+    Path: "sb/points/5/0037.png"
+    Hash: "a929bc9126e0a8252f190bc25aad1fb7"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
+  - Text: "4"
+    Path: "sb/points/5/0034.png"
+    Hash: "a56b0900d3ace11fcbfb9a8c2af3f49e"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 16
+    Height: 20
+  - Text: "6"
+    Path: "sb/points/5/0036.png"
+    Hash: "305ecafd74f50f49611fc074dff3d1df"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
+  - Text: "-"
+    Path: "sb/points/5/002d.png"
+    Hash: "a00b39785c1cd792333c8cf6023bda53"
+    OffsetX: 0
+    OffsetY: 14
+    BaseWidth: 11
+    BaseHeight: 30
+    Width: 11
+    Height: 4
+  - Text: "1"
+    Path: "sb/points/5/0031.png"
+    Hash: "d56ef5dc5c5e7e5930ea95c3624bb49b"
+    OffsetX: 2
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 12
+    Height: 20
+  - Text: "8"
+    Path: "sb/points/5/0038.png"
+    Hash: "1f5583766d35c3ac3c009fa96011eb18"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
+  - Text: "0"
+    Path: "sb/points/5/0030.png"
+    Hash: "45b256958e3c417e2933f4477f7f4bab"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
