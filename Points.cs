@@ -27,18 +27,18 @@ namespace StorybrewScripts
         {
             pointSystem = new PointSystem();
 
-            points("sb/points/1", 61399, 72571, 2); // break 1
-            points("sb/points/2", 115238, 128262, 2); // break 2
-            points("sb/points/3", 157062, 167640, 2); // break 3
-            points("sb/points/4", 213925, 221716, 2); // break 4
-            points("sb/points/5", 247113, 254732, 2); // break 5
-            points("sb/points/6", 283514, 290901, 2); // break 6
-            points("sb/points/7", 331111, 339380, 2); // break 7
+            points(1, "sb/points/1", 61399, 72571, 2); // break 1
+            points(2, "sb/points/2", 115238, 128262, 2); // break 2
+            points(3, "sb/points/3", 157062, 167640, 2); // break 3
+            points(4, "sb/points/4", 213925, 221716, 2); // break 4
+            points(5, "sb/points/5", 247113, 254732, 2); // break 5
+            points(6, "sb/points/6", 283514, 290901, 2); // break 6
+            points(7, "sb/points/7", 331111, 339380, 2); // break 7
 
             Log($"TOTALPASS: {pointSystem.totalPass}           TOTALFAIL: {pointSystem.totalFail}");
         }
 
-        public void points(string path, int startTime, int breakEnd, int speed)
+        public void points(int triggerGroup, string path, int startTime, int breakEnd, int speed)
         {
             // for the "you gained..." etc font
             var fontSize = 18;
@@ -104,6 +104,24 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             // Pass Points ------------------------------------------------------------------------------------------------
             
             var delay = (breakEnd - startTime) / 2 - 800;
@@ -113,7 +131,6 @@ namespace StorybrewScripts
             var randomHundredPass = Random(0, 10);
             var randomThousandPass = Random(0, 10);
 
-            var fadeTime = 0;
             var fade = 1;
 
             // numbers
@@ -128,14 +145,27 @@ namespace StorybrewScripts
             var hundred = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomHundredPass + 1, frameDelayHundred, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
             var thousand = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomThousandPass + 1, frameDelayThousand, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
 
+            
+            // Pass Triggers - Open Threshold
+
+            var relativeStartTime = 4000;
+            var relativeEndTime = 4000 + delay;
+
+            dot.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
+            one.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
+            ten.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
+            hundred.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
+            thousand.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
+
+
             // scale stuff
 
             var scale = new Vector2(0.5f, 0.5f);
-            dot.ScaleVec(startTime, scale.X, scale.Y);
-            one.ScaleVec(startTime, scale.X, scale.Y);
-            ten.ScaleVec(startTime, scale.X, scale.Y);
-            hundred.ScaleVec(startTime, scale.X, scale.Y);
-            thousand.ScaleVec(startTime, scale.X, scale.Y);
+            dot.ScaleVec(relativeStartTime, scale.X, scale.Y);
+            one.ScaleVec(relativeStartTime, scale.X, scale.Y);
+            ten.ScaleVec(relativeStartTime, scale.X, scale.Y);
+            hundred.ScaleVec(relativeStartTime, scale.X, scale.Y);
+            thousand.ScaleVec(relativeStartTime, scale.X, scale.Y);
 
 
             // positions
@@ -153,48 +183,43 @@ namespace StorybrewScripts
             var posHundred = new Vector2(pos.X, pos.Y);
             var posThousand = new Vector2(pos.X - numberWidth - 2, pos.Y);
 
-            dot.Move(startTime, posDot.X - (numberWidth * 1.5f), posDot.Y);
-            dot.Move(startTime + frameDelayTen, posDot.X - numberWidth, posDot.Y);
-            dot.Move(startTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
+            dot.Move(relativeStartTime, posDot.X - (numberWidth * 1.5f), posDot.Y);
+            dot.Move(relativeStartTime + frameDelayTen, posDot.X - numberWidth, posDot.Y);
+            dot.Move(relativeStartTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
 
-            one.Move(startTime, posOne.X - (numberWidth * 1.5f), posOne.Y);
-            one.Move(startTime + frameDelayTen, posOne.X - numberWidth, posOne.Y);
+            one.Move(relativeStartTime, posOne.X - (numberWidth * 1.5f), posOne.Y);
+            one.Move(relativeStartTime + frameDelayTen, posOne.X - numberWidth, posOne.Y);
 
-            ten.Move(startTime, posTen.X - (numberWidth * 1.5f), posTen.Y);
-            ten.Move(startTime + frameDelayTen, posTen.X - numberWidth, posTen.Y);
+            ten.Move(relativeStartTime, posTen.X - (numberWidth * 1.5f), posTen.Y);
+            ten.Move(relativeStartTime + frameDelayTen, posTen.X - numberWidth, posTen.Y);
 
-            hundred.Move(startTime, posHundred.X - (numberWidth * 1.5f), posHundred.Y);
-            hundred.Move(startTime + frameDelayTen, posHundred.X - numberWidth, posHundred.Y);
+            hundred.Move(relativeStartTime, posHundred.X - (numberWidth * 1.5f), posHundred.Y);
+            hundred.Move(relativeStartTime + frameDelayTen, posHundred.X - numberWidth, posHundred.Y);
 
-            thousand.Move(startTime, posThousand.X - (numberWidth * 1.5f), posThousand.Y);
-            thousand.Move(startTime + frameDelayTen, posThousand.X - numberWidth, posThousand.Y);
+            thousand.Move(relativeStartTime, posThousand.X - (numberWidth * 1.5f), posThousand.Y);
+            thousand.Move(relativeStartTime + frameDelayTen, posThousand.X - numberWidth, posThousand.Y);
 
 
             // opacity
 
-            dot.Fade(startTime, startTime + frameDelayThousand, 0, 0);
-            dot.Fade(endTime - fadeTime, endTime, fade, 0);
+            dot.Fade(relativeStartTime, relativeStartTime + frameDelayThousand, 0, 0);
 
-            one.Fade(startTime, startTime + fadeTime, 0, fade);
-            one.Fade(endTime - fadeTime, endTime, fade, 0);
+            one.Fade(relativeStartTime, fade);
 
-            ten.Fade(startTime, startTime + frameDelayTen, 0, 0);
-            ten.Fade(startTime + frameDelayTen, endTime, fade, fade);
-            ten.Fade(endTime - fadeTime, endTime, fade, 0);
+            ten.Fade(relativeStartTime, relativeStartTime + frameDelayTen, 0, 0);
+            ten.Fade(relativeStartTime + frameDelayTen, relativeEndTime, fade, fade);
 
-            hundred.Fade(startTime, startTime + frameDelayHundred, 0, 0);
-            hundred.Fade(startTime + frameDelayHundred, endTime, fade, fade);
-            hundred.Fade(endTime - fadeTime, endTime, fade, 0);
+            hundred.Fade(relativeStartTime, relativeStartTime + frameDelayHundred, 0, 0);
+            hundred.Fade(relativeStartTime + frameDelayHundred, relativeEndTime, fade, fade);
 
-            thousand.Fade(startTime, startTime + frameDelayThousand, 0, 0);
-            thousand.Fade(endTime - fadeTime, endTime, fade, 0);
+            thousand.Fade(relativeStartTime, relativeStartTime + frameDelayThousand, 0, 0);
 
             
             if (randomThousandPass > 0)
             {
                 string[] result = { $"You gained: {randomThousandPass}.{randomHundredPass}{randomTenPass}{randomOnePass} points" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/points-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, randomOnePass };
@@ -204,7 +229,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomHundredPass}00pts" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, 0, 0 };
@@ -214,7 +239,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomThousandPass}{randomHundredPass}0{randomOnePass} points" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, 0, randomOnePass };
@@ -224,7 +249,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomThousandPass}{randomHundredPass}{randomTenPass}0pts" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, 0 };
@@ -234,7 +259,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomHundredPass}{randomTenPass}{randomOnePass} points" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, randomOnePass };
@@ -243,50 +268,71 @@ namespace StorybrewScripts
 
             if (randomThousandPass == 0)
             {
-                dot.Move(startTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
-                one.Move(startTime + frameDelayHundred, posOne.X - (numberWidth / 2), posOne.Y);
-                ten.Move(startTime + frameDelayHundred, posTen.X - (numberWidth / 2), posTen.Y);
-                thousand.Move(startTime + frameDelayHundred, posThousand.X - (numberWidth / 2), posThousand.Y);
+                dot.Move(relativeStartTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
+                one.Move(relativeStartTime + frameDelayHundred, posOne.X - (numberWidth / 2), posOne.Y);
+                ten.Move(relativeStartTime + frameDelayHundred, posTen.X - (numberWidth / 2), posTen.Y);
+                thousand.Move(relativeStartTime + frameDelayHundred, posThousand.X - (numberWidth / 2), posThousand.Y);
 
                 string[] pts = { "pts" };   
                 var text = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text2 = new DialogManager(this, font2, startTime + frameDelayTen, startTime + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text3 = new DialogManager(this, font2, startTime + frameDelayHundred, endTime, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
 
-                thousand.Fade(startTime, endTime, 0, 0);
-                dot.Fade(startTime, endTime, 0, 0);
+                thousand.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, 0, 0);
+                dot.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, 0, 0);
             }
             else
             {
-                dot.Move(startTime + frameDelayThousand, posDot);
-                one.Move(startTime + frameDelayThousand, posOne);
-                ten.Move(startTime + frameDelayThousand, posTen);
-                hundred.Move(startTime + frameDelayThousand, posHundred);
-                thousand.Move(startTime + frameDelayThousand, posThousand);
+                dot.Move(relativeStartTime + frameDelayThousand, posDot);
+                one.Move(relativeStartTime + frameDelayThousand, posOne);
+                ten.Move(relativeStartTime + frameDelayThousand, posTen);
+                hundred.Move(relativeStartTime + frameDelayThousand, posHundred);
+                thousand.Move(relativeStartTime + frameDelayThousand, posThousand);
 
                 string[] pts = { "pts" };   
                 var text = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text2 = new DialogManager(this, font2, startTime + frameDelayTen, startTime + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text3 = new DialogManager(this, font2, startTime + frameDelayHundred, startTime + frameDelayThousand, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text4 = new DialogManager(this, font2, startTime + frameDelayThousand, endTime, "Points Pass", pos.X + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
-
-                thousand.Fade(startTime + frameDelayThousand, endTime - fadeTime, fade, fade);
-                dot.Fade(startTime + frameDelayThousand, endTime - fadeTime, fade, fade);
+    
+                thousand.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, fade, fade);
+                dot.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, fade, fade);
             }
+
+            // Pass Trigger - Close Threshold
+
+            dot.EndGroup();
+            one.EndGroup();
+            ten.EndGroup();
+            hundred.EndGroup();
+            thousand.EndGroup();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -331,22 +377,19 @@ namespace StorybrewScripts
 
             // opacity
 
-            oneFail.Fade(startTime, startTime + fadeTime, 0, fade);
-            oneFail.Fade(endTime - fadeTime, endTime, fade, 0);
+            oneFail.Fade(startTime, startTime, 0, fade);
 
             tenFail.Fade(startTime, startTime + frameDelayTen, 0, 0);
             tenFail.Fade(startTime + frameDelayTen, endTime, fade, fade);
-            tenFail.Fade(endTime - fadeTime, endTime, fade, 0);
 
             hundredFail.Fade(startTime, startTime + frameDelayHundred, 0, 0);
             hundredFail.Fade(startTime + frameDelayHundred, endTime, fade, fade);
-            hundredFail.Fade(endTime - fadeTime, endTime, fade, 0);
 
             if (randomHundredFail > 0)
             {
                 string[] result = { $"You gained: {randomHundredFail}{randomTenFail}{randomOneFail} points" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/points-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, randomOneFail };
@@ -356,7 +399,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomHundredFail}00pts" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
@@ -366,7 +409,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomHundredFail}0{randomOneFail} points" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
@@ -376,7 +419,7 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: {randomHundredFail}{randomTenFail}0pts" };
                 var pointFail2 = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
@@ -385,13 +428,13 @@ namespace StorybrewScripts
 
             string[] pts2 = { "pts" };   
             var text5 = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Fail", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
             var text6 = new DialogManager(this, font2, startTime + frameDelayTen, startTime + frameDelayHundred, "Points Fail", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
             var text7 = new DialogManager(this, font2, startTime + frameDelayHundred, endTime, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
+                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
         }
     }

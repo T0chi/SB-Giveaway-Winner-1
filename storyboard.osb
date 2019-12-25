@@ -1,8 +1,6 @@
 [Events]
 //Background and Video events
 //Storyboard Layer 0 (Background)
-Sprite,Background,Centre,"bg.jpg",0,0
- F,0,0,,0
 Sprite,Background,Centre,"sb\bgs\7\bg.jpg",320,240
  F,0,283671,290902,0,0.2810959
  S,0,283671,302210,0.6142467,1.661059

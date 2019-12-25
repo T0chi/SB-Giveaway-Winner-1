@@ -13,11 +13,6 @@ Config:
     Value: "1"
     DisplayName: "Random seed"
 Layers:
-  ce4763201dc149919672483b26cb709f:
-    Name: "-Tochi"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
   9b6cfb4d71914015ab2d93485ea04d43:
     Name: "Points Fail"
     OsbLayer: Fail

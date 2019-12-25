@@ -4,6 +4,7 @@ BeatmapId: 2261145
 BeatmapName: "collab"
 Assemblies:
 Layers:
+  - "cab851e2895c4653a1bfbf7426e94d98"
   - "f3ac6056ab324c55a9c9e6393b6dff7a"
   - "f6fa21895d7d445c98872b7bb7ecba4a"
   - "2cee4cc813f24ce89d586bbaa7b1d9bf"
@@ -72,7 +73,6 @@ Layers:
   - "cb202ba0997e409fb825e49a99c237ed"
   - "1c768f639aad494483035917c0548c18"
   - "823c77c0f6064db5a6196129ba8adfb2"
-  - "ce4763201dc149919672483b26cb709f"
   - "9b6cfb4d71914015ab2d93485ea04d43"
   - "e8d51c5ee716423199dac90cf8fc1759"
   - "281d7900afd04de39ab455278f48736b"
