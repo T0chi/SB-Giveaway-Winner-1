@@ -108,7 +108,7 @@ Mappers:
 - -[Pino]-
 
 Storyboarders:
-- PoNo // *helped with scriptslibrary usage*
+- PoNo // *helped with scriptslibrary usage + point system stuff*
 - Damnae // *for creating Storybrew*
 - Kawa // *amazing idea for mission 4.*
 
