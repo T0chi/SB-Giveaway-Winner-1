@@ -21,8 +21,12 @@ namespace StorybrewScripts
         [Configurable]
         public Color4 ColorPass = Color.White;
 
+        private PointSystem pointSystem;
+
         public override void Generate()
         {
+            pointSystem = new PointSystem();
+
             points("sb/points/1", 61399, 72571, 2); // break 1
             points("sb/points/2", 115238, 128262, 2); // break 2
             points("sb/points/3", 157062, 167640, 2); // break 3
@@ -30,6 +34,8 @@ namespace StorybrewScripts
             points("sb/points/5", 247113, 254732, 2); // break 5
             points("sb/points/6", 283514, 290901, 2); // break 6
             points("sb/points/7", 331111, 339380, 2); // break 7
+
+            Log($"TOTALPASS: {pointSystem.totalPass}           TOTALFAIL: {pointSystem.totalFail}");
         }
 
         public void points(string path, int startTime, int breakEnd, int speed)
@@ -97,8 +103,6 @@ namespace StorybrewScripts
                 Thickness = ShadowThickness2,
                 Color = Color4.Black,
             });
-
-            var pointSystem = new PointSystem();
 
             // Pass Points ------------------------------------------------------------------------------------------------
             
@@ -389,8 +393,6 @@ namespace StorybrewScripts
             var text7 = new DialogManager(this, font2, startTime + frameDelayHundred, endTime, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
                 fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/point-result.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
-
-            Log($"TOTALPASS: {pointSystem.totalPass}           TOTALFAIL: {pointSystem.totalFail}");
         }
     }
 }

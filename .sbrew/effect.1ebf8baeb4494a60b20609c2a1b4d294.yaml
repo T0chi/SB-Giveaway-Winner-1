@@ -10,7 +10,7 @@ Config:
     Value: "0.5180976,1,0.4149255,1"
   RandomSeed:
     Type: "System.Int32"
-    Value: "452424"
+    Value: "1"
     DisplayName: "Random seed"
 Layers:
   ce4763201dc149919672483b26cb709f:
