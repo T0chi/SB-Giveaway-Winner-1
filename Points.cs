@@ -35,10 +35,10 @@ namespace StorybrewScripts
             points(6, "sb/points/6", 283514, 290901, 2); // break 6
             points(7, "sb/points/7", 331111, 339380, 2); // break 7
 
-            Log($"TOTALPASS: {pointSystem.totalPass}           TOTALFAIL: {pointSystem.totalFail}");
+            Log($"TOTALPOINTS:                {pointSystem.totalPass} ; {pointSystem.totalFail}");
         }
 
-        public void points(int triggerGroup, string path, int startTime, int breakEnd, int speed)
+        public void points(int breakNumber, string path, int startTime, int breakEnd, int speed)
         {
             // for the "you gained..." etc font
             var fontSize = 18;
@@ -119,8 +119,8 @@ namespace StorybrewScripts
 
 
 
-
-
+            
+            var thresholdDelay = 5000; // when the fail/pass should be taking effect
 
             // Pass Points ------------------------------------------------------------------------------------------------
             
@@ -145,27 +145,15 @@ namespace StorybrewScripts
             var hundred = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomHundredPass + 1, frameDelayHundred, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
             var thousand = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomThousandPass + 1, frameDelayThousand, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
 
-            
-            // Pass Triggers - Open Threshold
-
-            var relativeStartTime = 4000;
-            var relativeEndTime = 4000 + delay;
-
-            dot.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
-            one.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
-            ten.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
-            hundred.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
-            thousand.StartTriggerGroup("Passing", startTime - 4000, endTime, triggerGroup);
-
 
             // scale stuff
 
             var scale = new Vector2(0.5f, 0.5f);
-            dot.ScaleVec(relativeStartTime, scale.X, scale.Y);
-            one.ScaleVec(relativeStartTime, scale.X, scale.Y);
-            ten.ScaleVec(relativeStartTime, scale.X, scale.Y);
-            hundred.ScaleVec(relativeStartTime, scale.X, scale.Y);
-            thousand.ScaleVec(relativeStartTime, scale.X, scale.Y);
+            dot.ScaleVec(startTime, scale.X, scale.Y);
+            one.ScaleVec(startTime, scale.X, scale.Y);
+            ten.ScaleVec(startTime, scale.X, scale.Y);
+            hundred.ScaleVec(startTime, scale.X, scale.Y);
+            thousand.ScaleVec(startTime, scale.X, scale.Y);
 
 
             // positions
@@ -183,36 +171,36 @@ namespace StorybrewScripts
             var posHundred = new Vector2(pos.X, pos.Y);
             var posThousand = new Vector2(pos.X - numberWidth - 2, pos.Y);
 
-            dot.Move(relativeStartTime, posDot.X - (numberWidth * 1.5f), posDot.Y);
-            dot.Move(relativeStartTime + frameDelayTen, posDot.X - numberWidth, posDot.Y);
-            dot.Move(relativeStartTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
+            dot.Move(startTime, posDot.X - (numberWidth * 1.5f), posDot.Y);
+            dot.Move(startTime + frameDelayTen, posDot.X - numberWidth, posDot.Y);
+            dot.Move(startTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
 
-            one.Move(relativeStartTime, posOne.X - (numberWidth * 1.5f), posOne.Y);
-            one.Move(relativeStartTime + frameDelayTen, posOne.X - numberWidth, posOne.Y);
+            one.Move(startTime, posOne.X - (numberWidth * 1.5f), posOne.Y);
+            one.Move(startTime + frameDelayTen, posOne.X - numberWidth, posOne.Y);
 
-            ten.Move(relativeStartTime, posTen.X - (numberWidth * 1.5f), posTen.Y);
-            ten.Move(relativeStartTime + frameDelayTen, posTen.X - numberWidth, posTen.Y);
+            ten.Move(startTime, posTen.X - (numberWidth * 1.5f), posTen.Y);
+            ten.Move(startTime + frameDelayTen, posTen.X - numberWidth, posTen.Y);
 
-            hundred.Move(relativeStartTime, posHundred.X - (numberWidth * 1.5f), posHundred.Y);
-            hundred.Move(relativeStartTime + frameDelayTen, posHundred.X - numberWidth, posHundred.Y);
+            hundred.Move(startTime, posHundred.X - (numberWidth * 1.5f), posHundred.Y);
+            hundred.Move(startTime + frameDelayTen, posHundred.X - numberWidth, posHundred.Y);
 
-            thousand.Move(relativeStartTime, posThousand.X - (numberWidth * 1.5f), posThousand.Y);
-            thousand.Move(relativeStartTime + frameDelayTen, posThousand.X - numberWidth, posThousand.Y);
-
+            thousand.Move(startTime, posThousand.X - (numberWidth * 1.5f), posThousand.Y);
+            thousand.Move(startTime + frameDelayTen, posThousand.X - numberWidth, posThousand.Y);
 
             // opacity
 
-            dot.Fade(relativeStartTime, relativeStartTime + frameDelayThousand, 0, 0);
+            dot.Fade(startTime - thresholdDelay, startTime + frameDelayThousand, 0, 0);
 
-            one.Fade(relativeStartTime, fade);
+            one.Fade(startTime - thresholdDelay, startTime, 0, 0);
+            one.Fade(startTime, endTime, fade, fade);
 
-            ten.Fade(relativeStartTime, relativeStartTime + frameDelayTen, 0, 0);
-            ten.Fade(relativeStartTime + frameDelayTen, relativeEndTime, fade, fade);
+            ten.Fade(startTime - thresholdDelay, startTime + frameDelayTen, 0, 0);
+            ten.Fade(startTime + frameDelayTen, endTime, fade, fade);
 
-            hundred.Fade(relativeStartTime, relativeStartTime + frameDelayHundred, 0, 0);
-            hundred.Fade(relativeStartTime + frameDelayHundred, relativeEndTime, fade, fade);
+            hundred.Fade(startTime - thresholdDelay, startTime + frameDelayHundred, 0, 0);
+            hundred.Fade(startTime + frameDelayHundred, endTime, fade, fade);
 
-            thousand.Fade(relativeStartTime, relativeStartTime + frameDelayThousand, 0, 0);
+            thousand.Fade(startTime - thresholdDelay, startTime + frameDelayThousand, 0, 0);
 
             
             if (randomThousandPass > 0)
@@ -268,10 +256,10 @@ namespace StorybrewScripts
 
             if (randomThousandPass == 0)
             {
-                dot.Move(relativeStartTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
-                one.Move(relativeStartTime + frameDelayHundred, posOne.X - (numberWidth / 2), posOne.Y);
-                ten.Move(relativeStartTime + frameDelayHundred, posTen.X - (numberWidth / 2), posTen.Y);
-                thousand.Move(relativeStartTime + frameDelayHundred, posThousand.X - (numberWidth / 2), posThousand.Y);
+                dot.Move(startTime + frameDelayHundred, posDot.X - (numberWidth / 2), posDot.Y);
+                one.Move(startTime + frameDelayHundred, posOne.X - (numberWidth / 2), posOne.Y);
+                ten.Move(startTime + frameDelayHundred, posTen.X - (numberWidth / 2), posTen.Y);
+                thousand.Move(startTime + frameDelayHundred, posThousand.X - (numberWidth / 2), posThousand.Y);
 
                 string[] pts = { "pts" };   
                 var text = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
@@ -284,16 +272,16 @@ namespace StorybrewScripts
                     fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
 
-                thousand.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, 0, 0);
-                dot.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, 0, 0);
+                thousand.Fade(startTime + frameDelayThousand, endTime, 0, 0);
+                dot.Fade(startTime + frameDelayThousand, endTime, 0, 0);
             }
             else
             {
-                dot.Move(relativeStartTime + frameDelayThousand, posDot);
-                one.Move(relativeStartTime + frameDelayThousand, posOne);
-                ten.Move(relativeStartTime + frameDelayThousand, posTen);
-                hundred.Move(relativeStartTime + frameDelayThousand, posHundred);
-                thousand.Move(relativeStartTime + frameDelayThousand, posThousand);
+                dot.Move(startTime + frameDelayThousand, posDot);
+                one.Move(startTime + frameDelayThousand, posOne);
+                ten.Move(startTime + frameDelayThousand, posTen);
+                hundred.Move(startTime + frameDelayThousand, posHundred);
+                thousand.Move(startTime + frameDelayThousand, posThousand);
 
                 string[] pts = { "pts" };   
                 var text = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
@@ -309,17 +297,9 @@ namespace StorybrewScripts
                     fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/point-result.wav",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
     
-                thousand.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, fade, fade);
-                dot.Fade(relativeStartTime + frameDelayThousand, relativeEndTime, fade, fade);
+                thousand.Fade(startTime + frameDelayThousand, endTime, fade, fade);
+                dot.Fade(startTime + frameDelayThousand, endTime, fade, fade);
             }
-
-            // Pass Trigger - Close Threshold
-
-            dot.EndGroup();
-            one.EndGroup();
-            ten.EndGroup();
-            hundred.EndGroup();
-            thousand.EndGroup();
 
 
 
@@ -343,7 +323,7 @@ namespace StorybrewScripts
 
             var randomOneFail = Random(0, 10);
             var randomTenFail = Random(0, 10);
-            var randomHundredFail = Random(0, 10);
+            var randomHundredFail = Random(0, 6);
 
 
             // numbers
@@ -377,13 +357,15 @@ namespace StorybrewScripts
 
             // opacity
 
-            oneFail.Fade(startTime, startTime, 0, fade);
+            oneFail.Fade(startTime - thresholdDelay, startTime, 0, 0);
+            oneFail.Fade(startTime, endTime, fade, fade);
 
-            tenFail.Fade(startTime, startTime + frameDelayTen, 0, 0);
+            tenFail.Fade(startTime - thresholdDelay, startTime + frameDelayTen, 0, 0);
             tenFail.Fade(startTime + frameDelayTen, endTime, fade, fade);
 
-            hundredFail.Fade(startTime, startTime + frameDelayHundred, 0, 0);
+            hundredFail.Fade(startTime - thresholdDelay, startTime + frameDelayHundred, 0, 0);
             hundredFail.Fade(startTime + frameDelayHundred, endTime, fade, fade);
+
 
             if (randomHundredFail > 0)
             {
@@ -436,6 +418,8 @@ namespace StorybrewScripts
             var text7 = new DialogManager(this, font2, startTime + frameDelayHundred, endTime, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
                 fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/point-result.wav",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
+
+            Log($"Pass/Fail {breakNumber}:                       {pointSystem.pointsPass} ; {pointSystem.pointsFail}");
         }
     }
 }
