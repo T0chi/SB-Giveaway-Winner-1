@@ -38,7 +38,6 @@ public class HUD
         Overlay();
         Loading();
         Playfield();
-        Performance();
         LoadingText(startTime, endTime, loadingTextEndtime);
         DialogNarrator(startTime, endTime, mission, songName);
         ProgressBar(nameTag, avatar, startTime + progressBarDelay, endTime);
@@ -265,41 +264,6 @@ public class HUD
         line2.EndGroup();
     }
 
-    public void Performance()
-    {
-        var text = generator.GetLayer("Performance").CreateSprite("sb/HUD/txt/badPerformance.png", OsbOrigin.CentreRight);
-
-        var duration = endTime - startTime;
-
-        text.Scale(startTime, 0.2f);
-        text.Move(startTime, 620, 328);
-
-        text.StartLoopGroup(startTime, duration / 4000);
-        text.Fade(OsbEasing.Out, 0, 2000, 0, 1);
-        text.Fade(OsbEasing.In, 2000, 4000, 1, 0);
-        text.EndGroup();
-
-        for (int i = 0; 20 < endTime; i++)
-        {
-            var bitmap = generator.GetMapsetBitmap("sb/HUD/stripe.png");
-            var stripe = generator.GetLayer("Performance").CreateSprite("sb/HUD/stripe.png", OsbOrigin.Centre);
-
-            var startPos = new Vector2(747 + bitmap.Width * i, 240);
-            var endPos = new Vector2(-107 + bitmap.Width * i, 240);
-
-            stripe.StartLoopGroup(startTime - (duration / 2), duration / 6000);
-            stripe.Additive(0, duration / 2);
-            stripe.Scale(0, 480.0f / bitmap.Height);
-            stripe.Move(0, duration / 2, startPos, endPos);
-            stripe.EndGroup();
-
-            stripe.StartLoopGroup(startTime, duration / 6000);
-            stripe.Fade(OsbEasing.Out, 0, 3000, 0.1f, 0.3f);
-            stripe.Fade(OsbEasing.In, 3000, 6000, 0.3f, 0.1f);
-            stripe.EndGroup();
-        }
-    }
-
     public void Playfield()
     {
         var pos = new Vector2(320, 240);
@@ -315,13 +279,13 @@ public class HUD
 
     public void ProgressBar(string NameTag, string Avatar, int StartTime, int EndTime)
     {
-        var pb = generator.GetLayer("Progress Bar").CreateSprite("sb/pixel.png", OsbOrigin.TopLeft);
-        var pbOverLay = generator.GetLayer("Progress Bar").CreateSprite("sb/HUD/progressBar.png", OsbOrigin.BottomCentre);
-        var pbProfile = generator.GetLayer("Progress Bar").CreateSprite("sb/HUD/progressBar_profile.png", OsbOrigin.TopCentre);
-        var profile = generator.GetLayer("Progress Bar").CreateSprite(Avatar, OsbOrigin.BottomCentre);
-        var nameTag = generator.GetLayer("Progress Bar").CreateSprite(NameTag, OsbOrigin.TopLeft);
-        var circleRight = generator.GetLayer("Progress Bar").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
-        var circleLeft = generator.GetLayer("Progress Bar").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+        var pb = generator.GetLayer("HUD").CreateSprite("sb/pixel.png", OsbOrigin.TopLeft);
+        var pbOverLay = generator.GetLayer("HUD").CreateSprite("sb/HUD/progressBar.png", OsbOrigin.BottomCentre);
+        var pbProfile = generator.GetLayer("HUD").CreateSprite("sb/HUD/progressBar_profile.png", OsbOrigin.TopCentre);
+        var profile = generator.GetLayer("HUD").CreateSprite(Avatar, OsbOrigin.BottomCentre);
+        var nameTag = generator.GetLayer("HUD").CreateSprite(NameTag, OsbOrigin.TopLeft);
+        var circleRight = generator.GetLayer("HUD").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+        var circleLeft = generator.GetLayer("HUD").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
 
         var duration = EndTime - StartTime;
         pb.MoveX(StartTime, 200);

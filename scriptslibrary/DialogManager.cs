@@ -35,8 +35,8 @@ public class DialogManager
     private bool originCentre;
     private bool showBox;
     private float textFade;
-    private DialogText startFadeTime;
-    private DialogText endFadeTime;
+    private int startFadeTime;
+    private int endFadeTime;
     private Color4 textColor;
     private Color4 boxColor;
     private float boxFade;
@@ -65,6 +65,8 @@ public class DialogManager
         this.showBox = showBox;
         this.boxFade = boxFade;
         this.textFade = textFade;
+        this.startFadeTime = startFadeTime;
+        this.endFadeTime = endFadeTime;
         this.sampleDelay = sampleDelay;
         this.sampleName = sampleName;
         this.pointer = pointer;
@@ -121,8 +123,8 @@ public class DialogText
     private float startTime;
     private int endTime;
     private float fade;
-    public int startFadeTime;
-    public int endFadeTime;
+    private int startFadeTime;
+    private int endFadeTime;
     private int fontSize;
     private float delay = 0.5f;
     private Position position;
@@ -135,7 +137,7 @@ public class DialogText
 
     public List<String> lines = new List<String>();
 
-    public DialogText(StoryboardObjectGenerator generator, string layerName, FontGenerator font, Color4 Color, Position position, DialogTiming timing, float fade, DialogText startFadeTime, DialogText endFadeTime, int fontSize, bool centre)
+    public DialogText(StoryboardObjectGenerator generator, string layerName, FontGenerator font, Color4 Color, Position position, DialogTiming timing, float fade, int startFadeTime, int endFadeTime, int fontSize, bool centre)
     {
         //And this pack of lines are just the way we set our local variable with the parameters values of the constructor.
         this.generator = generator;
