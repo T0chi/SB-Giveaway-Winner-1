@@ -422,18 +422,18 @@ public class HUD
         // MISSION + SONG NAME -----------------------------------------
         string[] sentence = { Mission };
         var dialog = new DialogManager(generator, font, startTime + 924, startTime + 8077, "HUD", 320, 290, true,
-            fontSize, 0.2f, 50, 500, Color4.White, false, 0.7f, Color4.Black, "HUD", 0, "sb/sfx/message-2.wav",
+            fontSize, 0.2f, 50, 500, Color4.White, false, 0.7f, Color4.Black, "HUD", 0, "sb/sfx/message-2.ogg",
             DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
 
         string[] sentence2 = { SongName };
         var dialog2 = new DialogManager(generator, font, startTime + 924, startTime + 8077, "HUD", 320, 425, true,
-            fontSize, 0.2f, 50, 500, Color4.White, false, 0.7f, Color4.Black, "HUD", 0, "sb/sfx/message-2.wav",
+            fontSize, 0.2f, 50, 500, Color4.White, false, 0.7f, Color4.Black, "HUD", 0, "sb/sfx/message-2.ogg",
             DialogBoxes.Pointer.None, DialogBoxes.Push.Right, sentence2);
 
         // READY -----------------------------------------
         string[] sentence3 = { "Ready" };
         var dialog3 = new DialogManager(generator, font, startTime + 10154, startTime + 11378, "HUD", 320, 290, true,
-            fontSize, 0.5f, 50, 500, Color4.White, false, 0.7f, Color4.Black, "HUD", 300, "sb/sfx/start-2.wav",
+            fontSize, 0.5f, 50, 500, Color4.White, false, 0.7f, Color4.Black, "HUD", 300, "sb/sfx/start-2.ogg",
             DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence3);
     }
 

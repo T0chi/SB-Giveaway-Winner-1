@@ -158,14 +158,14 @@ namespace StorybrewScripts
                                   "Now it's time for something more fun...",
                                   "Slashing it is! I hope your stamina is good heheh~." };
             var dialog = new DialogManager(this, font, 163962, 170382, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Slash the black virus boxes to complete the quest.",
                                    "Watch out at the end though!" };
             var dialog2 = new DialogManager(this, font, 170382, 175868, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
@@ -479,8 +479,8 @@ namespace StorybrewScripts
                     slashRight.FlipV(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + ScatteringSpeed);
                 }
                 // sound effects
-                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + Duration, 100);
-                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + spawnDelay + Duration, 100);
+                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + Duration, 100);
+                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + spawnDelay + Duration, 100);
             }
 
 
@@ -762,8 +762,8 @@ namespace StorybrewScripts
                     slashRight.FlipV(i + slashDelay + spawnDelay2 + Duration, i + slashDelay + spawnDelay2 + Duration + ScatteringSpeed);
                 }
                 // sound effects
-                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + Duration, 100);
-                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".wav", i + slashDelay + spawnDelay2 + Duration, 100);
+                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + Duration, 100);
+                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + spawnDelay2 + Duration, 100);
             }
 
             // AVATAR //////////////////////////////////////////////////////////////////////////////////////

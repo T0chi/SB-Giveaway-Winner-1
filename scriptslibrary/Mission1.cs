@@ -36,9 +36,9 @@ public class Mission1
 
         var loopCount3 = (startTime) / (duration3 * 5);
         var enemyloopCount = (startTime) / (enemyDuration * 5);
-        // var jetSound = generator.GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-1.wav", startTime, 70);
-        // var jetSound2 = generator.GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-3.wav", startTime, 70);
-        // var jetSound3 = generator.GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet_passing-1.wav", 700, 100);
+        // var jetSound = generator.GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-1.ogg", startTime, 70);
+        // var jetSound2 = generator.GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-3.ogg", startTime, 70);
+        // var jetSound3 = generator.GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet_passing-1.ogg", 700, 100);
         var aircraft3 = generator.GetLayer("Aircraft 3 Back").CreateSprite("sb/missions/1/aircrafts/3_back.png", OsbOrigin.Centre);
         var enemy = generator.GetLayer("Aircraft 1 & 2 Front").CreateSprite("sb/missions/1/aircrafts/" + generator.Random(1, 3) + "_back.png", OsbOrigin.Centre);
 
@@ -96,7 +96,7 @@ public class Mission1
                                       (enemy.PositionAt(i + (speed / 1.5f)).X - aircraft3.PositionAt(i).X)) + (Math.PI / 2);
             var pewRight = generator.GetLayer("Laser").CreateSprite("sb/pixel.png", OsbOrigin.Centre);
             var pewLeft = generator.GetLayer("Laser").CreateSprite("sb/pixel.png", OsbOrigin.Centre);
-            var laserSound = generator.GetLayer("Laser").CreateSample("sb/sfx/laser-1.wav", i + 80, generator.Random(5, 15));
+            var laserSound = generator.GetLayer("Laser").CreateSample("sb/sfx/laser-1.ogg", i + 80, generator.Random(5, 15));
 
             pewRight.Rotate(i, angle);
             pewRight.Color(i, Color4.Red);
@@ -118,7 +118,7 @@ public class Mission1
             if (enemy.PositionAt(i + (speed / generator.Random(1, 1.5f))).Y <= enemy.PositionAt(i + (speed)).Y)
             {
                 var FrameDelay = 100;
-                var LaserHit = generator.GetLayer("Laser").CreateSample("sb/sfx/laser-hit.wav", i + speed, generator.Random(10, 20));
+                var LaserHit = generator.GetLayer("Laser").CreateSample("sb/sfx/laser-hit.ogg", i + speed, generator.Random(10, 20));
                 var laserHit = generator.GetLayer("Laser").CreateAnimation("sb/missions/1/explosion/explode.jpg", 12, FrameDelay, OsbLoopType.LoopOnce, OsbOrigin.Centre);
                 
                 laserHit.Additive(i + speed, i + speed + fadeTime + FrameDelay);

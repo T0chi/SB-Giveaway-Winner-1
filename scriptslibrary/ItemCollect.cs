@@ -240,7 +240,7 @@ public class ItemCollect
                 light.Rotate(i + itemDuration - 500, rotation);
 
                 // sound effect
-                var obtainSFX = generator.GetLayer("Items").CreateSample("sb/sfx/obtain-item.wav", i + itemDuration - 500, 10);
+                var obtainSFX = generator.GetLayer("Items").CreateSample("sb/sfx/obtain-item.ogg", i + itemDuration - 500, 10);
 
             }
             // ///////////////////////////////////////////////////////////////////////////////////

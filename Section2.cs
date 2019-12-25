@@ -99,7 +99,7 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] sentence = { "Ready for your first quest?" };
             var dialog = new DialogManager(this, font, 66937, 70600, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
@@ -107,7 +107,7 @@ namespace StorybrewScripts
                                    "you will end up with less points so you must do your best.",
                                    "Good luck fellow player!" };
             var dialog2 = new DialogManager(this, font, 70630, 84571, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.wav",
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
@@ -128,9 +128,9 @@ namespace StorybrewScripts
             var tiltAt = startTime + (duration3 * 3);
 
             var loopCount3 = (tiltAt - startTime) / (duration3 * 2);
-            var jetSound = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-1.wav", startTime, 70);
-            var jetSound2 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-3.wav", startTime, 70);
-            var jetSound3 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet_passing-1.wav", tiltAt - 700, 100);
+            var jetSound = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-1.ogg", startTime, 70);
+            var jetSound2 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-3.ogg", startTime, 70);
+            var jetSound3 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet_passing-1.ogg", tiltAt - 700, 100);
             var aircraft3 = GetLayer("Aircraft 3 Front").CreateSprite("sb/missions/1/aircrafts/3_front.png", OsbOrigin.Centre);
         
             aircraft3.Scale(OsbEasing.Out, startTime, startTime + 4000, 0.05, 0.3);
