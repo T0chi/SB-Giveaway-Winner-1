@@ -14,7 +14,6 @@ public class Mission1
     private StoryboardObjectGenerator generator;
     private int startTime;
     private int endTime;
-    private int FadeTime = 5000;
 
     public Mission1(StoryboardObjectGenerator generator, int startTime, int endTime)
     {
