@@ -22,9 +22,9 @@ Layers:
     Name: "Points Fail"
     OsbLayer: Fail
     DiffSpecific: No
-    Visible: Yes
+    Visible: No
   e8d51c5ee716423199dac90cf8fc1759:
     Name: "Points Pass"
     OsbLayer: Pass
     DiffSpecific: No
-    Visible: No
+    Visible: Yes

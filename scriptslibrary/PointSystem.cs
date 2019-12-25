@@ -10,16 +10,14 @@ using System.Collections.Generic;
 
 public class PointSystem
 {
-    private StoryboardObjectGenerator generator;
     public int totalPass;
     public int totalFail;
 
-    public PointSystem(StoryboardObjectGenerator generator)
+    public PointSystem()
     {
-        this.generator = generator;
+
     }
 
-    // pass
     public void AddPassPoints(int[] points)
     {
         int score = 0;
@@ -28,9 +26,7 @@ public class PointSystem
 
         totalPass += score;
     }
-    public void AddPassPoints(int points) => totalPass += points;
 
-    // fail
     public void AddFailPoints(int[] points)
     {
         int score = 0;
@@ -39,5 +35,4 @@ public class PointSystem
 
         totalFail += score;
     }
-    public void AddFailPoints(int points) => totalFail += points;
 }
