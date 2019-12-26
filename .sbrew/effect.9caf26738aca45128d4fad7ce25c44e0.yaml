@@ -27,6 +27,16 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  5916879740064cf78374ac2f86bd2db7:
+    Name: "Progress Bar"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  3778473eab2f4beba5f2f3286c217daa:
+    Name: "Performance"
+    OsbLayer: Fail
+    DiffSpecific: No
+    Visible: Yes
   8711c09cc1d247c18f030e4ca2c128d0:
     Name: "HUD"
     OsbLayer: Foreground

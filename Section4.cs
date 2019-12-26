@@ -767,7 +767,7 @@ namespace StorybrewScripts
             }
 
             // AVATAR //////////////////////////////////////////////////////////////////////////////////////
-            var avatar = GetLayer("Avatar").CreateSprite("sb/avatars/ScubDomino2.png", OsbOrigin.Centre);
+            var avatar = GetLayer("Avatar").CreateSprite("sb/avatars/ScubDomino.png", OsbOrigin.Centre);
             var wingRight = GetLayer("Wings").CreateSprite("sb/missions/3/wing.png", OsbOrigin.CentreLeft);
             var wingLeft = GetLayer("Wings").CreateSprite("sb/missions/3/wing.png", OsbOrigin.CentreLeft);
 

@@ -18,16 +18,6 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  701b9960c8b04a2f8bfe6f41e6553dfe:
-    Name: "-Tochi"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
-  46f3e16e33c9407cbe7d1dceeb436353:
-    Name: "HUD"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
   15445a6c00614360bd571c4748e3d371:
     Name: "HUD - Intro"
     OsbLayer: Background
@@ -71,5 +61,25 @@ Layers:
   823c77c0f6064db5a6196129ba8adfb2:
     Name: "Light"
     OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  18997297915b45dea154968769c78937:
+    Name: "Progress Bar"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  e6e05e251a904edd9c62e73af9a0242b:
+    Name: "Performance"
+    OsbLayer: Fail
+    DiffSpecific: No
+    Visible: Yes
+  46f3e16e33c9407cbe7d1dceeb436353:
+    Name: "HUD"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  701b9960c8b04a2f8bfe6f41e6553dfe:
+    Name: "-Tochi"
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
