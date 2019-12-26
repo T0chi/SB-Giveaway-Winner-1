@@ -45,6 +45,8 @@ public class DialogManager
     private DialogBoxes.Pointer pointer;
     private DialogBoxes.Push push;
 
+    public OsbSprite textData;
+
     public DialogManager(StoryboardObjectGenerator generator, FontGenerator font, int startTime, int endTime, string layerText, float x, float y, bool originCentre,
             int fontSize, float textFade, int startFadeTime, int endFadeTime, Color4 textColor, bool showBox, float boxFade, Color4 boxColor, string layerBox, int sampleDelay, string sampleName,
             DialogBoxes.Pointer pointer, DialogBoxes.Push push, string[] sentences)
@@ -87,6 +89,8 @@ public class DialogManager
         dialogTiming.endTime = endTime;
         position.position = new Vector2(x, y);
         var dialog = new DialogText(generator, layerText, font, textColor, position, dialogTiming, textFade, startFadeTime, endFadeTime, fontSize, originCentre);
+        
+        textData = dialog.textSpritesData;
 
         // write sentences
         foreach (string line in Sentences)
@@ -134,6 +138,7 @@ public class DialogText
     private float textScale = 0.5f;
     private bool centre = true;
     private string layerName;
+    public OsbSprite textSpritesData;
 
     public List<String> lines = new List<String>();
 
@@ -243,6 +248,8 @@ public class DialogText
                     sprite.Fade(endTime - endFadeTime, endTime, fade, 0);
                     sprite.Scale(startTime, this.textScale);
                     sprite.Color(startTime, Color);
+
+                    textSpritesData = sprite;
                 }
                 letterX += texture.BaseWidth * this.textScale;
                 startTime += delay * i;

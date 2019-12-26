@@ -12,9 +12,7 @@ public class PointSystem
 {
     public int totalPass;
     public int totalFail;
-
     public int pointsPass;
-
     public int pointsFail;
         
     public PointSystem()
