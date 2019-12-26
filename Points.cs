@@ -23,66 +23,58 @@ namespace StorybrewScripts
 
         private PointSystem pointSystem;
 
-        private OsbSprite POINTSPASS;
-
-        private OsbSprite POINTSFAIL;
-
-        private string[] OVERALLPASS;
-
-        private string[] OVERALLFAIL;
-
         public override void Generate()
         {
             pointSystem = new PointSystem();
 
-            points(1, "sb/points/1", 61399, 72571, 2, POINTSPASS, POINTSFAIL); // break 1
+            points(1, "sb/points/1", 61399, 72571, 2); // break 1
             var pointsBreak1 = new Vector2(pointSystem.pointsPass, pointSystem.pointsFail);
-            currentPoints("sb/points/1", OVERALLPASS, OVERALLFAIL, 0, 72571 - 61399, pointSystem.pointsPass, pointSystem.pointsFail);
+            currentPoints("sb/points/1", 61399, 72571, pointSystem.pointsPass, pointSystem.pointsFail);
 
-            points(2, "sb/points/2", 115238, 128262, 2, POINTSPASS, POINTSFAIL); // break 2
+            points(2, "sb/points/2", 115238, 128262, 2); // break 2
             var pointsBreak2 = new Vector2(pointSystem.pointsPass, pointSystem.pointsFail);
-            currentPoints("sb/points/2", OVERALLPASS, OVERALLFAIL, 115238, 128262, pointSystem.pointsPass + (int)pointsBreak1.X,
+            currentPoints("sb/points/2", 115238, 128262, pointSystem.pointsPass + (int)pointsBreak1.X,
                                                          pointSystem.pointsFail + (int)pointsBreak1.Y);
 
-            points(3, "sb/points/3", 157062, 167640, 2, POINTSPASS, POINTSFAIL); // break 3
+            points(3, "sb/points/3", 157062, 167640, 2); // break 3
             var pointsBreak3 = new Vector2(pointSystem.pointsPass + pointsBreak2.X,
                                            pointSystem.pointsFail + pointsBreak2.Y);
-            currentPoints("sb/points/3", OVERALLPASS, OVERALLFAIL, 157062, 167640, pointSystem.pointsPass + (int)pointsBreak3.X,
+            currentPoints("sb/points/3", 157062, 167640, pointSystem.pointsPass + (int)pointsBreak3.X,
                                                          pointSystem.pointsFail + (int)pointsBreak3.Y);
 
-            points(4, "sb/points/4", 213925, 221716, 2, POINTSPASS, POINTSFAIL); // break 4
+            points(4, "sb/points/4", 213925, 221716, 2); // break 4
             var pointsBreak4 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X,
                                            pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y);
-            currentPoints("sb/points/4", OVERALLPASS, OVERALLFAIL, 213925, 221716, pointSystem.pointsPass + (int)pointsBreak4.X,
+            currentPoints("sb/points/4", 213925, 221716, pointSystem.pointsPass + (int)pointsBreak4.X,
                                                          pointSystem.pointsFail + (int)pointsBreak4.Y);
 
-            points(5, "sb/points/5", 247113, 254732, 2, POINTSPASS, POINTSFAIL); // break 5
+            points(5, "sb/points/5", 247113, 254732, 2); // break 5
             var pointsBreak5 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X + pointsBreak4.X,
                                            pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y + pointsBreak4.Y);
-            currentPoints("sb/points/5", OVERALLPASS, OVERALLFAIL, 247113, 254732, pointSystem.pointsPass + (int)pointsBreak5.X,
+            currentPoints("sb/points/5", 247113, 254732, pointSystem.pointsPass + (int)pointsBreak5.X,
                                                          pointSystem.pointsFail + (int)pointsBreak5.Y);
 
-            points(6, "sb/points/6", 283514, 290901, 2, POINTSPASS, POINTSFAIL); // break 6
+            points(6, "sb/points/6", 283514, 290901, 2); // break 6
             var pointsBreak6 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X +
                                            pointsBreak4.X + pointsBreak5.X,
                                            pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y +
                                            pointsBreak4.Y + pointsBreak5.Y);
-            currentPoints("sb/points/6", OVERALLPASS, OVERALLFAIL, 283514, 290901, pointSystem.pointsPass + (int)pointsBreak6.X,
+            currentPoints("sb/points/6", 283514, 290901, pointSystem.pointsPass + (int)pointsBreak6.X,
                                                          pointSystem.pointsFail + (int)pointsBreak6.Y);
 
-            points(7, "sb/points/7", 331111, 339380, 2, POINTSPASS, POINTSFAIL); // break 7
+            points(7, "sb/points/7", 331111, 339380, 2); // break 7
             var pointsBreak7 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X +
                                            pointsBreak4.X + pointsBreak5.X + pointsBreak6.X,
                                            pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y +
                                            pointsBreak4.Y + pointsBreak5.Y + pointsBreak6.Y);
-            currentPoints("sb/points/7", OVERALLPASS, OVERALLFAIL, 331111, 339380, pointSystem.pointsPass + (int)pointsBreak7.X,
+            currentPoints("sb/points/7", 331111, 339380, pointSystem.pointsPass + (int)pointsBreak7.X,
                                                          pointSystem.pointsFail + (int)pointsBreak7.Y);
 
 
             Log($"TOTALPOINTS:                {pointSystem.totalPass} ; {pointSystem.totalFail}");
         }
 
-        public void currentPoints(string fontPath, string[] CURRENTPASS, string[] CURRENTFAIL, int startTime, int endTime, int pointsPass, int pointsFail)
+        public void currentPoints(string fontPath, int startTime, int endTime, int pointsPass, int pointsFail)
         {
             var fontSize = 14;
             var GlowRadius = 0;
@@ -121,18 +113,14 @@ namespace StorybrewScripts
                 var pointPass = new DialogManager(this, font, startTime + ((endTime - startTime) / 2), endTime, "Points Pass", pos.X, pos.Y, true,
                     fontSize, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, resultPass);
-            
-            OVERALLPASS = resultPass;
 
             string[] resultFail = { $"Overall: {pointsFail}pts" };
                 var pointFail = new DialogManager(this, font, startTime + ((endTime - startTime) / 2), endTime, "Points Fail", pos.X, pos.Y, true,
                     fontSize, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, resultFail);
-
-            OVERALLFAIL = resultFail;
         }
 
-        public void points(int breakNumber, string fontPath, int startTime, int breakEnd, int speed, OsbSprite POINTSPASS, OsbSprite POINTSFAIL)
+        public void points(int breakNumber, string fontPath, int startTime, int breakEnd, int speed)
         {
             // for the "you gained..." etc font
             var fontSize = 18;
@@ -295,8 +283,6 @@ namespace StorybrewScripts
             hundred.Fade(startTime + frameDelayHundred, endTime, fade, fade);
 
             thousand.Fade(startTime - thresholdDelay, startTime + frameDelayThousand, 0, 0);
-
-            POINTSPASS = one;
     
             
             if (randomThousandPass > 0)
@@ -461,8 +447,6 @@ namespace StorybrewScripts
 
             hundredFail.Fade(startTime - thresholdDelay, startTime + frameDelayHundred, 0, 0);
             hundredFail.Fade(startTime + frameDelayHundred, endTime, fade, fade);
-
-            POINTSFAIL = oneFail;
 
 
             if (randomHundredFail > 0)
