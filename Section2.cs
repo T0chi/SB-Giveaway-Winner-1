@@ -36,6 +36,10 @@ namespace StorybrewScripts
         [Configurable]
         public Color4 ShadowColor = new Color4(0, 0, 0, 200);
 
+        private DialogManager dialog;
+
+        private DialogManager dialog2;
+
         public override void Generate()
         {
             Background();
@@ -98,7 +102,7 @@ namespace StorybrewScripts
 
             // DIALOG 1 -----------------------------------------
             string[] sentence = { "Ready for your first quest?" };
-            var dialog = new DialogManager(this, font, 66937, 70600, "-Tochi", 105, 326, false,
+            this.dialog = new DialogManager(this, font, 66937, 70600, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
@@ -106,7 +110,7 @@ namespace StorybrewScripts
             string[] sentence2 = { "Shoot the enemy and try not to miss. If you miss too many times",
                                    "you will end up with less points so you must do your best.",
                                    "Good luck fellow player!" };
-            var dialog2 = new DialogManager(this, font, 70630, 84571, "-Tochi", 105, 326, false,
+            this.dialog2 = new DialogManager(this, font, 70630, 84571, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }

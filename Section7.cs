@@ -15,6 +15,10 @@ namespace StorybrewScripts
 {
     public class Section7 : StoryboardObjectGenerator
     {
+        private DialogManager dialog;
+
+        private DialogManager dialog2;
+
         public override void Generate()
         {
             Dialog();
@@ -450,14 +454,14 @@ namespace StorybrewScripts
             string[] sentence = { "OK.",
                                   "The next quest is very simple.", 
                                   "It's about lyrics..." };
-            var dialog = new DialogManager(this, font, 281629, 285399, "-Tochi", 105, 326, false,
+            this.dialog = new DialogManager(this, font, 281629, 285399, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Your Avatar will help you with this.",
                                    "Be consistent and the lyrics will be delivered correctly on time." };
-            var dialog2 = new DialogManager(this, font, 285399, 290425, "-Tochi", 105, 326, false,
+            this.dialog2 = new DialogManager(this, font, 285399, 290425, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }

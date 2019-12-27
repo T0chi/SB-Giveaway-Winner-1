@@ -36,6 +36,10 @@ namespace StorybrewScripts
         [Configurable]
         public Color4 WallColorMax2 = Color4.Black;
 
+        private DialogManager dialog;
+
+        private DialogManager dialog2;
+
         public override void Generate()
         {
             Dialog();
@@ -157,14 +161,14 @@ namespace StorybrewScripts
             string[] sentence = { "Hope you enjoyed yourself while collecting items!",
                                   "Now it's time for something more fun...",
                                   "Slashing it is! I hope your stamina is good heheh~." };
-            var dialog = new DialogManager(this, font, 163962, 170382, "-Tochi", 105, 326, false,
+            this.dialog = new DialogManager(this, font, 163962, 170382, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Slash the black virus boxes to complete the quest.",
                                    "Watch out at the end though!" };
-            var dialog2 = new DialogManager(this, font, 170382, 175868, "-Tochi", 105, 326, false,
+            this.dialog2 = new DialogManager(this, font, 170382, 175868, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }

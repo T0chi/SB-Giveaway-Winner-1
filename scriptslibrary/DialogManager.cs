@@ -21,34 +21,38 @@ public class Position
 
 public class DialogManager
 {
-    private StoryboardObjectGenerator generator;
-    private FontGenerator font;
+    public StoryboardObjectGenerator generator;
+    public FontGenerator font;
 
-    private int startTime;
-    private int endTime;
-    private int fontSize;
-    public string[] sentences;
-    private float x;
-    private float y;
-    private string layerText;
-    private string layerBox;
-    private bool originCentre;
-    private bool showBox;
-    private float textFade;
-    private int startFadeTime;
-    private int endFadeTime;
-    private Color4 textColor;
-    private Color4 boxColor;
-    private float boxFade;
-    private int sampleDelay;
-    private string sampleName;
-    private DialogBoxes.Pointer pointer;
-    private DialogBoxes.Push push;
+    public int startTime;
+    public int endTime;
+    public int fontSize;
+    // public string[] sentences;
+    public float x;
+    public float y;
+    public string layerText;
+    public string layerBox;
+    public bool originCentre;
+    public bool showBox;
+    public float textFade;
+    public Color4 textColor;
+    public Color4 boxColor;
+    public float boxFade;
+    public int sampleDelay;
+    public string sampleName;
+    public DialogBoxes.Pointer pointer;
+    public DialogBoxes.Push push;
+    public int FadeIn;
+    public int FadeOut;
+    public OsbSprite sprite;
 
-    public OsbSprite textData;
+    public DialogManager()
+    {
+
+    }
 
     public DialogManager(StoryboardObjectGenerator generator, FontGenerator font, int startTime, int endTime, string layerText, float x, float y, bool originCentre,
-            int fontSize, float textFade, int startFadeTime, int endFadeTime, Color4 textColor, bool showBox, float boxFade, Color4 boxColor, string layerBox, int sampleDelay, string sampleName,
+            int fontSize, float textFade, int FadeIn, int FadeOut, Color4 textColor, bool showBox, float boxFade, Color4 boxColor, string layerBox, int sampleDelay, string sampleName,
             DialogBoxes.Pointer pointer, DialogBoxes.Push push, string[] sentences)
     {
         this.generator = generator;
@@ -67,17 +71,17 @@ public class DialogManager
         this.showBox = showBox;
         this.boxFade = boxFade;
         this.textFade = textFade;
-        this.startFadeTime = startFadeTime;
-        this.endFadeTime = endFadeTime;
         this.sampleDelay = sampleDelay;
         this.sampleName = sampleName;
         this.pointer = pointer;
         this.push = push;
+        this.FadeIn = FadeIn;
+        this.FadeOut = FadeOut;
 
-        Generate(sentences);
+        Generate(sprite, sentences, FadeIn, FadeOut);
     }
 
-    public void Generate(string[] text)
+    public void Generate(OsbSprite sprite, string[] text, int FadeIn, int FadeOut)
     {
         // convert text to string lines
         List<string> Sentences = new List<string>(text);
@@ -88,9 +92,7 @@ public class DialogManager
         dialogTiming.startTime = startTime;
         dialogTiming.endTime = endTime;
         position.position = new Vector2(x, y);
-        var dialog = new DialogText(generator, layerText, font, textColor, position, dialogTiming, textFade, startFadeTime, endFadeTime, fontSize, originCentre);
-        
-        textData = dialog.textSpritesData;
+        var dialog = new DialogText(generator, layerText, font, sprite, textColor, position, dialogTiming, textFade, FadeIn, FadeOut, fontSize, originCentre);
 
         // write sentences
         foreach (string line in Sentences)
@@ -101,7 +103,7 @@ public class DialogManager
         {
             dialog.calculateLineWidth();
             dialog.calculateLineHeight();
-            dialog.Generate();
+            dialog.Generate(sprite);
             var dialogOne = new DialogBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, boxFade,
             position, pointer, push, originCentre,
             dialog.GetLineWidth(), dialog.heightSpace());
@@ -111,7 +113,7 @@ public class DialogManager
         {
             dialog.calculateLineWidth();
             dialog.calculateLineHeight();
-            dialog.Generate();
+            dialog.Generate(sprite);
             var dialogOne = new DialogBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, 0f,
             position, pointer, push, originCentre,
             dialog.GetLineWidth(), dialog.heightSpace());
@@ -127,8 +129,6 @@ public class DialogText
     private float startTime;
     private int endTime;
     private float fade;
-    private int startFadeTime;
-    private int endFadeTime;
     private int fontSize;
     private float delay = 0.5f;
     private Position position;
@@ -138,11 +138,12 @@ public class DialogText
     private float textScale = 0.5f;
     private bool centre = true;
     private string layerName;
-    public OsbSprite textSpritesData;
+    private int FadeIn;
+    private int FadeOut;
 
     public List<String> lines = new List<String>();
 
-    public DialogText(StoryboardObjectGenerator generator, string layerName, FontGenerator font, Color4 Color, Position position, DialogTiming timing, float fade, int startFadeTime, int endFadeTime, int fontSize, bool centre)
+    public DialogText(StoryboardObjectGenerator generator, string layerName, FontGenerator font, OsbSprite sprite, Color4 Color, Position position, DialogTiming timing, float fade, int FadeIn, int FadeOut, int fontSize, bool centre)
     {
         //And this pack of lines are just the way we set our local variable with the parameters values of the constructor.
         this.generator = generator;
@@ -157,6 +158,8 @@ public class DialogText
         this.lineWidth = 0f;
         this.centre = centre;
         this.layerName = layerName;
+        this.FadeIn = FadeIn;
+        this.FadeOut = FadeOut;
     }
 
     public float lineHeightSpace()
@@ -215,7 +218,7 @@ public class DialogText
         }
     }
 
-    public void Generate()
+    public void Generate(OsbSprite sprite)
     {
         // float newLineSpacing = 0;
         float letterY = position.position.Y - 4;
@@ -226,7 +229,6 @@ public class DialogText
             // float lineHeight = 0;
             // float letterSpacing = 4f * this.textScale;
             float i = 0;
-            var FadeTime = startFadeTime;
 
             float letterX = position.position.X;
             if (this.centre)
@@ -243,13 +245,13 @@ public class DialogText
                     var letterPos = new Vector2(letterX, letterY)
                         + texture.OffsetFor(OsbOrigin.Centre) * this.textScale;
 
-                    var sprite = generator.GetLayer(layerName).CreateSprite(texture.Path, OsbOrigin.Centre, letterPos);
-                    sprite.Fade(startTime + delay * i, startTime + (FadeTime * 1.5) + delay * i, 0, fade);
-                    sprite.Fade(endTime - endFadeTime, endTime, fade, 0);
-                    sprite.Scale(startTime, this.textScale);
-                    sprite.Color(startTime, Color);
+                    var spriteText = generator.GetLayer(layerName).CreateSprite(texture.Path, OsbOrigin.Centre, letterPos);
+                    spriteText.Fade(startTime + delay * i, startTime + FadeIn + delay * i, 0, fade);
+                    spriteText.Fade(endTime, endTime + FadeOut, fade, 0);
+                    spriteText.Scale(startTime, this.textScale);
+                    spriteText.Color(startTime, Color);
 
-                    textSpritesData = sprite;
+                    sprite = spriteText;
                 }
                 letterX += texture.BaseWidth * this.textScale;
                 startTime += delay * i;

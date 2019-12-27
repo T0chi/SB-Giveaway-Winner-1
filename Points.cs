@@ -22,12 +22,24 @@ namespace StorybrewScripts
         public Color4 ColorPass = Color.White;
 
         private PointSystem pointSystem;
+        
+        private DialogManager pointsPass;
+
+        private DialogManager pointsFail;
 
         public override void Generate()
         {
             pointSystem = new PointSystem();
+            pointsPass = new DialogManager();
+            pointsFail = new DialogManager();
+
+            var OsbSpritePass = this.pointsPass.sprite;
+            var OsbSpriteFail = this.pointsFail.sprite;
+            
+            Log($"OsbSpritePass: {OsbSpritePass}           OsbSpritePass: {OsbSpriteFail}");
 
             points(1, "sb/points/1", 61399, 72571, 2); // break 1
+
             var pointsBreak1 = new Vector2(pointSystem.pointsPass, pointSystem.pointsFail);
             currentPoints("sb/points/1", 61399, 72571, pointSystem.pointsPass, pointSystem.pointsFail);
 
@@ -110,13 +122,13 @@ namespace StorybrewScripts
             var pos = new Vector2(320, 173);
 
             string[] resultPass = { $"Overall: {pointsPass}pts" };
-                var pointPass = new DialogManager(this, font, startTime + ((endTime - startTime) / 2), endTime, "Points Pass", pos.X, pos.Y, true,
-                    fontSize, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
+                this.pointsPass = new DialogManager(this, font, startTime + ((endTime - startTime) / 2), endTime, "Points Pass", pos.X, pos.Y, true,
+                    fontSize, 0.7f, 50, 1000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, resultPass);
 
             string[] resultFail = { $"Overall: {pointsFail}pts" };
-                var pointFail = new DialogManager(this, font, startTime + ((endTime - startTime) / 2), endTime, "Points Fail", pos.X, pos.Y, true,
-                    fontSize, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+                this.pointsFail = new DialogManager(this, font, startTime + ((endTime - startTime) / 2), endTime, "Points Fail", pos.X, pos.Y, true,
+                    fontSize, 0.7f, 50, 1000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, resultFail);
         }
 
@@ -288,8 +300,8 @@ namespace StorybrewScripts
             if (randomThousandPass > 0)
             {
                 string[] result = { $"You gained: {randomThousandPass}.{randomHundredPass}{randomTenPass}{randomOnePass} points" };
-                var pointPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                this.pointsPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, randomOnePass };
@@ -298,8 +310,8 @@ namespace StorybrewScripts
             else if (randomTenPass == 0 && randomOnePass == 0)
             {
                 string[] result = { $"You gained: {randomHundredPass}00pts" };
-                var pointPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                this.pointsPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, 0, 0 };
@@ -308,8 +320,8 @@ namespace StorybrewScripts
             else if (randomTenPass == 0)
             {
                 string[] result = { $"You gained: {randomThousandPass}{randomHundredPass}0{randomOnePass} points" };
-                var pointPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                this.pointsPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, 0, randomOnePass };
@@ -318,8 +330,8 @@ namespace StorybrewScripts
             else if (randomOnePass == 0)
             {
                 string[] result = { $"You gained: {randomThousandPass}{randomHundredPass}{randomTenPass}0pts" };
-                var pointPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                this.pointsPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, 0 };
@@ -328,8 +340,8 @@ namespace StorybrewScripts
             else if (randomThousandPass == 0)
             {
                 string[] result = { $"You gained: {randomHundredPass}{randomTenPass}{randomOnePass} points" };
-                var pointPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                this.pointsPass = new DialogManager(this, font, endTime, endTime + delay, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, randomOnePass };
@@ -345,13 +357,13 @@ namespace StorybrewScripts
 
                 string[] pts = { "pts" };   
                 var text = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text2 = new DialogManager(this, font2, startTime + frameDelayTen, startTime + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text3 = new DialogManager(this, font2, startTime + frameDelayHundred, endTime, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
 
                 thousand.Fade(startTime + frameDelayThousand, endTime, 0, 0);
@@ -367,16 +379,16 @@ namespace StorybrewScripts
 
                 string[] pts = { "pts" };   
                 var text = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text2 = new DialogManager(this, font2, startTime + frameDelayTen, startTime + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text3 = new DialogManager(this, font2, startTime + frameDelayHundred, startTime + frameDelayThousand, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
                 var text4 = new DialogManager(this, font2, startTime + frameDelayThousand, endTime, "Points Pass", pos.X + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts);
     
                 thousand.Fade(startTime + frameDelayThousand, endTime, fade, fade);
@@ -452,8 +464,8 @@ namespace StorybrewScripts
             if (randomHundredFail > 0)
             {
                 string[] result = { $"You gained: {randomHundredFail}{randomTenFail}{randomOneFail} points" };
-                var pointFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                this.pointsFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, randomOneFail };
@@ -462,8 +474,8 @@ namespace StorybrewScripts
             else if (randomTenFail == 0 && randomOneFail == 0)
             {
                 string[] result = { $"You gained: {randomHundredFail}00pts" };
-                var pointFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                this.pointsFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
@@ -472,8 +484,8 @@ namespace StorybrewScripts
             else if (randomTenFail == 0)
             {
                 string[] result = { $"You gained: {randomHundredFail}0{randomOneFail} points" };
-                var pointFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                this.pointsFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
@@ -482,8 +494,8 @@ namespace StorybrewScripts
             else if (randomOneFail == 0)
             {
                 string[] result = { $"You gained: {randomHundredFail}{randomTenFail}0pts" };
-                var pointFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 2000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                this.pointsFail = new DialogManager(this, font, endTime, endTime + delay, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, result);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
@@ -492,13 +504,13 @@ namespace StorybrewScripts
 
             string[] pts2 = { "pts" };   
             var text5 = new DialogManager(this, font2, startTime, startTime + frameDelayTen, "Points Fail", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
             var text6 = new DialogManager(this, font2, startTime + frameDelayTen, startTime + frameDelayHundred, "Points Fail", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
             var text7 = new DialogManager(this, font2, startTime + frameDelayHundred, endTime, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                fontSize2, 0.7f, 50, 2000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, pts2);
 
             Log($"Pass/Fail {breakNumber}:                       {pointSystem.pointsPass} ; {pointSystem.pointsFail}");

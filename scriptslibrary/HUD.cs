@@ -21,6 +21,7 @@ public class HUD
     private string nameTag;
     private int progressBarDelay;
     private string avatar;
+    private OsbSprite sprite;
 
     public HUD(StoryboardObjectGenerator generator, int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
     {

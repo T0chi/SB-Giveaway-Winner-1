@@ -49,6 +49,10 @@ namespace StorybrewScripts
         [Configurable]
         public Vector2 Scale = new Vector2(1, 200);
 
+        private DialogManager dialog;
+
+        private DialogManager dialog2;
+
         public override void Generate()
         {
 		    Dialog();
@@ -145,14 +149,14 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] sentence = { "Alright.",
                                   "Look, we are almost finished!" };
-            var dialog = new DialogManager(this, font, 332996, 336137, "-Tochi", 105, 326, false,
+            this.dialog = new DialogManager(this, font, 332996, 336137, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Next quest is even easier than the previous one.",
                                    "Just keep an eye on the aircrafts evading from behind the building." };
-            var dialog2 = new DialogManager(this, font, 336137, 344407, "-Tochi", 105, 326, false,
+            this.dialog2 = new DialogManager(this, font, 336137, 344407, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
