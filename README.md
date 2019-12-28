@@ -82,6 +82,23 @@ Each mapper had to choose an avatar from the image below in order for me to make
 10. 胎降 
 11. Ehgze
 
+------------
+
+**KEY NOTES**
+
+Key notes are the notes/hitobjects in the map that YOU MUST get a perfect combo on (get a 300 not a 100/50 or miss), to be able to pass the entire section the key notes represents. Due to limitations in storyboarding, this was the best way to decide wether you pass a section or not AND keep the data until the end of the map to calculate the total points gained. It can be sliders too not just circles!
+
+Here's a list of where the key notes are located at (timing):
+- Key note 1: 00:48:476
+- Key note 2: 01:46:905 - 01:47:572
+- Key note 3: 02:26:863 - 02:27:063
+- Key note 4: 03:17:982 - 03:18:240
+- Key note 5: 03:57:589
+- Key note 6: 04:34:561 - 04:34:639
+- Key note 7: 05:20:430 - 05:21:059
+- Key note 8: 08:04:268 - 08:04:343
+
+
 # Info
 Programs used:
 - Storybrew // *for creating every effect (basically whole sb)*
