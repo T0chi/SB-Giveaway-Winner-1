@@ -35,55 +35,41 @@ namespace StorybrewScripts
 
             var OsbSpritePass = this.pointsPass.sprite;
             var OsbSpriteFail = this.pointsFail.sprite;
-            
-            Log($"OsbSpritePass: {OsbSpritePass}           OsbSpritePass: {OsbSpriteFail}");
 
             points(1, "sb/points/1", 61399, 72571, 2); // break 1
-
-            var pointsBreak1 = new Vector2(pointSystem.pointsPass, pointSystem.pointsFail);
-            currentPoints("sb/points/1", 61399, 72571, pointSystem.pointsPass, pointSystem.pointsFail);
+            currentPoints("sb/points/1", 61399, 72571, pointSystem.totalPass, pointSystem.totalFail);
 
             points(2, "sb/points/2", 115238, 128262, 2); // break 2
-            var pointsBreak2 = new Vector2(pointSystem.pointsPass, pointSystem.pointsFail);
-            currentPoints("sb/points/2", 115238, 128262, pointSystem.pointsPass + (int)pointsBreak1.X,
-                                                         pointSystem.pointsFail + (int)pointsBreak1.Y);
+            currentPoints("sb/points/2", 115238, 128262, pointSystem.totalPass, pointSystem.totalFail);
 
             points(3, "sb/points/3", 157062, 167640, 2); // break 3
-            var pointsBreak3 = new Vector2(pointSystem.pointsPass + pointsBreak2.X,
-                                           pointSystem.pointsFail + pointsBreak2.Y);
-            currentPoints("sb/points/3", 157062, 167640, pointSystem.pointsPass + (int)pointsBreak3.X,
-                                                         pointSystem.pointsFail + (int)pointsBreak3.Y);
+            currentPoints("sb/points/3", 157062, 167640, pointSystem.totalPass, pointSystem.totalFail);
 
             points(4, "sb/points/4", 213925, 221716, 2); // break 4
-            var pointsBreak4 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X,
-                                           pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y);
-            currentPoints("sb/points/4", 213925, 221716, pointSystem.pointsPass + (int)pointsBreak4.X,
-                                                         pointSystem.pointsFail + (int)pointsBreak4.Y);
+            currentPoints("sb/points/4", 213925, 221716, pointSystem.totalPass, pointSystem.totalFail);
 
             points(5, "sb/points/5", 247113, 254732, 2); // break 5
-            var pointsBreak5 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X + pointsBreak4.X,
-                                           pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y + pointsBreak4.Y);
-            currentPoints("sb/points/5", 247113, 254732, pointSystem.pointsPass + (int)pointsBreak5.X,
-                                                         pointSystem.pointsFail + (int)pointsBreak5.Y);
+            currentPoints("sb/points/5", 247113, 254732, pointSystem.totalPass, pointSystem.totalFail);
 
             points(6, "sb/points/6", 283514, 290901, 2); // break 6
-            var pointsBreak6 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X +
-                                           pointsBreak4.X + pointsBreak5.X,
-                                           pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y +
-                                           pointsBreak4.Y + pointsBreak5.Y);
-            currentPoints("sb/points/6", 283514, 290901, pointSystem.pointsPass + (int)pointsBreak6.X,
-                                                         pointSystem.pointsFail + (int)pointsBreak6.Y);
+            currentPoints("sb/points/6", 283514, 290901, pointSystem.totalPass, pointSystem.totalFail);
 
             points(7, "sb/points/7", 331111, 339380, 2); // break 7
-            var pointsBreak7 = new Vector2(pointSystem.pointsPass + pointsBreak2.X + pointsBreak3.X +
-                                           pointsBreak4.X + pointsBreak5.X + pointsBreak6.X,
-                                           pointSystem.pointsFail + pointsBreak2.Y + pointsBreak3.Y +
-                                           pointsBreak4.Y + pointsBreak5.Y + pointsBreak6.Y);
-            currentPoints("sb/points/7", 331111, 339380, pointSystem.pointsPass + (int)pointsBreak7.X,
-                                                         pointSystem.pointsFail + (int)pointsBreak7.Y);
+            currentPoints("sb/points/7", 331111, 339380, pointSystem.totalPass, pointSystem.totalFail);
+
+            points(8, "sb/points/8", 488992, 488992 + 8000, 2); // break 8
+            currentPoints("sb/points/8", 488992, 488992 + 8000, pointSystem.totalPass, pointSystem.totalFail);
+
+            fight(398622, 488992);
 
 
             Log($"TOTALPOINTS:                {pointSystem.totalPass} ; {pointSystem.totalFail}");
+        }
+
+        public void fight(int startTime, int endTime)
+        {
+            var fightSFX = GetLayer("Points Pass").CreateSample("sb/sfx/fight-start.ogg", startTime, 100);
+            var fightSFX2 = GetLayer("Points Fail").CreateSample("sb/sfx/fight-start.ogg", startTime, 100);
         }
 
         public void currentPoints(string fontPath, int startTime, int endTime, int pointsPass, int pointsFail)
@@ -417,7 +403,7 @@ namespace StorybrewScripts
 
             var randomOneFail = Random(0, 10);
             var randomTenFail = Random(0, 10);
-            var randomHundredFail = Random(0, 6);
+            var randomHundredFail = Random(1, 9);
 
 
             // numbers

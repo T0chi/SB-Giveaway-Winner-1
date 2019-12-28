@@ -50,7 +50,7 @@ Layers:
     Name: "Performance"
     OsbLayer: Fail
     DiffSpecific: No
-    Visible: No
+    Visible: Yes
   b64878e5f4a74b798e8ff2e6c68c0489:
     Name: "HUD"
     OsbLayer: Foreground
@@ -60,4 +60,4 @@ Layers:
     Name: "-Tochi"
     OsbLayer: Foreground
     DiffSpecific: No
-    Visible: No
+    Visible: Yes

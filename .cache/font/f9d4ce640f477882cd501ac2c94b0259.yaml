@@ -229,3 +229,21 @@ Cache:
     BaseHeight: 30
     Width: 15
     Height: 20
+  - Text: "1"
+    Path: "sb/points/6/0031.png"
+    Hash: "d56ef5dc5c5e7e5930ea95c3624bb49b"
+    OffsetX: 2
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 12
+    Height: 20
+  - Text: "6"
+    Path: "sb/points/6/0036.png"
+    Hash: "305ecafd74f50f49611fc074dff3d1df"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20

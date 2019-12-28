@@ -73,7 +73,7 @@ Layers:
     Name: "Performance"
     OsbLayer: Fail
     DiffSpecific: No
-    Visible: No
+    Visible: Yes
   9aaad64be8504aff8145c5ba9458fe68:
     Name: "HUD"
     OsbLayer: Foreground
