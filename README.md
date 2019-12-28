@@ -126,6 +126,7 @@ Mappers:
 
 Storyboarders:
 - PoNo // *helped with scriptslibrary usage + point system stuff*
+- Endaris // *helping me understand storyboard Triggers*
 - Damnae // *for creating Storybrew*
 - Kawa // *amazing idea for mission 4.*
 
