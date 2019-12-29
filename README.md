@@ -96,7 +96,8 @@ Here's a list of where the key notes are located at (timing):
 - Key note 5: 03:57:589
 - Key note 6: 04:34:561 - 04:34:639
 - Key note 7: 05:20:430 - 05:21:059
-- Key note 8: 08:04:268 - 08:04:343
+- Key note 8: 06:08:909 - 06:09:223
+- Key note 9: 08:04:268 - 08:04:343
 
 
 # Info
