@@ -86,7 +86,7 @@ Each mapper had to choose an avatar from the image below in order for me to make
 
 **KEY NOTES**
 
-Key notes are the notes/hitobjects in the map that YOU MUST get a perfect combo on (get a 300 not a 100/50 or miss), to be able to pass the entire section the key notes represents. Due to limitations in storyboarding, this was the best way to decide wether you pass a section or not AND keep the data until the end of the map to calculate the total points gained. It can be sliders too not just circles!
+Key notes are the notes/hitobjects in the map that YOU MUST get a perfect combo on (get a 300 not a 100/50 or miss), to be able to pass each section the key notes represents. Due to limitations in storyboarding, this was the best way to decide wether you pass a section or not AND keep the data until the end of the map to calculate the total points gained. It can be sliders too not just circles!
 
 Here's a list of where the key notes are located at (timing):
 - Key note 1: 00:48:476
