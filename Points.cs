@@ -34,36 +34,35 @@ namespace StorybrewScripts
             pointsPass = new DialogManager();
             pointsFail = new DialogManager();
 
-            points(1, 2, "sb/points/1", 48476, 48476, 61399, 72571, 2, true); // break 1
+            points("sb/points/1", 48476, 48476, 61399, 72571, 2, true); // break 1
             currentPointsPass("sb/points/1", 48476, 48476, 61399, 72571, pointSystem.totalPass, true);
             currentPointsFail("sb/points/1", 48476, 48476, 61399, 72571, pointSystem.totalFail, true);
 
-
-            points(1, 2, "sb/points/2", 106905, 107572, 115238, 128262, 2, true); // break 2
+            points("sb/points/2", 106905, 107572, 115238, 128262, 2, true); // break 2
             currentPointsPass("sb/points/2", 106905, 107572, 115238, 128262, pointSystem.totalPass, true);
             currentPointsFail("sb/points/2", 106905, 107572, 115238, 128262, pointSystem.totalFail, true);
 
-            points(1, 2, "sb/points/3", 146863, 147063, 157062, 167640, 2, true); // break 3
+            points("sb/points/3", 146863, 147063, 157062, 167640, 2, true); // break 3
             currentPointsPass("sb/points/3", 146863, 147063, 157062, 167640, pointSystem.totalPass, true);
             currentPointsFail("sb/points/3", 146863, 147063, 157062, 167640, pointSystem.totalFail, true);
 
-            points(1, 2, "sb/points/4", 197982, 198240, 213925, 221716, 2, true); // break 4
+            points("sb/points/4", 197982, 198240, 213925, 221716, 2, true); // break 4
             currentPointsPass("sb/points/4", 197982, 198240, 213925, 221716, pointSystem.totalPass, true);
             currentPointsFail("sb/points/4", 197982, 198240, 213925, 221716, pointSystem.totalFail, true);
 
-            points(1, 2, "sb/points/5", 237589, 237589, 247113, 254732, 2, true); // break 5
+            points("sb/points/5", 237589, 237589, 247113, 254732, 2, true); // break 5
             currentPointsPass("sb/points/5", 237589, 237589, 247113, 254732, pointSystem.totalPass, true);
             currentPointsFail("sb/points/5", 237589, 237589, 247113, 254732, pointSystem.totalFail, true);
 
-            points(1, 2, "sb/points/6", 274561, 274639, 283671, 290901, 2, true); // break 6
+            points("sb/points/6", 274561, 274639, 283671, 290901, 2, true); // break 6
             currentPointsPass("sb/points/6", 274561, 274639, 283671, 290901, pointSystem.totalPass, true);
             currentPointsFail("sb/points/6", 274561, 274639, 283671, 290901, pointSystem.totalFail, true);
 
-            points(1, 2, "sb/points/7", 320430, 321059, 331111, 339380, 2, true); // break 7
+            points("sb/points/7", 320430, 321059, 331111, 339380, 2, true); // break 7
             currentPointsPass("sb/points/7", 320430, 321059, 331111, 339380, pointSystem.totalPass, true);
             currentPointsFail("sb/points/7", 320430, 321059, 331111, 339380, pointSystem.totalFail, true);
 
-            points(1, 2, "sb/points/8", 484268, 484343, 488992, 488992 + 8000, 2, true); // break 8
+            points("sb/points/8", 484268, 484343, 488992, 488992 + 8000, 2, true); // break 8
             currentPointsPass("sb/points/8", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalPass, true);
             currentPointsFail("sb/points/8", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalFail, true);
 
@@ -137,8 +136,8 @@ namespace StorybrewScripts
         public void currentPointsFail(string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
                                       bool startTriggerGroup = false)
         {
-            var noteStartFail = NoteStart - 20; // start range of the first note in milliseconds
-            var noteEndFail = NoteEnd + 20; // end range of the last note in milliseconds
+            var noteStartFail = NoteStart - 350; // start range of the first note in milliseconds
+            var noteEndFail = NoteEnd + 350; // end range of the last note in milliseconds
 
             var delay = ((breakEnd - breakStart) / 2) - 800; // calculation for the middle of the break
             var endTime = breakStart + delay; // middle of the break
@@ -189,7 +188,7 @@ namespace StorybrewScripts
             this.pointsFail.Generate(resultFail, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
         }
 
-        public void points(int GroupNumberPass, int GroupNumberFail, string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int speed,
+        public void points(string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int speed,
                            bool startTriggerGroup = false)
         {
             // for the "you gained..." etc font
@@ -274,8 +273,8 @@ namespace StorybrewScripts
 
             var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
             var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
-            var noteStartFail = NoteStart - 20; // start range of the first note in milliseconds
-            var noteEndFail = NoteEnd + 20; // end range of the last note in milliseconds
+            var noteStartFail = NoteStart - 350; // start range of the first note in milliseconds
+            var noteEndFail = NoteEnd + 350; // end range of the last note in milliseconds
 
             var appearTiming = breakStart - noteStartPass; // the duration value between the note(s) and the break start
 
@@ -320,11 +319,11 @@ namespace StorybrewScripts
             var hundred = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomHundredPass + 1, frameDelayHundred, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
             var thousand = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomThousandPass + 1, frameDelayThousand, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
 
-            dot.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, GroupNumberPass);
-            one.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, GroupNumberPass);
-            ten.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, GroupNumberPass);
-            hundred.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, GroupNumberPass);
-            thousand.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, GroupNumberPass);
+            dot.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
+            one.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
+            ten.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
+            hundred.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
+            thousand.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
 
             // scale stuff
 
@@ -385,7 +384,7 @@ namespace StorybrewScripts
             }
             else if (randomTenPass == 0 && randomOnePass == 0)
             {
-                string[] result = { $"You gained: +{randomHundredPass}00pts" };
+                string[] result = { $"You gained: +{randomHundredPass}00 points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
@@ -407,7 +406,7 @@ namespace StorybrewScripts
             }
             else if (randomOnePass == 0)
             {
-                string[] result = { $"You gained: +{randomThousandPass}{randomHundredPass}{randomTenPass}0pts" };
+                string[] result = { $"You gained: +{randomThousandPass}{randomHundredPass}{randomTenPass}0 points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
@@ -555,9 +554,9 @@ namespace StorybrewScripts
 
             // Trigger Pass
 
-            oneFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, GroupNumberFail);
-            tenFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, GroupNumberFail);
-            hundredFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, GroupNumberFail);
+            oneFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, 2);
+            tenFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, 2);
+            hundredFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, 2);
 
 
             // scale stuff
@@ -603,18 +602,18 @@ namespace StorybrewScripts
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, randomOneFail };
                 pointSystem.AddFailPoints(sectionPoints);
             }
             else if (randomTenFail == 0 && randomOneFail == 0)
             {
-                string[] result = { $"You gained: +{randomHundredFail}00pts" };
+                string[] result = { $"You gained: +{randomHundredFail}00 points" };
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
                 pointSystem.AddFailPoints(sectionPoints);
@@ -625,18 +624,18 @@ namespace StorybrewScripts
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
                 pointSystem.AddFailPoints(sectionPoints);
             }
             else if (randomOneFail == 0)
             {
-                string[] result = { $"You gained: +{randomHundredFail}{randomTenFail}0pts" };
+                string[] result = { $"You gained: +{randomHundredFail}{randomTenFail}0 points" };
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
                     fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
                 pointSystem.AddFailPoints(sectionPoints);
@@ -650,7 +649,7 @@ namespace StorybrewScripts
                 this.pointsFail.Setup(this, font2, appearTiming, appearTiming + frameDelayTen, "Points Fail", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
                     fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
             }
 
             if (PTS == true)
@@ -658,7 +657,7 @@ namespace StorybrewScripts
                 this.pointsFail.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Fail", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
                     fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
             }
 
             if (PTS == true)
@@ -666,7 +665,7 @@ namespace StorybrewScripts
                 this.pointsFail.Setup(this, font2, appearTiming + frameDelayHundred, duration, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
                     fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
             }
 
             oneFail.EndGroup();
