@@ -34,37 +34,80 @@ namespace StorybrewScripts
             pointsPass = new DialogManager();
             pointsFail = new DialogManager();
 
-            points("sb/points/1", 48476, 48476, 61399, 72571, 2, true); // break 1
-            currentPointsPass("sb/points/1", 48476, 48476, 61399, 72571, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/1", 48476, 48476, 61399, 72571, pointSystem.totalFail, true);
+            // var pointsDecision1 = 700;
+            // var pointsDecision2 = 800;
+            // var pointsDecision3 = 900;
+            // var pointsDecision4 = 1000;
 
-            points("sb/points/2", 106905, 107572, 115238, 128262, 2, true); // break 2
-            currentPointsPass("sb/points/2", 106905, 107572, 115238, 128262, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/2", 106905, 107572, 115238, 128262, pointSystem.totalFail, true);
+            points(1, "sb/points/", 48476, 48476, 61399, 72571, 2, true); // break 1
+            // var passPoints1 = pointSystem.totalPass;
+            // var failPoints1 = pointSystem.totalFail;
+            currentPointsPass(1, "sb/points/", 48476, 48476, 61399, 72571, pointSystem.totalPass, true);
+            currentPointsFail(1, "sb/points/", 48476, 48476, 61399, 72571, pointSystem.totalFail, true);
 
-            points("sb/points/3", 146863, 147063, 157062, 167640, 2, true); // break 3
-            currentPointsPass("sb/points/3", 146863, 147063, 157062, 167640, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/3", 146863, 147063, 157062, 167640, pointSystem.totalFail, true);
+            points(3, "sb/points/", 106905, 107572, 115238, 128262, 2, true); // break 2
+            // var passPoints2 = pointSystem.totalPass - passPoints1;
+            // var failPoints2 = pointSystem.totalFail - failPoints1;
+            currentPointsPass(3, "sb/points/", 106905, 107572, 115238, 128262, pointSystem.totalPass, true);
+            currentPointsFail(3, "sb/points/", 106905, 107572, 115238, 128262, pointSystem.totalFail, true);
+            // if passes -> passes
+            // points(5, "sb/points/", 106905 + pointsDecision1, 107572 + pointsDecision1, 115238, 128262, 2, true); // break 2
+            // currentPointsPass(5, "sb/points/", 106905 + pointsDecision1, 107572 + pointsDecision1, 115238, 128262, pointSystem.totalPass
+            //                                                                                                     + passPoints1, true);
+            // // if passes -> fails
+            // currentPointsFail(5, "sb/points/", 106905 + pointsDecision2, 107572 + pointsDecision2, 115238, 128262, pointSystem.totalPass
+            //                                                                                                     + failPoints1, true);
+            // // if fails -> fails
+            // points(7, "sb/points/", 106905 + pointsDecision3, 107572 + pointsDecision3, 115238, 128262, 2, true); // break 2
+            // currentPointsFail(7, "sb/points/", 106905 + pointsDecision3, 107572 + pointsDecision3, 115238, 128262, pointSystem.totalFail
+            //                                                                                                     + failPoints1, true);
+            // // if fails -> passes
+            // currentPointsPass(7, "sb/points/", 106905 + pointsDecision4, 107572 + pointsDecision4, 115238, 128262, pointSystem.totalFail
+            //                                                                                                     + passPoints1, true);
 
-            points("sb/points/4", 197982, 198240, 213925, 221716, 2, true); // break 4
-            currentPointsPass("sb/points/4", 197982, 198240, 213925, 221716, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/4", 197982, 198240, 213925, 221716, pointSystem.totalFail, true);
+            points(9, "sb/points/", 146863, 147063, 157062, 167640, 2, true); // break 3
+            // var passPoints3 = pointSystem.totalPass - passPoints2;
+            // var failPoints3 = pointSystem.totalFail - failPoints2;
+            currentPointsPass(9, "sb/points/", 146863, 147063, 157062, 167640, pointSystem.totalPass, true);
+            currentPointsFail(9, "sb/points/", 146863, 147063, 157062, 167640, pointSystem.totalFail, true);
+            // // if passes -> passes
+            // points(11, "sb/points/", 146863 + pointsDecision1, 147063 + pointsDecision1, 147063, 157062, 2, true); // break 2
+            // currentPointsPass(11, "sb/points/", 146863 + pointsDecision1, 147063 + pointsDecision1, 157062, 167640, pointSystem.totalPass
+            //                                                                                                     + passPoints1 + passPoints2, true);
+            // // if passes -> fails
+            // currentPointsFail(11, "sb/points/", 146863 + pointsDecision2, 147063 + pointsDecision2, 157062, 167640, pointSystem.totalPass
+            //                                                                                                     + failPoints1 + failPoints2, true);
+            // // if fails -> fails
+            // points(13, "sb/points/", 146863 + pointsDecision3, 147063 + pointsDecision3, 147063, 157062, 2, true); // break 2
+            // currentPointsFail(13, "sb/points/", 146863 + pointsDecision3, 147063 + pointsDecision3, 157062, 167640, pointSystem.totalFail
+            //                                                                                                     + failPoints1 + failPoints2, true);
+            // // if fails -> passes
+            // currentPointsPass(13, "sb/points/", 146863 + pointsDecision4, 147063 + pointsDecision4, 157062, 167640, pointSystem.totalFail
+            //                                                                                                     + passPoints1 + passPoints1, true);
 
-            points("sb/points/5", 237589, 237589, 247113, 254732, 2, true); // break 5
-            currentPointsPass("sb/points/5", 237589, 237589, 247113, 254732, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/5", 237589, 237589, 247113, 254732, pointSystem.totalFail, true);
+            points(15, "sb/points/", 197982, 198240, 213925, 221716, 2, true); // break 4
+            currentPointsPass(15, "sb/points/", 197982, 198240, 213925, 221716, pointSystem.totalPass, true);
+            currentPointsFail(15, "sb/points/", 197982, 198240, 213925, 221716, pointSystem.totalFail, true);
 
-            points("sb/points/6", 274561, 274639, 283671, 290901, 2, true); // break 6
-            currentPointsPass("sb/points/6", 274561, 274639, 283671, 290901, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/6", 274561, 274639, 283671, 290901, pointSystem.totalFail, true);
+            points(21, "sb/points/", 237589, 237589, 247113, 254732, 2, true); // break 5
+            currentPointsPass(21, "sb/points/", 237589, 237589, 247113, 254732, pointSystem.totalPass, true);
+            currentPointsFail(21, "sb/points/", 237589, 237589, 247113, 254732, pointSystem.totalFail, true);
 
-            points("sb/points/7", 320430, 321059, 331111, 339380, 2, true); // break 7
-            currentPointsPass("sb/points/7", 320430, 321059, 331111, 339380, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/7", 320430, 321059, 331111, 339380, pointSystem.totalFail, true);
+            points(27, "sb/points/", 274561, 274639, 283671, 290901, 2, true); // break 6
+            currentPointsPass(27, "sb/points/", 274561, 274639, 283671, 290901, pointSystem.totalPass, true);
+            currentPointsFail(27, "sb/points/", 274561, 274639, 283671, 290901, pointSystem.totalFail, true);
 
-            points("sb/points/8", 484268, 484343, 488992, 488992 + 8000, 2, true); // break 8
-            currentPointsPass("sb/points/8", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalPass, true);
-            currentPointsFail("sb/points/8", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalFail, true);
+            points(33, "sb/points/", 320430, 321059, 331111, 339380, 2, true); // break 7
+            currentPointsPass(33, "sb/points/", 320430, 321059, 331111, 339380, pointSystem.totalPass, true);
+            currentPointsFail(33, "sb/points/", 320430, 321059, 331111, 339380, pointSystem.totalFail, true);
+
+            points(39, "sb/points/", 368909, 369223, 379590, 388570, 2, true); // break 8
+            currentPointsPass(39, "sb/points/", 368909, 369223, 379590, 388570, pointSystem.totalPass, true);
+            currentPointsFail(39, "sb/points/", 368909, 369223, 379590, 388570, pointSystem.totalFail, true);
+
+            points(45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, 2, true); // break 9
+            currentPointsPass(45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalPass, true);
+            currentPointsFail(45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalFail, true);
 
             fightSound(398622, 488992);
 
@@ -78,7 +121,7 @@ namespace StorybrewScripts
             var fightSFX2 = GetLayer("Points Fail").CreateSample("sb/sfx/fight-start.ogg", breakStart, 100);
         }
 
-        public void currentPointsPass(string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
+        public void currentPointsPass(int triggerGroup, string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
                                       bool startTriggerGroup = false)
         {
             var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
@@ -94,7 +137,7 @@ namespace StorybrewScripts
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont(fontPath + "/cpPass", new FontDescription()
+            var font = LoadFont(fontPath + $"{triggerGroup}/cpPass", new FontDescription()
             {
                 FontPath = "Verdana",
                 FontSize = fontSize,
@@ -130,10 +173,10 @@ namespace StorybrewScripts
             this.pointsPass.Setup(this, font, appearTiming + delay, duration, "Points Pass", pos.X, pos.Y, true,
                 fontSize, 0.7f, 50, 1000, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-            this.pointsPass.Generate(resultPass, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+            this.pointsPass.Generate(resultPass, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
         }
 
-        public void currentPointsFail(string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
+        public void currentPointsFail(int triggerGroup, string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
                                       bool startTriggerGroup = false)
         {
             var noteStartFail = NoteStart - 350; // start range of the first note in milliseconds
@@ -149,7 +192,7 @@ namespace StorybrewScripts
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont(fontPath + "/cpFail", new FontDescription()
+            var font = LoadFont(fontPath + $"{triggerGroup}/cpFail", new FontDescription()
             {
                 FontPath = "Verdana",
                 FontSize = fontSize,
@@ -181,14 +224,15 @@ namespace StorybrewScripts
 
             // Trigger Start
 
-            string[] resultFail = { $"Overall: {points}pts" };
+            // string[] resultFail = { $"Overall: {points}pts" };
+            string[] resultFail = { $"Overall: --unknown--" };
             this.pointsFail.Setup(this, font, appearTiming + delay, duration, "Points Fail", pos.X, pos.Y, true,
                 fontSize, 0.7f, 50, 1000, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-            this.pointsFail.Generate(resultFail, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+            this.pointsFail.Generate(resultFail, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
         }
 
-        public void points(string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int speed,
+        public void points(int triggerGroup, string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int speed,
                            bool startTriggerGroup = false)
         {
             // for the "you gained..." etc font
@@ -196,7 +240,7 @@ namespace StorybrewScripts
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont(fontPath, new FontDescription()
+            var font = LoadFont(fontPath + $"{triggerGroup}", new FontDescription()
             {
                 FontPath = "Verdana",
                 FontSize = fontSize,
@@ -228,7 +272,7 @@ namespace StorybrewScripts
             var GlowRadius2 = 0;
             var ShadowThickness2 = 0;
             var OutlineThickness2 = 0;
-            var font2 = LoadFont(fontPath + "/pts", new FontDescription()
+            var font2 = LoadFont(fontPath + $"{triggerGroup}/pts", new FontDescription()
             {
                 FontPath = "Microsoft Yi Baiti",
                 FontSize = fontSize,
@@ -319,11 +363,13 @@ namespace StorybrewScripts
             var hundred = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomHundredPass + 1, frameDelayHundred, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
             var thousand = GetLayer("Points Pass").CreateAnimation("sb/points/n.png", randomThousandPass + 1, frameDelayThousand, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
 
-            dot.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
-            one.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
-            ten.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
-            hundred.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
-            thousand.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, 1);
+            dot.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, triggerGroup);
+            one.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, triggerGroup);
+            ten.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, triggerGroup);
+            hundred.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, triggerGroup);
+            thousand.StartTriggerGroup("HitSound", noteStartPass, noteEndPass, triggerGroup);
+
+            var pointSFX = GetLayer("Points Pass").CreateSample("sb/sfx/points-result.ogg", breakStart + delay, 100);
 
             // scale stuff
 
@@ -375,9 +421,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomThousandPass}.{randomHundredPass}{randomTenPass}{randomOnePass} points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, randomOnePass };
                 pointSystem.AddPassPoints(sectionPoints);
@@ -386,9 +432,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomHundredPass}00 points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, 0, 0 };
                 pointSystem.AddPassPoints(sectionPoints);
@@ -397,9 +443,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomThousandPass}{randomHundredPass}0{randomOnePass} points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, 0, randomOnePass };
                 pointSystem.AddPassPoints(sectionPoints);
@@ -408,9 +454,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomThousandPass}{randomHundredPass}{randomTenPass}0 points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
 
                 int[] sectionPoints = new int[] { randomThousandPass, randomHundredPass, randomTenPass, 0 };
                 pointSystem.AddPassPoints(sectionPoints);
@@ -419,9 +465,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomHundredPass}{randomTenPass}{randomOnePass} points" };
                 this.pointsPass.Setup(this, font, appearTiming + delay, durationText, "Points Pass", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorPass, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                this.pointsPass.Generate(result, 50, 1000, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
 
                 int[] sectionPoints = new int[] { 0, randomHundredPass, randomTenPass, randomOnePass };
                 pointSystem.AddPassPoints(sectionPoints);
@@ -440,26 +486,26 @@ namespace StorybrewScripts
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming, appearTiming + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
                 
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
                 
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayHundred, duration, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
                 thousand.Fade(appearTiming + frameDelayThousand, duration, 0, 0);
@@ -479,33 +525,33 @@ namespace StorybrewScripts
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming, appearTiming + frameDelayTen, "Points Pass", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayHundred, appearTiming + frameDelayThousand, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayThousand, duration, "Points Pass", pos.X + (numberWidth * 2.7f), pos.Y - 2, true,
-                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/points-result.ogg",
+                        fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Pass", 300, "sb/sfx/blank.ogg",
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 1);
+                    this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
                 thousand.Fade(appearTiming + frameDelayThousand, duration, fade, fade);
@@ -554,9 +600,9 @@ namespace StorybrewScripts
 
             // Trigger Pass
 
-            oneFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, 2);
-            tenFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, 2);
-            hundredFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, 2);
+            oneFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            tenFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            hundredFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
 
 
             // scale stuff
@@ -600,9 +646,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomHundredFail}{randomTenFail}{randomOneFail} points" };
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, randomOneFail };
                 pointSystem.AddFailPoints(sectionPoints);
@@ -611,9 +657,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomHundredFail}00 points" };
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
                 pointSystem.AddFailPoints(sectionPoints);
@@ -622,9 +668,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomHundredFail}0{randomOneFail} points" };
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
                 pointSystem.AddFailPoints(sectionPoints);
@@ -633,9 +679,9 @@ namespace StorybrewScripts
             {
                 string[] result = { $"You gained: +{randomHundredFail}{randomTenFail}0 points" };
                 this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
 
                 int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
                 pointSystem.AddFailPoints(sectionPoints);
@@ -647,25 +693,25 @@ namespace StorybrewScripts
             if (PTS == true)
             {
                 this.pointsFail.Setup(this, font2, appearTiming, appearTiming + frameDelayTen, "Points Fail", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
             }
 
             if (PTS == true)
             {
                 this.pointsFail.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Fail", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
             }
 
             if (PTS == true)
             {
                 this.pointsFail.Setup(this, font2, appearTiming + frameDelayHundred, duration, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/points-result.ogg",
+                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
                     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, 2);
+                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
             }
 
             oneFail.EndGroup();

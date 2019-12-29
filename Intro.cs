@@ -62,6 +62,7 @@ namespace StorybrewScripts
 
         public override void Generate()
         {
+            Trademark();
             Avatars();
             Background();
             CyanRain(0.3f, "RainFront", Random(5000, 10000), 0.15f, (float)Random(0.2f, 0.5f));
@@ -70,6 +71,32 @@ namespace StorybrewScripts
             DialogNarrator();
             Torch();
             Credits();
+        }
+
+        public void Trademark()
+        {
+            var bitmap = GetMapsetBitmap("sb/pixel.png");
+            var bg = GetLayer("").CreateSprite("sb/pixel.png", OsbOrigin.Centre, new Vector2(320, 240));
+            var logo = GetLayer("").CreateSprite("sb/tochi.png", OsbOrigin.Centre);
+            var logo2 = GetLayer("").CreateSprite("sb/tochi2.png", OsbOrigin.Centre);
+            var sound = GetLayer("").CreateSample("sb/sfx/voicetag.ogg", -3800, 80);
+
+            bg.ScaleVec(-3000, 854.0f / bitmap.Width, 480.0f / bitmap.Height);
+            bg.Fade(-4800, -4000, 0, 1);
+            bg.Fade(-800, 0, 1, 0);
+
+            var position = new Vector2(350, 270);
+
+            logo2.Move(-4000, position);
+            logo2.Color(-4000, Color4.Black);
+            logo2.Scale(OsbEasing.OutSine, -4000, -3000, 0.4f, 0.5f);
+            logo2.Fade(-4000, -3500, 0, 0.4f);
+            logo2.Fade(-3500, -3000, 0.4f, 0);
+
+            logo.Move(-4000, position);
+            logo.Scale(OsbEasing.OutBack, -4000, -3000, 0.6f, 0.5f);
+            logo.Fade(-4000, -3500, 0, 1);
+            logo.Fade(-1300, -800, 1, 0);
         }
 
         public void Torch()

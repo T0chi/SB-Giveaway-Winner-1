@@ -130,15 +130,6 @@ Cache:
     BaseHeight: 30
     Width: 18
     Height: 16
-  - Text: "3"
-    Path: "sb/points/7/0033.png"
-    Hash: "365fd9905e63b77e529e6f1bff2469d0"
-    OffsetX: 1
-    OffsetY: 5
-    BaseWidth: 16
-    BaseHeight: 30
-    Width: 14
-    Height: 20
   - Text: "."
     Path: "sb/points/7/002e.png"
     Hash: "0766c71e1bc900ab8ad1ed1a59280187"
@@ -210,6 +201,33 @@ Cache:
     BaseWidth: 16
     BaseHeight: 30
     Width: 14
+    Height: 20
+  - Text: "6"
+    Path: "sb/points/7/0036.png"
+    Hash: "305ecafd74f50f49611fc074dff3d1df"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
+  - Text: "7"
+    Path: "sb/points/7/0037.png"
+    Hash: "a929bc9126e0a8252f190bc25aad1fb7"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 15
+    Height: 20
+  - Text: "4"
+    Path: "sb/points/7/0034.png"
+    Hash: "a56b0900d3ace11fcbfb9a8c2af3f49e"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 30
+    Width: 16
     Height: 20
   - Text: "0"
     Path: "sb/points/7/0030.png"

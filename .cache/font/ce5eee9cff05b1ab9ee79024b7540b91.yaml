@@ -1,0 +1,60 @@
+﻿FontPath: "Microsoft Yi Baiti"
+FontSize: 18
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "p"
+    Path: "sb/points/11/pts/0070.png"
+    Hash: "e372178dbe1ae2ded62238cefb90a8fc"
+    OffsetX: 0
+    OffsetY: 11
+    BaseWidth: 11
+    BaseHeight: 25
+    Width: 11
+    Height: 14
+  - Text: "t"
+    Path: "sb/points/11/pts/0074.png"
+    Hash: "c4ad55c10b55ea978604340e844889c5"
+    OffsetX: 0
+    OffsetY: 9
+    BaseWidth: 6
+    BaseHeight: 25
+    Width: 6
+    Height: 13
+  - Text: "s"
+    Path: "sb/points/11/pts/0073.png"
+    Hash: "7fc519ae385aeabd31586e6d143d38c7"
+    OffsetX: 0
+    OffsetY: 11
+    BaseWidth: 10
+    BaseHeight: 25
+    Width: 10
+    Height: 11

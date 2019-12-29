@@ -25,6 +25,8 @@ namespace StorybrewScripts
 
         private DialogManager dialog2;
 
+        private DialogManager dialog3;
+
         public override void Generate()
         {
 		    Dialog();
@@ -32,7 +34,7 @@ namespace StorybrewScripts
             Background();
             Particles();
             Lights();
-            Tochi(333624, 344407);
+            Tochi(381475, 381475 + 16000);
             HUD(379590, 488992, 387313, "Mission #8", "Ordirehv", "sb/HUD/txt/nameTag/Necho&Otosaka.png", 4500, "sb/avatars/Necho&OtosakaProfile.png");
         }
 
@@ -419,18 +421,26 @@ namespace StorybrewScripts
 
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Alright.",
-                                  "Look, we are almost finished!" };
-            this.dialog = new DialogManager(this, font, 332996, 336137, "-Tochi", 105, 326, false,
+            string[] sentence = { "Oh no!!",
+                                  "Two of the mappers are going to fight each other!",
+                                  "It will have a negative effect on your points!" };
+            this.dialog = new DialogManager(this, font, 381475, 381475 + 6000, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Next quest is even easier than the previous one.",
-                                   "Just keep an eye on the aircrafts evading from behind the building." };
-            this.dialog2 = new DialogManager(this, font, 336137, 344407, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "Try to stop them before they drain all of your points!",
+                                   "The longer they fight... the more points you lose." };
+            this.dialog2 = new DialogManager(this, font, 381475 + 6000, 381475 + 12000, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
+            // DIALOG 3 -----------------------------------------
+            string[] sentence3 = { "I'm counting on you!",
+                                   "I know you can make them stop!" };
+            this.dialog3 = new DialogManager(this, font, 381475 + 12000, 381475 + 16000, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
         }
 
         public void Tochi(int startTime, int endTime)

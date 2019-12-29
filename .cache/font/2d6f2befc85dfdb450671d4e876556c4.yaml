@@ -1,0 +1,204 @@
+﻿FontPath: "Verdana"
+FontSize: 14
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Regular
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "O"
+    Path: "sb/points/11/cpPass/004f.png"
+    Hash: "3002c6cc6387a24000a7282e982a135a"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 15
+    BaseHeight: 23
+    Width: 15
+    Height: 16
+  - Text: "v"
+    Path: "sb/points/11/cpPass/0076.png"
+    Hash: "6256aa3f3619feac64d5d298bae818b0"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 13
+  - Text: "e"
+    Path: "sb/points/11/cpPass/0065.png"
+    Hash: "7e8f81630262d52e91ff18316a58bd65"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 13
+  - Text: "r"
+    Path: "sb/points/11/cpPass/0072.png"
+    Hash: "7158b7e15c88a68d08efc690d2818a6d"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 8
+    BaseHeight: 23
+    Width: 8
+    Height: 13
+  - Text: "a"
+    Path: "sb/points/11/cpPass/0061.png"
+    Hash: "5089693abcfb974bb4832c60a36fbbbc"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 11
+    Height: 13
+  - Text: "l"
+    Path: "sb/points/11/cpPass/006c.png"
+    Hash: "75244aa562cc32d74b34d6e3c6ad78f3"
+    OffsetX: 0
+    OffsetY: 3
+    BaseWidth: 6
+    BaseHeight: 23
+    Width: 5
+    Height: 17
+  - Text: ":"
+    Path: "sb/points/11/cpPass/003a.png"
+    Hash: "1d4546bac91e4e67bcc215658c4d7667"
+    OffsetX: 2
+    OffsetY: 7
+    BaseWidth: 9
+    BaseHeight: 23
+    Width: 5
+    Height: 13
+  - Text: "2"
+    Path: "sb/points/11/cpPass/0032.png"
+    Hash: "fa2820ca669cbdd79c62c7073514cba1"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "3"
+    Path: "sb/points/11/cpPass/0033.png"
+    Hash: "2c9e7fa3006ceffd03ff191226834b99"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "8"
+    Path: "sb/points/11/cpPass/0038.png"
+    Hash: "19378922c25c0cdf9dc2e93715697406"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "5"
+    Path: "sb/points/11/cpPass/0035.png"
+    Hash: "7d8b526ae8a765a130ed736ee4a81de8"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "p"
+    Path: "sb/points/11/cpPass/0070.png"
+    Hash: "8f796c5c85b3d079157017af5bdca94f"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "t"
+    Path: "sb/points/11/cpPass/0074.png"
+    Hash: "4086fd00201324e687802884ae7e8f57"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 8
+    BaseHeight: 23
+    Width: 8
+    Height: 16
+  - Text: "s"
+    Path: "sb/points/11/cpPass/0073.png"
+    Hash: "8a5d743ec5a65d2feccb5e010dc730a1"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 10
+    BaseHeight: 23
+    Width: 10
+    Height: 13
+  - Text: "1"
+    Path: "sb/points/11/cpPass/0031.png"
+    Hash: "6a29f5a66ab647a104e9c8c5bcda9b23"
+    OffsetX: 1
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 10
+    Height: 16
+  - Text: "6"
+    Path: "sb/points/11/cpPass/0036.png"
+    Hash: "3bcbbb83e12ac248a3ecc8e68257c7c6"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "9"
+    Path: "sb/points/11/cpPass/0039.png"
+    Hash: "4579c3fce7a3132193e4a14f04c4a382"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "7"
+    Path: "sb/points/11/cpPass/0037.png"
+    Hash: "3e432848bdb712d5387c4befcfc6de06"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "0"
+    Path: "sb/points/11/cpPass/0030.png"
+    Hash: "242e8ec1f0865ebb037b4a902d4d8409"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
