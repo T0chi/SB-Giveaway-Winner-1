@@ -1,0 +1,177 @@
+﻿FontPath: "Verdana"
+FontSize: 14
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Regular
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "O"
+    Path: "sb/points/6cpPass/004f.png"
+    Hash: "3002c6cc6387a24000a7282e982a135a"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 15
+    BaseHeight: 23
+    Width: 15
+    Height: 16
+  - Text: "v"
+    Path: "sb/points/6cpPass/0076.png"
+    Hash: "6256aa3f3619feac64d5d298bae818b0"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 13
+  - Text: "e"
+    Path: "sb/points/6cpPass/0065.png"
+    Hash: "7e8f81630262d52e91ff18316a58bd65"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 13
+  - Text: "r"
+    Path: "sb/points/6cpPass/0072.png"
+    Hash: "7158b7e15c88a68d08efc690d2818a6d"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 8
+    BaseHeight: 23
+    Width: 8
+    Height: 13
+  - Text: "a"
+    Path: "sb/points/6cpPass/0061.png"
+    Hash: "5089693abcfb974bb4832c60a36fbbbc"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 11
+    Height: 13
+  - Text: "l"
+    Path: "sb/points/6cpPass/006c.png"
+    Hash: "75244aa562cc32d74b34d6e3c6ad78f3"
+    OffsetX: 0
+    OffsetY: 3
+    BaseWidth: 6
+    BaseHeight: 23
+    Width: 5
+    Height: 17
+  - Text: ":"
+    Path: "sb/points/6cpPass/003a.png"
+    Hash: "1d4546bac91e4e67bcc215658c4d7667"
+    OffsetX: 2
+    OffsetY: 7
+    BaseWidth: 9
+    BaseHeight: 23
+    Width: 5
+    Height: 13
+  - Text: "D"
+    Path: "sb/points/6cpPass/0044.png"
+    Hash: "176e7b762c1f614fd8ed0d299b369a25"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 15
+    BaseHeight: 23
+    Width: 15
+    Height: 16
+  - Text: "i"
+    Path: "sb/points/6cpPass/0069.png"
+    Hash: "e4f2a36ad2f64a13399c5334bd97c6e5"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 6
+    BaseHeight: 23
+    Width: 5
+    Height: 16
+  - Text: "o"
+    Path: "sb/points/6cpPass/006f.png"
+    Hash: "bce60e1d634ced2f3496ff9bdb1724a3"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 13
+  - Text: "g"
+    Path: "sb/points/6cpPass/0067.png"
+    Hash: "55644dd4fd95dfecff1c9dee3a910fe4"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "M"
+    Path: "sb/points/6cpPass/004d.png"
+    Hash: "75e06a10b109b65409baae2fca4a5c29"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 16
+    BaseHeight: 23
+    Width: 16
+    Height: 16
+  - Text: "n"
+    Path: "sb/points/6cpPass/006e.png"
+    Hash: "5264d5124288e6748b0da56ede842b90"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 13
+  - Text: "p"
+    Path: "sb/points/6cpPass/0070.png"
+    Hash: "8f796c5c85b3d079157017af5bdca94f"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 16
+  - Text: "t"
+    Path: "sb/points/6cpPass/0074.png"
+    Hash: "4086fd00201324e687802884ae7e8f57"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 8
+    BaseHeight: 23
+    Width: 8
+    Height: 16
+  - Text: "s"
+    Path: "sb/points/6cpPass/0073.png"
+    Hash: "8a5d743ec5a65d2feccb5e010dc730a1"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 10
+    BaseHeight: 23
+    Width: 10
+    Height: 13

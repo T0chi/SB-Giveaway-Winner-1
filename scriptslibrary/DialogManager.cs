@@ -55,6 +55,17 @@ public class DialogManager
             int fontSize, float textFade, int FadeIn, int FadeOut, Color4 textColor, bool showBox, float boxFade, Color4 boxColor, string layerBox, int sampleDelay, string sampleName,
             DialogBoxes.Pointer pointer, DialogBoxes.Push push, string[] sentences)
     {
+        Setup(generator,font, startTime, endTime, layerText, x, y, originCentre,
+            fontSize, textFade, FadeIn, FadeOut, textColor, showBox, boxFade, boxColor, layerBox, sampleDelay, sampleName,
+            pointer, push);
+
+        Generate(sentences, FadeIn, FadeOut);
+    }
+
+    public void Setup(StoryboardObjectGenerator generator, FontGenerator font, int startTime, int endTime, string layerText, float x, float y, bool originCentre,
+            int fontSize, float textFade, int FadeIn, int FadeOut, Color4 textColor, bool showBox, float boxFade, Color4 boxColor, string layerBox, int sampleDelay, string sampleName,
+            DialogBoxes.Pointer pointer, DialogBoxes.Push push)
+    {
         this.generator = generator;
         this.font = font;
 
@@ -78,10 +89,11 @@ public class DialogManager
         this.FadeIn = FadeIn;
         this.FadeOut = FadeOut;
 
-        Generate(sprite, sentences, FadeIn, FadeOut);
+        // Generate(sentences, FadeIn, FadeOut);
     }
 
-    public void Generate(OsbSprite sprite, string[] text, int FadeIn, int FadeOut)
+    public void Generate(string[] text, int FadeIn, int FadeOut,
+            bool startTriggerGroup = false, string triggerType = "", int startTrigger = 0, int endTrigger = 0, int triggerGroup = 0)
     {
         // convert text to string lines
         List<string> Sentences = new List<string>(text);
@@ -103,7 +115,8 @@ public class DialogManager
         {
             dialog.calculateLineWidth();
             dialog.calculateLineHeight();
-            dialog.Generate(sprite);
+            sprite = dialog.Generate(sprite, startTriggerGroup, triggerType, startTrigger, endTrigger, triggerGroup);
+
             var dialogOne = new DialogBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, boxFade,
             position, pointer, push, originCentre,
             dialog.GetLineWidth(), dialog.heightSpace());
@@ -113,7 +126,8 @@ public class DialogManager
         {
             dialog.calculateLineWidth();
             dialog.calculateLineHeight();
-            dialog.Generate(sprite);
+            sprite = dialog.Generate(sprite, startTriggerGroup, triggerType, startTrigger, endTrigger, triggerGroup);
+
             var dialogOne = new DialogBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, 0f,
             position, pointer, push, originCentre,
             dialog.GetLineWidth(), dialog.heightSpace());
@@ -218,16 +232,12 @@ public class DialogText
         }
     }
 
-    public void Generate(OsbSprite sprite)
+    public OsbSprite Generate(OsbSprite sprite, bool startTriggerGroup = false, string triggerType = "", int startTrigger = 0, int endTrigger = 0, int triggerGroup = 0)
     {
-        // float newLineSpacing = 0;
         float letterY = position.position.Y - 4;
 
         foreach (var line in lines)
         {
-            // float lineWidth = 0;
-            // float lineHeight = 0;
-            // float letterSpacing = 4f * this.textScale;
             float i = 0;
 
             float letterX = position.position.X;
@@ -235,7 +245,7 @@ public class DialogText
             {
                 letterX = position.position.X - this.lineWidth * 0.5f;
             }
-            
+
             foreach (var letter in line)
             {
                 var duration = endTime - startTime;
@@ -246,10 +256,21 @@ public class DialogText
                         + texture.OffsetFor(OsbOrigin.Centre) * this.textScale;
 
                     var spriteText = generator.GetLayer(layerName).CreateSprite(texture.Path, OsbOrigin.Centre, letterPos);
+
+                    if (startTriggerGroup)
+                    {
+                        spriteText.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+                    }
+
                     spriteText.Fade(startTime + delay * i, startTime + FadeIn + delay * i, 0, fade);
                     spriteText.Fade(endTime, endTime + FadeOut, fade, 0);
                     spriteText.Scale(startTime, this.textScale);
                     spriteText.Color(startTime, Color);
+
+                    if (startTriggerGroup)
+                    {
+                        spriteText.EndGroup();
+                    }
 
                     sprite = spriteText;
                 }
@@ -257,9 +278,9 @@ public class DialogText
                 startTime += delay * i;
                 i++;
             }
-            // newLineSpacing += lineHeight + 2;
             letterY += this.textScale * lineHeightSpace() / textScale;
         }
+        return sprite;
     }
 }
 
@@ -318,7 +339,7 @@ public class DialogBoxes
             inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
             inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
             inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-            
+
             if (push == Push.None)
 
             if (push == Push.Up)
