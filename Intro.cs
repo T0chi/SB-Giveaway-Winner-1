@@ -79,7 +79,7 @@ namespace StorybrewScripts
             var bg = GetLayer("").CreateSprite("sb/pixel.png", OsbOrigin.Centre, new Vector2(320, 240));
             var logo = GetLayer("").CreateSprite("sb/tochi.png", OsbOrigin.Centre);
             var logo2 = GetLayer("").CreateSprite("sb/tochi2.png", OsbOrigin.Centre);
-            var sound = GetLayer("").CreateSample("sb/sfx/voicetag.ogg", -3800, 80);
+            var sound = GetLayer("").CreateSample("sb/sfx/voicetag.ogg", -3800, 60);
 
             bg.ScaleVec(-3000, 854.0f / bitmap.Width, 480.0f / bitmap.Height);
             bg.Fade(-4800, -4000, 0, 1);

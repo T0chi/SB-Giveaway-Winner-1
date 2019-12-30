@@ -166,30 +166,3 @@ Cache:
     BaseHeight: 23
     Width: 10
     Height: 13
-  - Text: "1"
-    Path: "sb/points/39/cpPass/0031.png"
-    Hash: "6a29f5a66ab647a104e9c8c5bcda9b23"
-    OffsetX: 1
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 10
-    Height: 16
-  - Text: "9"
-    Path: "sb/points/39/cpPass/0039.png"
-    Hash: "4579c3fce7a3132193e4a14f04c4a382"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "6"
-    Path: "sb/points/39/cpPass/0036.png"
-    Hash: "3bcbbb83e12ac248a3ecc8e68257c7c6"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16

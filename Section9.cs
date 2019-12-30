@@ -45,7 +45,7 @@ namespace StorybrewScripts
 
             bg.Scale(379590, 854.0f / bitmap.Width);
             bg.Fade(379590, 387313, 0, 0.5);
-            bg.Fade(488992, 488992 + 40000, 0.5, 0);
+            bg.Fade(488992, 488992 + 2000, 0.5, 0);
         }
 
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
@@ -88,7 +88,7 @@ namespace StorybrewScripts
         public void Particles()
         {
             var startTime = 387313;
-            var endTime = 491092;
+            var endTime = 488992;
             var timePerParticle = Random(50, 100);
 
             // blue particles

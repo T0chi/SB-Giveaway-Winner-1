@@ -45,6 +45,7 @@ public class DialogManager
     public int FadeIn;
     public int FadeOut;
     public OsbSprite sprite;
+    public OsbSprite spriteBox;
 
     public DialogManager()
     {
@@ -105,6 +106,7 @@ public class DialogManager
         dialogTiming.endTime = endTime;
         position.position = new Vector2(x, y);
         var dialog = new DialogText(generator, layerText, font, sprite, textColor, position, dialogTiming, textFade, FadeIn, FadeOut, fontSize, originCentre);
+        var dialogOne = new DialogBoxes(generator, layerBox, dialogTiming, position);
 
         // write sentences
         foreach (string line in Sentences)
@@ -115,22 +117,24 @@ public class DialogManager
         {
             dialog.calculateLineWidth();
             dialog.calculateLineHeight();
+
             sprite = dialog.Generate(sprite, startTriggerGroup, triggerType, startTrigger, endTrigger, triggerGroup);
 
-            var dialogOne = new DialogBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, boxFade,
-            position, pointer, push, originCentre,
-            dialog.GetLineWidth(), dialog.heightSpace());
+            spriteBox = dialogOne.GenerateBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, boxFade,
+            position, pointer, push, originCentre, dialog.GetLineWidth(), dialog.heightSpace(),
+            spriteBox, startTriggerGroup, triggerType, startTrigger, endTrigger, triggerGroup);
         }
 
         else
         {
             dialog.calculateLineWidth();
             dialog.calculateLineHeight();
+            
             sprite = dialog.Generate(sprite, startTriggerGroup, triggerType, startTrigger, endTrigger, triggerGroup);
 
-            var dialogOne = new DialogBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, 0f,
-            position, pointer, push, originCentre,
-            dialog.GetLineWidth(), dialog.heightSpace());
+            spriteBox = dialogOne.GenerateBoxes(generator, layerBox, sampleDelay, sampleName, boxColor, dialogTiming, (fontSize * 0.08f) - 1, 0f,
+            position, pointer, push, originCentre, dialog.GetLineWidth(), dialog.heightSpace(),
+            spriteBox, startTriggerGroup, triggerType, startTrigger, endTrigger, triggerGroup);
         }
     }
 }
@@ -309,8 +313,9 @@ public class DialogBoxes
         return this.timing.endTime;
     }
 
-    public DialogBoxes(StoryboardObjectGenerator generator, string layerName, int soundDelay, string soundEffect, Color4 Color, DialogTiming timing,
-           float pointerScale, float Fade, Position position, Pointer pointer, Push push, bool centre, float lineWidth, float lineHeight)
+    public OsbSprite GenerateBoxes(StoryboardObjectGenerator generator, string layerName, int soundDelay, string soundEffect, Color4 Color, DialogTiming timing,
+           float pointerScale, float Fade, Position position, Pointer pointer, Push push, bool centre, float lineWidth, float lineHeight,
+           OsbSprite spriteBox, bool startTriggerGroup = false, string triggerType = "", int startTrigger = 0, int endTrigger = 0, int triggerGroup = 0)
     {
         var d = 300;
         var fadeTime = 500;
@@ -327,6 +332,11 @@ public class DialogBoxes
         var heightInputBox = (lineHeight / bitmapInputBox.Height) + biggerBox;
         var bitmapPointer = generator.GetMapsetBitmap("sb/dialog/pointers/pointer.png");
         var bitmapPointerCorner = generator.GetMapsetBitmap("sb/dialog/pointers/pointerCorner.png");
+
+        if (startTriggerGroup)
+        {
+            inputBox.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        }
 
         // sfx - message-1
         var message1 = layer.CreateSample(soundEffect, timing.startTime - d + soundDelay, 60);
@@ -379,6 +389,11 @@ public class DialogBoxes
             var pointerPos = new Vector2(boxPos.X + (lineWidth / 2), boxPos.Y);
             var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
 
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
+
             point.Color(timing.startTime - d, Color);
             point.Scale(timing.startTime, pointerScale);
             point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
@@ -421,6 +436,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -434,6 +456,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X + (lineWidth / 2), boxPos.Y + heightInputBox);
             var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(180));
             point.Scale(timing.startTime, pointerScale);
@@ -478,6 +505,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -491,6 +525,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X, boxPos.Y + (heightInputBox / 2));
             var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-90));
             point.Scale(timing.startTime, pointerScale);
@@ -535,6 +574,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -548,6 +594,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X + widthInputBox, boxPos.Y + (heightInputBox / 2));
             var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(90));
             point.Scale(timing.startTime, pointerScale);
@@ -592,6 +643,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -605,6 +663,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X + (bitmapPointerCorner.Height / 4) + 0.5f, boxPos.Y + (bitmapPointerCorner.Height / 4) + 0.5f);
             var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-45));
             point.Scale(timing.startTime, pointerScale);
@@ -649,6 +712,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -662,6 +732,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X + widthInputBox - (bitmapPointerCorner.Height / 4) - 0.5f, boxPos.Y + (bitmapPointerCorner.Height / 4) + 0.5f);
             var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(45));
             point.Scale(timing.startTime, pointerScale);
@@ -706,6 +781,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -719,6 +801,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X + (bitmapPointerCorner.Height / 4) + 0.5f, boxPos.Y + heightInputBox - (bitmapPointerCorner.Height / 4) - 0.5f);
             var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-135));
             point.Scale(timing.startTime, pointerScale);
@@ -763,6 +850,13 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
 
@@ -776,6 +870,11 @@ public class DialogBoxes
 
             var pointerPos = new Vector2(boxPos.X + widthInputBox - (bitmapPointerCorner.Height / 4) - 0.5f, boxPos.Y + heightInputBox - (bitmapPointerCorner.Height / 4) - 0.5f);
             var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+            if (startTriggerGroup)
+            {
+                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+            }
 
             point.Rotate(timing.startTime, MathHelper.DegreesToRadians(135));
             point.Scale(timing.startTime, pointerScale);
@@ -820,7 +919,23 @@ public class DialogBoxes
                 point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
                 point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
+
+            if (startTriggerGroup)
+            {
+                point.EndGroup();
+            }
+
+            spriteBox = point;
         }
         // end style
+
+        if (startTriggerGroup)
+        {
+            inputBox.EndGroup();
+        }
+
+        spriteBox = inputBox;
+
+        return spriteBox;
     }
 }

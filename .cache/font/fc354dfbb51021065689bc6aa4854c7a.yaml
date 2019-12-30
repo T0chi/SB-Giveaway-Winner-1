@@ -94,87 +94,6 @@ Cache:
     BaseHeight: 23
     Width: 5
     Height: 13
-  - Text: "3"
-    Path: "sb/points/21/cpFail/0033.png"
-    Hash: "2c9e7fa3006ceffd03ff191226834b99"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "5"
-    Path: "sb/points/21/cpFail/0035.png"
-    Hash: "7d8b526ae8a765a130ed736ee4a81de8"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "8"
-    Path: "sb/points/21/cpFail/0038.png"
-    Hash: "19378922c25c0cdf9dc2e93715697406"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "p"
-    Path: "sb/points/21/cpFail/0070.png"
-    Hash: "8f796c5c85b3d079157017af5bdca94f"
-    OffsetX: 0
-    OffsetY: 7
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "t"
-    Path: "sb/points/21/cpFail/0074.png"
-    Hash: "4086fd00201324e687802884ae7e8f57"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 8
-    BaseHeight: 23
-    Width: 8
-    Height: 16
-  - Text: "s"
-    Path: "sb/points/21/cpFail/0073.png"
-    Hash: "8a5d743ec5a65d2feccb5e010dc730a1"
-    OffsetX: 0
-    OffsetY: 7
-    BaseWidth: 10
-    BaseHeight: 23
-    Width: 10
-    Height: 13
-  - Text: "2"
-    Path: "sb/points/21/cpFail/0032.png"
-    Hash: "fa2820ca669cbdd79c62c7073514cba1"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "0"
-    Path: "sb/points/21/cpFail/0030.png"
-    Hash: "242e8ec1f0865ebb037b4a902d4d8409"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 16
-  - Text: "1"
-    Path: "sb/points/21/cpFail/0031.png"
-    Hash: "6a29f5a66ab647a104e9c8c5bcda9b23"
-    OffsetX: 1
-    OffsetY: 4
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 10
-    Height: 16
   - Text: "-"
     Path: "sb/points/21/cpFail/002d.png"
     Hash: "dbc4970e849d25ac90eed20290af10ef"
@@ -184,15 +103,33 @@ Cache:
     BaseHeight: 23
     Width: 9
     Height: 4
-  - Text: "u"
-    Path: "sb/points/21/cpFail/0075.png"
-    Hash: "4bd07838a2621867d124cc0bc5163503"
+  - Text: "h"
+    Path: "sb/points/21/cpFail/0068.png"
+    Hash: "0dda737c616e69089421a173413aa465"
     OffsetX: 0
-    OffsetY: 7
+    OffsetY: 3
     BaseWidth: 12
     BaseHeight: 23
     Width: 12
-    Height: 13
+    Height: 17
+  - Text: "i"
+    Path: "sb/points/21/cpFail/0069.png"
+    Hash: "e4f2a36ad2f64a13399c5334bd97c6e5"
+    OffsetX: 0
+    OffsetY: 4
+    BaseWidth: 6
+    BaseHeight: 23
+    Width: 5
+    Height: 16
+  - Text: "d"
+    Path: "sb/points/21/cpFail/0064.png"
+    Hash: "7fdabe568aa9f9c9272083de6212f728"
+    OffsetX: 0
+    OffsetY: 3
+    BaseWidth: 12
+    BaseHeight: 23
+    Width: 12
+    Height: 17
   - Text: "n"
     Path: "sb/points/21/cpFail/006e.png"
     Hash: "5264d5124288e6748b0da56ede842b90"
@@ -201,31 +138,4 @@ Cache:
     BaseWidth: 12
     BaseHeight: 23
     Width: 12
-    Height: 13
-  - Text: "k"
-    Path: "sb/points/21/cpFail/006b.png"
-    Hash: "3e121ae85116fc74cfaa9de0ac12334f"
-    OffsetX: 0
-    OffsetY: 3
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 17
-  - Text: "o"
-    Path: "sb/points/21/cpFail/006f.png"
-    Hash: "bce60e1d634ced2f3496ff9bdb1724a3"
-    OffsetX: 0
-    OffsetY: 7
-    BaseWidth: 12
-    BaseHeight: 23
-    Width: 12
-    Height: 13
-  - Text: "w"
-    Path: "sb/points/21/cpFail/0077.png"
-    Hash: "a3396197fddc744d578ef7c64e1e2c9d"
-    OffsetX: 0
-    OffsetY: 7
-    BaseWidth: 16
-    BaseHeight: 23
-    Width: 16
     Height: 13

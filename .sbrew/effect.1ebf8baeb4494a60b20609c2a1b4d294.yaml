@@ -1,5 +1,5 @@
 ﻿FormatVersion: 6
-Name: "Points 1"
+Name: "Points + Outro"
 Script: "Points"
 Config:
   ColorFail:
@@ -8,11 +8,85 @@ Config:
   ColorPass:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.5180976,1,0.4149255,1"
+  TochiTagColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  BoxColorText:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  BoxColorTochi:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  GlowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  OutlineColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,0.7843137"
+  ShadowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,0.7843137"
+  StartTime:
+    Type: "System.Int32"
+    Value: "490992"
+  EndTime:
+    Type: "System.Int32"
+    Value: "558992"
   RandomSeed:
     Type: "System.Int32"
     Value: "345345"
     DisplayName: "Random seed"
 Layers:
+  0b08000d85604ba5b4828d47cee7da7e:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  db65d7d839b54e928e1be82dd180ca85:
+    Name: "splash"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  fdf98accce1b40ffb32a2cfce75fa9ea:
+    Name: "RainBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  58d95d372a3a48f9b36295363c1dce1c:
+    Name: ""
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  3883db12fe5342459aedfa3226d9eee5:
+    Name: "-Tochi"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  8b4e8d85d12846ea985e8ff96bd21d74:
+    Name: "nameTag"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  bb6171568bcc4608bc73b8045a228a4d:
+    Name: "Dialog - Box"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  40df0b58824544deb8cd83d0cbbdb47e:
+    Name: "Dialog - Text"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  bb105a9faaa24606923de5d1cbc51833:
+    Name: "RainFront"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  06f68520fb7d4c8caa158fda77d23a02:
+    Name: "Information"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
   9b6cfb4d71914015ab2d93485ea04d43:
     Name: "Points Fail"
     OsbLayer: Foreground

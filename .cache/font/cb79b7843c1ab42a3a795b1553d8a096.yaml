@@ -1,0 +1,249 @@
+﻿FontPath: "Microsoft Yi Baiti"
+FontSize: 20
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 1
+    ColorG: 1
+    ColorB: 1
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+Cache:
+  - Text: "Y"
+    Path: "sb/dialog/txt/pass/0059.png"
+    Hash: "5cecfe24aae291e7b0bc7d9166b63c98"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "o"
+    Path: "sb/dialog/txt/pass/006f.png"
+    Hash: "6d57475d8a2090fe41e5093947f829e4"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "u"
+    Path: "sb/dialog/txt/pass/0075.png"
+    Hash: "8ef129dcaf1962ea8a8d0622749e0f10"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "d"
+    Path: "sb/dialog/txt/pass/0064.png"
+    Hash: "eaf775dbefb3c9b69963fb2e4c70f9fb"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 16
+  - Text: "i"
+    Path: "sb/dialog/txt/pass/0069.png"
+    Hash: "a200bba15ff05c31ce05245075b6a2d2"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 6
+    BaseHeight: 27
+    Width: 5
+    Height: 16
+  - Text: "g"
+    Path: "sb/dialog/txt/pass/0067.png"
+    Hash: "1b071b019ea88772527c6b937d2a6b63"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 15
+  - Text: "r"
+    Path: "sb/dialog/txt/pass/0072.png"
+    Hash: "5cfbc9477a4d889c2abca9632760e26f"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 8
+    BaseHeight: 27
+    Width: 8
+    Height: 12
+  - Text: "e"
+    Path: "sb/dialog/txt/pass/0065.png"
+    Hash: "2259c82bcf5b4c30cee02d3fa2baf304"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "a"
+    Path: "sb/dialog/txt/pass/0061.png"
+    Hash: "1246fdc2fc27b47957c9c8582d3f12d7"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "t"
+    Path: "sb/dialog/txt/pass/0074.png"
+    Hash: "4a25f67d1e84cc66d1b7125b55056328"
+    OffsetX: 0
+    OffsetY: 9
+    BaseWidth: 7
+    BaseHeight: 27
+    Width: 7
+    Height: 15
+  - Text: "!"
+    Path: "sb/dialog/txt/pass/0021.png"
+    Hash: "a8eb28011e03795b58bd559e2ac63bb0"
+    OffsetX: 2
+    OffsetY: 8
+    BaseWidth: 9
+    BaseHeight: 27
+    Width: 6
+    Height: 16
+  - Text: "s"
+    Path: "sb/dialog/txt/pass/0073.png"
+    Hash: "2caa2b2f99a48fc77b424ad7bd339a2c"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "v"
+    Path: "sb/dialog/txt/pass/0076.png"
+    Hash: "22c761af8d4a590fccaaadc7f4c63b3a"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "h"
+    Path: "sb/dialog/txt/pass/0068.png"
+    Hash: "c8e72afc0d082863794d9e950b3530e9"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 16
+  - Text: "w"
+    Path: "sb/dialog/txt/pass/0077.png"
+    Hash: "be18f83be8b15ee7a89598f9f1930b09"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 12
+  - Text: "l"
+    Path: "sb/dialog/txt/pass/006c.png"
+    Hash: "37021fe781d4b3766c7fb0526ddc536e"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 6
+    BaseHeight: 27
+    Width: 5
+    Height: 16
+  - Text: "m"
+    Path: "sb/dialog/txt/pass/006d.png"
+    Hash: "cd2993f4dfe3f9052e74a50361a89a7e"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 18
+    BaseHeight: 27
+    Width: 18
+    Height: 12
+  - Text: "n"
+    Path: "sb/dialog/txt/pass/006e.png"
+    Hash: "612fa3d0346a61a59568d3d028e57707"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "T"
+    Path: "sb/dialog/txt/pass/0054.png"
+    Hash: "5e265281cd2f02db405a4e05c14fd87c"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 13
+    BaseHeight: 27
+    Width: 13
+    Height: 16
+  - Text: "k"
+    Path: "sb/dialog/txt/pass/006b.png"
+    Hash: "06f868a84db32fd05bde67b6239b8df8"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 16
+  - Text: "f"
+    Path: "sb/dialog/txt/pass/0066.png"
+    Hash: "3935342510e26cf16fe52f1d9c353dd2"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 7
+    BaseHeight: 27
+    Width: 7
+    Height: 17
+  - Text: "p"
+    Path: "sb/dialog/txt/pass/0070.png"
+    Hash: "88c084655a9dca8d861ec7ecf82dca66"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 15
+  - Text: "y"
+    Path: "sb/dialog/txt/pass/0079.png"
+    Hash: "654a6289882c12411bfffab72dc182bc"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 15
+  - Text: "~"
+    Path: "sb/dialog/txt/pass/007e.png"
+    Hash: "27795f3a1c8930bdbda51b879ffa68e3"
+    OffsetX: 0
+    OffsetY: 13
+    BaseWidth: 16
+    BaseHeight: 27
+    Width: 16
+    Height: 7

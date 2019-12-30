@@ -23,6 +23,9 @@ namespace StorybrewScripts
             // Section 7
             NormalVignette(290896, 311006, 0.8f, 0, 2000);
             IntenseVignette(290896, 311006, false, 20, 100, OsbEasing.InOutSine, 0.8f, 1000, 0);
+
+            // Outro
+            NormalVignette(490992, 558992, 0.8f, 2000, 2000);
         }
         
         private void NormalVignette(int StartTime, int EndTime, float Fade, int fadeDurationIn, int fadeDurationOut)
