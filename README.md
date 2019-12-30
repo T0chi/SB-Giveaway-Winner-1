@@ -12,6 +12,9 @@
 [![Live Stream VOD](https://i.imgur.com/fak8rDk.jpg "Live Stream VOD")](https://www.twitch.tv/videos/521565871 "Live Stream VOD")
 
 # Avatars + more
+
+Avatar art by: [@neco_person](https://twitter.com/neco_person "@neco_person")
+
 Each mapper had to choose an avatar from the image below in order for me to make the storyboard. The reason is because I wanted each mapper to somehow be included in the storyboard so they are a part of it as well!
 
 ![](https://i.imgur.com/vmmgb4A.jpg)
