@@ -7,9 +7,9 @@
 - https://streamable.com/f1bfx
 - https://streamable.com/ypkw2
 - https://streamable.com/30dkh
-- https://www.twitch.tv/videos/521565871
+- https://www.twitch.tv/tochi_osu/clip/RacyIntelligentClintmullinsCclamChamp
 
-[![Live Stream VOD](https://i.imgur.com/fak8rDk.jpg "Live Stream VOD")](https://www.twitch.tv/videos/521565871 "Live Stream VOD")
+[![Live Stream VOD](https://i.imgur.com/fak8rDk.jpg "Live Stream VOD")](https://www.twitch.tv/tochi_osu/clip/RacyIntelligentClintmullinsCclamChamp "Live Stream VOD")
 
 # Avatars + more
 
