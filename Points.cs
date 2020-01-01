@@ -191,7 +191,7 @@ namespace StorybrewScripts
         public void currentPointsPass(string text, int triggerGroup, string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
                                       bool startTriggerGroup = false)
         {
-            var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
+            var noteStartPass = NoteStart - 500; // start range of the first note in milliseconds
             var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
 
             var delay = ((breakEnd - breakStart) / 2) - 800; // calculation for the middle of the break
@@ -380,7 +380,7 @@ namespace StorybrewScripts
 
 
 
-            var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
+            var noteStartPass = NoteStart - 500; // start range of the first note in milliseconds
             var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
             var noteStartFail = NoteStart - 500; // start range of the first note in milliseconds
             var noteEndFail = NoteEnd + 5; // end range of the last note in milliseconds
