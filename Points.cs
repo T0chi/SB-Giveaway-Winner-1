@@ -245,8 +245,8 @@ namespace StorybrewScripts
         public void currentPointsFail(string text, int triggerGroup, string fontPath, int NoteStart, int NoteEnd, int breakStart, int breakEnd, int points,
                                       bool startTriggerGroup = false)
         {
-            var noteStartFail = NoteStart - 350; // start range of the first note in milliseconds
-            var noteEndFail = NoteEnd + 350; // end range of the last note in milliseconds
+            var noteStartFail = NoteStart - 10; // start range of the first note in milliseconds
+            var noteEndFail = NoteEnd + 10; // end range of the last note in milliseconds
 
             var delay = ((breakEnd - breakStart) / 2) - 800; // calculation for the middle of the break
             var duration = breakEnd - noteStartFail; // duration for the TriggerGroup
@@ -382,8 +382,8 @@ namespace StorybrewScripts
 
             var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
             var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
-            var noteStartFail = NoteStart - 350; // start range of the first note in milliseconds
-            var noteEndFail = NoteEnd + 350; // end range of the last note in milliseconds
+            var noteStartFail = NoteStart - 10; // start range of the first note in milliseconds
+            var noteEndFail = NoteEnd + 10; // end range of the last note in milliseconds
 
             var appearTiming = breakStart - noteStartPass; // the duration value between the note(s) and the break start
 

@@ -72,6 +72,11 @@ Layers:
     Name: "Performance"
     OsbLayer: Fail
     DiffSpecific: No
+    Visible: No
+  873fc1d01055464c8a670fa5672a3175:
+    Name: "Glitch"
+    OsbLayer: Foreground
+    DiffSpecific: No
     Visible: Yes
   46f3e16e33c9407cbe7d1dceeb436353:
     Name: "HUD"

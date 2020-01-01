@@ -27,15 +27,97 @@ namespace StorybrewScripts
 
         private DialogManager dialog3;
 
+        public enum glitch { one, two };
+
         public override void Generate()
         {
+            hud();
+            Lights();
 		    Dialog();
             Mission();
-            Background();
             Particles();
-            Lights();
+            Background();
+            ParticlesIntense();
             Tochi(381475, 381475 + 16000);
+
+		    Glitch(429565, glitch.one);
+		    Glitch(431450, glitch.two);
+		    Glitch(435538, glitch.two);
+		    Glitch(442084, glitch.one);
+		    Glitch(443720, glitch.two);
+		    Glitch(451902, glitch.one);
+		    Glitch(461447, glitch.one);
+		    Glitch(469902, glitch.one);
+		    Glitch(475902, glitch.one);
+
+		    GlitchIntense(479392, 488542);
+		    ErrorMessage(428779, 479392);
+
             HUD(379590, 488992, 387313, "Mission #8", "Ordirehv", "sb/HUD/txt/nameTag/Necho&Otosaka.png", 4500, "sb/avatars/Necho&OtosakaProfile.png");
+        }
+
+        public void ErrorMessage(int startTime, int endTime)
+        {
+            var speed = 70;
+            var sprite = GetLayer("Glitch").CreateAnimation("sb/glitch/error.jpg", 5, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 260));
+            
+            sprite.Fade(startTime, startTime + 50, 0, 0.5f);
+            sprite.Fade(endTime - 200, endTime, 0.5f, 0);
+            sprite.Additive(startTime, endTime);
+            sprite.Scale(startTime, 0.17f);
+
+            var loopCount = (endTime - startTime) / 1600;
+            var startRotation = MathHelper.DegreesToRadians(-5);
+            var endRotation = MathHelper.DegreesToRadians(5);
+
+            sprite.StartLoopGroup(startTime, loopCount);
+            sprite.Rotate(OsbEasing.InOutElastic, 0, 800, startRotation, endRotation);
+            sprite.Rotate(OsbEasing.InOutElastic, 800, 1600, endRotation, startRotation);
+            sprite.EndGroup();
+        }
+
+        public void Glitch(int startTime, glitch glitchType)
+        {
+            var speed = 100;
+
+            var bitmap = GetMapsetBitmap("sb/glitch/g1_1.jpg");
+            var sfx = GetLayer("Glitch").CreateSample("sb/sfx/glitch.ogg", startTime, 80);
+            var glitch = GetLayer("Glitch").CreateAnimation("sb/glitch/g1_.jpg", 4, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 240));
+            var glitch2 = GetLayer("Glitch").CreateAnimation("sb/glitch/g2_.jpg", 3, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 240));
+            
+            if (glitchType == Section9.glitch.one)
+            {
+                glitch.Scale(startTime, 480.0f / bitmap.Height);
+
+                glitch.StartLoopGroup(startTime, 1);
+                glitch.Fade(0, speed * 4, 1, 1);
+                glitch.EndGroup();
+                glitch.Fade(startTime + (speed * 4), startTime + (speed * 5), 1, 0);
+            }
+
+            if (glitchType == Section9.glitch.two)
+            {
+                glitch2.Scale(startTime, 480.0f / bitmap.Height);
+
+                glitch2.StartLoopGroup(startTime, 1);
+                glitch2.Fade(0, speed * 3, 1, 1);
+                glitch2.EndGroup();
+                glitch2.Fade(startTime + (speed * 3), startTime + (speed * 4), 1, 0);
+            }
+        }
+        public void GlitchIntense(int startTime, int endTime)
+        {
+            var speed = 100;
+            var bitmap = GetMapsetBitmap("sb/glitch/g1_1.jpg");
+
+            for (int i = startTime; i < endTime; i += (speed * Random(4, 7)))
+            {
+                var glitch = GetLayer("Glitch").CreateAnimation("sb/glitch/g" + Random(1, 3) + "_.jpg", 4, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 240));
+            
+                glitch.Scale(i, 480.0f / bitmap.Height);
+                glitch.Fade(i, i + (speed * 4), 1, 1);
+                glitch.Fade(i + (speed * 4), i + (speed * 5), 1, 0);
+            }
         }
 
         public void Background()
@@ -51,6 +133,28 @@ namespace StorybrewScripts
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
         {
             var hud = new HUD(this, startTime, endTime, loadingTextEndtime, mission, songName, nameTag, progressBarDelay, avatar);
+        }
+
+        public void hud()
+        {
+            var speed = 50;
+            var startTime = 428779;
+            var endTime = 487792;
+            var position = new Vector2(320, 260);
+
+            for (int i = startTime; i < endTime; i += (speed * 50))
+            {
+                var bitmap = GetMapsetBitmap("sb/HUD/animation/ani0.jpg");
+                var sprite = GetLayer("HUD - Intro").CreateAnimation("sb/HUD/animation/ani.jpg", 21, speed, OsbLoopType.LoopOnce, OsbOrigin.Centre);
+
+                sprite.Additive(i, i + (speed * 50));
+                sprite.Scale(i, 640.0f / bitmap.Width);
+                sprite.Move(OsbEasing.OutElasticHalf, i, i + 500, position.X - 50, position.Y, position.X, position.Y);
+                sprite.Rotate(OsbEasing.InOutBack, i, i + (speed * 50), MathHelper.DegreesToRadians(Random(-10, 10)), MathHelper.DegreesToRadians(Random(-10, 10)));
+
+                sprite.Fade(i, i + (speed * 21), 0.5f, 0.5f);
+                sprite.Fade(i + (speed * 48), i + (speed * 50), 0.5f, 0);
+            }
         }
 
         public void Lights()
@@ -83,6 +187,44 @@ namespace StorybrewScripts
             light2.Rotate(OsbEasing.InOutSine, 0, duration, 0, Rotation);
             light2.Rotate(OsbEasing.InOutSine, duration, duration * 2, Rotation, 0);
             light2.EndGroup();
+        }
+
+        public void ParticlesIntense()
+        {
+            var startTime = 433356;
+            var endTime = 488992;
+            var timePerParticle = Random(20, 60);
+
+            // blue particles
+            for (var i = startTime; i < endTime; i += timePerParticle)
+            {
+                var duration = Random(500, 2000);
+                var particleBack = GetLayer("Particles Back").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+                var particleFront = GetLayer("Particles Front").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+
+                var startPos = new Vector2(Random(-107, 747), Random(400, 500));
+                var endPos = new Vector2(startPos.X + Random(-40, 40), Random(260, 360));
+
+                var Fade = Random(0.05, 0.1);
+                var fadeDuration = Random(100, 200);
+                var Scale = Random(0.05, 0.1);
+
+                // particles in the back
+                particleBack.Fade(i, i + fadeDuration, 0, Fade);
+                particleBack.Fade(i + duration - fadeDuration, i + duration, Fade, 0);
+                particleBack.Move(i, i + duration, startPos, endPos);
+                particleBack.Color(i, Color4.White);
+                particleBack.Scale(i, Scale);
+                particleBack.Additive(i, i + duration);
+
+                // particles in the front
+                particleFront.Fade(i, i + fadeDuration, 0, Fade);
+                particleFront.Fade(i + duration - fadeDuration, i + duration, Fade, 0);
+                particleFront.Move(i, i + duration, startPos, endPos);
+                particleFront.Color(i, Color4.White);
+                particleFront.Scale(i, Scale);
+                particleFront.Additive(i, i + duration);
+            }
         }
 
         public void Particles()

@@ -24,6 +24,10 @@ namespace StorybrewScripts
             NormalVignette(290896, 311006, 0.8f, 0, 2000);
             IntenseVignette(290896, 311006, false, 20, 100, OsbEasing.InOutSine, 0.8f, 1000, 0);
 
+            // Secion 9
+            NormalVignette(433356, 488992, 0.8f, 0, 500);
+            IntenseVignette(479392, 488992, false, 20, 100, OsbEasing.InOutSine, 0.8f, 0, 500);
+
             // Outro
             NormalVignette(490992, 558992, 0.8f, 2000, 2000);
         }
