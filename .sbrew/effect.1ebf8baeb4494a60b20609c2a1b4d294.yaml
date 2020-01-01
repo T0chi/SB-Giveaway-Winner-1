@@ -11,12 +11,12 @@ Config:
   TochiTagColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
-  BoxColorText:
+  TextColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
-  BoxColorTochi:
+  BoxColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0,0,0,1"
+    Value: "1,1,1,1"
   GlowColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"

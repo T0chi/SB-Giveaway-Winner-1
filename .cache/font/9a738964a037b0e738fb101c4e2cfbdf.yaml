@@ -193,3 +193,93 @@ Cache:
     BaseHeight: 27
     Width: 12
     Height: 12
+  - Text: "D"
+    Path: "sb/dialog/txt/pass/1/0044.png"
+    Hash: "8253ed9ae89115fc193deeb0b0ea8ceb"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 16
+    BaseHeight: 27
+    Width: 16
+    Height: 16
+  - Text: "O"
+    Path: "sb/dialog/txt/pass/1/004f.png"
+    Hash: "4458edaafcba41ee0d21e095984de9f0"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 17
+    BaseHeight: 27
+    Width: 17
+    Height: 17
+  - Text: "N"
+    Path: "sb/dialog/txt/pass/1/004e.png"
+    Hash: "bb748aa1056961d843bb0d2db3453a09"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 16
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "'"
+    Path: "sb/dialog/txt/pass/1/0027.png"
+    Hash: "455b138e8755a12b7f003866b8adba1d"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 5
+    BaseHeight: 27
+    Width: 5
+    Height: 6
+  - Text: "T"
+    Path: "sb/dialog/txt/pass/1/0054.png"
+    Hash: "5e265281cd2f02db405a4e05c14fd87c"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 13
+    BaseHeight: 27
+    Width: 13
+    Height: 16
+  - Text: "S"
+    Path: "sb/dialog/txt/pass/1/0053.png"
+    Hash: "70387614bc3652f94e9b89bf2e690e37"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 17
+  - Text: "K"
+    Path: "sb/dialog/txt/pass/1/004b.png"
+    Hash: "6aad042f4e9eb9b82d5c5c749759b91f"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "I"
+    Path: "sb/dialog/txt/pass/1/0049.png"
+    Hash: "fcb409be0d4e2fa848ad549f96fa0f36"
+    OffsetX: 1
+    OffsetY: 8
+    BaseWidth: 7
+    BaseHeight: 27
+    Width: 5
+    Height: 16
+  - Text: "P"
+    Path: "sb/dialog/txt/pass/1/0050.png"
+    Hash: "d4d0c9b47edf981017d747c66af926c6"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "E"
+    Path: "sb/dialog/txt/pass/1/0045.png"
+    Hash: "bc303c88ac095130c89e3a0c508e252b"
+    OffsetX: 1
+    OffsetY: 8
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 14
+    Height: 16

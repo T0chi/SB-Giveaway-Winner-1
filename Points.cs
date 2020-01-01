@@ -31,10 +31,10 @@ namespace StorybrewScripts
         public Color4 TochiTagColor = Color4.Cyan;
 
         [Configurable]
-        public Color4 BoxColorText = new Color4(255, 255, 255, 255);
+        public Color4 TextColor = new Color4(255, 255, 255, 255);
 
         [Configurable]
-        public Color4 BoxColorTochi = new Color4(255, 255, 255, 255);
+        public Color4 BoxColor = new Color4(255, 255, 255, 255);
 
         [Configurable]
         public Color4 GlowColor = new Color4(255, 255, 255, 255);
@@ -914,9 +914,15 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] result = { "You did great! You saved the whole mission!" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
             this.pointsPass.Generate(result, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+
+            // DIALOG 2 -----------------------------------------
+            string[] text = { "DON'T SKIP YET" };
+            var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
+                fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
         }
 
         public void ResultsPass2(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
@@ -963,7 +969,7 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] result2 = { "Thanks for playing the map~" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
             this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
         }
@@ -1012,7 +1018,7 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] result = { "Oh well, you didn't get enough points..." };
             this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
             this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
         }
@@ -1061,7 +1067,7 @@ namespace StorybrewScripts
             // DIALOG 1 -----------------------------------------
             string[] result2 = { "You failed to save the mission... but you can always try again!" };
             this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
             this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
         }
