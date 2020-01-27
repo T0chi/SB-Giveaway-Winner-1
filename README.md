@@ -1,3 +1,5 @@
+`This storyboard was developed and finished after 4+ months`
+`@above text ↑ last updated on @January 27th, 2019 (17:18)`
 # Map
 - [Feryquitous - Songs Compilation](https://osu.ppy.sh/beatmapsets/1080818#osu/2261145 "Feryquitous - Songs Compilation") (by Acyl)
 - Outro song: Kaname Shigeyoshi - The Rain Turned to Autumn Leaves
