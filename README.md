@@ -123,30 +123,30 @@ Language:
 
 # Thanks to
 Mappers:
-- Acyl [@acyl_osu](https://twitter.com/acyl_osu"@acyl_osu") // *giveaway winner*
-- ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes"@ScubDominoes")
-- IOException [@iosexception](https://twitter.com/iosexception"@iosexception")
-- Heilia [@Heilia3](https://twitter.com/Heilia3"@Heilia3")
-- Necho [@sama4038](https://twitter.com/sama4038"@sama4038")
-- Moecho [@moeriko_](https://twitter.com/moeriko_"@moeriko_")
-- Otosaka-Yu [@1112deng](https://twitter.com/1112deng"@1112deng")
-- toybot [@toybot_](https://twitter.com/toybot_"@toybot_")
-- Dailycare [@D4ilycare](https://twitter.com/D4ilycare"@D4ilycare")
-- -[Pino]- [@Pino_uwu](https://twitter.com/Pino_uwu"@Pino_uwu")
+- Acyl [@acyl_osu](https://twitter.com/acyl_osu "@acyl_osu") // *giveaway winner*
+- ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes "@ScubDominoes")
+- IOException [@iosexception](https://twitter.com/iosexception "@iosexception")
+- Heilia [@Heilia3](https://twitter.com/Heilia3 "@Heilia3")
+- Necho [@sama4038](https://twitter.com/sama4038 "@sama4038")
+- Moecho [@moeriko_](https://twitter.com/moeriko_ "@moeriko_")
+- Otosaka-Yu [@1112deng](https://twitter.com/1112deng "@1112deng")
+- toybot [@toybot_](https://twitter.com/toybot_ "@toybot_")
+- Dailycare [@D4ilycare](https://twitter.com/D4ilycare "@D4ilycare")
+- -[Pino]- [@Pino_uwu](https://twitter.com/Pino_uwu "@Pino_uwu")
 
 Storyboarders:
-- PoNo [@Ponoyoshi](https://twitter.com/Ponoyoshi"@Ponoyoshi") // *helped with scriptslibrary usage + point system stuff* 
-- Endaris [@Endaris](https://osu.ppy.sh/users/392866"@Endaris") // *helping me understand storyboard Triggers*
-- Damnae [@Damnae](https://osu.ppy.sh/users/989377"@Damnae") // *for creating Storybrew*
-- Kawa [@Kawa](https://osu.ppy.sh/users/4588894"@Kawa") // *amazing idea for mission 4.*
+- PoNo [@Ponoyoshi](https://twitter.com/Ponoyoshi "@Ponoyoshi") // *helped with scriptslibrary usage + point system stuff* 
+- Endaris [@Endaris](https://osu.ppy.sh/users/392866 "@Endaris") // *helping me understand storyboard Triggers*
+- Damnae [@Damnae](https://osu.ppy.sh/users/989377 "@Damnae") // *for creating Storybrew*
+- Kawa [@Kawa](https://osu.ppy.sh/users/4588894 "@Kawa") // *amazing idea for mission 4.*
 
 CV:
-- Noffy (EN) [@NoffyNoffeh](https://twitter.com/NoffyNoffeh"@NoffyNoffeh") // *for being a part of the sb as a voice actor!*
-- Reey (JP) [@reiufw](https://twitter.com/reiufw"@reiufw") // *for also being a part of the sb as a voice actor!*
-- Emilia [@emilia0s](https://twitter.com/emilia0s"@emilia0s") // *for helping Reey translating the script to japanese*
+- Noffy (EN) [@NoffyNoffeh](https://twitter.com/NoffyNoffeh "@NoffyNoffeh") // *for being a part of the sb as a voice actor!*
+- Reey (JP) [@reiufw](https://twitter.com/reiufw "@reiufw") // *for also being a part of the sb as a voice actor!*
+- Emilia [@emilia0s](https://twitter.com/emilia0s "@emilia0s") // *for helping Reey translating the script to japanese*
 
 Graphics:
-- ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes"@ScubDominoes") // *making the map banner*
+- ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes "@ScubDominoes") // *making the map banner*
 
 # Socials
 Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://twitter.com/TochiOsu "@tochiosu"), and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
