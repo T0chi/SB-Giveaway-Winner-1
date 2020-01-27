@@ -116,6 +116,7 @@ Programs used:
 - PNGGauntlet // *PNG images optimization*
 - Bulk Rename Utility // *bulk rename a group of files in a folder*
 - Sublime Text 3 // *used for .osb & .osu file text editor*
+- cooltext.com // *for generating the fight introduction text*
 
 Language:
 - C# // *the language used in Storybrew*
