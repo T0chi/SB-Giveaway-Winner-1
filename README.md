@@ -121,7 +121,7 @@ Mappers:
 - Acyl [@acyl_osu](https://twitter.com/acyl_osu"@acyl_osu") // *giveaway winner*
 - ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes"@ScubDominoes")
 - IOException [@iosexception](https://twitter.com/iosexception"@iosexception")
-- Heilia3[@Heilia3](https://twitter.com/Heilia3"@Heilia3")
+- Heilia [@Heilia3](https://twitter.com/Heilia3"@Heilia3")
 - Necho [@sama4038](https://twitter.com/sama4038"@sama4038")
 - Moecho [@moeriko_](https://twitter.com/moeriko_"@moeriko_")
 - Otosaka-Yu [@1112deng](https://twitter.com/1112deng"@1112deng")
