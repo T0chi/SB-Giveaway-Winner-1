@@ -28,12 +28,12 @@ Each mapper had to choose an avatar from the image below in order for me to make
 
 1. Acyl
 2. ScubDomino ~~`CHANGED`~~
-3. deadcode `NONE`
+3. IOException `NONE`
 4. Heilia
 5. Necho
 6. `NONE`
 7. Moecho
-8. 1112
+8. Otosaka-Yu
 9. toybot
 10. Dailycare
 11. -[Pino]-
@@ -48,12 +48,12 @@ Each mapper had to choose an avatar from the image below in order for me to make
 - 02:08:263 - Acyl
 - 02:47:640 - ScubDomino
 - 03:40:447 - Dailycare
-- 04:15:230 - ~~deadcode~~ Moecho
+- 04:15:230 - ~~IOException~~ Moecho
 - 04:50:902 - Heilia
 - 05:39:381 - toybot
-- 06:27:314 - Necho *odds*  || 1112 *evens*
-- 07:13:357 - 1112 *odds*  || Necho *evens*
-- 07:58:193 - 1112 *odds*  || Necho *evens*
+- 06:27:314 - Necho *odds*  || Otosaka-Yu *evens*
+- 07:13:357 - Otosaka-Yu *odds*  || Necho *evens*
+- 07:58:193 - Otosaka-Yu *odds*  || Necho *evens*
 
 ------------
 
@@ -64,11 +64,11 @@ Each mapper had to choose an avatar from the image below in order for me to make
 2. Defeat aircraft
 3. Collect Items
 4. Slash the attacking boxes
-5. Popping balloons with arrows
+5. Pop balloons with arrows
 6. Collect Items
 7. Lyrics stuff
 8. Aircraft evading
-9. Necho vs. 1112
+9. Necho vs. Otosaka-Yu
 
 ------------
 
