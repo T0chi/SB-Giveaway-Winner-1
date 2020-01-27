@@ -136,7 +136,9 @@ Storyboarders:
 - Kawa // *amazing idea for mission 4.*
 
 CV:
-- Noffy // *for being such an amazing voice actor!*
+- Noffy (EN) // *for being a part of the sb as a voice actor!*
+- Reey (JP) // *for also being a part of the sb as a voice actor!*
+- Emilia // *for helping Reey translating to japanese*
 
 Graphic:
 - ScubDomino // *making the map banner*
