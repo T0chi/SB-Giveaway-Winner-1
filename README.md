@@ -1,7 +1,7 @@
 # Map
 - [Feryquitous - Songs Compilation](https://osu.ppy.sh/beatmapsets/1080818#osu/2261145 "Feryquitous - Songs Compilation") (by Acyl)
-- Link: -unsubmitted-
 - Outro song: Kaname Shigeyoshi - The Rain Turned to Autumn Leaves
+- Storyboard is currently -unsubmitted-
 
 **Previews**
 - https://streamable.com/f1bfx
@@ -18,7 +18,7 @@ Avatar art by: [@neco_person](https://twitter.com/neco_person "@neco_person")
 Each mapper had to choose an avatar from the image below in order for me to make the storyboard. The reason is because I wanted each mapper to somehow be included in the storyboard so they are a part of it as well!
 
 ![](https://i.imgur.com/vmmgb4A.jpg)
-*an extra character was added later that isn't on the image... (scubdomino's)*
+~~*an extra character was added later that isn't on the image... (scubdomino's)*~~
 
 
 ------------
@@ -27,7 +27,7 @@ Each mapper had to choose an avatar from the image below in order for me to make
 **AVATARS**
 
 1. Acyl
-2. ScubDomino `CHANGED`
+2. ScubDomino ~~`CHANGED`~~
 3. deadcode `NONE`
 4. Heilia
 5. Necho
