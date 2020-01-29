@@ -98,11 +98,6 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  88a87deb008e45da92c8e8b445f39e32:
-    Name: ""
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
   bb4afe58ab614e3fb6067bb856e9aa6c:
     Name: "Torch - Flames Front"
     OsbLayer: Foreground

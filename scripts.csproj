@@ -65,6 +65,7 @@
     <Compile Include="Section7.cs" />
     <Compile Include="Section8.cs" />
     <Compile Include="Section9.cs" />
+    <Compile Include="Trademark.cs" />
     <Compile Include="Vignette.cs" />
     <Compile Include="scriptslibrary/DialogManager.cs" />
     <Compile Include="scriptslibrary/HUD.cs" />

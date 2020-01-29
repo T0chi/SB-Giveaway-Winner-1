@@ -1,0 +1,19 @@
+﻿FormatVersion: 6
+Name: "Trademark 1"
+Script: "Trademark"
+Config:
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  15cc3556f4954bae88c897b6a0a618e4:
+    Name: ""
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  14e35095d58c4db1820cae38cfaa4126:
+    Name: "particles"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

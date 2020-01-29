@@ -139,6 +139,7 @@ namespace StorybrewScripts
             bg.ScaleVec(startTime, 854.0f / bgBitmap.Width, 480.0f / bgBitmap.Height);
             bg.Fade(startTime, startTime + 2000, 0, 0.9f);
             bg.Fade(endTime, endTime + 2000, 0.9f, 0);
+            bg.Color(startTime, Color4.Black);
             
             // github logo + text
             github.Scale(scrollStart, 0.35f);
