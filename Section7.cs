@@ -455,14 +455,14 @@ namespace StorybrewScripts
                                   "The next quest is very simple.", 
                                   "It's about lyrics..." };
             this.dialog = new DialogManager(this, font, 281629, 285399, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Your Avatar will help you with this.",
                                    "Be consistent and the lyrics will be delivered correctly on time." };
             this.dialog2 = new DialogManager(this, font, 285399, 290425, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 

@@ -52,6 +52,7 @@
   </Target>
   -->
   <ItemGroup>
+    <Compile Include="CV.cs" />
     <Compile Include="DeleteBackground.cs" />
     <Compile Include="ImportOsb.cs" />
     <Compile Include="Intro.cs" />

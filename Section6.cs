@@ -93,14 +93,14 @@ namespace StorybrewScripts
             string[] sentence = { "That must've been fun.",
                                   "The next quest is much easier though." };
             this.dialog = new DialogManager(this, font, 255870, 260268, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Just collect a few artifacts from the ground.",
                                    "Should be easy!" };
             this.dialog2 = new DialogManager(this, font, 260268, 265294, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 

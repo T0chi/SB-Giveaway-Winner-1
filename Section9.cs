@@ -567,21 +567,21 @@ namespace StorybrewScripts
                                   "Two of the mappers are going to fight each other!",
                                   "It will have a negative effect on your points!" };
             this.dialog = new DialogManager(this, font, 381475, 381475 + 6000, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Try to stop them before they drain all of your points!",
                                    "The longer they fight... the more points you lose." };
             this.dialog2 = new DialogManager(this, font, 381475 + 6000, 381475 + 12000, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
 
             // DIALOG 3 -----------------------------------------
             string[] sentence3 = { "I'm counting on you!",
                                    "I know you can make them stop!" };
             this.dialog3 = new DialogManager(this, font, 381475 + 12000, 381475 + 16000, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
         }
 

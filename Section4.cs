@@ -44,7 +44,7 @@ namespace StorybrewScripts
         {
             Dialog();
             Mission(172011, 211525);
-            Tochi(163962, 175868);
+            Tochi(163962, 182725);
             Background(160662, 211525, 167640);
             HUD(160662, 211525, 167640, "Mission #3", "Central Nucleus", "sb/HUD/txt/nameTag/ScubDomino.png", 2000, "sb/avatars/ScubDominoProfile.png");
         }
@@ -161,15 +161,15 @@ namespace StorybrewScripts
             string[] sentence = { "Hope you enjoyed yourself while collecting items!",
                                   "Now it's time for something more fun...",
                                   "Slashing it is! I hope your stamina is good heheh~." };
-            this.dialog = new DialogManager(this, font, 163962, 170382, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            this.dialog = new DialogManager(this, font, 163962, 175525, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Slash the black virus boxes to complete the quest.",
                                    "Watch out at the end though!" };
-            this.dialog2 = new DialogManager(this, font, 170382, 175868, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            this.dialog2 = new DialogManager(this, font, 175625, 182725, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
