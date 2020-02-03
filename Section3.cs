@@ -100,15 +100,15 @@ namespace StorybrewScripts
             string[] sentence = { "What a relief! Did you enjoy your first quest?",
                                   "Well, no worry. You will have to do something easier for this section.",
                                   "Which is... to obtain a few items from the ground." };
-            this.dialog = new DialogManager(this, font, 119905, 131862, "-Tochi", 105, 326, false,
+            this.dialog = new DialogManager(this, font, 119905, 133362, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "Easy right?",
                                    "Good luck, fellow player!" };
-            this.dialog2 = new DialogManager(this, font, 133662, 137262, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            this.dialog2 = new DialogManager(this, font, 133362, 137262, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 

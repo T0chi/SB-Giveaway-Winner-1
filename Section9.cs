@@ -581,7 +581,7 @@ namespace StorybrewScripts
             string[] sentence3 = { "I'm counting on you!",
                                    "I know you can make them stop!" };
             this.dialog3 = new DialogManager(this, font, 381475 + 12000, 381475 + 16000, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
         }
 

@@ -161,7 +161,7 @@ namespace StorybrewScripts
             string[] sentence = { "Hope you enjoyed yourself while collecting items!",
                                   "Now it's time for something more fun...",
                                   "Slashing it is! I hope your stamina is good heheh~." };
-            this.dialog = new DialogManager(this, font, 163962, 175525, "-Tochi", 105, 326, false,
+            this.dialog = new DialogManager(this, font, 163962, 175625, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
@@ -169,7 +169,7 @@ namespace StorybrewScripts
             string[] sentence2 = { "Slash the black virus boxes to complete the quest.",
                                    "Watch out at the end though!" };
             this.dialog2 = new DialogManager(this, font, 175625, 182725, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 

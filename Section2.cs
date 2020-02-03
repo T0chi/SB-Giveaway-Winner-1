@@ -111,7 +111,7 @@ namespace StorybrewScripts
                                    "you will end up with less points so you must do your best.",
                                    "Good luck fellow player!" };
             this.dialog2 = new DialogManager(this, font, 70630, 84571, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 

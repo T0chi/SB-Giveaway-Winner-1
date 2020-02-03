@@ -153,7 +153,7 @@ namespace StorybrewScripts
             string[] sentence2 = { "Popping balloons is fun, right?",
                                   "Well, now it's your chance to pop as many as you can!" };
             this.dialog2 = new DialogManager(this, font, 219754, 225526, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
