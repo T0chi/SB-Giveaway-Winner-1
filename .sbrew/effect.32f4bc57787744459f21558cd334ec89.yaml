@@ -4,7 +4,7 @@ Script: "Section3"
 Config:
   ThemeColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.5294118,0.7568628,0.7411765,1"
+    Value: "0.2847463,0.4754635,0.589609,0.8752747"
   PetalColorMin:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.3100402,0.5853745,0.6077465,1"
