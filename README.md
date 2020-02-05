@@ -143,7 +143,7 @@ Storyboarders:
 CV:
 - Noffy (EN) [@NoffyNoffeh](https://twitter.com/NoffyNoffeh "@NoffyNoffeh") // *for being a part of the sb as a voice actor!*
 - Reey (JP) [@reiufw](https://twitter.com/reiufw "@reiufw") // *for also being a part of the sb as a voice actor!*
-- Emilia [@emilia0s](https://twitter.com/emilia0s "@emilia0s") // *for spicing up the manuscript & helping Reey translating the it to japanese*
+- Emilia [@emilia0s](https://twitter.com/emilia0s "@emilia0s") // *for spicing up the manuscript & helping Reey translating it to japanese*
 
 Graphics:
 - ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes "@ScubDominoes") // *making the map banner*
