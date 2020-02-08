@@ -7,6 +7,13 @@
 - Outro song: Kaname Shigeyoshi - The Rain Turned to Autumn Leaves
 - Storyboard is currently -unsubmitted-
 
+
+**Skin**
+- The skin is made by: [@rkgk](https://osu.ppy.sh/users/7620476 "@rkgk")
+
+[![Verin](https://i.imgur.com/kicYFz4.png "Verin [Standard only]")](https://osu.ppy.sh/community/forums/topics/468771 "Verin [Standard only]")
+
+
 **Previews**
 - https://streamable.com/f1bfx
 - https://streamable.com/ypkw2
