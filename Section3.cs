@@ -104,7 +104,7 @@ namespace StorybrewScripts
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Be careful, the Tryplet gems are rather sharp. ",
+            string[] sentence2 = { "Be careful, the 'Triplet Gems' are rather sharp. ",
                                    "Good luck!" };
             this.dialog2 = new DialogManager(this, font, 130062, 137262, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
