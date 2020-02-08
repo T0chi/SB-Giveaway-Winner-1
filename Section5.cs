@@ -37,7 +37,7 @@ namespace StorybrewScripts
             Flowers(220447, 247113);
             Background(211525, 247113, 221081);
             Mission(224256, 247113);
-            Tochi(214268, 225526);
+            Tochi(214268, 233145);
             //  sTime,  eTime,  realSTime
             HUD(214268, 247113, 220447, "Mission #4", "Quon", "sb/HUD/txt/nameTag/Dailycare.png", 1000, "sb/avatars/DailycareProfile.png");
         }
@@ -142,17 +142,17 @@ namespace StorybrewScripts
             });
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Whew... That was intense!",
-                                  "It's time for some aim based challenge now.",
-                                  "Hopefully your aim is good enough!" };
-            this.dialog = new DialogManager(this, font, 214268, 219754, "-Tochi", 105, 326, false,
+            string[] sentence = { "That was intense!",
+                                  "The next mission is an aim practice balloon popping challenge.",
+                                  "Jump around the playfield to strike the balloons down with your bow-wielding mapper." };
+            this.dialog = new DialogManager(this, font, 214268, 224256, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Popping balloons is fun, right?",
-                                  "Well, now it's your chance to pop as many as you can!" };
-            this.dialog2 = new DialogManager(this, font, 219754, 225526, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "Take this as a small break to hone your mapper's abilities.",
+                                  "Do give it your best shot as it still accounts to your final score!" };
+            this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
@@ -168,7 +168,7 @@ namespace StorybrewScripts
             avatar.MoveX(startTime, 64);
             avatar.Scale(startTime, 0.3);
             avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime - 500, endTime, 1, 0);
+            avatar.Fade(endTime, endTime + 500, 1, 0);
 
             avatar.StartLoopGroup(startTime, loopCount + 1);
             avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
@@ -178,7 +178,7 @@ namespace StorybrewScripts
             ring.MoveX(startTime, 64);
             ring.Scale(startTime, 0.3);
             ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime - 500, endTime, 1, 0);
+            ring.Fade(endTime, endTime + 500, 1, 0);
             var rotation = MathHelper.DegreesToRadians(180);
             ring.Rotate(startTime, endTime, -rotation, rotation);
 

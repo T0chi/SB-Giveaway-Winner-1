@@ -18,6 +18,11 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  0d6046f730004388a8528b42ffbcb49f:
+    Name: "SystemError"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
   15445a6c00614360bd571c4748e3d371:
     Name: "HUD - Intro"
     OsbLayer: Background

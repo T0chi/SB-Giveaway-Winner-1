@@ -33,7 +33,7 @@ namespace StorybrewScripts
             Dialog();
             Background();
             ItemCollect();
-            Tochi(119905, 137262);
+            Tochi(117905, 137262);
             Petals(128262, 157062);
             HUD(115238, 157062, 128262, "Mission #2", "Adaptation Window", "sb/HUD/txt/nameTag/Acyl.png", 4500, "sb/avatars/AcylProfile.png");
         }
@@ -97,17 +97,16 @@ namespace StorybrewScripts
 
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "What a relief! Did you enjoy your first quest?",
-                                  "Well, no worry. You will have to do something easier for this section.",
-                                  "Which is... to obtain a few items from the ground." };
-            this.dialog = new DialogManager(this, font, 119905, 133362, "-Tochi", 105, 326, false,
+            string[] sentence = { "That was close! Congratulations on the completion of the first mission.",
+                                  "The next mission however is much easier, all you have to do is pick up a few miscellaneous materials!" };
+            this.dialog = new DialogManager(this, font, 117905, 130062, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Easy right?",
-                                   "Good luck, fellow player!" };
-            this.dialog2 = new DialogManager(this, font, 133362, 137262, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "Be careful, the Tryplet gems are rather sharp. ",
+                                   "Good luck!" };
+            this.dialog2 = new DialogManager(this, font, 130062, 137262, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
@@ -123,7 +122,7 @@ namespace StorybrewScripts
             avatar.MoveX(startTime, 64);
             avatar.Scale(startTime, 0.3);
             avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime - 500, endTime, 1, 0);
+            avatar.Fade(endTime, endTime + 500, 1, 0);
 
             avatar.StartLoopGroup(startTime, loopCount + 1);
             avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
@@ -133,7 +132,7 @@ namespace StorybrewScripts
             ring.MoveX(startTime, 64);
             ring.Scale(startTime, 0.3);
             ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime - 500, endTime, 1, 0);
+            ring.Fade(endTime, endTime + 500, 1, 0);
             var rotation = MathHelper.DegreesToRadians(180);
             ring.Rotate(startTime, endTime, -rotation, rotation);
 

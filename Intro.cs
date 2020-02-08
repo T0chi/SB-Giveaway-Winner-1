@@ -318,32 +318,33 @@ namespace StorybrewScripts
 
             
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Hello and welcome!",
-                                  "I have assembled a team for you",
-                                  "that will help you complete this map!" };
-            this.dialog = new DialogManager(this, font, 3245, 10168, "Dialog - Text", 150, 190, true,
+            string[] sentence = { "Hello, and welcome to World TQR-f3!",
+                                  "My name is -Tochi, and I will serve as",
+                                  "your assistant for today's missions!" };
+            this.dialog = new DialogManager(this, font, 3245, 12475, "Dialog - Text", 150, 190, true,
                 fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
             
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Now, have a look!" };
-            this.dialog2 = new DialogManager(this, font, 10630, 13399, "Dialog - Text", 195, 190, true,
+            string[] sentence2 = { "Please, follow me!" };
+            this.dialog2 = new DialogManager(this, font, 14322, 17091, "Dialog - Text", 370, 200, true,
                 fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence2);
+                DialogBoxes.Pointer.TopLeft, DialogBoxes.Push.Right, sentence2);
             
             // DIALOG 3 -----------------------------------------
-            string[] sentence3 = { "This is your team!",
-                                   "Refer to them as 'mappers'" };
-            this.dialog3 = new DialogManager(this, font, 18476, 25399, "Dialog - Text", 390, 170, true,
+            string[] sentence3 = { "I have assembled a team of mappers for you ",
+                                   "that will help you complete this map. Do",
+                                   "acquaint with them well, as your synergy will",
+                                   "determine the final grading of your performance." };
+            this.dialog3 = new DialogManager(this, font, 18476, 27706, "Dialog - Text", 390, 170, true,
                 fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
             
             // DIALOG 4 -----------------------------------------
-            string[] sentence4 = { "Perform well on each section and obtain",
-                                   "as many points as you can. You can only",
-                                   "complete the entire map if your total point",
-                                   "amount is over 30.000 at the end." };
-            this.dialog4 = new DialogManager(this, font, 26322, 37168, "Dialog - Text", 400, 170, true,
+            string[] sentence4 = { "In accordiance to your performance on each section,",
+                                   "points will be awarded. You can only complete the ",
+                                   "map if your score surpasses 30,000." };
+            this.dialog4 = new DialogManager(this, font, 28206, 37168, "Dialog - Text", 400, 170, true,
                 fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
         }

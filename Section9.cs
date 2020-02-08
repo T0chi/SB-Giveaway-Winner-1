@@ -38,7 +38,7 @@ namespace StorybrewScripts
             Particles();
             Background();
             ParticlesIntense();
-            Tochi(381475, 381475 + 16000);
+            Tochi(380218, 399660);
 
 		    Glitch(429565, glitch.one);
 		    Glitch(431450, glitch.two);
@@ -50,7 +50,22 @@ namespace StorybrewScripts
 		    Glitch(469902, glitch.one);
 		    Glitch(475902, glitch.one);
 
-		    GlitchIntense(479392, 488542);
+		    SystemError(384616);
+		    SystemError(386187);
+		    SystemError(388570);
+		    SystemError(391083);
+		    SystemError(393596);
+		    SystemError(401135);
+		    SystemError(404905);
+		    SystemError(408675);
+		    SystemError(410717);
+		    SystemError(413701);
+		    SystemError(417471);
+		    SystemError(418727);
+		    SystemError(423753);
+            var sfxSiren = GetLayer("SystemError").CreateSample("sb/sfx/siren.ogg", 379590, 80);
+
+		    GlitchIntense(479392, 489000);
 		    ErrorMessage(428779, 479392);
 
             HUD(379590, 488992, 387313, "Mission #8", "Ordirehv", "sb/HUD/txt/nameTag/Necho&Otosaka.png", 4500, "sb/avatars/Necho&OtosakaProfile.png");
@@ -81,7 +96,9 @@ namespace StorybrewScripts
             var speed = 100;
 
             var bitmap = GetMapsetBitmap("sb/glitch/g1_1.jpg");
-            var sfx = GetLayer("Glitch").CreateSample("sb/sfx/glitch.ogg", startTime, 80);
+
+            var sfx = GetLayer("Glitch").CreateSample("sb/sfx/glitch" + Random(1, 4) + ".ogg", startTime, 80);
+
             var glitch = GetLayer("Glitch").CreateAnimation("sb/glitch/g1_.jpg", 4, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 240));
             var glitch2 = GetLayer("Glitch").CreateAnimation("sb/glitch/g2_.jpg", 3, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 240));
             
@@ -120,6 +137,21 @@ namespace StorybrewScripts
             }
         }
 
+         public void SystemError(int startTime)
+        {
+            var speed = 100;
+
+            var bitmap = GetMapsetBitmap("sb/glitch/g3_1.jpg");
+            var sfx = GetLayer("SystemError").CreateSample("sb/sfx/glitch" + Random(1, 4) + ".ogg", startTime, 90);
+            var glitch = GetLayer("SystemError").CreateAnimation("sb/glitch/g3_.jpg", 6, speed, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 240));
+            
+            glitch.Scale(startTime, 854.0f / bitmap.Width);
+
+            glitch.StartLoopGroup(startTime, 1);
+            glitch.Fade(0, speed * 4, 0.5, 0.5);
+            glitch.EndGroup();
+            glitch.Fade(startTime + (speed * 4), startTime + (speed * 5), 0.5, 0);
+        }
         public void Background()
         {
             var bitmap = GetMapsetBitmap("sb/bgs/9/bg.jpg");
@@ -563,24 +595,22 @@ namespace StorybrewScripts
 
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Oh no!!",
-                                  "Two of the mappers are going to fight each other!",
-                                  "It will have a negative effect on your points!" };
-            this.dialog = new DialogManager(this, font, 381475, 381475 + 6000, "-Tochi", 105, 326, false,
+            string[] sentence = { "?!",
+                                  "- The remaining bugs from Section 4 have infiltrated the system, corrupting the databases for the mappers. -" };
+            this.dialog = new DialogManager(this, font, 380218, 387475, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Try to stop them before they drain all of your points!",
-                                   "The longer they fight... the more points you lose." };
-            this.dialog2 = new DialogManager(this, font, 381475 + 6000, 381475 + 12000, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "Unfortunately it seems that your score will inevitably drop,",
+                                   "but please save them! We can only count on you..." };
+            this.dialog2 = new DialogManager(this, font, 387475, 396109, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
 
             // DIALOG 3 -----------------------------------------
-            string[] sentence3 = { "I'm counting on you!",
-                                   "I know you can make them stop!" };
-            this.dialog3 = new DialogManager(this, font, 381475 + 12000, 381475 + 16000, "-Tochi", 105, 326, false,
+            string[] sentence3 = { "Commencing, Operation: Kollab" };
+            this.dialog3 = new DialogManager(this, font, 396109, 399660, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
         }
@@ -596,7 +626,7 @@ namespace StorybrewScripts
             avatar.MoveX(startTime, 64);
             avatar.Scale(startTime, 0.3);
             avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime - 500, endTime, 1, 0);
+            avatar.Fade(endTime, endTime + 500, 1, 0);
 
             avatar.StartLoopGroup(startTime, loopCount + 1);
             avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
@@ -606,7 +636,7 @@ namespace StorybrewScripts
             ring.MoveX(startTime, 64);
             ring.Scale(startTime, 0.3);
             ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime - 500, endTime, 1, 0);
+            ring.Fade(endTime, endTime + 500, 1, 0);
             var rotation = MathHelper.DegreesToRadians(180);
             ring.Rotate(startTime, endTime, -rotation, rotation);
 

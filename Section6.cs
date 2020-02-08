@@ -27,7 +27,7 @@ namespace StorybrewScripts
             Dialog();
             Background();
             Mission();
-            Tochi(255870, 265294);
+            Tochi(252193, 265294);
             HUD(253462, 283671, 262781, "Mission #5", "Dstorv", "sb/HUD/txt/nameTag/Moecho.png", 4500, "sb/avatars/MoechoProfile.png");
         }
 
@@ -90,16 +90,16 @@ namespace StorybrewScripts
 
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "That must've been fun.",
-                                  "The next quest is much easier though." };
-            this.dialog = new DialogManager(this, font, 255870, 260268, "-Tochi", 105, 326, false,
+            string[] sentence = { "Well executed!",
+                                  "The next mission involves slightly more technical knowledge however." };
+            this.dialog = new DialogManager(this, font, 252193, 257755, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Just collect a few artifacts from the ground.",
-                                   "Should be easy!" };
-            this.dialog2 = new DialogManager(this, font, 260268, 265294, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "Retrieve broken machine parts for research from Ice Biome 3.5.",
+                                   "Finger control is of utmost necessity, stay safe." };
+            this.dialog2 = new DialogManager(this, font, 257755, 265294, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
@@ -115,7 +115,7 @@ namespace StorybrewScripts
             avatar.MoveX(startTime, 64);
             avatar.Scale(startTime, 0.3);
             avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime - 500, endTime, 1, 0);
+            avatar.Fade(endTime, endTime + 500, 1, 0);
 
             avatar.StartLoopGroup(startTime, loopCount + 1);
             avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
@@ -125,7 +125,7 @@ namespace StorybrewScripts
             ring.MoveX(startTime, 64);
             ring.Scale(startTime, 0.3);
             ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime - 500, endTime, 1, 0);
+            ring.Fade(endTime, endTime + 500, 1, 0);
             var rotation = MathHelper.DegreesToRadians(180);
             ring.Rotate(startTime, endTime, -rotation, rotation);
 

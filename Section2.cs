@@ -48,7 +48,7 @@ namespace StorybrewScripts
 
             // Mission is to destroy all the enemies (aircrafts)
             Mission();
-            Tochi(66476, 84571);
+            Tochi(64514, 81905);
         }
 
         public void Background()
@@ -101,16 +101,17 @@ namespace StorybrewScripts
             });
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Ready for your first quest?" };
-            this.dialog = new DialogManager(this, font, 66937, 70600, "-Tochi", 105, 326, false,
+            string[] sentence = { "Apologies for the haste but are you ready for your first mission?",
+                                  "Unfortunately the warm-up phase was probably inadequate for these velocities..." };
+            this.dialog = new DialogManager(this, font, 64514, 72571, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Shoot the enemy and try not to miss. If you miss too many times",
-                                   "you will end up with less points so you must do your best.",
-                                   "Good luck fellow player!" };
-            this.dialog2 = new DialogManager(this, font, 70630, 84571, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "Shoot the enemy aircraft and try not to miss.",
+                                   "Missing too many times will result in a lower score so please do your best.",
+                                   "Good luck!" };
+            this.dialog2 = new DialogManager(this, font, 72571, 81905, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
@@ -267,7 +268,7 @@ namespace StorybrewScripts
             avatar.MoveX(startTime, 64);
             avatar.Scale(startTime, 0.3);
             avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime - 500, endTime, 1, 0);
+            avatar.Fade(endTime, endTime + 500, 1, 0);
 
             avatar.StartLoopGroup(startTime, loopCount + 1);
             avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
@@ -277,7 +278,7 @@ namespace StorybrewScripts
             ring.MoveX(startTime, 64);
             ring.Scale(startTime, 0.3);
             ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime - 500, endTime, 1, 0);
+            ring.Fade(endTime, endTime + 500, 1, 0);
             var rotation = MathHelper.DegreesToRadians(180);
             ring.Rotate(startTime, endTime, -rotation, rotation);
 

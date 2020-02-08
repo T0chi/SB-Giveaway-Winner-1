@@ -58,7 +58,7 @@ namespace StorybrewScripts
 		    Dialog();
             Mission();
             Background();
-            Tochi(333624, 344407);
+            Tochi(331111, 348176);
             Spectrum(0, SpectrumColor1);
             Spectrum(5, SpectrumColor2);
             ParticleGen(339380, 379590, GetLayer("Back"));
@@ -147,16 +147,16 @@ namespace StorybrewScripts
 
 
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Alright.",
-                                  "Look, we are almost finished!" };
-            this.dialog = new DialogManager(this, font, 332996, 336137, "-Tochi", 105, 326, false,
+            string[] sentence = { "Alright, those are all the difficult missions over and done with!",
+                                  "We should be done with the map soon." };
+            this.dialog = new DialogManager(this, font, 331111, 337394, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Next quest is even easier than the previous one.",
-                                   "Just keep an eye on the aircrafts evading from behind the building." };
-            this.dialog2 = new DialogManager(this, font, 336137, 344407, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "This mission should be relatively easier than the previous ones.",
+                                   "Spy on the aircrafts cruising past the building from behind, report any forms of inconsistency!" };
+            this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
@@ -172,7 +172,7 @@ namespace StorybrewScripts
             avatar.MoveX(startTime, 64);
             avatar.Scale(startTime, 0.3);
             avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime - 500, endTime, 1, 0);
+            avatar.Fade(endTime, endTime + 500, 1, 0);
 
             avatar.StartLoopGroup(startTime, loopCount + 1);
             avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
@@ -182,7 +182,7 @@ namespace StorybrewScripts
             ring.MoveX(startTime, 64);
             ring.Scale(startTime, 0.3);
             ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime - 500, endTime, 1, 0);
+            ring.Fade(endTime, endTime + 500, 1, 0);
             var rotation = MathHelper.DegreesToRadians(180);
             ring.Rotate(startTime, endTime, -rotation, rotation);
 

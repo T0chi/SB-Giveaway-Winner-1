@@ -231,7 +231,7 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
-            var pos = new Vector2(320, 173);
+            var pos = new Vector2(320, 400);
 
 
             // Trigger Start
@@ -285,7 +285,7 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
-            var pos = new Vector2(320, 173);
+            var pos = new Vector2(320, 400);
 
 
             // Trigger Start
