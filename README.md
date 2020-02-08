@@ -122,7 +122,12 @@ Language:
 - C# // *the language used in Storybrew*
 
 
-# Manuscript
+------------
+
+
+**Manuscript**
+
+
 **SECTION 1 (INTRO):**
 
 *Hello, and welcome to World TQR-f3!*
@@ -155,6 +160,7 @@ Do acquaint with them well, as your synergy will determine the final grading of 
 *合計点数が30,000を超えるのみに譜面を完成出来ます。*
 
 
+------------
 
 
 **SECTION 2:**
