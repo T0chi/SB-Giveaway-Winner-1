@@ -108,20 +108,6 @@ Here's a list of where the key notes are located at (timing):
 - Key note 9: 08:04:268 - 08:04:343
 
 
-# Info
-Programs used:
-- Storybrew // *for creating every effect (basically whole sb)*
-- Adobe Photoshop // *image editing*
-- Adobe Fireworks // *image editing*
-- PNGGauntlet // *PNG images optimization*
-- Bulk Rename Utility // *bulk rename a group of files in a folder*
-- Sublime Text 3 // *used for .osb & .osu file text editor*
-- cooltext.com // *for generating the fight introduction text*
-
-Language:
-- C# // *the language used in Storybrew*
-
-
 ------------
 
 
@@ -176,6 +162,20 @@ Do acquaint with them well, as your synergy will determine the final grading of 
 
 - See the rest here: https://pastebin.com/QKDrg6Y4
 
+
+
+# Info
+Programs used:
+- Storybrew // *for creating every effect (basically whole sb)*
+- Adobe Photoshop // *image editing*
+- Adobe Fireworks // *image editing*
+- PNGGauntlet // *PNG images optimization*
+- Bulk Rename Utility // *bulk rename a group of files in a folder*
+- Sublime Text 3 // *used for .osb & .osu file text editor*
+- cooltext.com // *for generating the fight introduction text*
+
+Language:
+- C# // *the language used in Storybrew*
 
 # Thanks to
 Mappers:
