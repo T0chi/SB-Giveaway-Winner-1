@@ -113,9 +113,6 @@ Here's a list of where the key notes are located at (timing):
 
 **Manuscript**
 
-
-**SECTION 1 (INTRO):**
-
 *Hello, and welcome to World TQR-f3!*
 
 *こんにちは、そして異世界TQR-f3にようこそ！*
@@ -129,35 +126,9 @@ Here's a list of where the key notes are located at (timing):
 *私についてきてください！*
 
  
-*I have assembled a team of mappers for you that will help you complete this map.*
+*I have assembled a team of mappers for yo . . . . . . . . . . . . . . . . . . . . . . .*
 
-*この譜面を終わらせるためにマッパーのチームを構成しました。*
-
-Do acquaint with them well, as your synergy will determine the final grading of your performance.*
-
-*彼たちと仲間になり、全員の協力によりあなたの業績が最終評価になります。*
-
-*In accordance to your performance on each section, points will be awarded.*
-
-*各セクションのあなたのプレイに従い、ポイントが与えられます。*
-
-*You can only complete the map if your score surpasses 30,000.*
-
-*合計点数が30,000を超えるのみに譜面を完成出来ます。*
-
-
-------------
-
-
-**SECTION 2:**
-
-*Apologies for the haste but are you ready for your first mission?*
-
-*急がしてごめんなさい、でも最初のミッションの準備はいいですか？*
-
-*Unfortunately the warm-up phase was proba. . . . . . . . . . . . . . . . . . . . . . .*
-
-*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .*
+*この譜面を終わらせるためにマッパー . . . . . . . . . . . . . . . . . . . . . . .*
 
 
 - See the rest here: https://pastebin.com/QKDrg6Y4
