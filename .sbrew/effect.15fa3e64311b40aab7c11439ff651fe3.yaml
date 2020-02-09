@@ -88,6 +88,11 @@ Layers:
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
+  deef8c34195141159ac07388c5b47a1e:
+    Name: "Scanning"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
   701b9960c8b04a2f8bfe6f41e6553dfe:
     Name: "-Tochi"
     OsbLayer: Foreground

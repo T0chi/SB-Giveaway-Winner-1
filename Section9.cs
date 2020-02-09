@@ -27,6 +27,8 @@ namespace StorybrewScripts
 
         private DialogManager dialog3;
 
+        private DialogManager dialog4;
+
         public enum glitch { one, two };
 
         public override void Generate()
@@ -38,7 +40,7 @@ namespace StorybrewScripts
             Particles();
             Background();
             ParticlesIntense();
-            Tochi(380218, 399660);
+            Tochi(380218, 414329);
 
 		    Glitch(429565, glitch.one);
 		    Glitch(431450, glitch.two);
@@ -67,8 +69,44 @@ namespace StorybrewScripts
 
 		    GlitchIntense(479392, 489000);
 		    ErrorMessage(428779, 479392);
+            SystemScan(383360, 397994);
 
             HUD(379590, 488992, 387313, "Mission #8", "Ordirehv", "sb/HUD/txt/nameTag/Necho&Otosaka.png", 4500, "sb/avatars/Necho&OtosakaProfile.png");
+        }
+
+        public void SystemScan(int startTime, int endTime)
+        {
+            var delay = 500;
+
+            var bg = GetLayer("Scanning").CreateSprite("sb/HUD/scanning/bg.png", OsbOrigin.Centre, new Vector2(320, 255));
+            var screen = GetLayer("Scanning").CreateAnimation("sb/HUD/scanning/screen/sprite.png", 41, 100, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 320));
+            var screen2 = GetLayer("Scanning").CreateAnimation("sb/HUD/scanning/screen2/sprite.png", 14, 160, OsbLoopType.LoopForever, OsbOrigin.Centre, new Vector2(320, 180));
+            var lines = GetLayer("Scanning").CreateAnimation("sb/HUD/scanning/lines/sprite.jpg", 31, 90, OsbLoopType.LoopForever, OsbOrigin.CentreRight, new Vector2(244, 180));
+            var graph = GetLayer("Scanning").CreateAnimation("sb/HUD/scanning/graph/sprite.png", 38, 90, OsbLoopType.LoopForever, OsbOrigin.CentreLeft, new Vector2(345, 180));
+
+            bg.Scale(startTime, 0.6f);
+            bg.Fade(startTime, startTime + 500, 0, 1);
+            bg.Fade(endTime - 500, endTime, 1, 0);
+
+            screen.Scale(startTime + delay, 0.6f);
+            screen.Additive(startTime + delay, endTime);
+            screen.Fade(startTime + delay, startTime + delay + 500, 0, 0.7f);
+            screen.Fade(endTime - delay - 500, endTime, 0.7f, 0);
+
+            screen2.Scale(startTime + (delay * 2), 0.6f);
+            screen2.Additive(startTime + (delay * 2), endTime);
+            screen2.Fade(startTime + (delay * 2), startTime + (delay * 2) + 500, 0, 0.7f);
+            screen2.Fade(endTime - (delay * 2) - 500, endTime, 0.7f, 0);
+
+            lines.Scale(startTime + (delay * 3), 0.2f);
+            lines.Additive(startTime + (delay * 3), endTime);
+            lines.Fade(startTime + (delay * 3), startTime + (delay * 3) + 500, 0, 0.7f);
+            lines.Fade(endTime - (delay * 3) - 500, endTime, 0.7f, 0);
+
+            graph.Scale(startTime + (delay * 4), 0.4f);
+            graph.Additive(startTime + (delay * 4), endTime);
+            graph.Fade(startTime + (delay * 4), startTime + (delay * 4) + 500, 0, 0.7f);
+            graph.Fade(endTime - (delay * 4) - 500, endTime, 0.7f, 0);
         }
 
         public void ErrorMessage(int startTime, int endTime)
@@ -320,8 +358,8 @@ namespace StorybrewScripts
         {
             // INTRO ////////////////////////////////////////////////////////////////////////
 
-            var appearStartTime = 389827;
-            var disappearStartTime = 398622;
+            var appearStartTime = 398622;
+            var disappearStartTime = 408675;
             var endTime = 488992;
 
             var nechoScale = 0.2;
@@ -596,23 +634,32 @@ namespace StorybrewScripts
 
             // DIALOG 1 -----------------------------------------
             string[] sentence = { "?!",
-                                  "- The remaining bugs from Section 4 have infiltrated the system, corrupting the databases for the mappers. -" };
-            this.dialog = new DialogManager(this, font, 380218, 387475, "-Tochi", 105, 326, false,
+                                  "What's going on?! Let me run a quick system scan..." };
+            this.dialog = new DialogManager(this, font, 380218, 385244, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Unfortunately it seems that your score will inevitably drop,",
-                                   "but please save them! We can only count on you..." };
-            this.dialog2 = new DialogManager(this, font, 387475, 396109, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "It seems the remaining bugs from Section 4 have infiltrated the system,", 
+                                   "corrupting the mappers' databases... Wait... this was not supposed to happen...",
+                                   "Why do Necho and Otosaki-Yu have to fight!" };
+            this.dialog2 = new DialogManager(this, font, 394853, 407418, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
 
             // DIALOG 3 -----------------------------------------
-            string[] sentence3 = { "Commencing, Operation: Kollab" };
-            this.dialog3 = new DialogManager(this, font, 396109, 399660, "-Tochi", 105, 326, false,
+            string[] sentence3 = { "Unfortunately it seems that your score will inevitably drop, but please save them!",
+                                   "We can only count on you..." };
+            this.dialog3 = new DialogManager(this, font, 407418, 414329, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
+
+            // DIALOG 4 -----------------------------------------
+            string[] sentence4 = { "....",
+                                   "*Scanning*" };
+            this.dialog4 = new DialogManager(this, font, 385244, 394853, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence4);
         }
 
         public void Tochi(int startTime, int endTime)

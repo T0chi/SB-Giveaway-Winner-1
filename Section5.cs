@@ -150,8 +150,8 @@ namespace StorybrewScripts
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Take this as a small break to hone your mapper's abilities.",
-                                  "Do give it your best shot as it still accounts to your final score!" };
+            string[] sentence2 = { "You can take this as a small break to hone your mapper's abilities.",
+                                  "But do give it your best shot as it still counts towards your final score!" };
             this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);

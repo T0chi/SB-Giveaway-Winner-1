@@ -91,7 +91,7 @@ namespace StorybrewScripts
 
             // DIALOG 1 -----------------------------------------
             string[] sentence = { "Well executed!",
-                                  "The next mission involves slightly more technical knowledge however." };
+                                  "However, the next mission involves slightly more technical knowledge." };
             this.dialog = new DialogManager(this, font, 252193, 257755, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);

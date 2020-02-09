@@ -155,7 +155,7 @@ namespace StorybrewScripts
 
             // DIALOG 2 -----------------------------------------
             string[] sentence2 = { "This mission should be relatively easier than the previous ones.",
-                                   "Spy on the aircrafts cruising past the building from behind, report any forms of inconsistency!" };
+                                   "Spy on aircrafts cruising by from behind the building, and report anything strange you find!" };
             this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
