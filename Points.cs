@@ -913,7 +913,8 @@ namespace StorybrewScripts
 
 
             // DIALOG 1 -----------------------------------------
-            string[] result = { "You did great! You saved the whole mission!" };
+            string[] result = { "The system is safe from collapse and our",
+                                "mappers are back to normal again!" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
@@ -968,7 +969,8 @@ namespace StorybrewScripts
             });
 
             // DIALOG 1 -----------------------------------------
-            string[] result2 = { "Thanks for playing the map~" };
+            string[] result2 = { "You have saved the mission and have completed",
+                                 "the map! Thank you for playing!" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
@@ -1017,7 +1019,8 @@ namespace StorybrewScripts
             });
             
             // DIALOG 1 -----------------------------------------
-            string[] result = { "Oh well, you didn't get enough points..." };
+            string[] result = { "Perhaps a system restore is due for all of us...",
+                                "Unfortunately you have failed to save the mission." };
             this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
@@ -1066,7 +1069,7 @@ namespace StorybrewScripts
             });
 
             // DIALOG 1 -----------------------------------------
-            string[] result2 = { "You failed to save the mission... but you can always try again!" };
+            string[] result2 = { "Do try the map again for a better grade!" };
             this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);

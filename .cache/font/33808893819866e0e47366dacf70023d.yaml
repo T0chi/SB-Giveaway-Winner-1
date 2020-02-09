@@ -238,3 +238,21 @@ Cache:
     BaseHeight: 27
     Width: 6
     Height: 16
+  - Text: "D"
+    Path: "sb/dialog/txt/fail/2/0044.png"
+    Hash: "8253ed9ae89115fc193deeb0b0ea8ceb"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 16
+    BaseHeight: 27
+    Width: 16
+    Height: 16
+  - Text: "p"
+    Path: "sb/dialog/txt/fail/2/0070.png"
+    Hash: "88c084655a9dca8d861ec7ecf82dca66"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 15

@@ -193,3 +193,57 @@ Cache:
     BaseHeight: 27
     Width: 16
     Height: 7
+  - Text: "Y"
+    Path: "sb/dialog/txt/pass/2/0059.png"
+    Hash: "5cecfe24aae291e7b0bc7d9166b63c98"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "u"
+    Path: "sb/dialog/txt/pass/2/0075.png"
+    Hash: "8ef129dcaf1962ea8a8d0622749e0f10"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "v"
+    Path: "sb/dialog/txt/pass/2/0076.png"
+    Hash: "22c761af8d4a590fccaaadc7f4c63b3a"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "d"
+    Path: "sb/dialog/txt/pass/2/0064.png"
+    Hash: "eaf775dbefb3c9b69963fb2e4c70f9fb"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 16
+  - Text: "c"
+    Path: "sb/dialog/txt/pass/2/0063.png"
+    Hash: "789c5ef738baef7561b224aaffcdeefb"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "!"
+    Path: "sb/dialog/txt/pass/2/0021.png"
+    Hash: "a8eb28011e03795b58bd559e2ac63bb0"
+    OffsetX: 2
+    OffsetY: 8
+    BaseWidth: 9
+    BaseHeight: 27
+    Width: 6
+    Height: 16

@@ -193,3 +193,66 @@ Cache:
     BaseHeight: 27
     Width: 6
     Height: 4
+  - Text: "P"
+    Path: "sb/dialog/txt/fail/1/0050.png"
+    Hash: "d4d0c9b47edf981017d747c66af926c6"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 15
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "r"
+    Path: "sb/dialog/txt/fail/1/0072.png"
+    Hash: "5cfbc9477a4d889c2abca9632760e26f"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 8
+    BaseHeight: 27
+    Width: 8
+    Height: 12
+  - Text: "a"
+    Path: "sb/dialog/txt/fail/1/0061.png"
+    Hash: "1246fdc2fc27b47957c9c8582d3f12d7"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "m"
+    Path: "sb/dialog/txt/fail/1/006d.png"
+    Hash: "cd2993f4dfe3f9052e74a50361a89a7e"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 18
+    BaseHeight: 27
+    Width: 18
+    Height: 12
+  - Text: "f"
+    Path: "sb/dialog/txt/fail/1/0066.png"
+    Hash: "3935342510e26cf16fe52f1d9c353dd2"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 7
+    BaseHeight: 27
+    Width: 7
+    Height: 17
+  - Text: "U"
+    Path: "sb/dialog/txt/fail/1/0055.png"
+    Hash: "e40550a95c9d2c0d1c387b0c37ab5818"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 16
+    BaseHeight: 27
+    Width: 15
+    Height: 16
+  - Text: "v"
+    Path: "sb/dialog/txt/fail/1/0076.png"
+    Hash: "22c761af8d4a590fccaaadc7f4c63b3a"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 11
+    BaseHeight: 27
+    Width: 11
+    Height: 12
