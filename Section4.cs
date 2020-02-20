@@ -126,13 +126,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15;
-            var GlowRadius = 0;
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
+            var GlowRadius = 15;
+            var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription()
+            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "Microsoft Yi Baiti",
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -143,8 +147,8 @@ namespace StorybrewScripts
             },
             new FontGlow()
             {
-                Radius = true ? 0 : GlowRadius,
-                Color = Color4.Black,
+                Radius = false ? 0 : GlowRadius,
+                Color = GlowColor,
             },
             new FontOutline()
             {
@@ -157,18 +161,33 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "Thank you for faithfully completing your errands.",
+            //                       "The next mission requires a lot more stamina; you'll be activating your sword-",
+            //                       "wielding mapper to perform bug fixes within our systems.",
+            //                       "Do take note that the difficulty does amp up after the bass drops." };
+            // this.dialog = new DialogManager(this, font, 163062, 179982, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "Slash the Stygian viral shapes to complete the mission.",
+            //                        "There are risks so proceed with caution!" };
+            // this.dialog2 = new DialogManager(this, font, 179982, 187868, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Thank you for faithfully completing your errands.",
-                                  "The next mission requires a lot more stamina; you'll be activating your sword-",
-                                  "wielding mapper to perform bug fixes within our systems.",
-                                  "Do take note that the difficulty does amp up after the bass drops." };
-            this.dialog = new DialogManager(this, font, 163062, 179982, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            string[] sentence = { "忠実に取り組んでくれてありがとう。",
+                                  "次のミッションは体力がもっと必要になります;　剣を振っているマッパーを使い、私たちのシステムのバグを直してください。",
+                                  "サビのベースドロップが始まった後に難易度が上がります！" };
+            this.dialog = new DialogManager(this, font, 163062, 178611, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Slash the Stygian viral shapes to complete the mission.",
-                                   "There are risks so proceed with caution!" };
+            string[] sentence2 = { "ダークウィルスの形の物を斬りつけてミッションを完了してください。",
+                                   "これらはまたリスクがあるので注意してください！" };
             this.dialog2 = new DialogManager(this, font, 179982, 187868, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);

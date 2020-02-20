@@ -8,9 +8,9 @@ Config:
   PassiveColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.2495309,0.2495309,0.2495309,1"
-  TochiTagColor:
+  TochiColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
+    Value: "0.8571371,0.8571371,0.8571371,1"
   BoxColorText:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
@@ -19,7 +19,7 @@ Config:
     Value: "1,0.6543843,0.3559785,1"
   BoxColorTochi:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0,0,0,1"
+    Value: "1,1,1,1"
   BoxColorOthers:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
@@ -118,6 +118,11 @@ Layers:
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
+  229244e85fe54b2f92c0e2534b264ddd:
+    Name: "Dialog - Text"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
   638ca758c59240b685c6a4e60e4700ce:
     Name: "ringFront"
     OsbLayer: Foreground
@@ -125,11 +130,6 @@ Layers:
     Visible: Yes
   6160bac76b3643eba7bb18e35a764855:
     Name: "nameTag"
-    OsbLayer: Foreground
-    DiffSpecific: No
-    Visible: Yes
-  229244e85fe54b2f92c0e2534b264ddd:
-    Name: "Dialog - Text"
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

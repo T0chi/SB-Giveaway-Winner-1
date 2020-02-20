@@ -23,7 +23,7 @@ namespace StorybrewScripts
         public Color4 PassiveColor = Color4.DarkGray;
 
         [Configurable]
-        public Color4 TochiTagColor = Color4.Cyan;
+        public Color4 TochiColor = Color4.Cyan;
 
         [Configurable]
         public Color4 BoxColorText = new Color4(255, 255, 255, 255);
@@ -285,17 +285,20 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 20;
+            var fontSize = 15; //  japanese
+            // var fontSize = 20; // english
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt", new FontDescription()
+            var font = LoadFont("sb/dialog/txt/jp", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt", new FontDescription() // english
             {
-                FontPath = "Microsoft Yi Baiti",
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
+                FontStyle = FontStyle.Regular,
                 TrimTransparency = true,
                 EffectsOnly = false,
                 Debug = false,
@@ -317,35 +320,63 @@ namespace StorybrewScripts
             });
 
             
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "Hello, and welcome to World TQR-f3!",
+            //                       "My name is -Tochi, and I will serve as",
+            //                       "your assistant for today's missions!" };
+            // this.dialog = new DialogManager(this, font, 3245, 12475, "Dialog - Text", 150, 190, true,
+            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
+            
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "Please, follow me!" };
+            // this.dialog2 = new DialogManager(this, font, 14322, 17091, "Dialog - Text", 370, 200, true,
+            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopLeft, DialogBoxes.Push.Right, sentence2);
+            
+            // // DIALOG 3 -----------------------------------------
+            // string[] sentence3 = { "I have assembled a team of mappers for you ",
+            //                        "that will help you complete this map. Do",
+            //                        "acquaint with them well, as your synergy will",
+            //                        "determine the final grading of your performance." };
+            // this.dialog3 = new DialogManager(this, font, 18476, 27706, "Dialog - Text", 390, 170, true,
+            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
+            
+            // // DIALOG 4 -----------------------------------------
+            // string[] sentence4 = { "In accordiance to your performance on each section,",
+            //                        "points will be awarded. You can only complete the ",
+            //                        "map if your score surpasses 30,000." };
+            // this.dialog4 = new DialogManager(this, font, 28206, 37168, "Dialog - Text", 400, 170, true,
+            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
+            
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Hello, and welcome to World TQR-f3!",
-                                  "My name is -Tochi, and I will serve as",
-                                  "your assistant for today's missions!" };
-            this.dialog = new DialogManager(this, font, 3245, 12475, "Dialog - Text", 150, 190, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            string[] sentence = { "こんにちは、そして異世界TQR-f3にようこそ！",
+                                  "私の名前は-Tochi、今日のミッションのために",
+                                  "あなたのアシスタントを努めます！" };
+            this.dialog = new DialogManager(this, font, 3245, 12475, "Dialog - Text", 130, 190, true,
+                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
             
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Please, follow me!" };
-            this.dialog2 = new DialogManager(this, font, 14322, 17091, "Dialog - Text", 370, 200, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            string[] sentence2 = { "では、ついてきてください！" };
+            this.dialog2 = new DialogManager(this, font, 14322, 17091, "Dialog - Text", 370, 205, true,
+                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopLeft, DialogBoxes.Push.Right, sentence2);
             
             // DIALOG 3 -----------------------------------------
-            string[] sentence3 = { "I have assembled a team of mappers for you ",
-                                   "that will help you complete this map. Do",
-                                   "acquaint with them well, as your synergy will",
-                                   "determine the final grading of your performance." };
-            this.dialog3 = new DialogManager(this, font, 18476, 27706, "Dialog - Text", 390, 170, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+            string[] sentence3 = { "この譜面を終わらせるためにマッパーのチームを構成しました。",
+                                   "彼たちと仲間になり、全員の協力によりあなたの業績が最終評価になります。" };
+            this.dialog3 = new DialogManager(this, font, 18476, 27706, "Dialog - Text", 430, 170, true,
+                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
             
             // DIALOG 4 -----------------------------------------
-            string[] sentence4 = { "In accordiance to your performance on each section,",
-                                   "points will be awarded. You can only complete the ",
-                                   "map if your score surpasses 30,000." };
+            string[] sentence4 = { "各セクションのあなたのプレイに従い、ポイントが与えられます。",
+                                   "合計点数が30,000を超えるのみに譜面を完成出来ます。" };
             this.dialog4 = new DialogManager(this, font, 28206, 37168, "Dialog - Text", 400, 170, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.7f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
         }
 
@@ -387,7 +418,7 @@ namespace StorybrewScripts
             string[] sentence = { "Get ready!",
                                   "Your mission is about to begin." };
             this.dialog = new DialogManager(this, font, 40630, 48937, "Dialog - Text Narrator", 40, 430, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.4f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
+                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.None, DialogBoxes.Push.Right, sentence);
         }
 
@@ -412,7 +443,7 @@ namespace StorybrewScripts
             var ProfilesLoopCount = (endTime - startTime) / duration;
             var HoverLoopCount = (HoverEndTime - startTime) / HoverDuration;
 
-            Tochi(320, 430, 1, 1860, HoverEndTime, duration, (int)HoverLoopCount, HoverDuration, HoverVelocity);
+            Tochi(320, 430, 0.9f, 1860, HoverEndTime, duration, (int)HoverLoopCount, HoverDuration, HoverVelocity);
             Acyl(startTime, duration, 0, (float)Random(-1.5, 1.5), posY, posX, ScalePassive, ScaleActive, (int)ProfilesLoopCount);
             Pino(startTime, duration, Spacing, (float)Random(-1.5, 1.5), posY, posX, ScalePassive, ScaleActive, (int)ProfilesLoopCount);
             ScubDomino(startTime, duration, Spacing * 2, (float)Random(-1.5, 1.5), posY, posX, ScalePassive, ScaleActive, (int)ProfilesLoopCount);
@@ -430,7 +461,8 @@ namespace StorybrewScripts
             var reMoveX = -70;
             // var b = GetMapsetBitmap("sb/avatars/-Tochi.png");
             var nameTag = GetLayer("nameTag").CreateSprite("sb/avatars/-TochiTag.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/-Tochi.png", 32, 50, OsbLoopType.LoopForever, OsbOrigin.BottomCentre);
 
             // hovering stuff
             avatar.StartLoopGroup(startTime, LoopCount);
@@ -448,17 +480,19 @@ namespace StorybrewScripts
             avatar.Scale(startTime, 0.25);
             avatar.Fade(startTime, startTime + (HoverDuration / 2), 0, Fade);
             avatar.Fade(endTime - (HoverDuration / 2), endTime, Fade, 0);
+            avatar.Color(startTime, TochiColor);
             nameTag.MoveX(startTime, posX + reMoveX);
             nameTag.MoveX(OsbEasing.InOutSine, 12937, 15707, posX + reMoveX, posX + reMoveX - 150);
             nameTag.Scale(startTime, 0.5);
             nameTag.Fade(startTime, startTime + (HoverDuration / 2), 0, Fade);
             nameTag.Fade(endTime - (HoverDuration / 2), endTime, Fade, 0);
-            nameTag.Color(startTime, TochiTagColor);
+            // nameTag.Color(startTime, TochiColor);
 
 
             // REFLECTION IN THE WATER
 
-            var avatarReflection = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            // var avatarReflection = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            var avatarReflection = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/-Tochi.png", 32, 50, OsbLoopType.LoopForever, OsbOrigin.BottomCentre);
 
             // hovering stuff
             avatarReflection.StartLoopGroup(startTime, LoopCount);
@@ -468,6 +502,7 @@ namespace StorybrewScripts
 
             // avatar stuff
             avatarReflection.MoveX(startTime, posX);
+            avatarReflection.FlipH(startTime, endTime);
             avatarReflection.MoveX(OsbEasing.InOutSine, 12937, 15707, posX, posX - 150);
             avatarReflection.Scale(startTime, 0.25);
             avatarReflection.Fade(startTime, startTime + (HoverDuration / 2), 0, Fade / 5);

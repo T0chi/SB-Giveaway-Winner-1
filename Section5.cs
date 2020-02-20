@@ -110,13 +110,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15;
-            var GlowRadius = 0;
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
+            var GlowRadius = 15;
+            var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription()
+            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "Microsoft Yi Baiti",
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -127,8 +131,8 @@ namespace StorybrewScripts
             },
             new FontGlow()
             {
-                Radius = true ? 0 : GlowRadius,
-                Color = Color4.Black,
+                Radius = false ? 0 : GlowRadius,
+                Color = GlowColor,
             },
             new FontOutline()
             {
@@ -141,17 +145,32 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "That was intense!",
+            //                       "The next mission is an aim practice balloon popping challenge.",
+            //                       "Jump around the playfield to strike the balloons down with your bow-wielding mapper." };
+            // this.dialog = new DialogManager(this, font, 214268, 224256, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "You can take this as a small break to hone your mapper's abilities",
+            //                       "But do give it your best shot as it still counts towards your final score!" };
+            // this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "That was intense!",
-                                  "The next mission is an aim practice balloon popping challenge.",
-                                  "Jump around the playfield to strike the balloons down with your bow-wielding mapper." };
+            string[] sentence = { "今のは激しかった！",
+                                  "次のミッションはaim練習で風船を割るチャレンジ。",
+                                  "弓を使うマッパーでフィールド内にある風船を矢で撃ってください。" };
             this.dialog = new DialogManager(this, font, 214268, 224256, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "You can take this as a small break to hone your mapper's abilities.",
-                                  "But do give it your best shot as it still counts towards your final score!" };
+            string[] sentence2 = { "小休憩としてマッパーの能力を磨き上げてください。",
+                                  "あなたの最後のスコアとして加算されるので最大限のベストを尽くしてください！" };
             this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);

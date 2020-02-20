@@ -1,0 +1,384 @@
+﻿FontPath: "font/jp/KozGoPro-Light.otf"
+FontSize: 15
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Regular
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 1
+    ColorG: 1
+    ColorB: 1
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+Cache:
+  - Text: "シ"
+    Path: "sb/dialog/txt/pass/1/jp/30b7.png"
+    Hash: "ca4e97e090f86fa9a8c82c4eaf39be32"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "ス"
+    Path: "sb/dialog/txt/pass/1/jp/30b9.png"
+    Hash: "51c6456c4b0deb502bb7c73dfca36a94"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 18
+  - Text: "テ"
+    Path: "sb/dialog/txt/pass/1/jp/30c6.png"
+    Hash: "c38dfdbfad751c30dd2753d940728fd6"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 19
+  - Text: "ム"
+    Path: "sb/dialog/txt/pass/1/jp/30e0.png"
+    Hash: "c8bc6855499d0e161756ab16676d44a4"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "が"
+    Path: "sb/dialog/txt/pass/1/jp/304c.png"
+    Hash: "bf0c9db52923591ca4101277660ddf2e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "崩"
+    Path: "sb/dialog/txt/pass/1/jp/5d29.png"
+    Hash: "90f19756656898e047e9299bde4808fe"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "壊"
+    Path: "sb/dialog/txt/pass/1/jp/58ca.png"
+    Hash: "57cd427187662f3711bd90af809b0058"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "す"
+    Path: "sb/dialog/txt/pass/1/jp/3059.png"
+    Hash: "cd505036ac9d255f9c6eead19052624d"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "る"
+    Path: "sb/dialog/txt/pass/1/jp/308b.png"
+    Hash: "1b5caf9f723ec6ea6d0f62176f4a96dc"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 18
+    Height: 19
+  - Text: "前"
+    Path: "sb/dialog/txt/pass/1/jp/524d.png"
+    Hash: "7fbab4a54917fbc16c09f1343f960bcf"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "に"
+    Path: "sb/dialog/txt/pass/1/jp/306b.png"
+    Hash: "350e76e53bc8980003b19ff32c3d8236"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 19
+  - Text: "無"
+    Path: "sb/dialog/txt/pass/1/jp/7121.png"
+    Hash: "813fe9bf7e8ea92373a0f3428a2077e0"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "事"
+    Path: "sb/dialog/txt/pass/1/jp/4e8b.png"
+    Hash: "14c9195c54e8ece84ebf00f8dce9c6e4"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "マ"
+    Path: "sb/dialog/txt/pass/1/jp/30de.png"
+    Hash: "9dab1a770217c79546132c9a12e362b7"
+    OffsetX: 0
+    OffsetY: 2
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 17
+  - Text: "ッ"
+    Path: "sb/dialog/txt/pass/1/jp/30c3.png"
+    Hash: "199afb955dfb64c59862b9ea0638280d"
+    OffsetX: 2
+    OffsetY: 4
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 16
+  - Text: "パ"
+    Path: "sb/dialog/txt/pass/1/jp/30d1.png"
+    Hash: "44671a136bceeca1b00b23023dda73be"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "ー"
+    Path: "sb/dialog/txt/pass/1/jp/30fc.png"
+    Hash: "9144b1e6f366941a6e5ac08e2d7a872d"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 4
+  - Text: "達"
+    Path: "sb/dialog/txt/pass/1/jp/9054.png"
+    Hash: "1e68d5b184b67101b12570f91d22b76c"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "も"
+    Path: "sb/dialog/txt/pass/1/jp/3082.png"
+    Hash: "901cbc2c035ecb14b677a715d9b49123"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 18
+    Height: 20
+  - Text: "普"
+    Path: "sb/dialog/txt/pass/1/jp/666e.png"
+    Hash: "00e162593809b30199edbc81f2ca512e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "通"
+    Path: "sb/dialog/txt/pass/1/jp/901a.png"
+    Hash: "96558eba6035c1b1367006f11e2c7679"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "戻"
+    Path: "sb/dialog/txt/pass/1/jp/623b.png"
+    Hash: "e45a4e9ec2598ac37ba0ac01a408346e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "り"
+    Path: "sb/dialog/txt/pass/1/jp/308a.png"
+    Hash: "7135476e87012d7217d3e928e50b583c"
+    OffsetX: 3
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 14
+    Height: 20
+  - Text: "ま"
+    Path: "sb/dialog/txt/pass/1/jp/307e.png"
+    Hash: "cd7260f7156d5958a3d0d584218087e9"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "し"
+    Path: "sb/dialog/txt/pass/1/jp/3057.png"
+    Hash: "a79facc1f06d67a44a4285b543b1daec"
+    OffsetX: 4
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 20
+  - Text: "た"
+    Path: "sb/dialog/txt/pass/1/jp/305f.png"
+    Hash: "7be1e8bdfb97a3ad5018b9ca07e40f53"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "！"
+    Path: "sb/dialog/txt/pass/1/jp/ff01.png"
+    Hash: "fd4e532a2e19093cb6dc55aa28942ad7"
+    OffsetX: 8
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 5
+    Height: 18
+  - Text: "D"
+    Path: "sb/dialog/txt/pass/1/jp/0044.png"
+    Hash: "0ccd4e1daed5c15d2d047e08ab884e0b"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 15
+    BaseHeight: 20
+    Width: 14
+    Height: 18
+  - Text: "O"
+    Path: "sb/dialog/txt/pass/1/jp/004f.png"
+    Hash: "87a443ee010ef2dbce76e06798900a40"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 15
+    BaseHeight: 20
+    Width: 15
+    Height: 18
+  - Text: "N"
+    Path: "sb/dialog/txt/pass/1/jp/004e.png"
+    Hash: "2aad404096125cbd9891a6539925f416"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 15
+    BaseHeight: 20
+    Width: 14
+    Height: 18
+  - Text: "'"
+    Path: "sb/dialog/txt/pass/1/jp/0027.png"
+    Hash: "cd910d5e42e9b4d60e8416563113c325"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 5
+    BaseHeight: 20
+    Width: 5
+    Height: 7
+  - Text: "T"
+    Path: "sb/dialog/txt/pass/1/jp/0054.png"
+    Hash: "0e97d2ae1dfaa3f309b291f8f0581255"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 11
+    BaseHeight: 20
+    Width: 11
+    Height: 18
+  - Text: "S"
+    Path: "sb/dialog/txt/pass/1/jp/0053.png"
+    Hash: "c871d4cb92093e5b119cbddf5f06aa89"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 11
+    BaseHeight: 20
+    Width: 11
+    Height: 18
+  - Text: "K"
+    Path: "sb/dialog/txt/pass/1/jp/004b.png"
+    Hash: "82ac6edc7cf8a0bbfdfb637bc377fe94"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 12
+    BaseHeight: 20
+    Width: 11
+    Height: 18
+  - Text: "I"
+    Path: "sb/dialog/txt/pass/1/jp/0049.png"
+    Hash: "9d7f4fb540c9f277f01e182322751ddc"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 5
+    BaseHeight: 20
+    Width: 4
+    Height: 18
+  - Text: "P"
+    Path: "sb/dialog/txt/pass/1/jp/0050.png"
+    Hash: "83de652b4c1c44580835132d3638e192"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 12
+    BaseHeight: 20
+    Width: 11
+    Height: 18
+  - Text: "Y"
+    Path: "sb/dialog/txt/pass/1/jp/0059.png"
+    Hash: "40426b464494073b898401cbb66bbf6b"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 12
+    BaseHeight: 20
+    Width: 12
+    Height: 18
+  - Text: "E"
+    Path: "sb/dialog/txt/pass/1/jp/0045.png"
+    Hash: "54c9f761fe12f2bad4a8763127f2f03a"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 11
+    BaseHeight: 20
+    Width: 10
+    Height: 18
+  - Text: "常"
+    Path: "sb/dialog/txt/pass/1/jp/5e38.png"
+    Hash: "742d0d1de88cefdd2de30957ef719789"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21

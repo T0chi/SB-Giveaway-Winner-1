@@ -114,13 +114,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15;
-            var GlowRadius = 0;
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
+            var GlowRadius = 15;
+            var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription()
+            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "Microsoft Yi Baiti",
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -131,8 +135,8 @@ namespace StorybrewScripts
             },
             new FontGlow()
             {
-                Radius = true ? 0 : GlowRadius,
-                Color = Color4.Black,
+                Radius = false ? 0 : GlowRadius,
+                Color = GlowColor,
             },
             new FontOutline()
             {
@@ -146,16 +150,30 @@ namespace StorybrewScripts
             });
 
 
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "Alright, those are all the difficult missions over and done with!",
+            //                       "We should be done with the map soon." };
+            // this.dialog = new DialogManager(this, font, 331111, 337394, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "This mission should be relatively easier than the previous ones.",
+            //                        "Spy on aircrafts cruising by from behind the building, and report anything strange you find!" };
+            // this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Alright, those are all the difficult missions over and done with!",
-                                  "We should be done with the map soon." };
+            string[] sentence = { "よし、難しいミッションはもう終わり！",
+                                  "もうすぐ全ての譜面も終了。" };
             this.dialog = new DialogManager(this, font, 331111, 337394, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "This mission should be relatively easier than the previous ones.",
-                                   "Spy on aircrafts cruising by from behind the building, and report anything strange you find!" };
+            string[] sentence2 = { "このミッションの方が前のミッションと比べて簡単。",
+                                   "建物の後ろから飛んでくる航空機を見逃さないで、不正を見つけたら報告して！" };
             this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);

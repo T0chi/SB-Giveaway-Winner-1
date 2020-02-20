@@ -18,7 +18,7 @@ namespace StorybrewScripts
         public override void Generate()
         {
 		    // Noffy();
-		    // Reey();
+		    Reey();
         }
 
         public void Noffy()
@@ -43,7 +43,11 @@ namespace StorybrewScripts
 
         public void Reey()
         {
-            var section1_1 = GetLayer("").CreateSample("sb/sfx/voice/reey/sections/", 3245 + delay, 100);
+            var section1_1 = GetLayer("").CreateSample("sb/sfx/voice/reey/sections/section1_1.ogg", 3245 + delay, 100);
+            var section2_1 = GetLayer("").CreateSample("sb/sfx/voice/reey/sections/section2_1.ogg", 64629 + delay, 100);
+            var section3_1 = GetLayer("").CreateSample("sb/sfx/voice/reey/sections/section3_1.ogg", 117905 + delay, 100);
+            var section4_1 = GetLayer("").CreateSample("sb/sfx/voice/reey/sections/section4_1.ogg", 163062 + delay, 100);
+            var section5_1 = GetLayer("").CreateSample("sb/sfx/voice/reey/sections/section5_1.ogg", 214268 + delay, 100);
         }
     }
 }

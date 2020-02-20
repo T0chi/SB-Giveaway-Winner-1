@@ -14,12 +14,9 @@ Config:
   BoxColorNarratorText:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
-  GlowColor:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
   OutlineColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.1960784,0.1960784,0.1960784,0.7843137"
+    Value: "0.1960784,0.1960784,0.1960784,0.1905839"
   ShadowColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "0,0,0,0"

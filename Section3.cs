@@ -33,7 +33,7 @@ namespace StorybrewScripts
             Dialog();
             Background();
             ItemCollect();
-            Tochi(117905, 137262);
+            Tochi(117905, 135012);
             Petals(128262, 157062);
             HUD(115238, 157062, 128262, "Mission #2", "Adaptation Window", "sb/HUD/txt/nameTag/Acyl.png", 4500, "sb/avatars/AcylProfile.png");
         }
@@ -64,13 +64,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15;
-            var GlowRadius = 0;
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
+            var GlowRadius = 15;
+            var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription()
+            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "Microsoft Yi Baiti",
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -81,8 +85,8 @@ namespace StorybrewScripts
             },
             new FontGlow()
             {
-                Radius = true ? 0 : GlowRadius,
-                Color = Color4.Black,
+                Radius = false ? 0 : GlowRadius,
+                Color = GlowColor,
             },
             new FontOutline()
             {
@@ -96,17 +100,31 @@ namespace StorybrewScripts
             });
 
 
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "That was close! Congratulations on the completion of the first mission.",
+            //                       "The next mission however is much easier, all you have to do is pick up a few miscellaneous materials!" };
+            // this.dialog = new DialogManager(this, font, 117905, 130062, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "Be careful, the 'Tryplet Gems' are rather sharp.",
+            //                        "Good luck!" };
+            // this.dialog2 = new DialogManager(this, font, 130062, 137262, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "That was close! Congratulations on the completion of the first mission.",
-                                  "The next mission however is much easier, all you have to do is pick up a few miscellaneous materials!" };
-            this.dialog = new DialogManager(this, font, 117905, 130062, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            string[] sentence = { "危なかった！最初のミッションのクリアおめでとう。",
+                                  "次のミッションはもっと簡単、色々な材料を採るだけ！" };
+            this.dialog = new DialogManager(this, font, 117905, 125905, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Be careful, the 'Tryplet Gems' are rather sharp.",
-                                   "Good luck!" };
-            this.dialog2 = new DialogManager(this, font, 130062, 137262, "-Tochi", 105, 326, false,
+            string[] sentence2 = { "サンレンダ宝石がとても鋭いから気を付けて。",
+                                   "頑張って！" };
+            this.dialog2 = new DialogManager(this, font, 130062, 135012, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }

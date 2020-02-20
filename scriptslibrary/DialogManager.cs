@@ -321,17 +321,26 @@ public class DialogBoxes
         var fadeTime = 500;
         var PushValue = 30;
         var biggerBox = 10;
-        var boxPos = centre ? new Vector2(position.position.X - lineWidth * 0.5f - (biggerBox / 2), position.position.Y - (biggerBox / 2)) :
-                                          new Vector2(position.position.X - (biggerBox / 2), position.position.Y - (biggerBox / 2));
+        var boxPos = centre ? new Vector2(position.position.X - lineWidth * 0.5f - (biggerBox / 2) - 3, position.position.Y - (biggerBox / 2) - 4) :
+                                          new Vector2(position.position.X - (biggerBox / 2) - 3, position.position.Y - (biggerBox / 2) - 4);
 
         var layer = generator.GetLayer(layerName);
 
-        var inputBox = layer.CreateSprite("sb/pixel.png", OsbOrigin.TopLeft, boxPos);
+        // var inputBox = layer.CreateSprite("sb/dialog/box/b.png", OsbOrigin.TopLeft, boxPos);
+        var inputBox = layer.CreateAnimation("sb/dialog/box/b.png", 30, 60, OsbLoopType.LoopForever, OsbOrigin.TopLeft, boxPos);
         var bitmapInputBox = generator.GetMapsetBitmap("sb/pixel.png");
-        var widthInputBox = (lineWidth / bitmapInputBox.Width) + biggerBox;
-        var heightInputBox = (lineHeight / bitmapInputBox.Height) + biggerBox;
+        var bitmapInputBox2 = generator.GetMapsetBitmap("sb/pixel.png");
+        var bitmapInputBoxWidth = ((lineWidth / bitmapInputBox.Width) + biggerBox);
+        var bitmapInputBoxHeight = (lineHeight / bitmapInputBox.Height) + biggerBox;
+
+        var widthInputBox = bitmapInputBoxWidth / 900;
+        var heightInputBox = bitmapInputBoxHeight / 400;
+        var bWidth = widthInputBox * 900;
+        var bHeight = heightInputBox * 900;
         var bitmapPointer = generator.GetMapsetBitmap("sb/dialog/pointers/pointer.png");
         var bitmapPointerCorner = generator.GetMapsetBitmap("sb/dialog/pointers/pointerCorner.png");
+
+        generator.Log($"width: {widthInputBox}     heigt: {heightInputBox}");
 
         if (startTriggerGroup)
         {
@@ -378,556 +387,590 @@ public class DialogBoxes
         }
         // end style
 
-        // start style
-        if (pointer == Pointer.Up)
+        else
         {
             inputBox.Color(timing.startTime - d, Color);
             inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
             inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
             inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + (lineWidth / 2), boxPos.Y);
-            var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Color(timing.startTime - d, Color);
-            point.Scale(timing.startTime, pointerScale);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
+            
             if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
 
             if (push == Push.Up)
             {
                 inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
                 inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
             }
 
             if (push == Push.Down)
             {
                 inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
                 inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
             }
 
             if (push == Push.Left)
             {
                 inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
                 inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
             }
 
             if (push == Push.Right)
             {
                 inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
                 inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
             }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
         }
-        // end style
-
-        // start style
-        if (pointer == Pointer.Down)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + (lineWidth / 2), boxPos.Y + heightInputBox);
-            var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(180));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
-
-        // start style
-        if (pointer == Pointer.CentreLeft)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X, boxPos.Y + (heightInputBox / 2));
-            var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-90));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
-
-        // start style
-        if (pointer == Pointer.CentreRight)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + widthInputBox, boxPos.Y + (heightInputBox / 2));
-            var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(90));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
-
-        // start style
-        if (pointer == Pointer.TopLeft)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + (bitmapPointerCorner.Height / 4) + 0.5f, boxPos.Y + (bitmapPointerCorner.Height / 4) + 0.5f);
-            var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-45));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
-
-        // start style
-        if (pointer == Pointer.TopRight)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + widthInputBox - (bitmapPointerCorner.Height / 4) - 0.5f, boxPos.Y + (bitmapPointerCorner.Height / 4) + 0.5f);
-            var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(45));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
-
-        // start style
-        if (pointer == Pointer.BottomLeft)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + (bitmapPointerCorner.Height / 4) + 0.5f, boxPos.Y + heightInputBox - (bitmapPointerCorner.Height / 4) - 0.5f);
-            var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-135));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
-
-        // start style
-        if (pointer == Pointer.BottomRight)
-        {
-            inputBox.Color(timing.startTime - d, Color);
-            inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
-            inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            var pointerPos = new Vector2(boxPos.X + widthInputBox - (bitmapPointerCorner.Height / 4) - 0.5f, boxPos.Y + heightInputBox - (bitmapPointerCorner.Height / 4) - 0.5f);
-            var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
-
-            if (startTriggerGroup)
-            {
-                point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
-            }
-
-            point.Rotate(timing.startTime, MathHelper.DegreesToRadians(135));
-            point.Scale(timing.startTime, pointerScale);
-            point.Color(timing.startTime - d, Color);
-            point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
-            point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
-
-            if (push == Push.None)
-            {
-                point.MoveX(timing.startTime - d, pointerPos.X);
-                point.MoveY(timing.endTime + d, pointerPos.Y);
-            }
-
-            if (push == Push.Up)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
-            }
-
-            if (push == Push.Down)
-            {
-                inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
-                inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
-                point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
-                point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
-            }
-
-            if (push == Push.Left)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
-            }
-
-            if (push == Push.Right)
-            {
-                inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
-                inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
-                point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
-                point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
-            }
-
-            if (startTriggerGroup)
-            {
-                point.EndGroup();
-            }
-
-            spriteBox = point;
-        }
-        // end style
+
+        // // start style
+        // if (pointer == Pointer.Up)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + (lineWidth / 2), boxPos.Y);
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.Down)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + (lineWidth / 2), boxPos.Y + heightInputBox);
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(180));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.CentreLeft)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X, boxPos.Y + (heightInputBox / 2));
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-90));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.CentreRight)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + widthInputBox, boxPos.Y + (heightInputBox / 2));
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointer.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(90));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.TopLeft)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + (bitmapPointerCorner.Height / 4) + 0.5f, boxPos.Y + (bitmapPointerCorner.Height / 4) + 0.5f);
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-45));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.TopRight)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + widthInputBox - (bitmapPointerCorner.Height / 4) - 0.5f, boxPos.Y + (bitmapPointerCorner.Height / 4) + 0.5f);
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(45));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.BottomLeft)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + (bitmapPointerCorner.Height / 4) + 0.5f, boxPos.Y + heightInputBox - (bitmapPointerCorner.Height / 4) - 0.5f);
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(-135));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
+
+        // // start style
+        // if (pointer == Pointer.BottomRight)
+        // {
+        //     inputBox.Color(timing.startTime - d, Color);
+        //     inputBox.ScaleVec(timing.startTime - d, widthInputBox, heightInputBox);
+        //     inputBox.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     inputBox.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     var pointerPos = new Vector2(boxPos.X + widthInputBox - (bitmapPointerCorner.Height / 4) - 0.5f, boxPos.Y + heightInputBox - (bitmapPointerCorner.Height / 4) - 0.5f);
+        //     var point = layer.CreateSprite("sb/dialog/pointers/pointerCorner.png", OsbOrigin.BottomCentre, pointerPos);
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.StartTriggerGroup(triggerType, startTrigger, endTrigger, triggerGroup);
+        //     }
+
+        //     point.Rotate(timing.startTime, MathHelper.DegreesToRadians(135));
+        //     point.Scale(timing.startTime, pointerScale);
+        //     point.Color(timing.startTime - d, Color);
+        //     point.Fade(timing.startTime - d, timing.startTime - d + 200, 0, Fade);
+        //     point.Fade(timing.endTime + d - fadeTime, timing.endTime + d, Fade, 0);
+
+        //     if (push == Push.None)
+        //     {
+        //         point.MoveX(timing.startTime - d, pointerPos.X);
+        //         point.MoveY(timing.endTime + d, pointerPos.Y);
+        //     }
+
+        //     if (push == Push.Up)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y + PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y - PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y + PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y - PushValue);
+        //     }
+
+        //     if (push == Push.Down)
+        //     {
+        //         inputBox.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.Y - PushValue, boxPos.Y);
+        //         inputBox.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.Y, boxPos.Y + PushValue);
+        //         point.MoveY(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.Y - PushValue, pointerPos.Y);
+        //         point.MoveY(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.Y, pointerPos.Y + PushValue);
+        //     }
+
+        //     if (push == Push.Left)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X + PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X - PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X + PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X - PushValue);
+        //     }
+
+        //     if (push == Push.Right)
+        //     {
+        //         inputBox.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, boxPos.X - PushValue, boxPos.X);
+        //         inputBox.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), boxPos.X, boxPos.X + PushValue);
+        //         point.MoveX(OsbEasing.OutBack, timing.startTime - d, timing.startTime - d + 400, pointerPos.X - PushValue, pointerPos.X);
+        //         point.MoveX(OsbEasing.OutSine, timing.endTime + (d * 2) - 400, timing.endTime + (d * 2), pointerPos.X, pointerPos.X + PushValue);
+        //     }
+
+        //     if (startTriggerGroup)
+        //     {
+        //         point.EndGroup();
+        //     }
+
+        //     spriteBox = point;
+        // }
+        // // end style
 
         if (startTriggerGroup)
         {

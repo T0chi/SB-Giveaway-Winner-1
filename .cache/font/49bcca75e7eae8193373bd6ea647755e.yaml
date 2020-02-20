@@ -1,0 +1,240 @@
+﻿FontPath: "font/jp/KozGoPro-Light.otf"
+FontSize: 15
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Regular
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 1
+    ColorG: 1
+    ColorB: 1
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+Cache:
+  - Text: "良"
+    Path: "sb/dialog/txt/fail/2/jp/826f.png"
+    Hash: "f101eab275e6d006561e921af07bfc04"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "い"
+    Path: "sb/dialog/txt/fail/2/jp/3044.png"
+    Hash: "280ac9f61baa099fee316ea08164e1cd"
+    OffsetX: 0
+    OffsetY: 2
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 17
+  - Text: "成"
+    Path: "sb/dialog/txt/fail/2/jp/6210.png"
+    Hash: "a4b1a79aa9999cff0688f791247a0aac"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "績"
+    Path: "sb/dialog/txt/fail/2/jp/7e3e.png"
+    Hash: "7e0c393ebbdc5942f177785bb3d0cbc6"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "を"
+    Path: "sb/dialog/txt/fail/2/jp/3092.png"
+    Hash: "19bf5d4188490c817e349a1510a13350"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "取"
+    Path: "sb/dialog/txt/fail/2/jp/53d6.png"
+    Hash: "cf985359549c6b0130b3ecbc3a27f586"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "る"
+    Path: "sb/dialog/txt/fail/2/jp/308b.png"
+    Hash: "1b5caf9f723ec6ea6d0f62176f4a96dc"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 18
+    Height: 19
+  - Text: "に"
+    Path: "sb/dialog/txt/fail/2/jp/306b.png"
+    Hash: "350e76e53bc8980003b19ff32c3d8236"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 19
+  - Text: "は"
+    Path: "sb/dialog/txt/fail/2/jp/306f.png"
+    Hash: "2a9b7845a7c60992690f0ef386932d6b"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "も"
+    Path: "sb/dialog/txt/fail/2/jp/3082.png"
+    Hash: "901cbc2c035ecb14b677a715d9b49123"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 18
+    Height: 20
+  - Text: "う"
+    Path: "sb/dialog/txt/fail/2/jp/3046.png"
+    Hash: "f28dbe6d7387e4b4cfc4f9df55922dc3"
+    OffsetX: 2
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 20
+  - Text: "一"
+    Path: "sb/dialog/txt/fail/2/jp/4e00.png"
+    Hash: "ae6426c3a9944cfac5838f62c779ecc7"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 4
+  - Text: "度"
+    Path: "sb/dialog/txt/fail/2/jp/5ea6.png"
+    Hash: "4bc29e7bea17789dba0c6c3f4aa263d5"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "プ"
+    Path: "sb/dialog/txt/fail/2/jp/30d7.png"
+    Hash: "6bf5b2a8c085f9a5509cea2361996c78"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "レ"
+    Path: "sb/dialog/txt/fail/2/jp/30ec.png"
+    Hash: "e1c03bedf9ee12264c0e01e9413dc882"
+    OffsetX: 3
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 17
+    Height: 19
+  - Text: "イ"
+    Path: "sb/dialog/txt/fail/2/jp/30a4.png"
+    Hash: "67d38d8d506d52eaef03a10730781f4e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "し"
+    Path: "sb/dialog/txt/fail/2/jp/3057.png"
+    Hash: "a79facc1f06d67a44a4285b543b1daec"
+    OffsetX: 4
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 20
+  - Text: "て"
+    Path: "sb/dialog/txt/fail/2/jp/3066.png"
+    Hash: "74688825b7db50cb92c1a44e5edc57ae"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "み"
+    Path: "sb/dialog/txt/fail/2/jp/307f.png"
+    Hash: "7d5dde4895b071c3f71324d8da4fb8a5"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "く"
+    Path: "sb/dialog/txt/fail/2/jp/304f.png"
+    Hash: "6c410a801ab4bfc2fb2a8ea705ba075a"
+    OffsetX: 3
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 13
+    Height: 20
+  - Text: "だ"
+    Path: "sb/dialog/txt/fail/2/jp/3060.png"
+    Hash: "d9715c4ff51afc51758f9c5c901671d1"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "さ"
+    Path: "sb/dialog/txt/fail/2/jp/3055.png"
+    Hash: "2652f8ded254579893f43f3dee7ae723"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "！"
+    Path: "sb/dialog/txt/fail/2/jp/ff01.png"
+    Hash: "fd4e532a2e19093cb6dc55aa28942ad7"
+    OffsetX: 8
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 5
+    Height: 18

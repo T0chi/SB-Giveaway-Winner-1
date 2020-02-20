@@ -57,13 +57,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15;
-            var GlowRadius = 0;
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
+            var GlowRadius = 15;
+            var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription()
+            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "Microsoft Yi Baiti",
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -74,8 +78,8 @@ namespace StorybrewScripts
             },
             new FontGlow()
             {
-                Radius = true ? 0 : GlowRadius,
-                Color = Color4.Black,
+                Radius = false ? 0 : GlowRadius,
+                Color = GlowColor,
             },
             new FontOutline()
             {
@@ -89,16 +93,30 @@ namespace StorybrewScripts
             });
 
 
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "Well executed!",
+            //                       "However, the next mission involves slightly more technical knowledge." };
+            // this.dialog = new DialogManager(this, font, 252193, 257755, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "Retrieve broken machine parts for research from Ice Biome 3.5.",
+            //                        "Finger control is of utmost necessity, stay safe." };
+            // this.dialog2 = new DialogManager(this, font, 257755, 265294, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Well executed!",
-                                  "However, the next mission involves slightly more technical knowledge." };
+            string[] sentence = { "うまくやりましたね！",
+                                  "ただし、次のミッションは専門的な知識が必要になります。" };
             this.dialog = new DialogManager(this, font, 252193, 257755, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Retrieve broken machine parts for research from Ice Biome 3.5.",
-                                   "Finger control is of utmost necessity, stay safe." };
+            string[] sentence2 = { "研究のために氷のバイオーム3.5から壊れた機械の部品を回収してください。",
+                                   "指のコントロールが最も必要になります、気を付けて。" };
             this.dialog2 = new DialogManager(this, font, 257755, 265294, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
