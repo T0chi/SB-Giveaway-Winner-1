@@ -1,6 +1,6 @@
-`This storyboard was developed and finished after 4+ months`
+`This storyboard was developed and finished after 5+ months`
 
-`@above text ↑ last updated on @January 27th, 2020 (17:21)`
+`@above text ↑ last updated on @February 21th, 2020 (18:34) UTC+1`
 
 # Map
 - [Feryquitous - Songs Compilation](https://osu.ppy.sh/beatmapsets/1080818#osu/2261145 "Feryquitous - Songs Compilation") (by Acyl)
