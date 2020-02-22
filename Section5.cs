@@ -110,17 +110,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 13; //  japanese
-            // var fontSize = 15; // english
+            // var fontSize = 13; //  japanese
+            var fontSize = 15; // english
             var GlowRadius = 15;
             var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/jp/5", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/5", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -145,35 +145,35 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
+            // DIALOG 1 -----------------------------------------
+            string[] sentence = { "That was intense!",
+                                  "The next mission is an aim practice balloon popping challenge.",
+                                  "Jump around the playfield to strike the balloons down with your bow-wielding mapper." };
+            this.dialog = new DialogManager(this, font, 214268, 224732, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // DIALOG 2 -----------------------------------------
+            string[] sentence2 = { "You can take this as a small break to hone your mapper's abilities",
+                                  "But do give it your best shot as it still counts towards your final score!" };
+            this.dialog2 = new DialogManager(this, font, 224732, 233145, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "That was intense!",
-            //                       "The next mission is an aim practice balloon popping challenge.",
-            //                       "Jump around the playfield to strike the balloons down with your bow-wielding mapper." };
+            // string[] sentence = { "今のは激しかった！",
+            //                       "次のミッションはaim練習で風船を割るチャレンジ。",
+            //                       "弓を使うマッパーでフィールド内にある風船を矢で撃ってください。" };
             // this.dialog = new DialogManager(this, font, 214268, 224256, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "You can take this as a small break to hone your mapper's abilities",
-            //                       "But do give it your best shot as it still counts towards your final score!" };
+            // string[] sentence2 = { "小休憩としてマッパーの能力を磨き上げてください。",
+            //                       "あなたの最後のスコアとして加算されるので最大限のベストを尽くしてください！" };
             // this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "今のは激しかった！",
-                                  "次のミッションはaim練習で風船を割るチャレンジ。",
-                                  "弓を使うマッパーでフィールド内にある風船を矢で撃ってください。" };
-            this.dialog = new DialogManager(this, font, 214268, 224256, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "小休憩としてマッパーの能力を磨き上げてください。",
-                                  "あなたの最後のスコアとして加算されるので最大限のベストを尽くしてください！" };
-            this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
         public void Tochi(int startTime, int endTime)
@@ -181,11 +181,12 @@ namespace StorybrewScripts
             var Hoveduration = 5000;
             var loopCount = (endTime - startTime) / Hoveduration;
             var pos = new Vector2(320, 240);
-            var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
+            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
+            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
             var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
 
             avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.3);
+            avatar.Scale(startTime, 0.6);
             avatar.Fade(startTime, startTime + 500, 0, 1);
             avatar.Fade(endTime, endTime + 500, 1, 0);
 

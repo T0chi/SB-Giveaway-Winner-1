@@ -1,4 +1,4 @@
-SECTION 1 (INTRO):
+﻿SECTION 1 (INTRO):
 ------------
 Hello, and welcome to World TQR-f3!
 こんにちは、そして異世界TQR-f3にようこそ！
@@ -39,7 +39,7 @@ That was close! Congratulations on the completion of the first mission.
 危なかった！　最初のミッションのクリアおめでとう。
 The next mission however is much easier, all you have to do is pick up a few miscellaneous materials!
 次のミッションはもっと簡単、色々な材料を採るだけ！
-Be careful, the Tryplets gems are rather sharp.
+Be careful, the 'Tryplet Gems' are rather sharp.
 サンレンダ宝石がとても鋭いから気を付けて。
 
 Good luck!
@@ -71,9 +71,9 @@ The next mission is an aim practice balloon popping challenge.
 次のミッションはaim練習で風船を割るチャレンジ。
 Jump around the playfield to strike the balloons down with your bow-wielding mapper.
 弓を使うマッパーでフィールド内にある風船を矢で撃ってください。
-Take this as a small break to hone your mapper's abilities.
+You can take this as a small break to hone your mapper's abilities
 小休憩としてマッパーの能力を磨き上げてください。
-Do give it your best shot as it still accounts to your final score!
+But do give it your best shot as it still counts towards your final score!
 あなたの最後のスコアとして加算されるので最大限のベストを尽くしてください！
 
 
@@ -82,7 +82,7 @@ SECTION 6:
 ------------
 Well executed!
 うまくやりましたね！
-The next mission involves slightly more technical knowledge however.
+However, the next mission involves slightly more technical knowledge.
 ただし、次のミッションは専門的な知識が必要になります。
 Retrieve broken machine parts for research from Ice Biome 3.5.
 研究のために氷のバイオーム3.5から壊れた機械の部品を回収してください。
@@ -115,7 +115,7 @@ We should be done with the map soon.
 もうすぐ全ての譜面も終了。
 This mission should be relatively easier than the previous ones.
 このミッションの方が前のミッションと比べて簡単。
-Spy on the aircrafts cruising past the building from behind, report any forms of inconsistency!
+Spy on aircrafts cruising by from behind the building, and report anything strange you find!
 建物の後ろから飛んでくる航空機を見逃さないで、不正を見つけたら報告して！
 
 
@@ -132,7 +132,7 @@ What's going on?! Let me run a quick system scan...
 *System scan starts*
 *System scan ends*
 
-It seems like the remaining bugs from Section 4 have infiltrated the system, corrupting the databases for the mappers...
+It seems the remaining bugs from Section 4 have infiltrated the system, corrupting the mappers' databases...
 見た感じセクション４からの残りのバグはシステムに侵入し、マッパー達のデーターベースを破損しました...
 Wait... this was not supposed to happen... Why do Necho and Otosaki-Yu have to fight!
 待って。こういうことがあってはダメです...なぜNechoとOtosaki-Yuは戦う必要性があるのですか！
@@ -144,15 +144,15 @@ Unfortunately it seems that your score will inevitably drop, but please save the
 AFTER ALL SECTIONS:
 ------------
 (Good performance)
-((The system is safe from collapse and our mappers are back to normal again!
+The system is safe from collapse and our mappers are back to normal again!
 You have saved the mission and have completed the map! Thank you for playing!
 システムが崩壊する前に無事にマッパー達も普通に戻りました！
 あなたはミッションを成し遂げマップもクリアしました！プレイしてくれてありがとうございました！
 
 
 (Poor performance)
-((Perhaps a system restore is due for all of us... unfortunately you have failed to save the mission.
-Do try the map again for a better grade!))
+Perhaps a system restore is due for all of us... unfortunately you have failed to save the mission.
+Do try the map again for a better grade!
 おそらくシステムの復元を私たちのためにしなければなりません...　残念ながらミッションを成し遂げることができませんでした。
 良い成績を取るにはもう一度プレイをしてみてください！
 
@@ -165,8 +165,8 @@ Perfect shot!
 ナイスエイム！
 パーフェクトショット！
 
-((Good shot! 
-Amazing!))
+Good shot! 
+Amazing!
 グッショット！
 すごい！
 
@@ -175,8 +175,8 @@ Amazing!))
 Are you having fun? Hehe~
 楽しんでる？ふふ
 
-((Good job!))
- グッジョブ！
+Good job!
+グッジョブ！
  
 (Section 4)
 Good job!
@@ -186,9 +186,9 @@ Good accuracy!
 速い！
 グッドACC！
 
-((That was quick!
+That was quick!
 Your reaction time is impeccable!
-Wow!))
+Wow!
 あれは早かった！
 反応速度が良い！
 わぁ！
@@ -200,8 +200,8 @@ Your aim is very good!
 ナイスエイム！
 エイムがすごく良い！
 
-((Good shot!
-Spot on!))
+Good shot!
+Spot on!
 グッドショット！
 当たりました！
 
@@ -212,8 +212,8 @@ Nice one!
 すごい！
 ナイスワン！
 
-((Good job!
-Just a few more to go!))
+Good job!
+Just a few more to go!
 グッジョブ！
 あともう少し！
  
@@ -224,8 +224,8 @@ You are doing great!
 ナイスタイミング！
 良い感じ！
 
-((It looks so easy for you!
-Perfect timing!))
+It looks so easy for you!
+Perfect timing!
 あなたにとって簡単に見える！
 パーフェクトタイミング！
  
@@ -236,8 +236,8 @@ Smooth combo~
 飛んでるよ！
 スムースコンボ～
 
-((They are coming through!
-Going good!))
+They are coming through!
+Going good!
 航空機が来てる！
 良い感じ！
 
@@ -252,10 +252,10 @@ Wonderful aim~
 わあ、ナイスコンボ～
 すごいエイム～
 
-((Good accuracy!
+Good accuracy!
 Nice combo!
 Please do your best!
-It seems like it will end soon!))
+It seems like it will end soon!
 グッドACC！
 ナイスコンボ！
 頑張ってください！
@@ -273,9 +273,9 @@ Your accuracy is almost there!
 敵を撃って！
 もう少し！
 
-((Just a little higher...
+Just a little higher...
 Ah! You were close there...
-You can do it!))
+You can do it!
 もう少し上だった...
 ああ！近かった！
 できるよ！
@@ -285,8 +285,8 @@ You can do it!))
 Concentrate!
 集中して！
 
-((Concentrate!
-Be careful!))
+Concentrate!
+Be careful!
 集中して！
 気を付けて！
 
@@ -299,9 +299,9 @@ Slash faster!
 もう少し！
 速く斬って！
 
-((Eek! That was close!
+Eek! That was close!
 You are not slashing quick enough...
-Be careful!))
+Be careful!
 わあ！危なかった！
 斬るのが速くないから...
 気を付けて！
@@ -313,8 +313,8 @@ Concentrate on your aim...
 あと少し！
 狙うのを集中して！
 
-((Ah you barely grazed that one!
-Remember to breathe!))
+Ah you barely grazed that one!
+Remember to breathe!
 あぁこすった！
 呼吸をするのを忘れないで！
 
@@ -326,9 +326,9 @@ Don't get hurt!
 怪我しないで！
 
 
-((Don't hurt yourself!
+Don't hurt yourself!
 Be careful!
-Ah! That has got to hurt...))
+Ah! That has got to hurt...
 怪我しないで！
 気を付けて！
 あぁ！痛そう...
@@ -340,10 +340,10 @@ It's getting intense!
 雪の結晶に気を付けて！
 激しくなってる！
 
-((A little slower...
+A little slower...
 Too quick!
 Perhaps the mapper's aid was not enough...
-You need more practice!))
+You need more practice!
 少し遅い
 速すぎる！
 おそらくマッパーの助けは不十分...
@@ -358,9 +358,9 @@ One more left.
 建物から航空機を通過させて
 もう一つ。
 
-((Don't peek your head out too far!
+Don't peek your head out too far!
 They see you!
-Be careful...))
+Be careful...
 頭を見せないで！
 見られる！
 気を付けて...
@@ -376,12 +376,12 @@ ACC悪い...
 ああ、失敗しないで！
 これ難しいのは私も分かる...
 
-((Oh no...
+Oh no...
 Please save them...
 The situation seems bleak...
 Be careful!
 Don't fail!
-Focus!))
+Focus!
 あぁ...
 彼たちを助けてください...
 この状況は良くない...

@@ -184,11 +184,12 @@ namespace StorybrewScripts
             var Hoveduration = 5000;
             var loopCount = (endTime - startTime) / Hoveduration;
             var pos = new Vector2(320, 240);
-            var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
+            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
+            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
             var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
 
             avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.3);
+            avatar.Scale(startTime, 0.6);
             avatar.Fade(startTime, startTime + 500, 0, 1);
             avatar.Fade(endTime, endTime + 500, 1, 0);
 

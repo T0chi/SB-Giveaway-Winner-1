@@ -45,7 +45,7 @@ namespace StorybrewScripts
 
             // Mission is to destroy all the enemies (aircrafts)
             Mission();
-            Tochi(64514, 81905);
+            Tochi(64514, 83571);
         }
 
         public void Background()
@@ -66,17 +66,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 13; //  japanese
-            // var fontSize = 15; // english
+            // var fontSize = 13; //  japanese
+            var fontSize = 15; // english
             var GlowRadius = 15;
             var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -101,35 +101,35 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
 
+            // DIALOG 1 -----------------------------------------
+            string[] sentence = { "Apologies for the haste but are you ready for your first mission?",
+                                  "Unfortunately the warm-up phase was probably inadequate for these velocities..." };
+            this.dialog = new DialogManager(this, font, 64514, 74905, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // DIALOG 2 -----------------------------------------
+            string[] sentence2 = { "Shoot the enemy aircraft and try not to miss.",
+                                   "Missing too many times will result in a lower score so please do your best.",
+                                   "Good luck!" };
+            this.dialog2 = new DialogManager(this, font, 74905, 83571, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
             // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "Apologies for the haste but are you ready for your first mission?",
-            //                       "Unfortunately the warm-up phase was probably inadequate for these velocities..." };
+            // string[] sentence = { "急がしてごめんなさい、でも最初のミッションの準備はいいですか？",
+            //                       "あいにく最初の段階であの速度のwarm-upは多分不十分だった..." };
             // this.dialog = new DialogManager(this, font, 64514, 72571, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "Shoot the enemy aircraft and try not to miss.",
-            //                        "Missing too many times will result in a lower score so please do your best.",
-            //                        "Good luck!" };
+            // string[] sentence2 = { "ミスをしないように敵を撃ってください。",
+            //                        "ミスを出しすぎると低い点数になるので気を抜かないようにしてください。",
+            //                        "頑張って！" };
             // this.dialog2 = new DialogManager(this, font, 72571, 81905, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "急がしてごめんなさい、でも最初のミッションの準備はいいですか？",
-                                  "あいにく最初の段階であの速度のwarm-upは多分不十分だった..." };
-            this.dialog = new DialogManager(this, font, 64514, 72571, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "ミスをしないように敵を撃ってください。",
-                                   "ミスを出しすぎると低い点数になるので気を抜かないようにしてください。",
-                                   "頑張って！" };
-            this.dialog2 = new DialogManager(this, font, 72571, 81905, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
         public void Mission()
@@ -283,7 +283,7 @@ namespace StorybrewScripts
             var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
             
             avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.3);
+            avatar.Scale(startTime, 0.6);
             avatar.Fade(startTime, startTime + 500, 0, 1);
             avatar.Fade(endTime, endTime + 500, 1, 0);
 

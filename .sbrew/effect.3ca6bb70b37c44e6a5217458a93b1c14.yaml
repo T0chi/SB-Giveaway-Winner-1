@@ -10,7 +10,7 @@ Config:
     Value: "0.2495309,0.2495309,0.2495309,1"
   TochiColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.8571371,0.8571371,0.8571371,1"
+    Value: "1,1,1,1"
   BoxColorText:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
@@ -108,6 +108,11 @@ Layers:
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
+  229244e85fe54b2f92c0e2534b264ddd:
+    Name: "Dialog - Text"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
   7e361741990d4a3bb1df33e7307e2c8a:
     Name: "-Tochi"
     OsbLayer: Foreground
@@ -115,11 +120,6 @@ Layers:
     Visible: Yes
   d2ec22aea0ed46f2a9f217f49482f959:
     Name: "avatarFront"
-    OsbLayer: Foreground
-    DiffSpecific: No
-    Visible: Yes
-  229244e85fe54b2f92c0e2534b264ddd:
-    Name: "Dialog - Text"
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

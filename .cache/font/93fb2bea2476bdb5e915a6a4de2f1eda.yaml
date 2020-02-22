@@ -1,0 +1,321 @@
+﻿FontPath: "Microsoft Yi Baiti"
+FontSize: 15
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 15
+    Power: 0
+    ColorR: 0.5882353
+    ColorG: 0.5882353
+    ColorB: 0.5882353
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "T"
+    Path: "sb/dialog/txt/4/0054.png"
+    Hash: "90cb6c1247a8839faf38e83d777f06df"
+    OffsetX: -12
+    OffsetY: -9
+    BaseWidth: 10
+    BaseHeight: 21
+    Width: 34
+    Height: 39
+  - Text: "h"
+    Path: "sb/dialog/txt/4/0068.png"
+    Hash: "80946ecd84ff3d6774bb194e76e70471"
+    OffsetX: -14
+    OffsetY: -7
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 38
+  - Text: "a"
+    Path: "sb/dialog/txt/4/0061.png"
+    Hash: "f592b84329bec11690da4a99d34769af"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 37
+  - Text: "n"
+    Path: "sb/dialog/txt/4/006e.png"
+    Hash: "d0c7dd5ab6a4ca5618bb33c5d496a916"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 37
+  - Text: "k"
+    Path: "sb/dialog/txt/4/006b.png"
+    Hash: "93a84dd26314a338777c101c24e48522"
+    OffsetX: -14
+    OffsetY: -7
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 36
+    Height: 38
+  - Text: "y"
+    Path: "sb/dialog/txt/4/0079.png"
+    Hash: "d96b502c819e5e6a645b9b841f3bf81c"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 36
+    Height: 38
+  - Text: "o"
+    Path: "sb/dialog/txt/4/006f.png"
+    Hash: "7c02548c1f72abcabbef3fcab97c139d"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 36
+  - Text: "u"
+    Path: "sb/dialog/txt/4/0075.png"
+    Hash: "f10b027650355b9826ec0b2680c64266"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 37
+  - Text: "f"
+    Path: "sb/dialog/txt/4/0066.png"
+    Hash: "467a13c9407558346d4fbb07562ba944"
+    OffsetX: -14
+    OffsetY: -7
+    BaseWidth: 5
+    BaseHeight: 21
+    Width: 33
+    Height: 37
+  - Text: "r"
+    Path: "sb/dialog/txt/4/0072.png"
+    Hash: "960ae40b2d23cdec7590b202dbebfed7"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 6
+    BaseHeight: 21
+    Width: 33
+    Height: 35
+  - Text: "i"
+    Path: "sb/dialog/txt/4/0069.png"
+    Hash: "269e2252c1eb0a153cbd7e011d8a534b"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 4
+    BaseHeight: 21
+    Width: 33
+    Height: 35
+  - Text: "t"
+    Path: "sb/dialog/txt/4/0074.png"
+    Hash: "57a83c6f5f6f115c33a6df66b4391ed2"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 5
+    BaseHeight: 21
+    Width: 33
+    Height: 36
+  - Text: "l"
+    Path: "sb/dialog/txt/4/006c.png"
+    Hash: "9b63eade4206034326435b1ba65b1241"
+    OffsetX: -14
+    OffsetY: -7
+    BaseWidth: 4
+    BaseHeight: 21
+    Width: 33
+    Height: 37
+  - Text: "c"
+    Path: "sb/dialog/txt/4/0063.png"
+    Hash: "5fb1c26e8d2edc99ccbe0f60365d387f"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 35
+    Height: 36
+  - Text: "m"
+    Path: "sb/dialog/txt/4/006d.png"
+    Hash: "21936d27b64994e8f8d57edf4b6c6f04"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 13
+    BaseHeight: 21
+    Width: 41
+    Height: 38
+  - Text: "p"
+    Path: "sb/dialog/txt/4/0070.png"
+    Hash: "846d2ec278e32fb2baad25622a162eeb"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 39
+  - Text: "e"
+    Path: "sb/dialog/txt/4/0065.png"
+    Hash: "b8320973bd929f6133ddc7912a5e4daa"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 35
+  - Text: "g"
+    Path: "sb/dialog/txt/4/0067.png"
+    Hash: "d3e51d12d4e0edd957b9ae706c5f5ca9"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 40
+  - Text: "d"
+    Path: "sb/dialog/txt/4/0064.png"
+    Hash: "96dccb2b7ce156cc585d75e64656fbbd"
+    OffsetX: -14
+    OffsetY: -7
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 38
+    Height: 39
+  - Text: "s"
+    Path: "sb/dialog/txt/4/0073.png"
+    Hash: "b169822d307b36de543bc7a9ea8158d9"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 36
+    Height: 37
+  - Text: "."
+    Path: "sb/dialog/txt/4/002e.png"
+    Hash: "8e1c6e38be7ebb90ee4e24e4bc51d346"
+    OffsetX: -6
+    OffsetY: 7
+    BaseWidth: 6
+    BaseHeight: 21
+    Width: 18
+    Height: 19
+  - Text: "x"
+    Path: "sb/dialog/txt/4/0078.png"
+    Hash: "0843ec2aefc5ec82e8c88bcc5a090140"
+    OffsetX: -13
+    OffsetY: -5
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 35
+    Height: 36
+  - Text: "q"
+    Path: "sb/dialog/txt/4/0071.png"
+    Hash: "b5646bf88d8fb0a53136c7740ca7921e"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 38
+    Height: 39
+  - Text: ";"
+    Path: "sb/dialog/txt/4/003b.png"
+    Hash: "e9606acf7b444fdc1114ec2966a9fab9"
+    OffsetX: -12
+    OffsetY: 1
+    BaseWidth: 6
+    BaseHeight: 21
+    Width: 30
+    Height: 30
+  - Text: "'"
+    Path: "sb/dialog/txt/4/0027.png"
+    Hash: "c9388f06792afbe56c9aab1d7b050748"
+    OffsetX: -12
+    OffsetY: -7
+    BaseWidth: 4
+    BaseHeight: 21
+    Width: 28
+    Height: 29
+  - Text: "b"
+    Path: "sb/dialog/txt/4/0062.png"
+    Hash: "d3b8d8ade1298741283e423c3a92f722"
+    OffsetX: -14
+    OffsetY: -7
+    BaseWidth: 9
+    BaseHeight: 21
+    Width: 37
+    Height: 39
+  - Text: "v"
+    Path: "sb/dialog/txt/4/0076.png"
+    Hash: "80d591a1f1804a9830ad463e73573be2"
+    OffsetX: -13
+    OffsetY: -5
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 35
+    Height: 36
+  - Text: "w"
+    Path: "sb/dialog/txt/4/0077.png"
+    Hash: "ccd2ee33cf16ba4812d41738846b2778"
+    OffsetX: -14
+    OffsetY: -6
+    BaseWidth: 12
+    BaseHeight: 21
+    Width: 40
+    Height: 38
+  - Text: "-"
+    Path: "sb/dialog/txt/4/002d.png"
+    Hash: "1e6873d48d667ec190e1e3500e063daf"
+    OffsetX: -10
+    OffsetY: -2
+    BaseWidth: 10
+    BaseHeight: 21
+    Width: 30
+    Height: 29
+  - Text: "D"
+    Path: "sb/dialog/txt/4/0044.png"
+    Hash: "76c9e36c662b530cd378600fad896a00"
+    OffsetX: -14
+    OffsetY: -9
+    BaseWidth: 12
+    BaseHeight: 21
+    Width: 40
+    Height: 41
+  - Text: "S"
+    Path: "sb/dialog/txt/4/0053.png"
+    Hash: "f684d8e9d3019294e3577d95b5d47d2c"
+    OffsetX: -13
+    OffsetY: -9
+    BaseWidth: 11
+    BaseHeight: 21
+    Width: 38
+    Height: 41
+  - Text: "!"
+    Path: "sb/dialog/txt/4/0021.png"
+    Hash: "542a93c5b3c4a5621eaea952908af2dc"
+    OffsetX: -13
+    OffsetY: -8
+    BaseWidth: 7
+    BaseHeight: 21
+    Width: 33
+    Height: 37
