@@ -125,7 +125,7 @@ namespace StorybrewScripts
             var bgBitmap = GetMapsetBitmap("sb/pixel.png");
             var bg = GetLayer("Information").CreateSprite("sb/pixel.png", OsbOrigin.Centre, new Vector2(320, 240));
             var github = GetLayer("Information").CreateSprite("sb/outro/github.png", OsbOrigin.Centre);
-            var githubText = GetLayer("Information").CreateSprite("sb/outro/githubText.png", OsbOrigin.Centre);
+            var githubText = GetLayer("Information").CreateSprite("sb/outro/githubTextJP.png", OsbOrigin.Centre);
             var tyMessage = GetLayer("Information").CreateSprite("sb/outro/ty.png", OsbOrigin.Centre);
             var heart = GetLayer("Information").CreateAnimation("sb/outro/ani/heart.jpg", 16, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
             var skip = GetLayer("Information").CreateSprite("sb/outro/skip.png", OsbOrigin.Centre, new Vector2(320, 240));
@@ -142,9 +142,9 @@ namespace StorybrewScripts
             bg.Color(startTime, Color4.Black);
             
             // github logo + text
-            github.Scale(scrollStart, 0.35f);
-            github.Fade(scrollStart, scrollStart + 1000, 0, 1);
-            github.Move(scrollStart, scrollStart + scrollDuration, scrollStartPos.X, scrollStartPos.Y + 150,
+            github.Scale(scrollStart - 1000, 0.35f);
+            github.Fade(scrollStart - 1000, scrollStart - 1000 + 1000, 0, 1);
+            github.Move(scrollStart - 1000, scrollStart - 1000 + scrollDuration, scrollStartPos.X, scrollStartPos.Y + 150,
                                                                    scrollEndPos.X, scrollEndPos.Y - 150);
             githubText.Scale(scrollStart + 2000, 0.3f);
             githubText.Fade(scrollStart + 2000, scrollStart + 2000 + 1000, 0, 1);
@@ -1142,7 +1142,8 @@ namespace StorybrewScripts
             var reMoveX = -70;
             // var b = GetMapsetBitmap("sb/avatars/-Tochi.png");
             var nameTag = GetLayer("nameTag").CreateSprite("sb/avatars/-TochiTag.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/-Tochi.png", 32, 50, OsbLoopType.LoopForever, OsbOrigin.BottomCentre);
 
             // hovering stuff
             avatar.StartLoopGroup(startTime, LoopCount);
@@ -1156,7 +1157,7 @@ namespace StorybrewScripts
 
             // avatar stuff
             avatar.MoveX(startTime, posX);
-            avatar.Scale(startTime, 0.25);
+            avatar.Scale(startTime, 0.50);
             avatar.Fade(startTime, startTime + (HoverDuration / 2), 0, Fade);
             avatar.Fade(endTime - (HoverDuration / 2), endTime, Fade, 0);
             nameTag.MoveX(startTime, posX + reMoveX);

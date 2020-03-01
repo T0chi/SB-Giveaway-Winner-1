@@ -193,3 +193,246 @@ Cache:
     BaseHeight: 27
     Width: 5
     Height: 4
+  - Text: "準"
+    Path: "sb/dialog/txt/system/6e96.png"
+    Hash: "b2373a607775540084b988ad827e66d7"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 27
+    BaseHeight: 28
+    Width: 27
+    Height: 27
+  - Text: "備"
+    Path: "sb/dialog/txt/system/5099.png"
+    Hash: "f4b7d705bbce542fb0c5e41eb3c913bd"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 27
+    BaseHeight: 28
+    Width: 27
+    Height: 27
+  - Text: "し"
+    Path: "sb/dialog/txt/system/3057.png"
+    Hash: "dedc2e71dad3718c4d4be39daf371f67"
+    OffsetX: 3
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 28
+    Width: 17
+    Height: 24
+  - Text: "て"
+    Path: "sb/dialog/txt/system/3066.png"
+    Hash: "1c77613ac7a0a572102b905a088efd5c"
+    OffsetX: 0
+    OffsetY: 2
+    BaseWidth: 21
+    BaseHeight: 28
+    Width: 21
+    Height: 23
+  - Text: "く"
+    Path: "sb/dialog/txt/system/304f.png"
+    Hash: "eb967b212a854e625c1234cdbbeeb1da"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 14
+    BaseHeight: 28
+    Width: 14
+    Height: 26
+  - Text: "だ"
+    Path: "sb/dialog/txt/system/3060.png"
+    Hash: "b51c622970a596eef46036c2771f1597"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 21
+    BaseHeight: 28
+    Width: 21
+    Height: 25
+  - Text: "さ"
+    Path: "sb/dialog/txt/system/3055.png"
+    Hash: "2771bd957d9f817e5081c64463e53868"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 19
+    BaseHeight: 28
+    Width: 18
+    Height: 26
+  - Text: "い"
+    Path: "sb/dialog/txt/system/3044.png"
+    Hash: "6502027849b46e9fa2dc20f583027e35"
+    OffsetX: 1
+    OffsetY: 3
+    BaseWidth: 22
+    BaseHeight: 28
+    Width: 21
+    Height: 22
+  - Text: "！"
+    Path: "sb/dialog/txt/system/ff01.png"
+    Hash: "ba70fd79c9ba310d203b392e8b43e7ce"
+    OffsetX: 7
+    OffsetY: 9
+    BaseWidth: 19
+    BaseHeight: 28
+    Width: 5
+    Height: 16
+  - Text: "あ"
+    Path: "sb/dialog/txt/system/3042.png"
+    Hash: "5bad9efcdcd7a6d30c3123ae14f262d8"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 22
+    BaseHeight: 28
+    Width: 21
+    Height: 26
+  - Text: "な"
+    Path: "sb/dialog/txt/system/306a.png"
+    Hash: "e06d33cb48e23fb145b3e5d4c3bada6d"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 23
+    BaseHeight: 28
+    Width: 22
+    Height: 26
+  - Text: "た"
+    Path: "sb/dialog/txt/system/305f.png"
+    Hash: "99e21dfa40b7644b1f523c2ebc0a4462"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 21
+    BaseHeight: 28
+    Width: 21
+    Height: 25
+  - Text: "の"
+    Path: "sb/dialog/txt/system/306e.png"
+    Hash: "b76f2d728351d9acded11409fa252437"
+    OffsetX: 0
+    OffsetY: 2
+    BaseWidth: 22
+    BaseHeight: 28
+    Width: 22
+    Height: 23
+  - Text: "ミ"
+    Path: "sb/dialog/txt/system/30df.png"
+    Hash: "68790082285fdd8055bb1f29a270282a"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 16
+    BaseHeight: 28
+    Width: 15
+    Height: 25
+  - Text: "ッ"
+    Path: "sb/dialog/txt/system/30c3.png"
+    Hash: "c0ea8f1450bb29256f24e4b5d9d5d83b"
+    OffsetX: 0
+    OffsetY: 6
+    BaseWidth: 16
+    BaseHeight: 28
+    Width: 16
+    Height: 20
+  - Text: "シ"
+    Path: "sb/dialog/txt/system/30b7.png"
+    Hash: "e1d3b41b1a52903b77dfe4f3b977ed7b"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 22
+    BaseHeight: 28
+    Width: 21
+    Height: 25
+  - Text: "ョ"
+    Path: "sb/dialog/txt/system/30e7.png"
+    Hash: "0b3d3e09c391618699ef1ca6bcf7b719"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 14
+    BaseHeight: 28
+    Width: 13
+    Height: 18
+  - Text: "ン"
+    Path: "sb/dialog/txt/system/30f3.png"
+    Hash: "54f85428bd5d6feadae3afd1a0999209"
+    OffsetX: 1
+    OffsetY: 2
+    BaseWidth: 20
+    BaseHeight: 28
+    Width: 19
+    Height: 24
+  - Text: "は"
+    Path: "sb/dialog/txt/system/306f.png"
+    Hash: "5f8493bef0763d9dc8cdbc098c4a5cd4"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 23
+    BaseHeight: 28
+    Width: 22
+    Height: 25
+  - Text: "も"
+    Path: "sb/dialog/txt/system/3082.png"
+    Hash: "148b98de187094da61e5a91e78621a52"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 21
+    BaseHeight: 28
+    Width: 20
+    Height: 26
+  - Text: "う"
+    Path: "sb/dialog/txt/system/3046.png"
+    Hash: "e0f0a3d3675cf35986b26f942d48cdbd"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 16
+    BaseHeight: 28
+    Width: 16
+    Height: 27
+  - Text: "す"
+    Path: "sb/dialog/txt/system/3059.png"
+    Hash: "1a63aec51e2cafc1b80d0bc39793ef2e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 23
+    BaseHeight: 28
+    Width: 23
+    Height: 27
+  - Text: "ぐ"
+    Path: "sb/dialog/txt/system/3050.png"
+    Hash: "94cd633f631366186e8d02b0e304c064"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 17
+    BaseHeight: 28
+    Width: 17
+    Height: 26
+  - Text: "始"
+    Path: "sb/dialog/txt/system/59cb.png"
+    Hash: "8fb9b207156fcb647a5feb0dbd58478b"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 27
+    BaseHeight: 28
+    Width: 27
+    Height: 27
+  - Text: "ま"
+    Path: "sb/dialog/txt/system/307e.png"
+    Hash: "ca4d908e87591f043f9fa3689703c77c"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 21
+    BaseHeight: 28
+    Width: 20
+    Height: 26
+  - Text: "り"
+    Path: "sb/dialog/txt/system/308a.png"
+    Hash: "69eff2b5ec3ee6e3b41222c5efd61dbd"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 17
+    BaseHeight: 28
+    Width: 16
+    Height: 25
+  - Text: "。"
+    Path: "sb/dialog/txt/system/3002.png"
+    Hash: "d4e47ff4c2383023fa65d39fa80be286"
+    OffsetX: 1
+    OffsetY: 18
+    BaseWidth: 19
+    BaseHeight: 28
+    Width: 9
+    Height: 8

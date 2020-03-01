@@ -40,7 +40,7 @@ namespace StorybrewScripts
             Particles();
             Background();
             ParticlesIntense();
-            Tochi(380218, 414329);
+            Tochi(380218, 416214);
 
 		    Glitch(429565, glitch.one);
 		    Glitch(431450, glitch.two);
@@ -682,7 +682,7 @@ namespace StorybrewScripts
             // DIALOG 3 -----------------------------------------
             string[] sentence3 = { "残念ながらあなたのスコアは必然的に落ちますが、彼たちを助けてください！",
                                    "私たちはあなたにしか頼れません..." };
-            this.dialog3 = new DialogManager(this, font, 407418, 414329, "-Tochi", 105, 326, false,
+            this.dialog3 = new DialogManager(this, font, 407418, 416214, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
 
