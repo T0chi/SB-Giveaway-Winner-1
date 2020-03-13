@@ -31,6 +31,33 @@ Effects:
     ColorB: 0
     ColorA: 0.7843137
 Cache:
+  - Text: "そ"
+    Path: "sb/dialog/txt/pass/2/jp/305d.png"
+    Hash: "63614577e939adc7d3326086dbb33589"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "し"
+    Path: "sb/dialog/txt/pass/2/jp/3057.png"
+    Hash: "a79facc1f06d67a44a4285b543b1daec"
+    OffsetX: 4
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 20
+  - Text: "て"
+    Path: "sb/dialog/txt/pass/2/jp/3066.png"
+    Hash: "74688825b7db50cb92c1a44e5edc57ae"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
   - Text: "あ"
     Path: "sb/dialog/txt/pass/2/jp/3042.png"
     Hash: "2c40abd9343e98a7af535b64ca46e386"
@@ -130,15 +157,6 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 21
-  - Text: "し"
-    Path: "sb/dialog/txt/pass/2/jp/3057.png"
-    Hash: "a79facc1f06d67a44a4285b543b1daec"
-    OffsetX: 4
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 16
-    Height: 20
   - Text: "遂"
     Path: "sb/dialog/txt/pass/2/jp/9042.png"
     Hash: "6e1a4f31440ec432e99b1746fe47f28d"
@@ -175,15 +193,6 @@ Cache:
     BaseHeight: 40
     Width: 19
     Height: 20
-  - Text: "も"
-    Path: "sb/dialog/txt/pass/2/jp/3082.png"
-    Hash: "901cbc2c035ecb14b677a715d9b49123"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 18
-    Height: 20
   - Text: "ク"
     Path: "sb/dialog/txt/pass/2/jp/30af.png"
     Hash: "ec8a98992a75b91922cba3e409ae8b2a"
@@ -211,6 +220,69 @@ Cache:
     BaseHeight: 40
     Width: 19
     Height: 19
+  - Text: "す"
+    Path: "sb/dialog/txt/pass/2/jp/3059.png"
+    Hash: "cd505036ac9d255f9c6eead19052624d"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "る"
+    Path: "sb/dialog/txt/pass/2/jp/308b.png"
+    Hash: "1b5caf9f723ec6ea6d0f62176f4a96dc"
+    OffsetX: 1
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 18
+    Height: 19
+  - Text: "こ"
+    Path: "sb/dialog/txt/pass/2/jp/3053.png"
+    Hash: "ca5a1b014fc7b0413671cd1cdcaaba0f"
+    OffsetX: 2
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 18
+  - Text: "と"
+    Path: "sb/dialog/txt/pass/2/jp/3068.png"
+    Hash: "f9e1383a3bd242d6362fdf6b2abe2568"
+    OffsetX: 2
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 17
+    Height: 20
+  - Text: "が"
+    Path: "sb/dialog/txt/pass/2/jp/304c.png"
+    Hash: "bf0c9db52923591ca4101277660ddf2e"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "で"
+    Path: "sb/dialog/txt/pass/2/jp/3067.png"
+    Hash: "674da8a3c81f33df52786cacac9af0c9"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "き"
+    Path: "sb/dialog/txt/pass/2/jp/304d.png"
+    Hash: "3d0939550412ff80fd20d749cf5bf0e6"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
   - Text: "ま"
     Path: "sb/dialog/txt/pass/2/jp/307e.png"
     Hash: "cd7260f7156d5958a3d0d584218087e9"
@@ -247,27 +319,18 @@ Cache:
     BaseHeight: 40
     Width: 19
     Height: 20
-  - Text: "て"
-    Path: "sb/dialog/txt/pass/2/jp/3066.png"
-    Hash: "74688825b7db50cb92c1a44e5edc57ae"
+  - Text: "い"
+    Path: "sb/dialog/txt/pass/2/jp/3044.png"
+    Hash: "280ac9f61baa099fee316ea08164e1cd"
     OffsetX: 0
-    OffsetY: 1
+    OffsetY: 2
     BaseWidth: 20
     BaseHeight: 40
     Width: 20
-    Height: 19
-  - Text: "く"
-    Path: "sb/dialog/txt/pass/2/jp/304f.png"
-    Hash: "6c410a801ab4bfc2fb2a8ea705ba075a"
-    OffsetX: 3
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 13
-    Height: 20
-  - Text: "れ"
-    Path: "sb/dialog/txt/pass/2/jp/308c.png"
-    Hash: "605270d73cea565defb3a38dd8d838a6"
+    Height: 17
+  - Text: "だ"
+    Path: "sb/dialog/txt/pass/2/jp/3060.png"
+    Hash: "d9715c4ff51afc51758f9c5c901671d1"
     OffsetX: 0
     OffsetY: 0
     BaseWidth: 20
@@ -282,24 +345,6 @@ Cache:
     BaseWidth: 20
     BaseHeight: 40
     Width: 14
-    Height: 20
-  - Text: "が"
-    Path: "sb/dialog/txt/pass/2/jp/304c.png"
-    Hash: "bf0c9db52923591ca4101277660ddf2e"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 20
-    Height: 20
-  - Text: "と"
-    Path: "sb/dialog/txt/pass/2/jp/3068.png"
-    Hash: "f9e1383a3bd242d6362fdf6b2abe2568"
-    OffsetX: 2
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 17
     Height: 20
   - Text: "う"
     Path: "sb/dialog/txt/pass/2/jp/3046.png"
@@ -322,33 +367,6 @@ Cache:
   - Text: "ざ"
     Path: "sb/dialog/txt/pass/2/jp/3056.png"
     Hash: "5df5482e6f568adad84beb94391bcc16"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 19
-    Height: 20
-  - Text: "い"
-    Path: "sb/dialog/txt/pass/2/jp/3044.png"
-    Hash: "280ac9f61baa099fee316ea08164e1cd"
-    OffsetX: 0
-    OffsetY: 2
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 20
-    Height: 17
-  - Text: "だ"
-    Path: "sb/dialog/txt/pass/2/jp/3060.png"
-    Hash: "d9715c4ff51afc51758f9c5c901671d1"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 20
-    Height: 20
-  - Text: "き"
-    Path: "sb/dialog/txt/pass/2/jp/304d.png"
-    Hash: "3d0939550412ff80fd20d749cf5bf0e6"
     OffsetX: 1
     OffsetY: 0
     BaseWidth: 20

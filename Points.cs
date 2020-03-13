@@ -125,11 +125,12 @@ namespace StorybrewScripts
             var bgBitmap = GetMapsetBitmap("sb/pixel.png");
             var bg = GetLayer("Information").CreateSprite("sb/pixel.png", OsbOrigin.Centre, new Vector2(320, 240));
             var github = GetLayer("Information").CreateSprite("sb/outro/github.png", OsbOrigin.Centre);
-            var githubText = GetLayer("Information").CreateSprite("sb/outro/githubTextJP.png", OsbOrigin.Centre);
+            var githubText = GetLayer("Information").CreateSprite("sb/outro/githubText.png", OsbOrigin.Centre);
             var tyMessage = GetLayer("Information").CreateSprite("sb/outro/ty.png", OsbOrigin.Centre);
             var heart = GetLayer("Information").CreateAnimation("sb/outro/ani/heart.jpg", 16, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
             var skip = GetLayer("Information").CreateSprite("sb/outro/skip.png", OsbOrigin.Centre, new Vector2(320, 240));
             var skipNot = GetLayer("Information").CreateSprite("sb/outro/skipNot.png", OsbOrigin.Centre, new Vector2(320, 200));
+            // var easterEgg = GetLayer("Information").CreateSprite("sb/outro/unknown.png", OsbOrigin.Centre);
 
             var scrollDuration = 20000;
             var scrollStart = startTime;
@@ -181,6 +182,11 @@ namespace StorybrewScripts
                 skipNot.ScaleVec(0, loopDuration, -0.3f, 0.3f, 0.3f, 0.3f);
                 skipNot.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
             skipNot.EndGroup();
+
+            // easterEgg.Scale(scrollStart + 24000, 0.8f);
+            // easterEgg.Fade(scrollStart + 24000, scrollStart + 24000 + 1000, 0, 1);
+            // easterEgg.Fade(endTime + 9000, endTime + 10000, 1, 0);
+            // easterEgg.Move(scrollStart + 24000, new Vector2(320, 410));
         }
 
         public void fightSound(int breakStart, int endTime)
@@ -930,7 +936,7 @@ namespace StorybrewScripts
             //     DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
 
             // DIALOG 1 -----------------------------------------
-            string[] result = { "システムが崩壊する前に無事にマッパー達も通常に戻りました！" };
+            string[] result = { "システムが崩壊する前に無事にマッパー達も通常に戻り、" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
@@ -996,7 +1002,7 @@ namespace StorybrewScripts
             // this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
 
             // DIALOG 1 -----------------------------------------
-            string[] result2 = { "あなたはミッションを成し遂げマップをクリアしました！",
+            string[] result2 = { "そしてあなたはミッションを成し遂げマップをクリアすることができました！",
                                  "プレイをしていただきありがとうございました！" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
@@ -1169,7 +1175,8 @@ namespace StorybrewScripts
 
             // REFLECTION IN THE WATER
 
-            var avatarReflection = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            // var avatarReflection = GetLayer("-Tochi").CreateSprite("sb/avatars/-Tochi.png", OsbOrigin.BottomCentre);
+            var avatarReflection = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/-Tochi.png", 32, 50, OsbLoopType.LoopForever, OsbOrigin.BottomCentre);
 
             // hovering stuff
             avatarReflection.StartLoopGroup(startTime, LoopCount);

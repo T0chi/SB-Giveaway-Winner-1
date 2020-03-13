@@ -139,59 +139,59 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 21
-  - Text: "Ｔ"
-    Path: "sb/dialog/txt/jp/ff34.png"
-    Hash: "dcbe8477030ce735eda623225f5e994b"
-    OffsetX: 2
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 16
-    Height: 19
-  - Text: "Ｑ"
-    Path: "sb/dialog/txt/jp/ff31.png"
-    Hash: "4f094b99d61d1f30cbd191b932c934bc"
-    OffsetX: 2
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 17
-    Height: 21
-  - Text: "Ｒ"
-    Path: "sb/dialog/txt/jp/ff32.png"
-    Hash: "bfea923e5db65687bf6f13567ad41a59"
-    OffsetX: 3
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
+  - Text: "T"
+    Path: "sb/dialog/txt/jp/0054.png"
+    Hash: "0e97d2ae1dfaa3f309b291f8f0581255"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 11
+    BaseHeight: 20
+    Width: 11
+    Height: 18
+  - Text: "Q"
+    Path: "sb/dialog/txt/jp/0051.png"
+    Hash: "865b658d9a3d660679ac9090c757109d"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 15
+    BaseHeight: 20
     Width: 15
     Height: 19
-  - Text: "－"
-    Path: "sb/dialog/txt/jp/ff0d.png"
-    Hash: "7c454efd6e5c9d0a9fe1b82df81c06c6"
+  - Text: "R"
+    Path: "sb/dialog/txt/jp/0052.png"
+    Hash: "b084bee4b29ea6e170833ec4d1aa0aeb"
     OffsetX: 1
-    OffsetY: 8
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 18
-    Height: 4
-  - Text: "ｆ"
-    Path: "sb/dialog/txt/jp/ff46.png"
-    Hash: "f92780917b5f8352fc9afca94be6e906"
-    OffsetX: 5
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 12
-    Height: 19
-  - Text: "３"
-    Path: "sb/dialog/txt/jp/ff13.png"
-    Hash: "58325f4e788a9b448e8e2f41cc88df3a"
-    OffsetX: 4
     OffsetY: 1
-    BaseWidth: 20
+    BaseWidth: 12
     BaseHeight: 20
-    Width: 13
+    Width: 11
+    Height: 18
+  - Text: "-"
+    Path: "sb/dialog/txt/jp/002d.png"
+    Hash: "070f7420dba497b1c1cb0b1782c704db"
+    OffsetX: 0
+    OffsetY: 10
+    BaseWidth: 7
+    BaseHeight: 20
+    Width: 7
+    Height: 3
+  - Text: "f"
+    Path: "sb/dialog/txt/jp/0066.png"
+    Hash: "dc830d8924a67934471ff239a0901d0e"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 6
+    BaseHeight: 20
+    Width: 6
+    Height: 18
+  - Text: "3"
+    Path: "sb/dialog/txt/jp/0033.png"
+    Hash: "31adb695c6184e91453fa423543894b1"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 11
+    BaseHeight: 20
+    Width: 11
     Height: 18
   - Text: "よ"
     Path: "sb/dialog/txt/jp/3088.png"
@@ -256,51 +256,42 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 21
-  - Text: "ｏ"
-    Path: "sb/dialog/txt/jp/ff4f.png"
-    Hash: "3217be4993727c15f065a0abc9ee9bf3"
-    OffsetX: 3
-    OffsetY: 5
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 14
-    Height: 14
-  - Text: "ｃ"
-    Path: "sb/dialog/txt/jp/ff43.png"
-    Hash: "61866b10dd7e1a334d8001cca25d353d"
-    OffsetX: 4
-    OffsetY: 5
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 12
-    Height: 14
-  - Text: "ｈ"
-    Path: "sb/dialog/txt/jp/ff48.png"
-    Hash: "06e8558f1a1ae9b220ab555727c1f517"
-    OffsetX: 4
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 13
-    Height: 19
-  - Text: "ｉ"
-    Path: "sb/dialog/txt/jp/ff49.png"
-    Hash: "dbf4e46ae689557fb1c45eb408387382"
-    OffsetX: 8
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 5
-    Height: 19
-  - Text: "，"
-    Path: "sb/dialog/txt/jp/ff0c.png"
-    Hash: "bbc8293c48547b687a7fb95fdee97193"
+  - Text: "o"
+    Path: "sb/dialog/txt/jp/006f.png"
+    Hash: "9e1530ce908c98952ad67e10ac479096"
     OffsetX: 0
-    OffsetY: 14
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 6
-    Height: 7
+    OffsetY: 6
+    BaseWidth: 12
+    BaseHeight: 20
+    Width: 12
+    Height: 13
+  - Text: "c"
+    Path: "sb/dialog/txt/jp/0063.png"
+    Hash: "dac1f58a7a824d7e9e4136aa6cfdf1a0"
+    OffsetX: 0
+    OffsetY: 6
+    BaseWidth: 10
+    BaseHeight: 20
+    Width: 10
+    Height: 13
+  - Text: "h"
+    Path: "sb/dialog/txt/jp/0068.png"
+    Hash: "7b5cf80e5f524943122b3befdd098797"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 12
+    BaseHeight: 20
+    Width: 12
+    Height: 18
+  - Text: "i"
+    Path: "sb/dialog/txt/jp/0069.png"
+    Hash: "ec58e86c24d69a74a0ee60c96078d1cb"
+    OffsetX: 0
+    OffsetY: 2
+    BaseWidth: 5
+    BaseHeight: 20
+    Width: 5
+    Height: 17
   - Text: "今"
     Path: "sb/dialog/txt/jp/4eca.png"
     Hash: "225c2c2ae43c918cb8decc255c62e098"
@@ -472,6 +463,15 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 21
+  - Text: "で"
+    Path: "sb/dialog/txt/jp/3067.png"
+    Hash: "674da8a3c81f33df52786cacac9af0c9"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
   - Text: "つ"
     Path: "sb/dialog/txt/jp/3064.png"
     Hash: "4670fa32ab3766e92bafbbb6e04f373b"
@@ -931,15 +931,24 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 21
-  - Text: "０"
-    Path: "sb/dialog/txt/jp/ff10.png"
-    Hash: "be0b8a69555b1b3458627a52d3aaea10"
-    OffsetX: 4
+  - Text: "0"
+    Path: "sb/dialog/txt/jp/0030.png"
+    Hash: "a0a7925dfce7641d414770ab9a4b1778"
+    OffsetX: 0
     OffsetY: 1
-    BaseWidth: 20
+    BaseWidth: 11
     BaseHeight: 20
-    Width: 13
+    Width: 11
     Height: 18
+  - Text: ","
+    Path: "sb/dialog/txt/jp/002c.png"
+    Hash: "017a97338f4ff32c91d2a4803491ad73"
+    OffsetX: 0
+    OffsetY: 15
+    BaseWidth: 5
+    BaseHeight: 20
+    Width: 5
+    Height: 5
   - Text: "超"
     Path: "sb/dialog/txt/jp/8d85.png"
     Hash: "b2936d5800028b4ea02270d8a4cf0696"
@@ -985,120 +994,3 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 20
-  - Text: "-"
-    Path: "sb/dialog/txt/jp/002d.png"
-    Hash: "070f7420dba497b1c1cb0b1782c704db"
-    OffsetX: 0
-    OffsetY: 10
-    BaseWidth: 7
-    BaseHeight: 20
-    Width: 7
-    Height: 3
-  - Text: "T"
-    Path: "sb/dialog/txt/jp/0054.png"
-    Hash: "0e97d2ae1dfaa3f309b291f8f0581255"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 11
-    BaseHeight: 20
-    Width: 11
-    Height: 18
-  - Text: "o"
-    Path: "sb/dialog/txt/jp/006f.png"
-    Hash: "9e1530ce908c98952ad67e10ac479096"
-    OffsetX: 0
-    OffsetY: 6
-    BaseWidth: 12
-    BaseHeight: 20
-    Width: 12
-    Height: 13
-  - Text: "c"
-    Path: "sb/dialog/txt/jp/0063.png"
-    Hash: "dac1f58a7a824d7e9e4136aa6cfdf1a0"
-    OffsetX: 0
-    OffsetY: 6
-    BaseWidth: 10
-    BaseHeight: 20
-    Width: 10
-    Height: 13
-  - Text: "h"
-    Path: "sb/dialog/txt/jp/0068.png"
-    Hash: "7b5cf80e5f524943122b3befdd098797"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 12
-    BaseHeight: 20
-    Width: 12
-    Height: 18
-  - Text: "i"
-    Path: "sb/dialog/txt/jp/0069.png"
-    Hash: "ec58e86c24d69a74a0ee60c96078d1cb"
-    OffsetX: 0
-    OffsetY: 2
-    BaseWidth: 5
-    BaseHeight: 20
-    Width: 5
-    Height: 17
-  - Text: ","
-    Path: "sb/dialog/txt/jp/002c.png"
-    Hash: "017a97338f4ff32c91d2a4803491ad73"
-    OffsetX: 0
-    OffsetY: 15
-    BaseWidth: 5
-    BaseHeight: 20
-    Width: 5
-    Height: 5
-  - Text: "Q"
-    Path: "sb/dialog/txt/jp/0051.png"
-    Hash: "865b658d9a3d660679ac9090c757109d"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 15
-    BaseHeight: 20
-    Width: 15
-    Height: 19
-  - Text: "R"
-    Path: "sb/dialog/txt/jp/0052.png"
-    Hash: "b084bee4b29ea6e170833ec4d1aa0aeb"
-    OffsetX: 1
-    OffsetY: 1
-    BaseWidth: 12
-    BaseHeight: 20
-    Width: 11
-    Height: 18
-  - Text: "f"
-    Path: "sb/dialog/txt/jp/0066.png"
-    Hash: "dc830d8924a67934471ff239a0901d0e"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 6
-    BaseHeight: 20
-    Width: 6
-    Height: 18
-  - Text: "3"
-    Path: "sb/dialog/txt/jp/0033.png"
-    Hash: "31adb695c6184e91453fa423543894b1"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 11
-    BaseHeight: 20
-    Width: 11
-    Height: 18
-  - Text: "0"
-    Path: "sb/dialog/txt/jp/0030.png"
-    Hash: "a0a7925dfce7641d414770ab9a4b1778"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 11
-    BaseHeight: 20
-    Width: 11
-    Height: 18
-  - Text: "で"
-    Path: "sb/dialog/txt/jp/3067.png"
-    Hash: "674da8a3c81f33df52786cacac9af0c9"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 20
-    Height: 19

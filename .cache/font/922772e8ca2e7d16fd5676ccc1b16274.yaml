@@ -202,15 +202,6 @@ Cache:
     BaseHeight: 40
     Width: 18
     Height: 20
-  - Text: "普"
-    Path: "sb/dialog/txt/pass/1/jp/666e.png"
-    Hash: "00e162593809b30199edbc81f2ca512e"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 20
-    Height: 20
   - Text: "通"
     Path: "sb/dialog/txt/pass/1/jp/901a.png"
     Hash: "96558eba6035c1b1367006f11e2c7679"
@@ -220,6 +211,15 @@ Cache:
     BaseHeight: 40
     Width: 20
     Height: 20
+  - Text: "常"
+    Path: "sb/dialog/txt/pass/1/jp/5e38.png"
+    Hash: "742d0d1de88cefdd2de30957ef719789"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
   - Text: "戻"
     Path: "sb/dialog/txt/pass/1/jp/623b.png"
     Hash: "e45a4e9ec2598ac37ba0ac01a408346e"
@@ -238,42 +238,15 @@ Cache:
     BaseHeight: 40
     Width: 14
     Height: 20
-  - Text: "ま"
-    Path: "sb/dialog/txt/pass/1/jp/307e.png"
-    Hash: "cd7260f7156d5958a3d0d584218087e9"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 19
-    Height: 20
-  - Text: "し"
-    Path: "sb/dialog/txt/pass/1/jp/3057.png"
-    Hash: "a79facc1f06d67a44a4285b543b1daec"
-    OffsetX: 4
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 16
-    Height: 20
-  - Text: "た"
-    Path: "sb/dialog/txt/pass/1/jp/305f.png"
-    Hash: "7be1e8bdfb97a3ad5018b9ca07e40f53"
+  - Text: "、"
+    Path: "sb/dialog/txt/pass/1/jp/3001.png"
+    Hash: "610a8a15a10d406974d5dc68b9dd1cf4"
     OffsetX: 0
-    OffsetY: 0
+    OffsetY: 12
     BaseWidth: 20
     BaseHeight: 40
-    Width: 20
-    Height: 20
-  - Text: "！"
-    Path: "sb/dialog/txt/pass/1/jp/ff01.png"
-    Hash: "fd4e532a2e19093cb6dc55aa28942ad7"
-    OffsetX: 8
-    OffsetY: 1
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 5
-    Height: 18
+    Width: 8
+    Height: 8
   - Text: "D"
     Path: "sb/dialog/txt/pass/1/jp/0044.png"
     Hash: "0ccd4e1daed5c15d2d047e08ab884e0b"
@@ -373,12 +346,3 @@ Cache:
     BaseHeight: 20
     Width: 10
     Height: 18
-  - Text: "常"
-    Path: "sb/dialog/txt/pass/1/jp/5e38.png"
-    Hash: "742d0d1de88cefdd2de30957ef719789"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 20
-    BaseHeight: 40
-    Width: 20
-    Height: 21

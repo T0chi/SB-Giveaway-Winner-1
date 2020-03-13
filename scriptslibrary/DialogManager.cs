@@ -337,8 +337,8 @@ public class DialogBoxes
         var heightInputBox = bitmapInputBoxHeight / 400;
         var bWidth = widthInputBox * 900;
         var bHeight = heightInputBox * 900;
-        var bitmapPointer = generator.GetMapsetBitmap("sb/dialog/pointers/pointer.png");
-        var bitmapPointerCorner = generator.GetMapsetBitmap("sb/dialog/pointers/pointerCorner.png");
+        // var bitmapPointer = generator.GetMapsetBitmap("sb/dialog/pointers/pointer.png");
+        // var bitmapPointerCorner = generator.GetMapsetBitmap("sb/dialog/pointers/pointerCorner.png");
 
         generator.Log($"width: {widthInputBox}     heigt: {heightInputBox}");
 
