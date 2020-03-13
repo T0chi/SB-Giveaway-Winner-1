@@ -5,7 +5,7 @@
 # Map
 - [Feryquitous - Songs Compilation](https://osu.ppy.sh/beatmapsets/1080818#osu/2261145 "Feryquitous - Songs Compilation") (by Acyl)
 - Outro song: Kaname Shigeyoshi - The Rain Turned to Autumn Leaves
-- Download the Storyboard: [EN & JP versions](https://www.mediafire.com/#ukzfrnwj9wdfi "EN & JP versions")
+- Download the Storyboard: [EN & JP versions](http://www.mediafire.com/folder/ukzfrnwj9wdfi/(Acyl)_Feryquitous_-_Songs_Compilation "EN & JP versions")
 
 
 **Previews**
