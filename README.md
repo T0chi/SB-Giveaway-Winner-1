@@ -158,7 +158,7 @@ Mappers:
 - Heilia [@Heilia3](https://twitter.com/Heilia3 "@Heilia3")
 - Necho [@sama4038](https://twitter.com/sama4038 "@sama4038")
 - Moecho [@moeriko_](https://twitter.com/moeriko_ "@moeriko_")
-- Otosaka-Yu [@1112deng](https://twitter.com/1112deng "@1112deng")
+- Otosaka-Yu [@1112deng](https://twitter.com/coredepaint "@1112deng")
 - toybot [@toybot_](https://twitter.com/toybot_ "@toybot_")
 - Dailycare [@D4ilycare](https://twitter.com/D4ilycare "@D4ilycare")
 - -[Pino]- [@Pino_uwu](https://twitter.com/Pino_uwu "@Pino_uwu")
