@@ -348,7 +348,7 @@ public class DialogBoxes
         }
 
         // sfx - message-1
-        var message1 = layer.CreateSample(soundEffect, timing.startTime - d + soundDelay, 60);
+        var message1 = layer.CreateSample(soundEffect, timing.startTime - d + soundDelay, 40);
         //
 
         // start style

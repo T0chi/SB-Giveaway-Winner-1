@@ -28,7 +28,7 @@ namespace StorybrewScripts
             SwingingBars(311006, 331111);
             ObjectHighlight(311006, 331111);
             Blank(303310, 307237);
-            Tochi(280529, 305980);
+            Tochi(280529, 300483);
             SnowChaos(290896, 301425, 1000);
             SnowChaos(303310, 311006, 500);
             HUD(283671, 329854, 290901, "Mission #6", "Strahv", "sb/HUD/txt/nameTag/Heilia.png", 4500, "sb/avatars/HeiliaProfile.png");
@@ -418,17 +418,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
             var GlowRadius = 15;
             var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
+            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -454,36 +454,36 @@ namespace StorybrewScripts
             });
 
 
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "These machine parts will be useful, your assistance is greatly appreciated.",
-                                  "The next mission will involve some general rhythmic sense and musical knowledge." };
-            this.dialog = new DialogManager(this, font, 280529, 291451, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Your mapper will guide you with singing at the start,",
-                                   "but you do have to continue by yourself in the second phase of this section.",
-                                   "The more inconsistent you are, the more your points will be compromised.",
-                                   "Take care." };
-            this.dialog2 = new DialogManager(this, font, 291451, 305980, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
             // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "あれらの機械の部品はきっと使い物になる、あなたの助けに本当に感謝します！",
-            //                       "次のミッションはリズム感と音楽の知識が必要になります。" };
-            // this.dialog = new DialogManager(this, font, 280529, 288854, "-Tochi", 105, 326, false,
+            // string[] sentence = { "These machine parts will be useful, your assistance is greatly appreciated.",
+            //                       "The next mission will involve some general rhythmic sense and musical knowledge." };
+            // this.dialog = new DialogManager(this, font, 280529, 291451, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "始めはマッパーが歌いあなたのことを支えますが、2番目はあなた自身で続けなければなりません。",
-            //                        "適当にしてしまうと、ポイントに影響が与えられます。",
-            //                        "気を付けて。" };
-            // this.dialog2 = new DialogManager(this, font, 288854, 300483, "-Tochi", 105, 326, false,
+            // string[] sentence2 = { "Your mapper will guide you with singing at the start,",
+            //                        "but you do have to continue by yourself in the second phase of this section.",
+            //                        "The more inconsistent you are, the more your points will be compromised.",
+            //                        "Take care." };
+            // this.dialog2 = new DialogManager(this, font, 291451, 305980, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
+            // DIALOG 1 -----------------------------------------
+            string[] sentence = { "あれらの機械の部品はきっと使い物になる、あなたの助けに本当に感謝します！",
+                                  "次のミッションはリズム感と音楽の知識が必要になります。" };
+            this.dialog = new DialogManager(this, font, 280529, 288854, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // DIALOG 2 -----------------------------------------
+            string[] sentence2 = { "始めはマッパーが歌いあなたのことを支えますが、2番目はあなた自身で続けなければなりません。",
+                                   "適当にしてしまうと、ポイントに影響が与えられます。",
+                                   "気を付けて。" };
+            this.dialog2 = new DialogManager(this, font, 288854, 300483, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
         public void Tochi(int startTime, int endTime)

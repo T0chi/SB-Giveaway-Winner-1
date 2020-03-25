@@ -276,8 +276,8 @@ public class HUD
         text.Move(startTime, 620, 328);
 
         text.StartLoopGroup(startTime, sectionDuration / 1000);
-        text.Fade(OsbEasing.Out, 0, 500, 0, 1);
-        text.Fade(OsbEasing.In, 500, 1000, 1, 0);
+        text.Fade(OsbEasing.Out, 0, 500, 0, 0.3);
+        text.Fade(OsbEasing.In, 500, 1000, 0.3, 0);
         text.EndGroup();
 
 

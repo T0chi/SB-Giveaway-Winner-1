@@ -1,9 +1,10 @@
 ﻿FormatVersion: 6
-MapsetPath: "D:/Stuff/osu!/Songs/1080818 Feryquitous - Songs Compilation"
-BeatmapId: 2261145
-BeatmapName: "English Ver."
+MapsetPath: "D:/Stuff/osu!/Songs/1124097 Feryquitous - Songs Compilation"
+BeatmapId: 2348896
+BeatmapName: "-[//mission:#FC.0011-excindell.defer.abferibus]-"
 Assemblies:
 Layers:
+  - "3c756b11117a45bd896b49799855e849"
   - "cab851e2895c4653a1bfbf7426e94d98"
   - "f3ac6056ab324c55a9c9e6393b6dff7a"
   - "f6fa21895d7d445c98872b7bb7ecba4a"
@@ -89,7 +90,6 @@ Layers:
   - "bb6171568bcc4608bc73b8045a228a4d"
   - "40df0b58824544deb8cd83d0cbbdb47e"
   - "bb105a9faaa24606923de5d1cbc51833"
-  - "3c756b11117a45bd896b49799855e849"
   - "e6e05e251a904edd9c62e73af9a0242b"
   - "8f4def0318004ce6838296e7033fb235"
   - "c17c8ed84ce04734afb70e3a26c85eb2"

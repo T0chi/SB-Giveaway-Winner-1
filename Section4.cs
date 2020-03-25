@@ -44,7 +44,7 @@ namespace StorybrewScripts
         {
             Dialog();
             Mission(172011, 211525);
-            Tochi(163062, 187868);
+            Tochi(163062 - 5385, 187868 - 5385);
             Background(160662, 211525, 167640);
             HUD(160662, 211525, 167640, "Mission #3", "Central Nucleus", "sb/HUD/txt/nameTag/ScubDomino.png", 2000, "sb/avatars/ScubDominoProfile.png");
         }
@@ -76,22 +76,22 @@ namespace StorybrewScripts
             var ShakeAmount = 100;
             var ShakeEasing = OsbEasing.InOutSine;
 
-            bgRed.Color(189582, Color4.IndianRed);
-            bgRed.Scale(189582, 854.0f / bitmap.Width);
-            bgRed.Fade(189582, 189582 + 150, 0, 0.2);
+            bgRed.Color(189597, Color4.IndianRed);
+            bgRed.Scale(189597, 854.0f / bitmap.Width);
+            bgRed.Fade(189597, 189597 + 150, 0, 0.2);
             bgRed.Fade(endTime, endTime + 1000, 0.2, 0);
-            bgRed.Move(189582, new Vector2(320, 240));
+            bgRed.Move(189597, new Vector2(320, 240));
 
             var Additive = true;
             if (Additive)
             {
-                bgRed.Additive(189582, endTime + 100);
+                bgRed.Additive(189597, endTime + 100);
             }
 
             var angleCurrent = 0d;
             var radiusCurrent = 0;
             // ShakeAmount -> smaller number = more shaking!
-            for (int i = 189582; i < endTime + 100 - ShakeAmount; i += ShakeAmount)
+            for (int i = 189597; i < endTime + 100 - ShakeAmount; i += ShakeAmount)
             {
                 var angle = Random(angleCurrent - Math.PI / 4, angleCurrent + Math.PI / 4);
                 var radius = Math.Abs(Random(radiusCurrent - Radius / 4, radiusCurrent + Radius / 4));
@@ -126,17 +126,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
+            var fontSize = 13; //  japanese
+            // var fontSize = 15; // english
             var GlowRadius = 15;
             var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/4", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/4", new FontDescription() // english
+            var font = LoadFont("sb/dialog/txt/jp/4", new FontDescription() // japanese
+            // var font = LoadFont("sb/dialog/txt/4", new FontDescription() // english
             {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
+                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                // FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -161,36 +161,36 @@ namespace StorybrewScripts
                 Color = Color4.Black,
             });
 
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Thank you for faithfully completing your errands.",
-                                  "The next mission requires a lot more stamina; you'll be activating your sword-",
-                                  "wielding mapper to perform bug fixes within our systems.",
-                                  "Do take note that the difficulty does amp up after the bass drops." };
-            this.dialog = new DialogManager(this, font, 163062, 181011, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Slash the Stygian viral shapes to complete the mission.",
-                                   "There are risks so proceed with caution!" };
-            this.dialog2 = new DialogManager(this, font, 181011, 187868, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
             // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "忠実に取り組んでくれてありがとう。",
-            //                       "次のミッションは体力がもっと必要になります;　剣を振っているマッパーを使い、私たちのシステムのバグを直してください。",
-            //                       "サビのベースドロップが始まった後に難易度が上がります！" };
-            // this.dialog = new DialogManager(this, font, 163062, 178611, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            // string[] sentence = { "Thank you for faithfully completing your errands.",
+            //                       "The next mission requires a lot more stamina; you'll be activating your sword-",
+            //                       "wielding mapper to perform bug fixes within our systems.",
+            //                       "Do take note that the difficulty does amp up after the bass drops." };
+            // this.dialog = new DialogManager(this, font, 163062 - 5385, 181011 - 5385, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "ダークウィルスの形の物を斬りつけてミッションを完了してください。",
-            //                        "これらはまたリスクがあるので注意してください！" };
-            // this.dialog2 = new DialogManager(this, font, 179982, 187868, "-Tochi", 105, 326, false,
+            // string[] sentence2 = { "Slash the Stygian viral shapes to complete the mission.",
+            //                        "There are risks so proceed with caution!" };
+            // this.dialog2 = new DialogManager(this, font, 181011 - 5385, 187868 - 5385, "-Tochi", 105, 326, false,
             //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
             //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
+            // DIALOG 1 -----------------------------------------
+            string[] sentence = { "忠実に取り組んでくれてありがとう。",
+                                  "次のミッションは体力がもっと必要になります;　剣を振っているマッパーを使い、私たちのシステムのバグを直してください。",
+                                  "サビのベースドロップが始まった後に難易度が上がります！" };
+            this.dialog = new DialogManager(this, font, 163062 - 5385, 178611 - 5385, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // DIALOG 2 -----------------------------------------
+            string[] sentence2 = { "ダークウィルスの形の物を斬りつけてミッションを完了してください。",
+                                   "これらはまたリスクがあるので注意してください！" };
+            this.dialog2 = new DialogManager(this, font, 179982 - 5385, 187868 - 5385, "-Tochi", 105, 326, false,
+                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
         public void Tochi(int startTime, int endTime)
@@ -230,7 +230,7 @@ namespace StorybrewScripts
             // var mission = new Mission3(this, startTime, endTime);
 
             var sTime = 173125;
-            var eTime = 189582;
+            var eTime = 189597;
             var speed = Random(10, 15);
             var Beat = Beatmap.GetTimingPointAt(sTime).BeatDuration;
             var interval = Random(Beat * 2, Beat * 4);
@@ -504,8 +504,8 @@ namespace StorybrewScripts
                     slashRight.FlipV(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + ScatteringSpeed);
                 }
                 // sound effects
-                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + Duration, 100);
-                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + spawnDelay + Duration, 100);
+                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + Duration, 80);
+                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + spawnDelay + Duration, 80);
             }
 
 
@@ -513,7 +513,7 @@ namespace StorybrewScripts
 
             // INTENSE WALLS
             // SMALL WALLS FROM LEFT AND RIGHT ///////////////////////////////////////
-            var sTime2 = 189582;
+            var sTime2 = 189597;
             var eTime2 = 211525;
             var speed2 = Random(1, 5);
             var Beat2 = Beatmap.GetTimingPointAt(sTime2).BeatDuration;
@@ -787,8 +787,8 @@ namespace StorybrewScripts
                     slashRight.FlipV(i + slashDelay + spawnDelay2 + Duration, i + slashDelay + spawnDelay2 + Duration + ScatteringSpeed);
                 }
                 // sound effects
-                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + Duration, 100);
-                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + spawnDelay2 + Duration, 100);
+                var slashLeftSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + Duration, 80);
+                var slashRightSFX = GetLayer("Slashing").CreateSample("sb/sfx/swoosh-" + Random(1, 4) + ".ogg", i + slashDelay + spawnDelay2 + Duration, 80);
             }
 
             // AVATAR //////////////////////////////////////////////////////////////////////////////////////
@@ -820,7 +820,7 @@ namespace StorybrewScripts
             var wingsPosY = 220;
             var height = 10;
             var loopSpeed = 3500;
-            var duration = (189582) - startTime;
+            var duration = (189597) - startTime;
 
             avatar.StartLoopGroup(startTime, (duration / loopSpeed));
             avatar.MoveY(OsbEasing.InOutQuad, 0, loopSpeed / 2, posY + height, posY - (height + 15));
@@ -850,7 +850,7 @@ namespace StorybrewScripts
             var wingsPosY2 = 220;
             var height2 = 8;
             var loopSpeed2 = 1000;
-            var startTime2 = 189582;
+            var startTime2 = 189597;
             var duration2 = (endTime + delay) - startTime2;
 
             avatar.StartLoopGroup(startTime2, (duration2 / loopSpeed2) + 2);

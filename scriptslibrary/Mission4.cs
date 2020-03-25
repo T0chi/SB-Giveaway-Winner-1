@@ -321,7 +321,7 @@ public class Mission4
                 // arrows
                 var arrowSpeed = generator.Random(400, 550);
                 var arrow = generator.GetLayer("Arrows").CreateSprite("sb/missions/4/arrow.png", OsbOrigin.Centre);
-                var arrowSound = generator.GetLayer("Arrows").CreateSample("sb/sfx/arrow-1.ogg", time + balloonDuration - arrowSpeed, 70);
+                var arrowSound = generator.GetLayer("Arrows").CreateSample("sb/sfx/arrow-1.ogg", time + balloonDuration - arrowSpeed, 50);
 
                 var arrowScale = 0.2;
                 var randomX = generator.Random(50, 320);
@@ -438,7 +438,7 @@ public class Mission4
                     var randomScale = generator.Random(-balloonPopScale.X, balloonPopScale.X);
 
                     var balloonPop = generator.GetLayer("targetBalloonsFront").CreateSprite("sb/missions/4/balloon.png", OsbOrigin.Centre);
-                    var balloonPopSound = generator.GetLayer("targetBalloonsFront").CreateSample("sb/sfx/balloon-pop.ogg", time + balloonDuration, 12);
+                    var balloonPopSound = generator.GetLayer("targetBalloonsFront").CreateSample("sb/sfx/balloon-pop.ogg", time + balloonDuration, 7);
 
                     if (time >= endTime - (popDuration * 4))
                     {
@@ -461,7 +461,7 @@ public class Mission4
                 // arrows
                 var arrowSpeed = generator.Random(400, 550);
                 var arrow = generator.GetLayer("Arrows").CreateSprite("sb/missions/4/arrow2.png", OsbOrigin.Centre);
-                var arrowSound = generator.GetLayer("Arrows").CreateSample("sb/sfx/arrow-1.ogg", time + balloonDuration - arrowSpeed, 100);
+                var arrowSound = generator.GetLayer("Arrows").CreateSample("sb/sfx/arrow-1.ogg", time + balloonDuration - arrowSpeed, 50);
 
                 var arrowScale = 0.2;
                 var randomX = generator.Random(50, 320);
