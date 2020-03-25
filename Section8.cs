@@ -114,17 +114,17 @@ namespace StorybrewScripts
         public void Dialog()
         {
             // DIALOG BOXES STARTS HERE
-            var fontSize = 13; //  japanese
-            // var fontSize = 15; // english
+            // var fontSize = 13; //  japanese
+            var fontSize = 15; // english
             var GlowRadius = 15;
             var GlowColor = new Color4(150, 150, 150, 255);
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -150,33 +150,33 @@ namespace StorybrewScripts
             });
 
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "Alright, those are all the difficult missions over and done with!",
-            //                       "We should be done with the map soon." };
-            // this.dialog = new DialogManager(this, font, 331111, 337394, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "This mission should be relatively easier than the previous ones.",
-            //                        "Spy on aircrafts cruising by from behind the building, and report anything strange you find!" };
-            // this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
             // DIALOG 1 -----------------------------------------
-            string[] sentence = { "よし、難しいミッションはもう終わり！",
-                                  "もうすぐ全ての譜面も終了。" };
+            string[] sentence = { "Alright, those are all the difficult missions over and done with!",
+                                  "We should be done with the map soon." };
             this.dialog = new DialogManager(this, font, 331111, 337394, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
 
             // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "このミッションの方が前のミッションと比べて簡単。",
-                                   "建物の後ろから飛んでくる航空機を見逃さないで、不正を見つけたら報告して！" };
+            string[] sentence2 = { "This mission should be relatively easier than the previous ones.",
+                                   "Spy on aircrafts cruising by from behind the building, and report anything strange you find!" };
             this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
                 fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
                 DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
+
+            // // DIALOG 1 -----------------------------------------
+            // string[] sentence = { "よし、難しいミッションはもう終わり！",
+            //                       "もうすぐ全ての譜面も終了。" };
+            // this.dialog = new DialogManager(this, font, 331111, 337394, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] sentence2 = { "このミッションの方が前のミッションと比べて簡単。",
+            //                        "建物の後ろから飛んでくる航空機を見逃さないで、不正を見つけたら報告して！" };
+            // this.dialog2 = new DialogManager(this, font, 337394, 348176, "-Tochi", 105, 326, false,
+            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
+            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
         }
 
         public void Tochi(int startTime, int endTime)

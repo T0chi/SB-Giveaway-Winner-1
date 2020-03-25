@@ -125,13 +125,13 @@ namespace StorybrewScripts
             var bgBitmap = GetMapsetBitmap("sb/pixel.png");
             var bg = GetLayer("Information").CreateSprite("sb/pixel.png", OsbOrigin.Centre, new Vector2(320, 240));
             var github = GetLayer("Information").CreateSprite("sb/outro/github.png", OsbOrigin.Centre);
-            // var githubText = GetLayer("Information").CreateSprite("sb/outro/githubText.png", OsbOrigin.Centre); // english
-            var githubText = GetLayer("Information").CreateSprite("sb/outro/githubTextJP.png", OsbOrigin.Centre); // japanese
+            var githubText = GetLayer("Information").CreateSprite("sb/outro/githubText.png", OsbOrigin.Centre); // english
+            // var githubText = GetLayer("Information").CreateSprite("sb/outro/githubTextJP.png", OsbOrigin.Centre); // japanese
             var tyMessage = GetLayer("Information").CreateSprite("sb/outro/ty.png", OsbOrigin.Centre);
             var heart = GetLayer("Information").CreateAnimation("sb/outro/ani/heart.jpg", 16, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
             var skip = GetLayer("Information").CreateSprite("sb/outro/skip.png", OsbOrigin.Centre, new Vector2(320, 240));
             var skipNot = GetLayer("Information").CreateSprite("sb/outro/skipNot.png", OsbOrigin.Centre, new Vector2(320, 200));
-            var easterEgg = GetLayer("Information").CreateSprite("sb/outro/unknown.png", OsbOrigin.Centre); // japanese
+            // var easterEgg = GetLayer("Information").CreateSprite("sb/outro/unknown.png", OsbOrigin.Centre); // japanese
 
             var scrollDuration = 20000;
             var scrollStart = startTime;
@@ -184,10 +184,10 @@ namespace StorybrewScripts
                 skipNot.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
             skipNot.EndGroup();
 
-            easterEgg.Scale(scrollStart + 24000, 0.8f);
-            easterEgg.Fade(scrollStart + 24000, scrollStart + 24000 + 1000, 0, 1);
-            easterEgg.Fade(endTime + 9000, endTime + 10000, 1, 0);
-            easterEgg.Move(scrollStart + 24000, new Vector2(320, 410));
+            // easterEgg.Scale(scrollStart + 24000, 0.8f);
+            // easterEgg.Fade(scrollStart + 24000, scrollStart + 24000 + 1000, 0, 1);
+            // easterEgg.Fade(endTime + 9000, endTime + 10000, 1, 0);
+            // easterEgg.Move(scrollStart + 24000, new Vector2(320, 410));
         }
 
         public void fightSound(int breakStart, int endTime)
@@ -844,6 +844,8 @@ namespace StorybrewScripts
                 rain.MoveY(i, i + speed, StartPosY, EndPosY);
                 // rain.Rotate(i, i + speed, 0, Rotation);
 
+                
+
                 if (speed >= 5000)
                 {
                     rain.ScaleVec(i + speed, i + speed + Random(1000, 2000), ScaleX, ScaleY, ScaleX, 0);
@@ -887,16 +889,16 @@ namespace StorybrewScripts
             var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
 
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15; //  japanese
-            // var fontSize = 20; // english
+            // var fontSize = 15; //  japanese
+            var fontSize = 20; // english
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/pass/1/jp", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/pass/1", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/pass/1/jp", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/pass/1", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -922,22 +924,9 @@ namespace StorybrewScripts
             });
 
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] result = { "The system is safe from collapse and our",
-            //                     "mappers are back to normal again!" };
-            // this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
-            // this.pointsPass.Generate(result, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] text = { "DON'T SKIP YET" };
-            // var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
-            //     fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
-
             // DIALOG 1 -----------------------------------------
-            string[] result = { "システムが崩壊する前に無事にマッパー達も通常に戻り、" };
+            string[] result = { "The system is safe from collapse and our",
+                                "mappers are back to normal again!" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
@@ -948,6 +937,19 @@ namespace StorybrewScripts
             var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
                 fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
+
+            // // DIALOG 1 -----------------------------------------
+            // string[] result = { "システムが崩壊する前に無事にマッパー達も通常に戻り、" };
+            // this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
+            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
+            // this.pointsPass.Generate(result, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+
+            // // DIALOG 2 -----------------------------------------
+            // string[] text = { "DON'T SKIP YET" };
+            // var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
+            //     fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+            //     DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
         }
 
         public void ResultsPass2(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
@@ -960,16 +962,16 @@ namespace StorybrewScripts
             var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
 
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15; //  japanese
-            // var fontSize = 20; // english
+            // var fontSize = 15; //  japanese
+            var fontSize = 20; // english
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/pass/2/jp", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/pass/2", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/pass/2/jp", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/pass/2", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -994,21 +996,21 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] result2 = { "You have saved the mission and have completed",
-            //                      "the map! Thank you for playing!" };
-            // this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
-            // this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
-
             // DIALOG 1 -----------------------------------------
-            string[] result2 = { "そしてあなたはミッションを成し遂げマップをクリアすることができました！",
-                                 "プレイをしていただきありがとうございました！" };
+            string[] result2 = { "You have saved the mission and have completed",
+                                 "the map! Thank you for playing!" };
             this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
             this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+
+            // // DIALOG 1 -----------------------------------------
+            // string[] result2 = { "そしてあなたはミッションを成し遂げマップをクリアすることができました！",
+            //                      "プレイをしていただきありがとうございました！" };
+            // this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
+            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
+            // this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
         }
 
         public void ResultsFail(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
@@ -1021,16 +1023,16 @@ namespace StorybrewScripts
             var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
 
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15; //  japanese
-            // var fontSize = 20; // english
+            // var fontSize = 15; //  japanese
+            var fontSize = 20; // english
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/fail/1/jp", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/fail/1", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/fail/1/jp", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/fail/1", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -1055,21 +1057,21 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
             
-            // // DIALOG 1 -----------------------------------------
-            // string[] result = { "Perhaps a system restore is due for all of us...",
-            //                     "Unfortunately you have failed to save the mission." };
-            // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
-            // this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
-            
             // DIALOG 1 -----------------------------------------
-            string[] result = { "おそらくシステムの復元を私たちのためにしなければなりません...",
-                                "残念ながらミッションを成し遂げることができませんでした。" };
+            string[] result = { "Perhaps a system restore is due for all of us...",
+                                "Unfortunately you have failed to save the mission." };
             this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
             this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
+            
+            // // DIALOG 1 -----------------------------------------
+            // string[] result = { "おそらくシステムの復元を私たちのためにしなければなりません...",
+            //                     "残念ながらミッションを成し遂げることができませんでした。" };
+            // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
+            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
+            // this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
         }
 
         public void ResultsFail2(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
@@ -1082,16 +1084,16 @@ namespace StorybrewScripts
             var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
 
             // DIALOG BOXES STARTS HERE
-            var fontSize = 15; //  japanese
-            // var fontSize = 20; // english
+            // var fontSize = 15; //  japanese
+            var fontSize = 20; // english
             var GlowRadius = 0;
             var ShadowThickness = 0;
             var OutlineThickness = 0;
-            var font = LoadFont("sb/dialog/txt/fail/2/jp", new FontDescription() // japanese
-            // var font = LoadFont("sb/dialog/txt/fail/2", new FontDescription() // english
+            // var font = LoadFont("sb/dialog/txt/fail/2/jp", new FontDescription() // japanese
+            var font = LoadFont("sb/dialog/txt/fail/2", new FontDescription() // english
             {
-                FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                // FontPath = "Microsoft Yi Baiti", // english
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Microsoft Yi Baiti", // english
                 FontSize = fontSize,
                 Color = Color4.White,
                 Padding = Vector2.Zero,
@@ -1116,19 +1118,19 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] result2 = { "Do try the map again for a better grade!" };
-            // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
-            // this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
-
             // DIALOG 1 -----------------------------------------
-            string[] result2 = { "良い成績を取るにはもう一度プレイをしてみてください！" };
+            string[] result2 = { "Do try the map again for a better grade!" };
             this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
                 fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
             this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
+
+            // // DIALOG 1 -----------------------------------------
+            // string[] result2 = { "良い成績を取るにはもう一度プレイをしてみてください！" };
+            // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
+            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
+            // this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
         }
 
         public void Avatars()
