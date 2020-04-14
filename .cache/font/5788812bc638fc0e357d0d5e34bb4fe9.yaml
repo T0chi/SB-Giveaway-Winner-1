@@ -1,0 +1,132 @@
+﻿FontPath: "Yu Gothic"
+FontSize: 18
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 1
+    ColorG: 1
+    ColorB: 1
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0.7843137
+Cache:
+  - Text: "D"
+    Path: "sb/dialog/txt/pass/1/skip/0044.png"
+    Hash: "0148fe963a4f3bc07ceac2ca95acc5a7"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 19
+    BaseHeight: 31
+    Width: 18
+    Height: 20
+  - Text: "O"
+    Path: "sb/dialog/txt/pass/1/skip/004f.png"
+    Hash: "aa48977ccb8700d41af3f373e6a1d5b1"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 19
+    BaseHeight: 31
+    Width: 19
+    Height: 20
+  - Text: "N"
+    Path: "sb/dialog/txt/pass/1/skip/004e.png"
+    Hash: "5b93d851bf4d2d6c3154f9ce60efbaf2"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 19
+    BaseHeight: 31
+    Width: 17
+    Height: 20
+  - Text: "'"
+    Path: "sb/dialog/txt/pass/1/skip/0027.png"
+    Hash: "8931b1bc7a292cb9c608900c5938b07e"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 6
+    BaseHeight: 31
+    Width: 6
+    Height: 9
+  - Text: "T"
+    Path: "sb/dialog/txt/pass/1/skip/0054.png"
+    Hash: "2a22c7c4899fb7bb6e7b2cbce392192f"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 31
+    Width: 16
+    Height: 20
+  - Text: "S"
+    Path: "sb/dialog/txt/pass/1/skip/0053.png"
+    Hash: "f1c0718002b03887a3fe146be251d8b6"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 31
+    Width: 16
+    Height: 20
+  - Text: "K"
+    Path: "sb/dialog/txt/pass/1/skip/004b.png"
+    Hash: "4f654ac0b1b7ab3da3aca4cb9f848497"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 18
+    BaseHeight: 31
+    Width: 17
+    Height: 20
+  - Text: "I"
+    Path: "sb/dialog/txt/pass/1/skip/0049.png"
+    Hash: "7c41fdb77be5b87816bb4c5eef7e06f7"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 8
+    BaseHeight: 31
+    Width: 6
+    Height: 20
+  - Text: "P"
+    Path: "sb/dialog/txt/pass/1/skip/0050.png"
+    Hash: "0898ce97045c1a51c8c09a3d01e91ba5"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 17
+    BaseHeight: 31
+    Width: 16
+    Height: 20
+  - Text: "Y"
+    Path: "sb/dialog/txt/pass/1/skip/0059.png"
+    Hash: "7db05b6d8933355ba8bbf27f3431599b"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 17
+    BaseHeight: 31
+    Width: 17
+    Height: 20
+  - Text: "E"
+    Path: "sb/dialog/txt/pass/1/skip/0045.png"
+    Hash: "cf669e51d357ba28915460b71820e0f2"
+    OffsetX: 1
+    OffsetY: 5
+    BaseWidth: 16
+    BaseHeight: 31
+    Width: 15
+    Height: 20

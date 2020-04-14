@@ -165,7 +165,7 @@ namespace StorybrewScripts
                                                                        scrollEndPos.X, scrollEndPos.Y - 150);
 
             // skip + skipNot
-            var loopDuration = 6000;
+            // var loopDuration = 6000;
             // var loopCount = ((endTime + 2000) - (scrollStart + 14000)) / loopDuration;
             // var loopCount2 = ((startTime + 10000) - startTime) / loopDuration;
             var startRotation = MathHelper.DegreesToRadians(-360);
@@ -174,14 +174,16 @@ namespace StorybrewScripts
             skip.Fade(scrollStart + 26000, scrollStart + 26000 + 1000, 0, 1);
             skip.Fade(endTime, endTime + 2000, 1, 0);
             skip.StartLoopGroup(scrollStart + 26000, 1);
-                skip.ScaleVec(0, loopDuration, -0.6f, 0.6f, 0.6f, 0.6f);
-                skip.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
+                skip.Scale(0, 0.6f);
+                // skip.ScaleVec(0, loopDuration, -0.6f, 0.6f, 0.6f, 0.6f);
+                // skip.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
             skip.EndGroup();
             skipNot.Fade(startTime, startTime + 2500, 0, 1);
-            skipNot.Fade(startTime + 9000, startTime + 10000, 1, 0);
+            skipNot.Fade(startTime + 7500, startTime + 8500, 1, 0);
             skipNot.StartLoopGroup(startTime, 1);
-                skipNot.ScaleVec(0, loopDuration, -0.3f, 0.3f, 0.3f, 0.3f);
-                skipNot.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
+                skipNot.Scale(0, 0.6f);
+                // skipNot.ScaleVec(0, loopDuration, -0.3f, 0.3f, 0.3f, 0.3f);
+                // skipNot.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
             skipNot.EndGroup();
 
             // easterEgg.Scale(scrollStart + 24000, 0.8f);
@@ -932,9 +934,37 @@ namespace StorybrewScripts
                 DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
             this.pointsPass.Generate(result, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
 
+            var font2 = LoadFont("sb/dialog/txt/pass/1/skip", new FontDescription() // english
+            {
+                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+                FontPath = "Yu Gothic", // english
+                FontSize = 18,
+                Color = Color4.White,
+                Padding = Vector2.Zero,
+                FontStyle = FontStyle.Bold,
+                TrimTransparency = true,
+                EffectsOnly = false,
+                Debug = false,
+            },
+            new FontGlow()
+            {
+                Radius = true ? 0 : GlowRadius,
+                Color = GlowColor,
+            },
+            new FontOutline()
+            {
+                Thickness = OutlineThickness,
+                Color = OutlineColor,
+            },
+            new FontShadow()
+            {
+                Thickness = ShadowThickness,
+                Color = ShadowColor,
+            });
+
             // DIALOG 2 -----------------------------------------
             string[] text = { "DON'T SKIP YET" };
-            var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
+            var dialog = new DialogManager(this, font2, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
                 fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
                 DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
 
