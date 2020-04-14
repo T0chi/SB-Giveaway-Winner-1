@@ -27,7 +27,7 @@ namespace StorybrewScripts
             Dialog();
             Background();
             Mission();
-            Tochi(252193, 265294);
+            Tochi(252193, 268278);
             HUD(253462, 283671, 262781, "Mission #5", "Dstorv", "sb/HUD/txt/nameTag/Moecho.png", 4500, "sb/avatars/MoechoProfile.png");
         }
 

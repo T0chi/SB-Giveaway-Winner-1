@@ -33,7 +33,7 @@ namespace StorybrewScripts
             Dialog();
             Background();
             ItemCollect();
-            Tochi(117905, 135012);
+            Tochi(117905, 135312);
             Petals(128262, 157062);
             HUD(115238, 157062, 128262, "Mission #2", "Adaptation Window", "sb/HUD/txt/nameTag/Acyl.png", 4500, "sb/avatars/AcylProfile.png");
         }

@@ -23,23 +23,25 @@ namespace StorybrewScripts
 
         public void Noffy()
         {
-            var section1 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section1_1.ogg", 3245 + delay, 80);
-            var section2 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section2_1.ogg", 64629 + delay, 80);
-            var section3 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section3_1.ogg", 117905 + delay, 80);
-            var section4 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section4_1.ogg", 163062 + delay, 80);
-            var section5 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section5_1.ogg", 214268 + delay, 80);
-            var section6 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section6_1.ogg", 252193 + delay, 80);
-            var section7 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section7_1.ogg", 280529 + delay, 80);
-            var section8 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section8_1.ogg", 331111 + delay, 80);
-            var section9 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section9_1.ogg", 380218 + delay, 80);
-            var section9_2 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section9_2.ogg", 394853 + delay, 80);
+            var volume = 100;
+
+            var section1 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section1_1.ogg", 3245 + delay, volume);
+            var section2 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section2_1.ogg", 64629 + delay, volume);
+            var section3 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section3_1.ogg", 117905 + delay, volume);
+            var section4 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section4_1.ogg", 157678 + delay, volume);
+            var section5 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section5_1.ogg", 214268 + delay, volume);
+            var section6 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section6_1.ogg", 252193 + delay, volume);
+            var section7 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section7_1.ogg", 280529 + delay, volume);
+            var section8 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section8_1.ogg", 331111 + delay, volume);
+            var section9 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section9_1.ogg", 380218 + delay, volume);
+            var section9_2 = GetLayer("").CreateSample("sb/sfx/voice/noffy/section9_2.ogg", 394853 + delay, volume);
 
             var satelliteSFX = GetLayer("").CreateSample("sb/sfx/satellite.ogg", 385244, 20);
 
-            StaticSFX(3045); // 1
-            StaticSFX(13822);
-            StaticSFX(16199);
-            StaticSFX(26583);
+            StaticSFX(3245); // 1
+            StaticSFX(14437);
+            StaticSFX(16283);
+            StaticSFX(26668);
 
             StaticSFX(64629); // 2
             StaticSFX(74050);
@@ -47,17 +49,17 @@ namespace StorybrewScripts
             StaticSFX(117905); // 3
             StaticSFX(130512);
 
-            StaticSFX(163062); // 4
-            StaticSFX(180811);
+            StaticSFX(157678); // 4
+            StaticSFX(175626);
 
-            StaticSFX(214268); // 5
-            StaticSFX(224732);
+            StaticSFX(214283); // 5
+            StaticSFX(224901);
 
             StaticSFX(252193); // 6
             StaticSFX(257755);
 
             StaticSFX(280529); // 7
-            StaticSFX(291251);
+            StaticSFX(291471);
 
             StaticSFX(331111); // 8
             StaticSFX(337194);
@@ -69,16 +71,18 @@ namespace StorybrewScripts
 
         public void Reey()
         {
-            var section1 = GetLayer("").CreateSample("sb/sfx/voice/reey/section1_1.ogg", 3245 + delay, 80);
-            var section2 = GetLayer("").CreateSample("sb/sfx/voice/reey/section2_1.ogg", 64629 + delay, 80);
-            var section3 = GetLayer("").CreateSample("sb/sfx/voice/reey/section3_1.ogg", 117905 + delay, 80);
-            var section4 = GetLayer("").CreateSample("sb/sfx/voice/reey/section4_1.ogg", 163062 - 5385 + delay, 80);
-            var section5 = GetLayer("").CreateSample("sb/sfx/voice/reey/section5_1.ogg", 214268 + delay, 80);
-            var section6 = GetLayer("").CreateSample("sb/sfx/voice/reey/section6_1.ogg", 252193 + delay, 80);
-            var section7 = GetLayer("").CreateSample("sb/sfx/voice/reey/section7_1.ogg", 280529 + delay, 80);
-            var section8 = GetLayer("").CreateSample("sb/sfx/voice/reey/section8_1.ogg", 331111 + delay, 80);
-            var section9 = GetLayer("").CreateSample("sb/sfx/voice/reey/section9_1.ogg", 380218 + delay, 80);
-            var section9_2 = GetLayer("").CreateSample("sb/sfx/voice/reey/section9_2.ogg", 394853 + delay, 80);
+            var volume = 100;
+
+            var section1 = GetLayer("").CreateSample("sb/sfx/voice/reey/section1_1.ogg", 3245 + delay, volume);
+            var section2 = GetLayer("").CreateSample("sb/sfx/voice/reey/section2_1.ogg", 64629 + delay, volume);
+            var section3 = GetLayer("").CreateSample("sb/sfx/voice/reey/section3_1.ogg", 117905 + delay, volume);
+            var section4 = GetLayer("").CreateSample("sb/sfx/voice/reey/section4_1.ogg", 163062 - 5385 + delay, volume);
+            var section5 = GetLayer("").CreateSample("sb/sfx/voice/reey/section5_1.ogg", 214268 + delay, volume);
+            var section6 = GetLayer("").CreateSample("sb/sfx/voice/reey/section6_1.ogg", 252193 + delay, volume);
+            var section7 = GetLayer("").CreateSample("sb/sfx/voice/reey/section7_1.ogg", 280529 + delay, volume);
+            var section8 = GetLayer("").CreateSample("sb/sfx/voice/reey/section8_1.ogg", 331111 + delay, volume);
+            var section9 = GetLayer("").CreateSample("sb/sfx/voice/reey/section9_1.ogg", 380218 + delay, volume);
+            var section9_2 = GetLayer("").CreateSample("sb/sfx/voice/reey/section9_2.ogg", 394853 + delay, volume);
 
             var satelliteSFX = GetLayer("").CreateSample("sb/sfx/satellite.ogg", 385244, 20);
 

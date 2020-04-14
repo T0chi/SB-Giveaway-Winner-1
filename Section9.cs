@@ -40,7 +40,7 @@ namespace StorybrewScripts
             Particles();
             Background();
             ParticlesIntense();
-            Tochi(380218, 416214);
+            Tochi(380218, 417785);
 
 		    Glitch(429565, glitch.one);
 		    Glitch(431450, glitch.two);
@@ -628,7 +628,7 @@ namespace StorybrewScripts
             var ShadowThickness = 0;
             var OutlineThickness = 0;
             // var font = LoadFont("sb/dialog/txt/jp/9", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
+            var font = LoadFont("sb/dialog/txt/9", new FontDescription() // english
             {
                 // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
                 FontPath = "Microsoft Yi Baiti", // english

@@ -17,11 +17,6 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  d0687d37478b473b8438a61c4acda618:
-    Name: "ObjectHighlight"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
   8f688eb62b0c425299f8c4832b8bab14:
     Name: "Avatar"
     OsbLayer: Background
@@ -36,6 +31,11 @@ Layers:
     Name: "Performance"
     OsbLayer: Fail
     DiffSpecific: No
+    Visible: Yes
+  d0687d37478b473b8438a61c4acda618:
+    Name: "ObjectHighlight"
+    OsbLayer: Foreground
+    DiffSpecific: Yes
     Visible: Yes
   8711c09cc1d247c18f030e4ca2c128d0:
     Name: "HUD"

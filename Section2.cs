@@ -45,7 +45,7 @@ namespace StorybrewScripts
 
             // Mission is to destroy all the enemies (aircrafts)
             Mission();
-            Tochi(64514, 81905);
+            Tochi(64514, 83571);
         }
 
         public void Background()

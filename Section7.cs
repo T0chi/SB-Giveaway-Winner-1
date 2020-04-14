@@ -28,7 +28,7 @@ namespace StorybrewScripts
             SwingingBars(311006, 331111);
             ObjectHighlight(311006, 331111);
             Blank(303310, 307237);
-            Tochi(280529, 300483);
+            Tochi(280529, 305980);
             SnowChaos(290896, 301425, 1000);
             SnowChaos(303310, 311006, 500);
             HUD(283671, 329854, 290901, "Mission #6", "Strahv", "sb/HUD/txt/nameTag/Heilia.png", 4500, "sb/avatars/HeiliaProfile.png");
