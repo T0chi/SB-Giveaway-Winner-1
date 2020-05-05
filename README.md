@@ -97,7 +97,8 @@ Each mapper had to choose an avatar from the image below in order for me to make
 **KEY NOTES**
 
 ~~Key notes are the notes/hitobjects in the map that YOU MUST get a perfect combo on (get a 300 not a 100/50 or miss), to be able to pass each section that the key notes represents. Due to limitations in storyboarding, this was the best way to decide wether you pass a section or not. Key notes can be sliders too not just circles!~~
-Due to a buggy outcome with the key notes for when "failing" a section, I decided to remove the failing states from the point system to avoid an overlapped visualization of both failing and pass states.
+
+`Due to a buggy outcome with the key notes for when "failing" a section, I decided to remove the failing states from the point system to avoid an overlapped visualization of both failing and pass states.`
 
 ~~Here's a list of where the key notes are located at (timing):~~
 ~~- Key note 1: 00:48:476~~
