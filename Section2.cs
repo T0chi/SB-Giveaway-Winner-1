@@ -41,11 +41,9 @@ namespace StorybrewScripts
         {
             Background();
             HUD(61860, 115238, 72572, "Mission #1", "Ein", "sb/HUD/txt/nameTag/Pino.png", 0, "sb/avatars/PinoProfile.png");
-            Dialog();
 
             // Mission is to destroy all the enemies (aircrafts)
             Mission();
-            Tochi(64514, 83571);
         }
 
         public void Background()
@@ -63,85 +61,7 @@ namespace StorybrewScripts
             var hud = new HUD(this, startTime, endTime, loadingTextEndtime, mission, songName, nameTag, progressBarDelay, avatar);
         }
 
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
-            var GlowRadius = 15;
-            var GlowColor = new Color4(150, 150, 150, 255);
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = false ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = OutlineColor,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = ShadowColor,
-            });
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Apologies for the haste, but are you ready for your first mission?",
-                                  "Unfortunately, the warm-up phase was probably inadequate for these velocities..." };
-            this.dialog = new DialogManager(this, font, 64514, 74250, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Shoot the enemy aircraft and try not to miss.",
-                                   "Missing too many times will result in a lower score, so please do your best.",
-                                   "Good luck!" };
-            this.dialog2 = new DialogManager(this, font, 74250, 83571, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "急がしてごめんなさい、でも最初のミッションの準備はいいですか？",
-            //                       "あいにく最初の段階であの速度のwarm-upは多分不十分だった..." };
-            // this.dialog = new DialogManager(this, font, 64514, 72571, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "ミスをしないように敵を撃ってください。",
-            //                        "ミスを出しすぎると低い点数になるので気を抜かないようにしてください。",
-            //                        "頑張って！" };
-            // this.dialog2 = new DialogManager(this, font, 72571, 81905, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-        }
-
-        public void Mission()
-        {
-            var mission = new Mission1(this, 79238, 112571);
-
-            // INTRODUCTION TO THE MISSION
-            Aircraft();
-            Clouds();
-        }
-
-        public void Aircraft()
+        public void AircraftIntro()
         {
             var startTime = 72571;
             var endTime = 79238;
@@ -242,7 +162,7 @@ namespace StorybrewScripts
             }
         }
 
-        public void Clouds()
+        public void CloudsIntro()
         {
             
             var startTime = 72571;
@@ -273,36 +193,304 @@ namespace StorybrewScripts
             }
         }
 
-        public void Tochi(int startTime, int endTime)
+        public void Mission()
         {
-            var Hoveduration = 5000;
-            var loopCount = (endTime - startTime) / Hoveduration;
-            var pos = new Vector2(320, 240);
-            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
-            var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
-            
-            avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.6);
-            avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime, endTime + 500, 1, 0);
+            var startTime = 79238;
+            var endTime = 112571;
 
-            avatar.StartLoopGroup(startTime, loopCount + 1);
-            avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            avatar.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            avatar.EndGroup();
-            
-            ring.MoveX(startTime, 64);
-            ring.Scale(startTime, 0.3);
-            ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime, endTime + 500, 1, 0);
-            var rotation = MathHelper.DegreesToRadians(180);
-            ring.Rotate(startTime, endTime, -rotation, rotation);
+            // INTRODUCTION TO THE MISSION
+            AircraftIntro();
+            CloudsIntro();
 
-            ring.StartLoopGroup(startTime, loopCount + 1);
-            ring.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            ring.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            ring.EndGroup();
+            // THE MISSION
+            Aircraft(startTime, endTime);
+            Clouds(startTime, endTime);
+            AircraftEnemy(startTime, endTime);
+        }
+
+        public void Aircraft(int StartTime, int EndTime)
+        {
+            var startTime = StartTime;
+            var endTime = EndTime + 2000;
+            var duration3 = 1500;
+            var enemyDuration = 1000;
+
+            var loopCount3 = (startTime) / (duration3 * 5);
+            var enemyloopCount = (startTime) / (enemyDuration * 5);
+            // var jetSound = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-1.ogg", startTime, 70);
+            // var jetSound2 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-3.ogg", startTime, 70);
+            // var jetSound3 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet_passing-1.ogg", 700, 100);
+            var aircraft = GetLayer("Aircraft 3 Back").CreateSprite("sb/missions/1/aircrafts/3_back.png", OsbOrigin.Centre);
+            var enemy = GetLayer("Aircraft 1 & 2 Front").CreateSprite("sb/missions/1/aircrafts/" + Random(1, 3) + "_back.png", OsbOrigin.Centre);
+
+            aircraft.Scale(OsbEasing.Out, startTime, startTime + 4000, 4, 0.3);
+            aircraft.Fade(OsbEasing.Out, startTime, startTime + 2000, 0, 1);
+            aircraft.Fade(endTime - 500, endTime, 1, 0);
+
+            aircraft.StartLoopGroup(startTime, loopCount3 - 1);
+            // x
+            aircraft.MoveX(OsbEasing.InOutSine, 0, duration3 / 2, 310, 330);
+            aircraft.MoveX(OsbEasing.InOutSine, duration3 / 2, duration3, 330, 300);
+            aircraft.MoveX(OsbEasing.InOutSine, duration3, duration3 * 2, 300, 310);
+            aircraft.MoveX(OsbEasing.InOutSine, duration3 * 2, duration3 * 3, 310, 330);
+            aircraft.MoveX(OsbEasing.InOutSine, duration3 * 3, duration3 * 4, 330, 320);
+            aircraft.MoveX(OsbEasing.InOutSine, duration3 * 4, duration3 * 5, 320, 310);
+            // y
+            aircraft.MoveY(OsbEasing.InOutSine, 0, duration3 / 2, 270, 340);
+            aircraft.MoveY(OsbEasing.InOutSine, duration3 / 2, duration3, 340, 330);
+            aircraft.MoveY(OsbEasing.InOutSine, duration3, duration3 * 2, 330, 350);
+            aircraft.MoveY(OsbEasing.InOutSine, duration3 * 2, duration3 * 3, 350, 310);
+            aircraft.MoveY(OsbEasing.InOutSine, duration3 * 3, duration3 * 4, 310, 330);
+            aircraft.MoveY(OsbEasing.InOutSine, duration3 * 4, duration3 * 5, 330, 270);
+            //
+            aircraft.EndGroup();
+
+            enemy.Scale(OsbEasing.Out, startTime, startTime + 4000, 0.05, 0.1);
+            enemy.Fade(OsbEasing.Out, startTime, startTime + 2000, 0, 1);
+            enemy.Fade(endTime - 500, endTime, 1, 0);
+
+            enemy.StartLoopGroup(startTime, enemyloopCount - 1);
+            // x
+            enemy.MoveX(OsbEasing.InOutSine, 0, enemyDuration / 2, 310, 330);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration / 2, enemyDuration, 330, 300);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration, enemyDuration * 2, 300, 310);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration * 2, enemyDuration * 3, 310, 330);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration * 3, enemyDuration * 4, 330, 320);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration * 4, enemyDuration * 5, 320, 310);
+            // y
+            enemy.MoveY(OsbEasing.InOutSine, 0, enemyDuration / 2, 270, 240);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration / 2, enemyDuration, 240, 230);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration, enemyDuration * 2, 230, 250);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration * 2, enemyDuration * 3, 250, 210);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration * 3, enemyDuration * 4, 210, 230);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration * 4, enemyDuration * 5, 230, 270);
+            //
+            enemy.EndGroup();
+
+            // PEW PEW
+            var randomStep = Random(100, 1000);
+            for (var i = startTime + 3500; i < endTime; i += randomStep)
+            {
+                var speed = 500;
+                var fadeTime = 50;
+                var angle = Math.Atan2((enemy.PositionAt(i + (speed / 1.5f)).Y - aircraft.PositionAt(i).Y),
+                                        (enemy.PositionAt(i + (speed / 1.5f)).X - aircraft.PositionAt(i).X)) + (Math.PI / 2);
+                var pewRight = GetLayer("Laser").CreateSprite("sb/pixel.png", OsbOrigin.Centre);
+                var pewLeft = GetLayer("Laser").CreateSprite("sb/pixel.png", OsbOrigin.Centre);
+                var laserSound = GetLayer("Laser").CreateSample("sb/sfx/laser-1.ogg", i + 80, Random(5, 15));
+
+                pewRight.Rotate(i, angle);
+                pewRight.Color(i, Color4.Red);
+                pewRight.Additive(i, i + speed + fadeTime);
+                pewRight.ScaleVec(OsbEasing.OutExpo, i, i + (speed / 4), 3, 0, 3, 13);
+                pewRight.ScaleVec(OsbEasing.Out, i + (speed / 4), i + speed, 3, 13, 2, 2);
+                pewRight.Move(i, i + speed, aircraft.PositionAt(i).X + 20, aircraft.PositionAt(i).Y,
+                                    enemy.PositionAt(i + (speed / Random(1, 1.5f))).X, enemy.PositionAt(i + (speed / Random(1, 1.5f))).Y);
+
+                pewLeft.Rotate(i, angle);
+                pewLeft.Color(i, Color4.Red);
+                pewLeft.Additive(i, i + speed + fadeTime);
+                pewLeft.ScaleVec(OsbEasing.OutExpo, i, i + (speed / 4), 3, 0, 3, 13);
+                pewLeft.ScaleVec(OsbEasing.Out, i + (speed / 4), i + speed, 3, 13, 2, 2);
+                pewLeft.Move(i, i + speed, aircraft.PositionAt(i).X - 20, aircraft.PositionAt(i).Y,
+                                    enemy.PositionAt(i + (speed / Random(1, 1.5f))).X, enemy.PositionAt(i + (speed / Random(1, 1.5f))).Y);
+                
+                // when it hits the enemy
+                if (enemy.PositionAt(i + (speed / Random(1, 1.5f))).Y <= enemy.PositionAt(i + (speed)).Y)
+                {
+                    var FrameDelay = 100;
+                    var LaserHit = GetLayer("Laser").CreateSample("sb/sfx/laser-hit.ogg", i + speed, Random(10, 20));
+                    var laserHit = GetLayer("Laser").CreateAnimation("sb/missions/1/explosion/explode.jpg", 12, FrameDelay, OsbLoopType.LoopOnce, OsbOrigin.Centre);
+                    
+                    laserHit.Additive(i + speed, i + speed + fadeTime + FrameDelay);
+                    laserHit.Scale(i + speed, i + speed + fadeTime + FrameDelay, 0.2, 0.1);
+                    laserHit.Move(i + speed + fadeTime, enemy.PositionAt(i + (speed / Random(1, 1.5f))));
+                }
+            }
+
+            // SMOKE
+            float X = 370;
+            float scale = 4f;
+            float fade = 0;
+            var smokeAmount = 40;
+            var smokeDuration = 50;
+            for (int i = startTime; i <= endTime; i += smokeAmount)
+            {
+                var smokeLeft = GetLayer("Aircraft 3 Back - Smoke").CreateAnimation("sb/missions/1/aircrafts/smoke/smoke.png",
+                                                                4, 100, OsbLoopType.LoopForever, OsbOrigin.Centre);
+                var smokeRight = GetLayer("Aircraft 3 Back - Smoke").CreateAnimation("sb/missions/1/aircrafts/smoke/smoke.png",
+                                                                4, 100, OsbLoopType.LoopForever, OsbOrigin.Centre);
+                int x = 42;
+                int y = 15;
+                int delay = 4;
+                int fadeDelay = 10;
+
+                if (i > startTime + 4000)
+                {
+                    smokeLeft.Fade(i, 0.2);
+                    smokeLeft.Additive(i, i + smokeDuration);
+                    smokeLeft.Scale(OsbEasing.In, i, i + (smokeDuration * fadeDelay), 0.3, 0.3 / 4);
+                    smokeLeft.Fade(i + smokeDuration, i + (smokeDuration * fadeDelay), 0.2f, 0);
+                    smokeLeft.Move(OsbEasing.Out, i, i + smokeDuration, aircraft.PositionAt(i).X - x, aircraft.PositionAt(i).Y - y,
+                            aircraft.PositionAt(i - (smokeDuration * 2)).X - x, aircraft.PositionAt(i - (smokeDuration * delay)).Y - y);
+
+                    smokeRight.Fade(i, 0.2);
+                    smokeRight.Additive(i, i + smokeDuration);
+                    smokeRight.Scale(OsbEasing.In, i, i + (smokeDuration * fadeDelay), 0.3, 0.3 / 4);
+                    smokeRight.Fade(i + smokeDuration, i + (smokeDuration * fadeDelay), 0.2f, 0);
+                    smokeRight.Move(OsbEasing.Out, i, i + smokeDuration, aircraft.PositionAt(i).X + x, aircraft.PositionAt(i).Y - y,
+                            aircraft.PositionAt(i - (smokeDuration * 2)).X + x, aircraft.PositionAt(i - (smokeDuration * delay)).Y - y);
+                }
+
+                else
+                {
+                    X -= 3.35f;
+                    scale -= 0.034f;
+                    fade += 0.002f;
+
+                    smokeLeft.Fade(i, fade);
+                    smokeLeft.Additive(i, i + smokeDuration);
+                    smokeLeft.Scale(OsbEasing.OutExpo, i, i + (smokeDuration * fadeDelay), scale, scale / 4);
+                    smokeLeft.Fade(i + smokeDuration, i + (smokeDuration * fadeDelay), fade, 0);
+                    smokeLeft.Move(OsbEasing.In, i, i + smokeDuration, aircraft.PositionAt(i).X - X, aircraft.PositionAt(i).Y - y,
+                            aircraft.PositionAt(i - (smokeDuration * 2)).X - X, aircraft.PositionAt(i - (smokeDuration * delay)).Y - y);
+
+                    smokeRight.Fade(i, fade);
+                    smokeRight.Additive(i, i + smokeDuration);
+                    smokeRight.Scale(OsbEasing.OutExpo, i, i + (smokeDuration * fadeDelay), scale, scale / 4);
+                    smokeRight.Fade(i + smokeDuration, i + (smokeDuration * fadeDelay), fade, 0);
+                    smokeRight.Move(OsbEasing.In, i, i + smokeDuration, aircraft.PositionAt(i).X + X, aircraft.PositionAt(i).Y - y,
+                            aircraft.PositionAt(i - (smokeDuration * 2)).X + X, aircraft.PositionAt(i - (smokeDuration * delay)).Y - y);
+                }
+            }
+
+            var eSmokeAmount = 40;
+            var eSmokeDuration = 100;
+            for (int i = startTime; i <= endTime; i += eSmokeAmount)
+            {
+                var smokeLeft = GetLayer("Aircraft 1 & 2 Front - Smoke").CreateAnimation("sb/missions/1/aircrafts/smoke/smoke.png",
+                                                                4, 100, OsbLoopType.LoopForever, OsbOrigin.Centre);
+                var smokeRight = GetLayer("Aircraft 1 & 2 Front - Smoke").CreateAnimation("sb/missions/1/aircrafts/smoke/smoke.png",
+                                                                4, 100, OsbLoopType.LoopForever, OsbOrigin.Centre);
+                int x = 10;
+                int y = -5;
+                float delay = 2f;
+                int fadeDelay = 2;
+
+                if (i > startTime + 1000)
+                {
+                    var Scale = 0.15f;
+                    smokeLeft.Fade(i, 0.09f);
+                    smokeLeft.Additive(i, i + eSmokeDuration);
+                    smokeLeft.Scale(OsbEasing.In, i, i + (eSmokeDuration * fadeDelay), Scale, Scale / 4);
+                    smokeLeft.Fade(i + eSmokeDuration, i + (eSmokeDuration * fadeDelay), 0.09f, 0);
+                    smokeLeft.Move(OsbEasing.Out, i, i + eSmokeDuration, enemy.PositionAt(i).X - x, enemy.PositionAt(i).Y - y,
+                            enemy.PositionAt(i - (eSmokeDuration * 2)).X - x, enemy.PositionAt(i - (eSmokeDuration * delay)).Y - y);
+
+                    smokeRight.Fade(i, 0.09f);
+                    smokeRight.Additive(i, i + eSmokeDuration);
+                    smokeRight.Scale(OsbEasing.In, i, i + (eSmokeDuration * fadeDelay), Scale, Scale / 4);
+                    smokeRight.Fade(i + eSmokeDuration, i + (eSmokeDuration * fadeDelay), 0.09f, 0);
+                    smokeRight.Move(OsbEasing.Out, i, i + eSmokeDuration, enemy.PositionAt(i).X + x, enemy.PositionAt(i).Y - y,
+                            enemy.PositionAt(i - (eSmokeDuration * 2)).X + x, enemy.PositionAt(i - (eSmokeDuration * delay)).Y - y);
+                }
+            }
+        }
+
+        public void Clouds(int StartTime, int EndTime)
+            {
+                
+                var startTime = StartTime;
+                var endTime = EndTime;
+                float cloudVelocity = 20;
+                var d = (endTime - startTime) / 4;
+
+                for (float i = startTime; i < startTime + d; i += cloudVelocity)
+                {
+                    var duration = Random(800, 1200);
+                    var RandomX = Random(-107, 747);
+                    var RandomFade = Random(0.015, 0.15);
+                    var RandomScale = Random(2.5, 3);
+                    var startPos  = new Vector2(RandomX, Random(300, 315));
+                    var endPos  = new Vector2(RandomX, Random(500, 520));
+
+                    var sprite = GetLayer("Clouds").CreateSprite("sb/missions/1/cloud/cloud" + Random(1, 11) + ".png", OsbOrigin.TopCentre);
+
+                    var loopCount = (endTime - startTime) / duration;
+                    sprite.StartLoopGroup(i, loopCount);
+                    sprite.Additive(0, duration);
+                    sprite.Fade(OsbEasing.InExpo, 0, duration / 2, 0, RandomFade);
+                    sprite.Fade(duration - duration / 8, duration, RandomFade, 0);
+                    sprite.MoveX(0, duration, startPos.X, endPos.X);
+                    sprite.MoveY(OsbEasing.InExpo, 0, duration, startPos.Y, endPos.Y);
+                    sprite.ScaleVec(OsbEasing.InExpo, 0, duration, RandomScale / 8, RandomScale / 8, RandomScale, RandomScale);
+                    sprite.EndGroup();
+                }
+            }
+
+        public void AircraftEnemy(int StartTime, int EndTime)
+        {
+            var startTime = StartTime;
+            var endTime = EndTime + 2000;
+            var enemyDuration = 1000;
+
+            var enemyloopCount = (startTime) / (enemyDuration * 5);
+            var enemy = GetLayer("Aircraft 1 & 2 Front").CreateSprite("sb/missions/1/aircrafts/" + Random(1, 3) + "_back.png", OsbOrigin.Centre);
+
+            enemy.Scale(OsbEasing.Out, startTime, startTime + 4000, 0.05, 0.1);
+            enemy.Fade(OsbEasing.Out, startTime, startTime + 2000, 0, 1);
+            enemy.Fade(endTime - 500, endTime, 1, 0);
+
+            enemy.StartLoopGroup(startTime, enemyloopCount - 1);
+            // x
+            enemy.MoveX(OsbEasing.InOutSine, 0, enemyDuration / 2, 310, 330);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration / 2, enemyDuration, 330, 300);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration, enemyDuration * 2, 300, 310);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration * 2, enemyDuration * 3, 310, 330);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration * 3, enemyDuration * 4, 330, 320);
+            enemy.MoveX(OsbEasing.InOutSine, enemyDuration * 4, enemyDuration * 5, 320, 310);
+            // y
+            enemy.MoveY(OsbEasing.InOutSine, 0, enemyDuration / 2, 270, 240);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration / 2, enemyDuration, 240, 230);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration, enemyDuration * 2, 230, 250);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration * 2, enemyDuration * 3, 250, 210);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration * 3, enemyDuration * 4, 210, 230);
+            enemy.MoveY(OsbEasing.InOutSine, enemyDuration * 4, enemyDuration * 5, 230, 270);
+            //
+            enemy.EndGroup();
+
+            // SMOKE
+            var eSmokeAmount = 40;
+            var eSmokeDuration = 100;
+            for (int i = startTime; i <= endTime; i += eSmokeAmount)
+            {
+                var smokeLeft = GetLayer("Aircraft 1 & 2 Front - Smoke").CreateAnimation("sb/missions/1/aircrafts/smoke/smoke.png",
+                                                                4, 100, OsbLoopType.LoopForever, OsbOrigin.Centre);
+                var smokeRight = GetLayer("Aircraft 1 & 2 Front - Smoke").CreateAnimation("sb/missions/1/aircrafts/smoke/smoke.png",
+                                                                4, 100, OsbLoopType.LoopForever, OsbOrigin.Centre);
+                int x = 10;
+                int y = -5;
+                float delay = 2f;
+                int fadeDelay = 2;
+
+                if (i > startTime + 1000)
+                {
+                    var Scale = 0.15f;
+                    smokeLeft.Fade(i, 0.09f);
+                    smokeLeft.Additive(i, i + eSmokeDuration);
+                    smokeLeft.Scale(OsbEasing.In, i, i + (eSmokeDuration * fadeDelay), Scale, Scale / 4);
+                    smokeLeft.Fade(i + eSmokeDuration, i + (eSmokeDuration * fadeDelay), 0.09f, 0);
+                    smokeLeft.Move(OsbEasing.Out, i, i + eSmokeDuration, enemy.PositionAt(i).X - x, enemy.PositionAt(i).Y - y,
+                            enemy.PositionAt(i - (eSmokeDuration * 2)).X - x, enemy.PositionAt(i - (eSmokeDuration * delay)).Y - y);
+
+                    smokeRight.Fade(i, 0.09f);
+                    smokeRight.Additive(i, i + eSmokeDuration);
+                    smokeRight.Scale(OsbEasing.In, i, i + (eSmokeDuration * fadeDelay), Scale, Scale / 4);
+                    smokeRight.Fade(i + eSmokeDuration, i + (eSmokeDuration * fadeDelay), 0.09f, 0);
+                    smokeRight.Move(OsbEasing.Out, i, i + eSmokeDuration, enemy.PositionAt(i).X + x, enemy.PositionAt(i).Y - y,
+                            enemy.PositionAt(i - (eSmokeDuration * 2)).X + x, enemy.PositionAt(i - (eSmokeDuration * delay)).Y - y);
+                }
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ public class HUD
         Playfield();
         Performance();
         LoadingText(startTime, endTime, loadingTextEndtime);
-        DialogNarrator(startTime, endTime, mission, songName);
+        DialogHUD(startTime, endTime, mission, songName);
         ProgressBar(nameTag, avatar, startTime + progressBarDelay, endTime);
     }
 
@@ -417,14 +417,14 @@ public class HUD
         // circle.EndGroup();
     }
 
-    public void DialogNarrator(int startTime, int endTime, string Mission, string SongName)
+    public void DialogHUD(int startTime, int endTime, string Mission, string SongName)
     {
         // DIALOG BOXES STARTS HERE
         var fontSize = 20;
         var GlowRadius = 0;
         var ShadowThickness = 0;
         var OutlineThickness = 0;
-        var font = generator.LoadFont("sb/dialog/txt/narrator/2", new FontDescription()
+        var font = generator.LoadFont("sb/HUD/txt/system/" + Mission, new FontDescription()
         {
             FontPath = "Impact",
             FontSize = fontSize,

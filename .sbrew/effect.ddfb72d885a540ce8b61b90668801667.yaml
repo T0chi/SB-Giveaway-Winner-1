@@ -79,8 +79,3 @@ Layers:
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
-  4443d3e643b84b3abf3a88e48f957b55:
-    Name: "-Tochi"
-    OsbLayer: Foreground
-    DiffSpecific: No
-    Visible: Yes

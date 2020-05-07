@@ -30,10 +30,8 @@ namespace StorybrewScripts
 
         public override void Generate()
         {
-            Dialog();
             Background();
             ItemCollect();
-            Tochi(117905, 135312);
             Petals(128262, 157062);
             HUD(115238, 157062, 128262, "Mission #2", "Adaptation Window", "sb/HUD/txt/nameTag/Acyl.png", 4500, "sb/avatars/AcylProfile.png");
         }
@@ -59,106 +57,6 @@ namespace StorybrewScripts
             var itemcollect = new ItemCollect(this, "sb/avatars/Acyl.png", 0.25f, 4000, 620, 470,
                                                     "items", 1, 380, 450, false,
                                                     128262, 157062, ThemeColor, 2000, 6000);
-        }
-
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
-            var GlowRadius = 15;
-            var GlowColor = new Color4(150, 150, 150, 255);
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/3", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/3", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = false ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = Color4.Black,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = Color4.Black,
-            });
-
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "That was close! Congratulations on the completion of the first mission.",
-                                  "The next mission however is much easier, all you have to do is pick up a few miscellaneous materials!" };
-            this.dialog = new DialogManager(this, font, 117905, 130712, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Be careful, the 'Tryplet Gems' are rather sharp.",
-                                   "Good luck!" };
-            this.dialog2 = new DialogManager(this, font, 130712, 135312, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "危なかった！最初のミッションのクリアおめでとう。",
-            //                       "次のミッションはもっと簡単、色々な材料を採るだけ！" };
-            // this.dialog = new DialogManager(this, font, 117905, 125905, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "サンレンダ宝石がとても鋭いから気を付けて。",
-            //                        "頑張って！" };
-            // this.dialog2 = new DialogManager(this, font, 130062, 135012, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-        }
-
-        public void Tochi(int startTime, int endTime)
-        {
-            var Hoveduration = 5000;
-            var loopCount = (endTime - startTime) / Hoveduration;
-            var pos = new Vector2(320, 240);
-            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
-            var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
-
-            avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.6);
-            avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime, endTime + 500, 1, 0);
-
-            avatar.StartLoopGroup(startTime, loopCount + 1);
-            avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            avatar.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            avatar.EndGroup();
-
-            ring.MoveX(startTime, 64);
-            ring.Scale(startTime, 0.3);
-            ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime, endTime + 500, 1, 0);
-            var rotation = MathHelper.DegreesToRadians(180);
-            ring.Rotate(startTime, endTime, -rotation, rotation);
-
-            ring.StartLoopGroup(startTime, loopCount + 1);
-            ring.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            ring.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            ring.EndGroup();
         }
 
         public void Petals(int startTime, int endTime)

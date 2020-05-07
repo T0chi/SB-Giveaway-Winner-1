@@ -1,0 +1,636 @@
+﻿FontPath: "font/jp/KozGoPro-Light.otf"
+FontSize: 13
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Bold
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 15
+    Power: 0
+    ColorR: 0.5882353
+    ColorG: 0.5882353
+    ColorB: 0.5882353
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "う"
+    Path: "sb/dialog/txt/6/jp/3046.png"
+    Hash: "de5233ad317b7e2d9a0fd896408134e0"
+    OffsetX: -9
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 38
+    Height: 42
+  - Text: "ま"
+    Path: "sb/dialog/txt/6/jp/307e.png"
+    Hash: "2ed40cb1a3895e25741631349c87c1b8"
+    OffsetX: -12
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 41
+    Height: 44
+  - Text: "く"
+    Path: "sb/dialog/txt/6/jp/304f.png"
+    Hash: "94e57c8593bcf786d8e1bfea4c542844"
+    OffsetX: -10
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 36
+    Height: 42
+  - Text: "や"
+    Path: "sb/dialog/txt/6/jp/3084.png"
+    Hash: "8d31fc69cc1dbb3a1c4237423fd8a19f"
+    OffsetX: -11
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 42
+  - Text: "り"
+    Path: "sb/dialog/txt/6/jp/308a.png"
+    Hash: "7b4623ea3331aaaf6826e373573f73da"
+    OffsetX: -11
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 40
+    Height: 41
+  - Text: "し"
+    Path: "sb/dialog/txt/6/jp/3057.png"
+    Hash: "f4c4fb83f088392d2b43e2151cd4699d"
+    OffsetX: -11
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 40
+    Height: 42
+  - Text: "た"
+    Path: "sb/dialog/txt/6/jp/305f.png"
+    Hash: "e174c4bd831df5fc8b51e6b21ddc66f9"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 40
+    Height: 43
+  - Text: "ね"
+    Path: "sb/dialog/txt/6/jp/306d.png"
+    Hash: "52d2cc8e01b1cf78777bc80b4ad60e10"
+    OffsetX: -13
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 43
+  - Text: "！"
+    Path: "sb/dialog/txt/6/jp/ff01.png"
+    Hash: "e90cc473e6ed412466c52255cceaeb56"
+    OffsetX: -8
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 33
+    Height: 38
+  - Text: "だ"
+    Path: "sb/dialog/txt/6/jp/3060.png"
+    Hash: "342ebcba4478a441db5c781f954816d8"
+    OffsetX: -12
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 44
+  - Text: "、"
+    Path: "sb/dialog/txt/6/jp/3001.png"
+    Hash: "9bfbc9d3d961bd22caa605c210e707bc"
+    OffsetX: -12
+    OffsetY: -1
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 31
+    Height: 31
+  - Text: "次"
+    Path: "sb/dialog/txt/6/jp/6b21.png"
+    Hash: "f675c5a6842c288450f7bc2f2188a453"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 43
+    Height: 43
+  - Text: "の"
+    Path: "sb/dialog/txt/6/jp/306e.png"
+    Hash: "9fd2cca173dc3fbbb589d0760e4d132f"
+    OffsetX: -14
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 42
+  - Text: "ミ"
+    Path: "sb/dialog/txt/6/jp/30df.png"
+    Hash: "c03953b317bf11c4e37ea167317e0611"
+    OffsetX: -9
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 37
+    Height: 42
+  - Text: "ッ"
+    Path: "sb/dialog/txt/6/jp/30c3.png"
+    Hash: "50be6bcf1b6aa498e4a9614f55735e8f"
+    OffsetX: -10
+    OffsetY: -9
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 38
+    Height: 38
+  - Text: "シ"
+    Path: "sb/dialog/txt/6/jp/30b7.png"
+    Hash: "c6f982ec98684c29e90870d9bc125865"
+    OffsetX: -11
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 41
+    Height: 40
+  - Text: "ョ"
+    Path: "sb/dialog/txt/6/jp/30e7.png"
+    Hash: "1e3c57c493f61092c26a3429ba3aec3c"
+    OffsetX: -8
+    OffsetY: -9
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 37
+    Height: 39
+  - Text: "ン"
+    Path: "sb/dialog/txt/6/jp/30f3.png"
+    Hash: "ba5bb77ceaf7310afcbe3edde252a32e"
+    OffsetX: -10
+    OffsetY: -10
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 40
+    Height: 40
+  - Text: "は"
+    Path: "sb/dialog/txt/6/jp/306f.png"
+    Hash: "b32a951d829eea0f9d8572d9efebfc2d"
+    OffsetX: -14
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 43
+  - Text: "専"
+    Path: "sb/dialog/txt/6/jp/5c02.png"
+    Hash: "42389e502fcf115b2ceea298ec18c180"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 44
+  - Text: "門"
+    Path: "sb/dialog/txt/6/jp/9580.png"
+    Hash: "28db6124130ec8317f6a0e861168a1e3"
+    OffsetX: -14
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 44
+  - Text: "的"
+    Path: "sb/dialog/txt/6/jp/7684.png"
+    Hash: "79f5d6417cd004e326ce8399c7b94ffd"
+    OffsetX: -14
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 44
+  - Text: "な"
+    Path: "sb/dialog/txt/6/jp/306a.png"
+    Hash: "d334b42293b2100c1bcaa171c4fe177c"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 41
+    Height: 43
+  - Text: "知"
+    Path: "sb/dialog/txt/6/jp/77e5.png"
+    Hash: "6d3801acd7b46d26e4252cdcc624473e"
+    OffsetX: -14
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 44
+  - Text: "識"
+    Path: "sb/dialog/txt/6/jp/8b58.png"
+    Hash: "68b800739f28573979ead730db18802a"
+    OffsetX: -14
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 46
+  - Text: "が"
+    Path: "sb/dialog/txt/6/jp/304c.png"
+    Hash: "16be2bc9e61b76ae99e424a211059d71"
+    OffsetX: -12
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 43
+    Height: 45
+  - Text: "必"
+    Path: "sb/dialog/txt/6/jp/5fc5.png"
+    Hash: "87e8b8a02fb7c3a52c8b4927a627817f"
+    OffsetX: -14
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 44
+  - Text: "要"
+    Path: "sb/dialog/txt/6/jp/8981.png"
+    Hash: "755942bf76f23a27d5fb3f9710f8d015"
+    OffsetX: -13
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 45
+  - Text: "に"
+    Path: "sb/dialog/txt/6/jp/306b.png"
+    Hash: "1eef25683c098816393cd1c3384d5377"
+    OffsetX: -13
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 41
+    Height: 42
+  - Text: "す"
+    Path: "sb/dialog/txt/6/jp/3059.png"
+    Hash: "54c8776f6543bea267d5c1f3e136d026"
+    OffsetX: -10
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 37
+    Height: 41
+  - Text: "。"
+    Path: "sb/dialog/txt/6/jp/3002.png"
+    Hash: "604f56e9ff505324ae06176436ffe805"
+    OffsetX: -13
+    OffsetY: -2
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 33
+    Height: 32
+  - Text: "研"
+    Path: "sb/dialog/txt/6/jp/7814.png"
+    Hash: "0e3e13790c4611fdc87c3a2972af0f71"
+    OffsetX: -14
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 45
+  - Text: "究"
+    Path: "sb/dialog/txt/6/jp/7a76.png"
+    Hash: "5fdddca565ea94d343f1d1c0b6c95d1b"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 44
+  - Text: "め"
+    Path: "sb/dialog/txt/6/jp/3081.png"
+    Hash: "bf5bc1581c5abea5d1547a48a51c310b"
+    OffsetX: -13
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 43
+  - Text: "氷"
+    Path: "sb/dialog/txt/6/jp/6c37.png"
+    Hash: "1a9058ff9d5c04c99ffa7da386c88233"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 43
+  - Text: "バ"
+    Path: "sb/dialog/txt/6/jp/30d0.png"
+    Hash: "b5114c796c75d46b43c2ad96ac98d87b"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 42
+  - Text: "イ"
+    Path: "sb/dialog/txt/6/jp/30a4.png"
+    Hash: "aaae8b03fc9855decdcbee0c386ac65b"
+    OffsetX: -10
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 38
+    Height: 40
+  - Text: "オ"
+    Path: "sb/dialog/txt/6/jp/30aa.png"
+    Hash: "6e9e44325579cf55658f1ee70aefd076"
+    OffsetX: -12
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 39
+    Height: 41
+  - Text: "ー"
+    Path: "sb/dialog/txt/6/jp/30fc.png"
+    Hash: "ba18d17d406aba619d80b6365cd80d38"
+    OffsetX: -9
+    OffsetY: -7
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 35
+    Height: 31
+  - Text: "ム"
+    Path: "sb/dialog/txt/6/jp/30e0.png"
+    Hash: "c29c99b518004ac38217b185c03822d2"
+    OffsetX: -12
+    OffsetY: -10
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 41
+  - Text: "3"
+    Path: "sb/dialog/txt/6/jp/0033.png"
+    Hash: "eb09bde0ddbdb091e33961c116515459"
+    OffsetX: -11
+    OffsetY: -12
+    BaseWidth: 10
+    BaseHeight: 18
+    Width: 35
+    Height: 41
+  - Text: "."
+    Path: "sb/dialog/txt/6/jp/002e.png"
+    Hash: "b01561643da5a4af40bb9bb18eb8d23e"
+    OffsetX: -9
+    OffsetY: 3
+    BaseWidth: 4
+    BaseHeight: 18
+    Width: 23
+    Height: 23
+  - Text: "5"
+    Path: "sb/dialog/txt/6/jp/0035.png"
+    Hash: "8ff62cdb7f86b36576f49d7e91821372"
+    OffsetX: -13
+    OffsetY: -12
+    BaseWidth: 10
+    BaseHeight: 18
+    Width: 36
+    Height: 41
+  - Text: "か"
+    Path: "sb/dialog/txt/6/jp/304b.png"
+    Hash: "4dde720d7fba3400cf44603f66cd5da4"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 43
+    Height: 43
+  - Text: "ら"
+    Path: "sb/dialog/txt/6/jp/3089.png"
+    Hash: "67cf90a08777733410b2bf6f38413ce7"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 42
+  - Text: "壊"
+    Path: "sb/dialog/txt/6/jp/58ca.png"
+    Hash: "dc8df76bbc8258e1794850af44182ea9"
+    OffsetX: -13
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 46
+  - Text: "れ"
+    Path: "sb/dialog/txt/6/jp/308c.png"
+    Hash: "c4b0ae67d778fa84e9e3dd72adbff8ba"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 42
+  - Text: "機"
+    Path: "sb/dialog/txt/6/jp/6a5f.png"
+    Hash: "fae41d62c08c8477b17ad24e0c9133b4"
+    OffsetX: -13
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 46
+  - Text: "械"
+    Path: "sb/dialog/txt/6/jp/68b0.png"
+    Hash: "d404f27a4984016dcfc666ba47dc176b"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 45
+  - Text: "部"
+    Path: "sb/dialog/txt/6/jp/90e8.png"
+    Hash: "42ebe7bde9c7933c689bf1d5aa9ae35d"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 45
+  - Text: "品"
+    Path: "sb/dialog/txt/6/jp/54c1.png"
+    Hash: "425369da3616f4245d56f214f6be9d99"
+    OffsetX: -14
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 45
+  - Text: "を"
+    Path: "sb/dialog/txt/6/jp/3092.png"
+    Hash: "112635aa55fadcd177659230a3078845"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 41
+    Height: 43
+  - Text: "回"
+    Path: "sb/dialog/txt/6/jp/56de.png"
+    Hash: "96ed1fcc51a2cc6a56b56f6a3fe02fe7"
+    OffsetX: -14
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 46
+    Height: 44
+  - Text: "収"
+    Path: "sb/dialog/txt/6/jp/53ce.png"
+    Hash: "8603475b583ed0bace49384c6b6b1898"
+    OffsetX: -14
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 44
+  - Text: "て"
+    Path: "sb/dialog/txt/6/jp/3066.png"
+    Hash: "fe4d9b1b3939d04e9d3d9ad2b9127ec8"
+    OffsetX: -10
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 37
+    Height: 43
+  - Text: "さ"
+    Path: "sb/dialog/txt/6/jp/3055.png"
+    Hash: "738dba1a640b1f4daee5fa5092ac5b54"
+    OffsetX: -11
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 39
+    Height: 42
+  - Text: "い"
+    Path: "sb/dialog/txt/6/jp/3044.png"
+    Hash: "053a36f88ac5e9e3c0318009f1c74919"
+    OffsetX: -14
+    OffsetY: -10
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 39
+  - Text: "指"
+    Path: "sb/dialog/txt/6/jp/6307.png"
+    Hash: "8344df9927bc7d992c2995225e0eff7f"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 45
+    Height: 45
+  - Text: "コ"
+    Path: "sb/dialog/txt/6/jp/30b3.png"
+    Hash: "e3271b77eee32dd7d5b9c7674f8a57b0"
+    OffsetX: -9
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 40
+    Height: 41
+  - Text: "ト"
+    Path: "sb/dialog/txt/6/jp/30c8.png"
+    Hash: "47bd1ff438813cfa9124366300c25782"
+    OffsetX: -9
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 35
+    Height: 39
+  - Text: "ロ"
+    Path: "sb/dialog/txt/6/jp/30ed.png"
+    Hash: "259f6c5df881ae76332d22ed4e7c5958"
+    OffsetX: -13
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 42
+  - Text: "ル"
+    Path: "sb/dialog/txt/6/jp/30eb.png"
+    Hash: "0e24505ee8a650e458e2333163febbb0"
+    OffsetX: -13
+    OffsetY: -11
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 43
+    Height: 41
+  - Text: "最"
+    Path: "sb/dialog/txt/6/jp/6700.png"
+    Hash: "fa6661b18bb4ab2c6109781d4891ee6d"
+    OffsetX: -13
+    OffsetY: -14
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 45
+  - Text: "も"
+    Path: "sb/dialog/txt/6/jp/3082.png"
+    Hash: "8e7779a560b503e6ccad0f171df39ab9"
+    OffsetX: -12
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 42
+    Height: 43
+  - Text: "気"
+    Path: "sb/dialog/txt/6/jp/6c17.png"
+    Hash: "cc265457009abad833b26b7f97ef1ef0"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 45
+  - Text: "付"
+    Path: "sb/dialog/txt/6/jp/4ed8.png"
+    Hash: "c28efc2932d80130ac7d12c9f0b7f86c"
+    OffsetX: -13
+    OffsetY: -13
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 44
+    Height: 44
+  - Text: "け"
+    Path: "sb/dialog/txt/6/jp/3051.png"
+    Hash: "44a574fc0215424dd87bff6a78c4fc4c"
+    OffsetX: -14
+    OffsetY: -12
+    BaseWidth: 18
+    BaseHeight: 35
+    Width: 43
+    Height: 42

@@ -11,9 +11,9 @@ using System.Collections.Generic;
 public class PointSystem
 {
     public int totalPass;
-    public int totalFail;
+    // public int totalFail;
     public int pointsPass;
-    public int pointsFail;
+    // public int pointsFail;
         
     public PointSystem()
     {
@@ -37,19 +37,19 @@ public class PointSystem
         pointsPass = sectionPoints;
     }
 
-    public void AddFailPoints(int[] points)
-    {
-        int score = 0;
-        for(int i = 0; i < points.Length; i++)
-            score += points[i] * (1000 / (int)Math.Pow(10, i));
+    // public void AddFailPoints(int[] points)
+    // {
+    //     int score = 0;
+    //     for(int i = 0; i < points.Length; i++)
+    //         score += points[i] * (1000 / (int)Math.Pow(10, i));
 
-        totalFail += score;
+    //     totalFail += score;
 
-        var hundreds = points[1] * 100;
-        var tens = points[2] * 10;
-        var ones = points[3] * 1;
+    //     var hundreds = points[1] * 100;
+    //     var tens = points[2] * 10;
+    //     var ones = points[3] * 1;
         
-        var sectionPoints = hundreds + tens + ones;
-        pointsFail = sectionPoints;
-    }
+    //     var sectionPoints = hundreds + tens + ones;
+    //     pointsFail = sectionPoints;
+    // }
 }

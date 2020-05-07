@@ -340,7 +340,7 @@ public class DialogBoxes
         // var bitmapPointer = generator.GetMapsetBitmap("sb/dialog/pointers/pointer.png");
         // var bitmapPointerCorner = generator.GetMapsetBitmap("sb/dialog/pointers/pointerCorner.png");
 
-        generator.Log($"width: {widthInputBox}     heigt: {heightInputBox}");
+        // generator.Log($"width: {widthInputBox}     heigt: {heightInputBox}");
 
         if (startTriggerGroup)
         {

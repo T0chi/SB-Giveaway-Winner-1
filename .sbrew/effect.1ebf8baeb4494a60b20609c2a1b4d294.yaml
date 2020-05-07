@@ -2,9 +2,6 @@
 Name: "Points + Outro"
 Script: "Points"
 Config:
-  ColorFail:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,0.4149255,0.4149255,1"
   ColorPass:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.5180976,1,0.4149255,1"
@@ -32,6 +29,12 @@ Config:
   EndTime:
     Type: "System.Int32"
     Value: "558992"
+  Language:
+    Type: "System.Int32"
+    Value: "1"
+    AllowedValues:
+      English: "0"
+      Japanese: "1"
   RandomSeed:
     Type: "System.Int32"
     Value: "345345"

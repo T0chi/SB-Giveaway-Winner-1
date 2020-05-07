@@ -1,0 +1,186 @@
+﻿FontPath: "Impact"
+FontSize: 20
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Regular
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "M"
+    Path: "sb/HUD/txt/system/Mission #6/004d.png"
+    Hash: "e9aa63a398b2ece42169c01fb386ff5d"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 20
+    BaseHeight: 33
+    Width: 20
+    Height: 23
+  - Text: "i"
+    Path: "sb/HUD/txt/system/Mission #6/0069.png"
+    Hash: "a9889ba2244fc5b6dcee8101f6ec89ca"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 8
+    BaseHeight: 33
+    Width: 8
+    Height: 23
+  - Text: "s"
+    Path: "sb/HUD/txt/system/Mission #6/0073.png"
+    Hash: "84f9744175ec0a5776f5cdac0bb4c836"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 13
+    BaseHeight: 33
+    Width: 13
+    Height: 20
+  - Text: "o"
+    Path: "sb/HUD/txt/system/Mission #6/006f.png"
+    Hash: "2172651a817123bdb00da7af975d525c"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 20
+  - Text: "n"
+    Path: "sb/HUD/txt/system/Mission #6/006e.png"
+    Hash: "cee923c9e5d2e1ecb1bca4151bd4ec6f"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 20
+  - Text: "#"
+    Path: "sb/HUD/txt/system/Mission #6/0023.png"
+    Hash: "2c1f9ac505b0c184dc4293f0c94cd6e7"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 17
+    BaseHeight: 33
+    Width: 17
+    Height: 21
+  - Text: "6"
+    Path: "sb/HUD/txt/system/Mission #6/0036.png"
+    Hash: "ed0b195d660958a5e670b3b35de40a74"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 15
+    BaseHeight: 33
+    Width: 15
+    Height: 23
+  - Text: "S"
+    Path: "sb/HUD/txt/system/Mission #6/0053.png"
+    Hash: "a60bb2f780d919281aa7b8b0faca236f"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 23
+  - Text: "t"
+    Path: "sb/HUD/txt/system/Mission #6/0074.png"
+    Hash: "619421e94986f5726a67b38845174c1c"
+    OffsetX: 0
+    OffsetY: 6
+    BaseWidth: 9
+    BaseHeight: 33
+    Width: 9
+    Height: 22
+  - Text: "r"
+    Path: "sb/HUD/txt/system/Mission #6/0072.png"
+    Hash: "3552004dbf158c38a243805c46afbd29"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 10
+    BaseHeight: 33
+    Width: 10
+    Height: 20
+  - Text: "a"
+    Path: "sb/HUD/txt/system/Mission #6/0061.png"
+    Hash: "b289705ee2f9b3ce96bd01bad7babb0a"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 20
+  - Text: "h"
+    Path: "sb/HUD/txt/system/Mission #6/0068.png"
+    Hash: "0ff364db2d6ad6b6cd04ca49ffc12ee4"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 23
+  - Text: "v"
+    Path: "sb/HUD/txt/system/Mission #6/0076.png"
+    Hash: "02806e566e10e17ece6184d3864d7590"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 33
+    Width: 12
+    Height: 20
+  - Text: "R"
+    Path: "sb/HUD/txt/system/Mission #6/0052.png"
+    Hash: "1e9136f3fd6ff9e769dda6a00611a330"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 15
+    BaseHeight: 33
+    Width: 15
+    Height: 23
+  - Text: "e"
+    Path: "sb/HUD/txt/system/Mission #6/0065.png"
+    Hash: "591e28d109f56159f3c3e64352c15c78"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 20
+  - Text: "d"
+    Path: "sb/HUD/txt/system/Mission #6/0064.png"
+    Hash: "c39d122ab325bd1c3b5b1422acb3ac04"
+    OffsetX: 0
+    OffsetY: 5
+    BaseWidth: 14
+    BaseHeight: 33
+    Width: 14
+    Height: 23
+  - Text: "y"
+    Path: "sb/HUD/txt/system/Mission #6/0079.png"
+    Hash: "d790111c010c797ff40460c29d2dc62d"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 33
+    Width: 12
+    Height: 22

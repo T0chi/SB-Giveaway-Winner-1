@@ -33,11 +33,9 @@ namespace StorybrewScripts
 
         public override void Generate()
         {
-            Dialog();
             Flowers(220447, 247113);
             Background(211525, 247113, 221081);
             Mission(224256, 247113);
-            Tochi(214268, 233145);
             //  sTime,  eTime,  realSTime
             HUD(214268, 247113, 220447, "Mission #4", "Quon", "sb/HUD/txt/nameTag/Dailycare.png", 1000, "sb/avatars/DailycareProfile.png");
         }
@@ -107,107 +105,6 @@ namespace StorybrewScripts
             }
         }
 
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
-            var GlowRadius = 15;
-            var GlowColor = new Color4(150, 150, 150, 255);
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/5", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/5", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = false ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = Color4.Black,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = Color4.Black,
-            });
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "That was intense!",
-                                  "The next mission is an aim practice balloon popping challenge.",
-                                  "Jump around the playfield to strike the balloons down with your bow-wielding mapper." };
-            this.dialog = new DialogManager(this, font, 214268, 224932, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "You can take this as a small break to hone your mapper's abilities.",
-                                  "But do give it your best shot as it still counts towards your final score!" };
-            this.dialog2 = new DialogManager(this, font, 224932, 233145, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "今のは激しかった！",
-            //                       "次のミッションはaim練習で風船を割るチャレンジ。",
-            //                       "弓を使うマッパーでフィールド内にある風船を矢で撃ってください。" };
-            // this.dialog = new DialogManager(this, font, 214268, 224256, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "小休憩としてマッパーの能力を磨き上げてください。",
-            //                       "あなたの最後のスコアとして加算されるので最大限のベストを尽くしてください！" };
-            // this.dialog2 = new DialogManager(this, font, 224256, 233145, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-        }
-
-        public void Tochi(int startTime, int endTime)
-        {
-            var Hoveduration = 5000;
-            var loopCount = (endTime - startTime) / Hoveduration;
-            var pos = new Vector2(320, 240);
-            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
-            var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
-
-            avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.6);
-            avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime, endTime + 500, 1, 0);
-
-            avatar.StartLoopGroup(startTime, loopCount + 1);
-            avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            avatar.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            avatar.EndGroup();
-
-            ring.MoveX(startTime, 64);
-            ring.Scale(startTime, 0.3);
-            ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime, endTime + 500, 1, 0);
-            var rotation = MathHelper.DegreesToRadians(180);
-            ring.Rotate(startTime, endTime, -rotation, rotation);
-
-            ring.StartLoopGroup(startTime, loopCount + 1);
-            ring.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            ring.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            ring.EndGroup();
-        }
-
         public void Mission(int startTime, int endTime)
         {
             var interval = Random(1500, 3000);
@@ -262,7 +159,511 @@ namespace StorybrewScripts
                     prevPosition = (int)nextPosX;
                 }
             }
-            var mission = new Mission4(this, balloon, avatar, startTime, endTime, interval, balloonColorMin, balloonColorMax);
+
+            Balloons(startTime, endTime, balloon, avatar, interval, balloonColorMin, balloonColorMax);
+        }
+
+        public void Balloons(int startTime, int endTime, OsbSprite targetBalloon, OsbSprite avatarData, int interval, Color4 balloonColorMin, Color4 balloonColorMax)
+        {
+            var timeStepBalloon = interval;
+            var Beat = Beatmap.GetTimingPointAt(startTime).BeatDuration;
+
+            // BALLOONS
+            for (int time = startTime; time < endTime; time += (timeStepBalloon * 3))
+            {
+                var shiftX = Random(-100, 100);
+                var shiftY = Random(-500, -380);
+                var balloonScale = Random(0.02, 0.55);
+                var balloonDuration = Random(6000, 10000);
+                var balloonStartPos = new Vector2(Random(0, 640), Random(350, 400));
+                var balloonEndPos = new Vector2(balloonStartPos.X + shiftX, balloonStartPos.Y + shiftY);
+
+                // if balloons are small then they're NOT blurry ////////////////////////////////////////////////////////////////////////////////////
+                if (balloonScale <= 0.2)
+                {
+                var balloon = GetLayer("BalloonsBack").CreateSprite("sb/missions/4/balloon.png", OsbOrigin.BottomCentre);
+
+                if (time < 244653)
+                {
+                    balloon.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 1);
+                }
+                else if (time > 244653)
+                {
+                    balloon.Fade(244653, endTime, 0, 0);
+                }
+                if (time + balloonDuration >= endTime)
+                {
+                    balloon.Fade(endTime - (balloonDuration / 6), endTime, 1, 0);
+                }
+                else
+                {
+                    balloon.Fade(time + balloonDuration - (balloonDuration / 6), time + balloonDuration, 1, 0);
+                }
+                // loop x position from left to right
+                balloon.MoveX(OsbEasing.InOutSine, time, time + (balloonDuration / 2), balloonStartPos.X, balloonEndPos.X);
+                balloon.MoveX(OsbEasing.InOutSine, time + (balloonDuration / 2), time + (balloonDuration / 1), balloonEndPos.X, balloonStartPos.X);
+                // ending the x position loop
+                balloon.Scale(time, balloonScale);
+                // starts higher up if the balloon is smaller
+                balloon.MoveY(time, time + balloonDuration, balloonStartPos.Y - 25, balloonEndPos.Y);
+
+                var RandomColor = true;
+                var balloonColor = RandomColor ? new Color4((float)Random(balloonColorMin.R, balloonColorMax.R),
+                                                        (float)Random(balloonColorMin.G, balloonColorMax.G),
+                                                        (float)Random(balloonColorMin.B, balloonColorMax.B),
+                                                        255
+                                                        ) : balloonColorMin;
+                balloon.Color(time, balloonColor);
+
+                var currentAngle = balloon.RotationAt(time);
+                var newAngle = Math.Atan2((balloon.PositionAt(time + (balloonDuration / 2)).Y - balloon.PositionAt(time).Y), (balloon.PositionAt(time + (balloonDuration / 2)).X - balloon.PositionAt(time).X)) + (Math.PI / 2);
+                balloon.Rotate(OsbEasing.InOutSine, time, time + (balloonDuration / 2), newAngle, currentAngle);
+                balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2), time + balloonDuration, -currentAngle, -newAngle);
+                balloon.Rotate(OsbEasing.InOutSine, time + balloonDuration, time + (balloonDuration * 2), -newAngle, -currentAngle);
+                balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration * 2), time + (balloonDuration * 4), currentAngle, newAngle);
+
+
+                // balloon string
+                var stringCount = Random(10, 20);
+                var prevPosX = balloonStartPos.X;
+                var prevPosY = balloonStartPos.Y;
+                var stringDelay = Random(60, 100);
+                for (var i = 0; i < stringCount; i++)
+                {
+                    var balloonString = GetLayer("BalloonsBack").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+
+                    if (time < 244653)
+                    {
+                        balloonString.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 1);
+                    }
+                    else if (time > 244653)
+                    {
+                        balloonString.Fade(244653, endTime, 0, 0);
+                    }
+                    if (time + balloonDuration >= endTime)
+                    {
+                        balloonString.Fade(endTime - (balloonDuration / 6), endTime, 1, 0);
+                    }
+
+                    else
+                    {
+                        balloonString.Fade(time + balloonDuration - (balloonDuration / 6), time + balloonDuration, 1, 0);
+                    }
+
+                    var timeStepBalloonString = Beat;
+                    for (int s = time; s < time + balloonDuration; s += (int)timeStepBalloonString)
+                    {
+                        var Scale = balloonScale * 0.1;
+                        var heightOffset = 52 * balloonScale;
+                        var stringDistance = stringCount * (balloonScale * 1.2);
+                        var position = new Vector2(balloon.PositionAt(s + timeStepBalloonString).X, balloon.PositionAt(s + timeStepBalloonString).Y + i * stringDistance);
+
+                        balloonString.ScaleVec(s, Scale / 4, Scale * 3);
+                        balloonString.ColorHsb(s, (i * 30 / stringCount) + Random(-5.0, 10.0), 0.18 + Random(0.4), 0.90);
+                        balloonString.MoveX(s + (stringDelay * i), s + timeStepBalloonString + (stringDelay * i), prevPosX, position.X);
+                        balloonString.MoveY(s, s + timeStepBalloonString, prevPosY - heightOffset, position.Y - heightOffset);
+
+                        var currentAngle2 = balloonString.RotationAt(time);
+                        var newAngle2 = Math.Atan2((balloonString.PositionAt(time + (balloonDuration / 2)).Y - balloonString.PositionAt(time).Y), (balloonString.PositionAt(time + (balloonDuration / 2)).X - balloonString.PositionAt(time).X)) + (Math.PI / 2);
+                        balloonString.Rotate(OsbEasing.InOutSine, time + (stringDelay * i), time + (balloonDuration / 2) + (stringDelay * i), currentAngle2, newAngle2);
+                        balloonString.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2) + (stringDelay * i), time + balloonDuration + (stringDelay * i), newAngle2, currentAngle2);
+
+                        prevPosX = position.X;
+                        prevPosY = position.Y;
+                        // i++;
+                    }
+                }
+                }
+
+                // if balloons are large then they ARE blurry ////////////////////////////////////////////////////////////////////////////////////
+                else
+                {
+                    var balloon = GetLayer("BalloonsFront").CreateSprite("sb/missions/4/balloonBlurry.png", OsbOrigin.BottomCentre);
+
+                if (time < 244653)
+                {
+                    balloon.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 0.9);
+                }
+                else if (time > 244653)
+                {
+                    balloon.Fade(244653, endTime, 0, 0);
+                }
+                if (time + balloonDuration >= endTime)
+                {
+                    balloon.Fade(endTime - (balloonDuration / 6), endTime, 0.9, 0);
+                }
+                else
+                {
+                    balloon.Fade(time + balloonDuration - (balloonDuration / 6), time + balloonDuration, 0.9, 0);
+                }
+                // loop x position from left to right
+                balloon.MoveX(OsbEasing.InOutSine, time, time + (balloonDuration / 2), balloonStartPos.X, balloonEndPos.X);
+                balloon.MoveX(OsbEasing.InOutSine, time + (balloonDuration / 2), time + (balloonDuration / 1), balloonEndPos.X, balloonStartPos.X);
+                // ending the x position loop
+                balloon.Scale(time, balloonScale);
+                // starts higher up if the balloon is smaller
+                balloon.MoveY(time, time + balloonDuration, balloonStartPos.Y + 80, balloonEndPos.Y);
+
+                var RandomColor = true;
+                var balloonColor = RandomColor ? new Color4((float)Random(balloonColorMin.R, balloonColorMax.R),
+                                                        (float)Random(balloonColorMin.G, balloonColorMax.G),
+                                                        (float)Random(balloonColorMin.B, balloonColorMax.B),
+                                                        255
+                                                        ) : balloonColorMin;
+                balloon.Color(time, balloonColor);
+
+                var currentAngle = balloon.RotationAt(time);
+                var newAngle = Math.Atan2((balloon.PositionAt(time + (balloonDuration / 2)).Y - balloon.PositionAt(time).Y), (balloon.PositionAt(time + (balloonDuration / 2)).X - balloon.PositionAt(time).X)) + (Math.PI / 2);
+                balloon.Rotate(OsbEasing.InOutSine, time, time + (balloonDuration / 2), newAngle, currentAngle);
+                balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2), time + balloonDuration, -currentAngle, -newAngle);
+                balloon.Rotate(OsbEasing.InOutSine, time + balloonDuration, time + (balloonDuration * 2), -newAngle, -currentAngle);
+                balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration * 2), time + (balloonDuration * 4), currentAngle, newAngle);
+
+
+                // balloon string
+                var stringCount = Random(10, 20);
+                var prevPosX = balloonStartPos.X;
+                var prevPosY = balloonStartPos.Y;
+                var stringDelay = Random(60, 100);
+                for (var i = 0; i < stringCount; i++)
+                {
+                    var balloonString = GetLayer("BalloonsFront").CreateSprite("sb/particleBlurry2.png", OsbOrigin.Centre);
+
+                    if (time < 244653)
+                    {
+                        balloonString.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 0.9);
+                    }
+                    else if (time > 244653)
+                    {
+                        balloonString.Fade(244653, endTime, 0, 0);
+                    }
+                    if (time + balloonDuration >= endTime)
+                    {
+                        balloonString.Fade(endTime - (balloonDuration / 6), endTime, 0.9, 0);
+                    }
+
+                    else
+                    {
+                        balloonString.Fade(time + balloonDuration - (balloonDuration / 6), time + balloonDuration, 0.9, 0);
+                    }
+
+                    var timeStepBalloonString = Beat;
+                    for (int s = time; s < time + balloonDuration; s += (int)timeStepBalloonString)
+                    {
+                        var Scale = balloonScale * 0.1;
+                        var heightOffset = 52 * balloonScale;
+                        var stringDistance = stringCount * (balloonScale * 1.2);
+                        var position = new Vector2(balloon.PositionAt(s + timeStepBalloonString).X, balloon.PositionAt(s + timeStepBalloonString).Y + i * stringDistance);
+
+                        balloonString.ScaleVec(s, Scale / 4, Scale * 3);
+                        balloonString.ColorHsb(s, (i * 30 / stringCount) + Random(-5.0, 10.0), 0.18 + Random(0.4), 0.90);
+                        balloonString.MoveX(s + (stringDelay * i), s + timeStepBalloonString + (stringDelay * i), prevPosX, position.X);
+                        balloonString.MoveY(s, s + timeStepBalloonString, prevPosY - heightOffset, position.Y - heightOffset);
+
+                        var currentAngle2 = balloonString.RotationAt(time);
+                        var newAngle2 = Math.Atan2((balloonString.PositionAt(time + (balloonDuration / 2)).Y - balloonString.PositionAt(time).Y), (balloonString.PositionAt(time + (balloonDuration / 2)).X - balloonString.PositionAt(time).X)) + (Math.PI / 2);
+                        balloonString.Rotate(OsbEasing.InOutSine, time + (stringDelay * i), time + (balloonDuration / 2) + (stringDelay * i), currentAngle2, newAngle2);
+                        balloonString.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2) + (stringDelay * i), time + balloonDuration + (stringDelay * i), newAngle2, currentAngle2);
+
+                        prevPosX = position.X;
+                        prevPosY = position.Y;
+                        // i++;
+                    }
+                }
+                }
+            }
+
+            // TARGET BALLOONS, ARROWS & AVATAR
+            for (int time = startTime; time < endTime; time += timeStepBalloon)
+            {
+                var shiftX = Random(-100, 100);
+                var shiftY = Random(-400, -100);
+                var popDuration = Random(1500, 3000);
+                var balloonScale = Random(0.1, 0.55);
+                var balloonDuration = Random(4000, 8000);
+                var balloonStartPos = new Vector2(Random(0, 640), Random(430, 480));
+                var balloonEndPos = new Vector2(balloonStartPos.X + shiftX, balloonStartPos.Y + shiftY);
+
+                // if balloons are small then they're NOT blurry ////////////////////////////////////////////////////////////////////////////////////
+                if (balloonScale <= 0.27)
+                {
+                    var balloon = GetLayer("targetBalloonsBack").CreateSprite("sb/missions/4/balloon.png", OsbOrigin.BottomCentre);
+
+                    balloon.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 1);
+                    balloon.Fade(time + balloonDuration, time + balloonDuration + 50, 1, 0);
+
+                    // loop x position from left to right
+                    balloon.MoveX(OsbEasing.InOutSine, time, time + (balloonDuration / 2), balloonStartPos.X, balloonEndPos.X);
+                    balloon.MoveX(OsbEasing.InOutSine, time + (balloonDuration / 2), time + (balloonDuration / 1), balloonEndPos.X, balloonStartPos.X);
+                    // ending the x position loop
+                    balloon.Scale(time, balloonScale);
+                    // starts higher up if the balloon is smaller
+                    balloon.MoveY(time, time + balloonDuration, balloonStartPos.Y - 25, balloonEndPos.Y);
+
+                    var RandomColor = true;
+                    var balloonColor = RandomColor ? new Color4((float)Random(balloonColorMin.R, balloonColorMax.R),
+                                                            (float)Random(balloonColorMin.G, balloonColorMax.G),
+                                                            (float)Random(balloonColorMin.B, balloonColorMax.B),
+                                                            255
+                                                            ) : balloonColorMin;
+                    balloon.Color(time, balloonColor);
+
+                    var currentAngle = balloon.RotationAt(time);
+                    var newAngle = Math.Atan2((balloon.PositionAt(time + (balloonDuration / 2)).Y - balloon.PositionAt(time).Y), (balloon.PositionAt(time + (balloonDuration / 2)).X - balloon.PositionAt(time).X)) + (Math.PI / 2);
+                    balloon.Rotate(OsbEasing.InOutSine, time, time + (balloonDuration / 2), newAngle, currentAngle);
+                    balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2), time + balloonDuration, -currentAngle, -newAngle);
+                    balloon.Rotate(OsbEasing.InOutSine, time + balloonDuration, time + (balloonDuration * 2), -newAngle, -currentAngle);
+                    balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration * 2), time + (balloonDuration * 4), currentAngle, newAngle);
+
+                    // balloon pop stuff
+                    var balloonPopCount = Random(4, 7);
+                    for (var i = 0; i < balloonPopCount; i++)
+                    {
+                        var balloonPopScale = balloon.ScaleAt(time + balloonDuration) * Random(0.005, 0.2);
+                        var randomScale = Random(-balloonPopScale.X, balloonPopScale.X);
+
+                        var balloonPop = GetLayer("targetBalloonsBack").CreateSprite("sb/missions/4/balloon.png", OsbOrigin.Centre);
+                        var balloonPopSound = GetLayer("targetBalloonsBack").CreateSample("sb/sfx/balloon-pop.ogg", time + balloonDuration, 7);
+
+                        if (time >= endTime - (popDuration * 4))
+                        {
+                            balloonPop.Fade(time + balloonDuration, time + balloonDuration + popDuration, 1, 0);
+                        }
+                        else
+                        {
+                            balloonPop.Fade(endTime, endTime + popDuration, 1, 0);
+                        }
+                        
+                        balloonPop.Color(time + balloonDuration, balloon.ColorAt(time + balloonDuration));
+                        balloonPop.MoveY(OsbEasing.InSine, time + balloonDuration, time + balloonDuration + popDuration, balloonEndPos.Y + Random(-70, -20), balloonStartPos.Y);
+                        balloonPop.MoveX(OsbEasing.OutSine, time + balloonDuration, time + balloonDuration + popDuration, balloonStartPos.X + Random(-10, 10), balloonStartPos.X + Random(-100, 100));
+                        balloonPop.ScaleVec(OsbEasing.InOutSine, time + balloonDuration, time + balloonDuration + (popDuration / 2), balloonPopScale.X, balloonPopScale.Y, -balloonPopScale.X, randomScale);
+                        balloonPop.ScaleVec(OsbEasing.InOutSine, time + balloonDuration + (popDuration / 2), time + balloonDuration + (popDuration / 1), -randomScale, balloonPopScale.Y, Random(-balloonPopScale.X, balloonPopScale.X), balloonPopScale.Y);
+                        balloonPop.Rotate(OsbEasing.InOutSine, time + balloonDuration, time + balloonDuration + popDuration, balloon.RotationAt(time + balloonDuration), balloon.RotationAt(time + balloonDuration) + Random(-5, 5));
+                    }
+                    // balloon pop  stuff ends
+
+                    // arrows
+                    var arrowSpeed = Random(400, 550);
+                    var arrow = GetLayer("Arrows").CreateSprite("sb/missions/4/arrow.png", OsbOrigin.Centre);
+                    var arrowSound = GetLayer("Arrows").CreateSample("sb/sfx/arrow-1.ogg", time + balloonDuration - arrowSpeed, 50);
+
+                    var arrowScale = 0.2;
+                    var randomX = Random(50, 320);
+                    var arrowStartPos = new Vector2(avatarData.PositionAt(time + balloonDuration - arrowSpeed).X, 450);
+                    var arrowEndPos = balloon.PositionAt(time + balloonDuration);
+                    var arrowAngle = Math.Atan2(((balloon.PositionAt(time + balloonDuration - arrowSpeed).Y) - (avatarData.PositionAt(time + balloonDuration).Y) + 40), ((balloon.PositionAt(time + balloonDuration - arrowSpeed).X + 20) - avatarData.PositionAt(time + balloonDuration).X)) + (Math.PI / 2);
+
+                    arrow.Rotate(time + balloonDuration - arrowSpeed, arrowAngle);
+                    arrow.Fade(time + balloonDuration - arrowSpeed, time + balloonDuration - arrowSpeed + (arrowSpeed / 4), 0, 1);
+                    arrow.Fade(time + balloonDuration, time + balloonDuration + (arrowSpeed / 4), 1, 0);
+                    arrow.ScaleVec(time + balloonDuration - arrowSpeed, time + balloonDuration, arrowScale * 0.7, arrowScale * 0.7, arrowScale * 0.6, arrowScale * 0.5);
+                    arrow.MoveX(time + balloonDuration - arrowSpeed, time + balloonDuration, arrowStartPos.X, arrowEndPos.X);
+                    arrow.MoveY(time + balloonDuration - arrowSpeed, time + balloonDuration, arrowStartPos.Y - 100, arrowEndPos.Y);
+
+                    Log(avatarData.PositionAt(time + balloonDuration).X.ToString());
+
+
+                    // balloon string
+                    var stringCount = Random(10, 20);
+                    var prevPosX = balloonStartPos.X;
+                    var prevPosY = balloonStartPos.Y;
+                    var stringDelay = Random(60, 100);
+                    var heightOffset = 52 * balloonScale;
+                    var stringDistance = stringCount * (balloonScale * 1.2);
+                    for (var i = 0; i < stringCount; i++)
+                    {
+                        var balloonStringTarget = GetLayer("targetBalloonsBack").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+
+                        balloonStringTarget.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 1);
+
+                        var timeStepBalloonString = Beat;
+                        for (int s = time; s < time + balloonDuration; s += (int)timeStepBalloonString)
+                        {
+                            var Scale = balloonScale * 0.1;
+                            var position = new Vector2(balloon.PositionAt(s + timeStepBalloonString).X, balloon.PositionAt(s + timeStepBalloonString).Y + i * stringDistance);
+
+                            balloonStringTarget.ScaleVec(s, Scale / 4, Scale * 3);
+                            balloonStringTarget.ColorHsb(s, (i * 30 / stringCount) + Random(-5.0, 10.0), 0.18 + Random(0.4), 0.90);
+                            balloonStringTarget.MoveX(s + (stringDelay * i), s + timeStepBalloonString + (stringDelay * i), prevPosX, position.X);
+                            balloonStringTarget.MoveY(s, s + timeStepBalloonString, prevPosY - heightOffset, position.Y - heightOffset);
+
+                            var currentAngle2 = balloonStringTarget.RotationAt(time);
+                            var newAngle2 = Math.Atan2((balloonStringTarget.PositionAt(time + (balloonDuration / 2)).Y - balloonStringTarget.PositionAt(time).Y), (balloonStringTarget.PositionAt(time + (balloonDuration / 2)).X - balloonStringTarget.PositionAt(time).X)) + (Math.PI / 2);
+                            balloonStringTarget.Rotate(OsbEasing.InOutSine, time + (stringDelay * i), time + (balloonDuration / 2) + (stringDelay * i), currentAngle2, newAngle2);
+                            balloonStringTarget.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2) + (stringDelay * i), time + balloonDuration + (stringDelay * i), newAngle2, currentAngle2);
+
+                            prevPosX = position.X;
+                            prevPosY = position.Y;
+                            // i++;
+
+                        }
+
+                        // balloonStringTarget pop stuff
+                        var balloonStringScale = balloonStringTarget.ScaleAt(time + balloonDuration);
+                        var balloonStringPosX = balloonStringTarget.PositionAt(time + balloonDuration + (stringDelay * i)).X;
+                        var balloonStringPosStartY = balloon.PositionAt(time + balloonDuration).Y + i * stringDistance;
+                        var balloonStringPosEndY = balloon.PositionAt(time).Y + i * stringDistance;
+
+                        if (time >= endTime - (popDuration * 4))
+                        {
+                            balloonStringTarget.Fade(time + balloonDuration, time + balloonDuration + popDuration, 1, 0);
+                        }
+                        else
+                        {
+                            balloonStringTarget.Fade(endTime, endTime + popDuration, 1, 0);
+                        }
+
+                        balloonStringTarget.MoveY(OsbEasing.InSine, time + balloonDuration, time + balloonDuration + popDuration, balloonStringPosStartY - heightOffset, balloonStringPosEndY - heightOffset);
+                        balloonStringTarget.MoveX(OsbEasing.InSine, time + balloonDuration + (stringDelay * i), time + balloonDuration + popDuration, balloonStringPosX, balloonStringPosX + Random(-40, 40));
+                        balloonStringTarget.ScaleVec(OsbEasing.InOutSine, time + balloonDuration, time + balloonDuration + (popDuration / 2), balloonStringScale.X, balloonStringScale.Y, -balloonStringScale.X, balloonStringScale.Y);
+                        balloonStringTarget.ScaleVec(OsbEasing.InOutSine, time + balloonDuration + (popDuration / 2), time + balloonDuration + (popDuration / 1), -balloonStringScale.X, balloonStringScale.Y, balloonStringScale.X, balloonStringScale.Y);
+                        balloonStringTarget.Rotate(OsbEasing.InOutSine, time + balloonDuration + (stringDelay * i), time + balloonDuration + (stringDelay * i) + popDuration, balloonStringTarget.RotationAt(time + balloonDuration + (stringDelay * i)), balloonStringTarget.RotationAt(time + balloonDuration + (stringDelay * i)) + Random(-5, 5));
+                        // balloonStringTarget pop  stuff ends
+                    }
+                    balloon = targetBalloon;
+                }
+                
+                // if balloons are large then they ARE blurry ////////////////////////////////////////////////////////////////////////////////////
+                else
+                {
+                    var balloon = GetLayer("targetBalloonsFront").CreateSprite("sb/missions/4/balloonBlurry.png", OsbOrigin.BottomCentre);
+
+                    balloon.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 0.9);
+                    balloon.Fade(time + balloonDuration, time + balloonDuration + 50, 0.9, 0);
+
+                    // loop x position from left to right
+                    balloon.MoveX(OsbEasing.InOutSine, time, time + (balloonDuration / 2), balloonStartPos.X, balloonEndPos.X);
+                    balloon.MoveX(OsbEasing.InOutSine, time + (balloonDuration / 2), time + (balloonDuration / 1), balloonEndPos.X, balloonStartPos.X);
+                    // ending the x position loop
+                    balloon.Scale(time, balloonScale);
+                    // starts higher up if the balloon is smaller
+                    balloon.MoveY(time, time + balloonDuration, balloonStartPos.Y + 80, balloonEndPos.Y);
+
+                    var RandomColor = true;
+                    var balloonColor = RandomColor ? new Color4((float)Random(balloonColorMin.R, balloonColorMax.R),
+                                                            (float)Random(balloonColorMin.G, balloonColorMax.G),
+                                                            (float)Random(balloonColorMin.B, balloonColorMax.B),
+                                                            255
+                                                            ) : balloonColorMin;
+                    balloon.Color(time, balloonColor);
+
+                    var currentAngle = balloon.RotationAt(time);
+                    var newAngle = Math.Atan2((balloon.PositionAt(time + (balloonDuration / 2)).Y - balloon.PositionAt(time).Y), (balloon.PositionAt(time + (balloonDuration / 2)).X - balloon.PositionAt(time).X)) + (Math.PI / 2);
+                    balloon.Rotate(OsbEasing.InOutSine, time, time + (balloonDuration / 2), newAngle, currentAngle);
+                    balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2), time + balloonDuration, -currentAngle, -newAngle);
+                    balloon.Rotate(OsbEasing.InOutSine, time + balloonDuration, time + (balloonDuration * 2), -newAngle, -currentAngle);
+                    balloon.Rotate(OsbEasing.InOutSine, time + (balloonDuration * 2), time + (balloonDuration * 4), currentAngle, newAngle);
+
+                    // balloon pop stuff
+                    var balloonPopCount = Random(4, 7);
+                    for (var i = 0; i < balloonPopCount; i++)
+                    {
+                        var balloonPopScale = balloon.ScaleAt(time + balloonDuration) * Random(0.005, 0.2);
+                        var randomScale = Random(-balloonPopScale.X, balloonPopScale.X);
+
+                        var balloonPop = GetLayer("targetBalloonsFront").CreateSprite("sb/missions/4/balloon.png", OsbOrigin.Centre);
+                        var balloonPopSound = GetLayer("targetBalloonsFront").CreateSample("sb/sfx/balloon-pop.ogg", time + balloonDuration, 7);
+
+                        if (time >= endTime - (popDuration * 4))
+                        {
+                            balloonPop.Fade(time + balloonDuration, time + balloonDuration + popDuration, 0.9, 0);
+                        }
+                        else
+                        {
+                            balloonPop.Fade(endTime, endTime + popDuration, 0.9, 0);
+                        }
+
+                        balloonPop.Color(time + balloonDuration, balloon.ColorAt(time + balloonDuration));
+                        balloonPop.MoveY(OsbEasing.InSine, time + balloonDuration, time + balloonDuration + popDuration, balloonEndPos.Y + Random(-70, -20), balloonStartPos.Y);
+                        balloonPop.MoveX(OsbEasing.OutSine, time + balloonDuration, time + balloonDuration + popDuration, balloonStartPos.X + Random(-10, 10), balloonStartPos.X + Random(-100, 100));
+                        balloonPop.ScaleVec(OsbEasing.InOutSine, time + balloonDuration, time + balloonDuration + (popDuration / 2), balloonPopScale.X, balloonPopScale.Y, -balloonPopScale.X, randomScale);
+                        balloonPop.ScaleVec(OsbEasing.InOutSine, time + balloonDuration + (popDuration / 2), time + balloonDuration + (popDuration / 1), -randomScale, balloonPopScale.Y, Random(-balloonPopScale.X, balloonPopScale.X), balloonPopScale.Y);
+                        balloonPop.Rotate(OsbEasing.InOutSine, time + balloonDuration, time + balloonDuration + popDuration, balloon.RotationAt(time + balloonDuration), balloon.RotationAt(time + balloonDuration) + Random(-5, 5));
+                    }
+                    // balloon pop  stuff ends
+
+                    // arrows
+                    var arrowSpeed = Random(400, 550);
+                    var arrow = GetLayer("Arrows").CreateSprite("sb/missions/4/arrow2.png", OsbOrigin.Centre);
+                    var arrowSound = GetLayer("Arrows").CreateSample("sb/sfx/arrow-1.ogg", time + balloonDuration - arrowSpeed, 50);
+
+                    var arrowScale = 0.2;
+                    var randomX = Random(50, 320);
+                    var arrowStartPos = new Vector2(avatarData.PositionAt(time + balloonDuration - arrowSpeed).X, 450);
+                    var arrowEndPos = balloon.PositionAt(time + balloonDuration);
+                    var arrowAngle = Math.Atan2(((balloon.PositionAt(time + balloonDuration - arrowSpeed).Y - 50 ) - (avatarData.PositionAt(time + balloonDuration).Y) + 40), ((balloon.PositionAt(time + balloonDuration - arrowSpeed).X + 50) - avatarData.PositionAt(time + balloonDuration).X)) + (Math.PI / 2);
+
+                    arrow.Rotate(time + balloonDuration - arrowSpeed, arrowAngle);
+                    arrow.Fade(time + balloonDuration - arrowSpeed, time + balloonDuration - arrowSpeed + (arrowSpeed / 4), 0, 1);
+                    arrow.Fade(time + balloonDuration, time + balloonDuration + (arrowSpeed / 4), 1, 0);
+                    arrow.ScaleVec(time + balloonDuration - arrowSpeed, time + balloonDuration, arrowScale * 0.05, arrowScale * 1, arrowScale * 1.3, arrowScale * 0.5);
+                    arrow.MoveX(time + balloonDuration - arrowSpeed, time + balloonDuration, arrowStartPos.X, arrowEndPos.X);
+                    arrow.MoveY(time + balloonDuration - arrowSpeed, time + balloonDuration, arrowStartPos.Y - 100, arrowEndPos.Y - 50);
+
+                    Log(avatarData.PositionAt(time + balloonDuration).X.ToString());
+
+
+                    // balloon string
+                    var stringCount = Random(10, 20);
+                    var prevPosX = balloonStartPos.X;
+                    var prevPosY = balloonStartPos.Y;
+                    var stringDelay = Random(60, 100);
+                    var heightOffset = 52 * balloonScale;
+                    var stringDistance = stringCount * (balloonScale * 1.2);
+                    for (var i = 0; i < stringCount; i++)
+                    {
+                        var balloonStringTarget = GetLayer("targetBalloonsFront").CreateSprite("sb/particle2.png", OsbOrigin.Centre);
+
+                        balloonStringTarget.Fade(time + (balloonDuration / 10), time + (balloonDuration / 10) + (balloonDuration / 6), 0, 0.9);
+
+                        var timeStepBalloonString = Beat;
+                        for (int s = time; s < time + balloonDuration; s += (int)timeStepBalloonString)
+                        {
+                            var Scale = balloonScale * 0.1;
+                            var position = new Vector2(balloon.PositionAt(s + timeStepBalloonString).X, balloon.PositionAt(s + timeStepBalloonString).Y + i * stringDistance);
+
+                            balloonStringTarget.ScaleVec(s, Scale / 4, Scale * 3);
+                            balloonStringTarget.ColorHsb(s, (i * 30 / stringCount) + Random(-5.0, 10.0), 0.18 + Random(0.4), 0.90);
+                            balloonStringTarget.MoveX(s + (stringDelay * i), s + timeStepBalloonString + (stringDelay * i), prevPosX, position.X);
+                            balloonStringTarget.MoveY(s, s + timeStepBalloonString, prevPosY - heightOffset, position.Y - heightOffset);
+
+                            var currentAngle2 = balloonStringTarget.RotationAt(time);
+                            var newAngle2 = Math.Atan2((balloonStringTarget.PositionAt(time + (balloonDuration / 2)).Y - balloonStringTarget.PositionAt(time).Y), (balloonStringTarget.PositionAt(time + (balloonDuration / 2)).X - balloonStringTarget.PositionAt(time).X)) + (Math.PI / 2);
+                            balloonStringTarget.Rotate(OsbEasing.InOutSine, time + (stringDelay * i), time + (balloonDuration / 2) + (stringDelay * i), currentAngle2, newAngle2);
+                            balloonStringTarget.Rotate(OsbEasing.InOutSine, time + (balloonDuration / 2) + (stringDelay * i), time + balloonDuration + (stringDelay * i), newAngle2, currentAngle2);
+
+                            prevPosX = position.X;
+                            prevPosY = position.Y;
+                            // i++;
+
+                        }
+
+                        // balloonStringTarget pop stuff
+                        var balloonStringScale = balloonStringTarget.ScaleAt(time + balloonDuration);
+                        var balloonStringPosX = balloonStringTarget.PositionAt(time + balloonDuration + (stringDelay * i)).X;
+                        var balloonStringPosStartY = balloon.PositionAt(time + balloonDuration).Y + i * stringDistance;
+                        var balloonStringPosEndY = balloon.PositionAt(time).Y + i * stringDistance;
+
+                        if (time >= endTime - (popDuration * 4))
+                        {
+                            balloonStringTarget.Fade(time + balloonDuration, time + balloonDuration + popDuration, 0.9, 0);
+                        }
+                        else
+                        {
+                            balloonStringTarget.Fade(endTime, endTime + popDuration, 0.9, 0);
+                        }
+
+                        balloonStringTarget.MoveY(OsbEasing.InSine, time + balloonDuration, time + balloonDuration + popDuration, balloonStringPosStartY - heightOffset, balloonStringPosEndY - heightOffset);
+                        balloonStringTarget.MoveX(OsbEasing.InSine, time + balloonDuration + (stringDelay * i), time + balloonDuration + popDuration, balloonStringPosX, balloonStringPosX + Random(-40, 40));
+                        balloonStringTarget.ScaleVec(OsbEasing.InOutSine, time + balloonDuration, time + balloonDuration + (popDuration / 2), balloonStringScale.X, balloonStringScale.Y, -balloonStringScale.X, balloonStringScale.Y);
+                        balloonStringTarget.ScaleVec(OsbEasing.InOutSine, time + balloonDuration + (popDuration / 2), time + balloonDuration + (popDuration / 1), -balloonStringScale.X, balloonStringScale.Y, balloonStringScale.X, balloonStringScale.Y);
+                        balloonStringTarget.Rotate(OsbEasing.InOutSine, time + balloonDuration + (stringDelay * i), time + balloonDuration + (stringDelay * i) + popDuration, balloonStringTarget.RotationAt(time + balloonDuration + (stringDelay * i)), balloonStringTarget.RotationAt(time + balloonDuration + (stringDelay * i)) + Random(-5, 5));
+                        // balloonStringTarget pop  stuff ends
+                    }
+                    balloon = targetBalloon;
+                }
+            }
         }
     }
 }

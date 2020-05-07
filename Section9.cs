@@ -35,12 +35,10 @@ namespace StorybrewScripts
         {
             hud();
             Lights();
-		    Dialog();
             Mission();
             Particles();
             Background();
             ParticlesIntense();
-            Tochi(380218, 417785);
 
 		    Glitch(429565, glitch.one);
 		    Glitch(431450, glitch.two);
@@ -616,135 +614,6 @@ namespace StorybrewScripts
                 otosakaDamageSprites.Fade(i + slashDelay + spawnDelay + Duration, i + slashDelay + spawnDelay + Duration + damageDuration, 1, 0);
                 otosakaDamageSprites.Scale(i + slashDelay + spawnDelay + Duration, Random(0.2, 0.3));
             }
-        }
-
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
-            var GlowRadius = 15;
-            var GlowColor = new Color4(150, 150, 150, 255);
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/9", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/9", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = false ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = Color4.Black,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = Color4.Black,
-            });
-
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "?!",
-                                  "What's going on?! Let me run a quick system scan..." };
-            this.dialog = new DialogManager(this, font, 380218, 385244, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "It seems the remaining bugs from Section 4 have infiltrated the system,", 
-                                   "corrupting the mappers' databases... Wait... this was not supposed to happen...",
-                                   "Why do Necho and Otosaki-Yu have to fight!" };
-            this.dialog2 = new DialogManager(this, font, 394853, 407418, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // DIALOG 3 -----------------------------------------
-            string[] sentence3 = { "Unfortunately, it seems that your score will inevitably drop, but please save them!",
-                                   "We can only count on you..." };
-            this.dialog3 = new DialogManager(this, font, 407418, 417785, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
-
-            // DIALOG 4 -----------------------------------------
-            string[] sentence4 = { "....",
-                                   "*Scanning*" };
-            this.dialog4 = new DialogManager(this, font, 385244, 394853, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence4);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "？！",
-            //                       "何が起こっているの？！私にシステムスキャンをさせてください..." };
-            // this.dialog = new DialogManager(this, font, 380218, 385244, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "見た感じセクション４からの残りのバグはシステムに侵入し、マッパー達のデーターベースを破損しました...", 
-            //                        "待って。こういうことがあってはダメです...なぜNechoとOtosaki-Yuは戦う必要性があるのですか！" };
-            // this.dialog2 = new DialogManager(this, font, 394853, 407418, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // // DIALOG 3 -----------------------------------------
-            // string[] sentence3 = { "残念ながらあなたのスコアは必然的に落ちますが、彼たちを助けてください！",
-            //                        "私たちはあなたにしか頼れません..." };
-            // this.dialog3 = new DialogManager(this, font, 407418, 416214, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence3);
-
-            // // DIALOG 4 -----------------------------------------
-            // string[] sentence4 = { "....",
-            //                        "*Scanning*" };
-            // this.dialog4 = new DialogManager(this, font, 385244, 394853, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence4);
-        }
-
-        public void Tochi(int startTime, int endTime)
-        {
-            var Hoveduration = 5000;
-            var loopCount = (endTime - startTime) / Hoveduration;
-            var pos = new Vector2(320, 240);
-            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
-            var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
-
-            avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.6);
-            avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime, endTime + 500, 1, 0);
-
-            avatar.StartLoopGroup(startTime, loopCount + 1);
-            avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            avatar.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            avatar.EndGroup();
-
-            ring.MoveX(startTime, 64);
-            ring.Scale(startTime, 0.3);
-            ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime, endTime + 500, 1, 0);
-            var rotation = MathHelper.DegreesToRadians(180);
-            ring.Rotate(startTime, endTime, -rotation, rotation);
-
-            ring.StartLoopGroup(startTime, loopCount + 1);
-            ring.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            ring.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            ring.EndGroup();
         }
     }
 }

@@ -15,17 +15,18 @@ namespace StorybrewScripts
 {
     public class Points : StoryboardObjectGenerator
     {
+        public Language langClass;
+
+        public enum language { English, Japanese };
+
         [Configurable]
-        public Color4 ColorFail = Color.White;
+        public static language Language = language.English;
+
+        // [Configurable]
+        // public Color4 ColorFail = Color.White;
 
         [Configurable]
         public Color4 ColorPass = Color.White;
-
-        private PointSystem pointSystem;
-
-        private DialogManager pointsPass;
-
-        private DialogManager pointsFail;
 
         [Configurable]
         public Color4 TochiTagColor = Color4.Cyan;
@@ -53,6 +54,12 @@ namespace StorybrewScripts
         public int EndTime = 558992;
         // public int EndTime = 558992;
 
+        private PointSystem pointSystem;
+
+        private DialogManager pointsPass;
+
+        private DialogManager pointsFail;
+
         public override void Generate()
         {
             pointSystem = new PointSystem();
@@ -61,55 +68,53 @@ namespace StorybrewScripts
 
             points(1, "sb/points/", 48476, 48476, 61399, 72571, 2, true); // break 1
             currentPointsPass("Overall", 1, "sb/points/", 48476, 48476, 61399, 72571, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 1, "sb/points/", 48476, 48476, 61399, 72571, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 1, "sb/points/", 48476, 48476, 61399, 72571, pointSystem.totalFail, true);
 
             points(3, "sb/points/", 106905, 107572, 115238, 128262, 2, true); // break 2
             currentPointsPass("Overall", 3, "sb/points/", 106905, 107572, 115238, 128262, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 3, "sb/points/", 106905, 107572, 115238, 128262, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 3, "sb/points/", 106905, 107572, 115238, 128262, pointSystem.totalFail, true);
             points(9, "sb/points/", 146863, 147063, 157062, 167640, 2, true); // break 3
             currentPointsPass("Overall", 9, "sb/points/", 146863, 147063, 157062, 167640, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 9, "sb/points/", 146863, 147063, 157062, 167640, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 9, "sb/points/", 146863, 147063, 157062, 167640, pointSystem.totalFail, true);
 
             points(15, "sb/points/", 197982, 198240, 213925, 221716, 2, true); // break 4
             currentPointsPass("Overall", 15, "sb/points/", 197982, 198240, 213925, 221716, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 15, "sb/points/", 197982, 198240, 213925, 221716, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 15, "sb/points/", 197982, 198240, 213925, 221716, pointSystem.totalFail, true);
 
             points(21, "sb/points/", 237589, 237589, 247113, 254732, 2, true); // break 5
             currentPointsPass("Overall", 21, "sb/points/", 237589, 237589, 247113, 254732, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 21, "sb/points/", 237589, 237589, 247113, 254732, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 21, "sb/points/", 237589, 237589, 247113, 254732, pointSystem.totalFail, true);
 
             points(27, "sb/points/", 274561, 274639, 283671, 290901, 2, true); // break 6
             currentPointsPass("Overall", 27, "sb/points/", 274561, 274639, 283671, 290901, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 27, "sb/points/", 274561, 274639, 283671, 290901, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 27, "sb/points/", 274561, 274639, 283671, 290901, pointSystem.totalFail, true);
 
             points(33, "sb/points/", 320430, 321059, 331111, 339380, 2, true); // break 7
             currentPointsPass("Overall", 33, "sb/points/", 320430, 321059, 331111, 339380, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 33, "sb/points/", 320430, 321059, 331111, 339380, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 33, "sb/points/", 320430, 321059, 331111, 339380, pointSystem.totalFail, true);
 
             points(39, "sb/points/", 368909, 369223, 379590, 388570, 2, true); // break 8
             currentPointsPass("Overall", 39, "sb/points/", 368909, 369223, 379590, 388570, pointSystem.totalPass, true);
-            currentPointsFail("Overall", 39, "sb/points/", 368909, 369223, 379590, 388570, pointSystem.totalFail, true);
+            // currentPointsFail("Overall", 39, "sb/points/", 368909, 369223, 379590, 388570, pointSystem.totalFail, true);
 
-            var pointsFight = new Vector2(pointSystem.totalPass, pointSystem.totalFail); // middle of the fight
-            currentPointsPass("Overall after lost points", 100, "sb/points/", 408675, 409303, 426266, 432549, (int)pointsFight.X - 10000, true);
-            currentPointsFail("Overall after lost points", 100, "sb/points/", 408675, 409303, 426266, 432549, (int)pointsFight.Y - 10000, true);
+            var pointsFight = new Vector2(pointSystem.totalPass, pointSystem.totalPass); // middle of the fight
+            // var pointsFight = new Vector2(pointSystem.totalPass, pointSystem.totalFail); // middle of the fight
+            currentPointsPass("Overall after lost points", 100, "sb/points/", 408675, 409303, 426266, 432549, (int)pointsFight.X - 12548, true);
+            // currentPointsFail("Overall after lost points", 100, "sb/points/", 408675, 409303, 426266, 432549, (int)pointsFight.Y - 12548, true);
 
             points(45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, 2, true); // break 9
-            currentPointsPass("Overall", 45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalPass - 10000, true);
-            currentPointsFail("Overall", 45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalFail - 10000, true);
+            currentPointsPass("Overall", 45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalPass - 12548, true);
+            // currentPointsFail("Overall", 45, "sb/points/", 484268, 484343, 488992, 488992 + 8000, pointSystem.totalFail - 12548, true);
 
             fightSound(398622, 488992);
 
 
-            Log($"TOTALPOINTS:                {pointSystem.totalPass} ; {pointSystem.totalFail}");
+            // Log($"TOTALPOINTS:                {pointSystem.totalPass} ; {pointSystem.totalFail}");
+            Log($"TOTALPOINTS:                {pointSystem.totalPass}");
 
 
             Avatars();
             Background();
-            ResultsPass(408675, 409303, StartTime + 5000, StartTime + 10000, 2, true);
-            ResultsPass2(408675, 409303, StartTime + 12000, StartTime + 18000, 2, true);
-            ResultsFail(408675, 409303, StartTime + 5000, StartTime + 10000, 2, true);
-            ResultsFail2(408675, 409303, StartTime + 12000, StartTime + 20000, 2, true);
             CyanRain(0.3f, "RainFront", Random(5000, 10000), 0.15f, (float)Random(0.2f, 0.5f));
             CyanRain(0.2f, "RainBack", Random(500, 1000), 0.1f, (float)Random(0.1f, 0.5f));
 
@@ -118,6 +123,11 @@ namespace StorybrewScripts
 
             // cool visuals
             Information(StartTime + 17000, EndTime - 2000);
+
+            ResultsPass(408675, 409303, StartTime + 5000, StartTime + 10000, 2, true);
+            ResultsPass2(408675, 409303, StartTime + 12000, StartTime + 18000, 2, true);
+            // ResultsFail(408675, 409303, StartTime + 5000, StartTime + 10000, 2, true);
+            // ResultsFail2(408675, 409303, StartTime + 12000, StartTime + 20000, 2, true);
         }
 
         public void Information(int startTime, int endTime)
@@ -142,7 +152,7 @@ namespace StorybrewScripts
             bg.Fade(startTime, startTime + 2000, 0, 0.9f);
             bg.Fade(endTime, endTime + 2000, 0.9f, 0);
             bg.Color(startTime, Color4.Black);
-            
+
             // github logo + text
             github.Scale(scrollStart - 1000, 0.35f);
             github.Fade(scrollStart - 1000, scrollStart - 1000 + 1000, 0, 1);
@@ -170,20 +180,20 @@ namespace StorybrewScripts
             // var loopCount2 = ((startTime + 10000) - startTime) / loopDuration;
             var startRotation = MathHelper.DegreesToRadians(-360);
             var endRotation = MathHelper.DegreesToRadians(0);
-            
+
             skip.Fade(scrollStart + 26000, scrollStart + 26000 + 1000, 0, 1);
             skip.Fade(endTime, endTime + 2000, 1, 0);
             skip.StartLoopGroup(scrollStart + 26000, 1);
-                skip.Scale(0, 0.6f);
-                // skip.ScaleVec(0, loopDuration, -0.6f, 0.6f, 0.6f, 0.6f);
-                // skip.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
+            skip.Scale(0, 0.6f);
+            // skip.ScaleVec(0, loopDuration, -0.6f, 0.6f, 0.6f, 0.6f);
+            // skip.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
             skip.EndGroup();
             skipNot.Fade(startTime, startTime + 2500, 0, 1);
             skipNot.Fade(startTime + 7500, startTime + 8500, 1, 0);
             skipNot.StartLoopGroup(startTime, 1);
-                skipNot.Scale(0, 0.6f);
-                // skipNot.ScaleVec(0, loopDuration, -0.3f, 0.3f, 0.3f, 0.3f);
-                // skipNot.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
+            skipNot.Scale(0, 0.6f);
+            // skipNot.ScaleVec(0, loopDuration, -0.3f, 0.3f, 0.3f, 0.3f);
+            // skipNot.Rotate(OsbEasing.InOutSine, 0, loopDuration, startRotation, endRotation);
             skipNot.EndGroup();
 
             // easterEgg.Scale(scrollStart + 24000, 0.8f);
@@ -565,7 +575,7 @@ namespace StorybrewScripts
                         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
                     this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
-                
+
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Pass", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
@@ -574,7 +584,7 @@ namespace StorybrewScripts
                     this.pointsPass.Generate(pts, 0, 0, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, triggerGroup);
                 }
 
-                
+
                 if (PTS2 == true)
                 {
                     this.pointsPass.Setup(this, font2, appearTiming + frameDelayHundred, duration, "Points Pass", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
@@ -659,141 +669,142 @@ namespace StorybrewScripts
 
 
 
-            // Fail Points ------------------------------------------------------------------------------------------------
+            // // Fail Points ------------------------------------------------------------------------------------------------
 
-            var randomOneFail = Random(0, 10);
-            var randomTenFail = Random(0, 10);
-            var randomHundredFail = Random(1, 9);
-
-
-            // numbers
-
-            var oneFail = GetLayer("Points Fail").CreateAnimation("sb/points/n.png", randomOneFail + 1, frameDelayOne, OsbLoopType.LoopOnce, OsbOrigin.CentreLeft);
-            var tenFail = GetLayer("Points Fail").CreateAnimation("sb/points/n.png", randomTenFail + 1, frameDelayTen, OsbLoopType.LoopOnce, OsbOrigin.CentreLeft);
-            var hundredFail = GetLayer("Points Fail").CreateAnimation("sb/points/n.png", randomHundredFail + 1, frameDelayHundred, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
+            // var randomOneFail = Random(0, 10);
+            // var randomTenFail = Random(0, 10);
+            // var randomHundredFail = Random(1, 9);
 
 
-            // Trigger Pass
+            // // numbers
 
-            oneFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
-            tenFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
-            hundredFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
-
-
-            // scale stuff
-
-            oneFail.ScaleVec(appearTiming, scale.X, scale.Y);
-            tenFail.ScaleVec(appearTiming, scale.X, scale.Y);
-            hundredFail.ScaleVec(appearTiming, scale.X, scale.Y);
+            // var oneFail = GetLayer("Points Fail").CreateAnimation("sb/points/n.png", randomOneFail + 1, frameDelayOne, OsbLoopType.LoopOnce, OsbOrigin.CentreLeft);
+            // var tenFail = GetLayer("Points Fail").CreateAnimation("sb/points/n.png", randomTenFail + 1, frameDelayTen, OsbLoopType.LoopOnce, OsbOrigin.CentreLeft);
+            // var hundredFail = GetLayer("Points Fail").CreateAnimation("sb/points/n.png", randomHundredFail + 1, frameDelayHundred, OsbLoopType.LoopOnce, OsbOrigin.CentreRight);
 
 
-            // positions
+            // // Trigger Pass
 
-            oneFail.Move(appearTiming, posOne.X - (numberWidth * 1.5f), posOne.Y);
-            oneFail.Move(appearTiming + frameDelayTen, posOne.X - numberWidth, posOne.Y);
-            oneFail.Move(appearTiming + frameDelayHundred, posOne.X - (numberWidth / 2), posOne.Y);
-
-            tenFail.Move(appearTiming, posTen.X - (numberWidth * 1.5f), posTen.Y);
-            tenFail.Move(appearTiming + frameDelayTen, posTen.X - numberWidth, posTen.Y);
-            tenFail.Move(appearTiming + frameDelayHundred, posTen.X - (numberWidth / 2), posTen.Y);
-
-            hundredFail.Move(appearTiming, posHundred.X - (numberWidth * 1.5f), posHundred.Y);
-            hundredFail.Move(appearTiming + frameDelayTen, posHundred.X - numberWidth, posHundred.Y);
-            hundredFail.Move(appearTiming + frameDelayHundred, posHundred.X - (numberWidth / 2), posHundred.Y);
+            // oneFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // tenFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // hundredFail.StartTriggerGroup("Failing", noteStartFail, noteEndFail, triggerGroup + 1);
 
 
-            // opacity
+            // // scale stuff
 
-            oneFail.Fade(appearTiming, 0);
-            oneFail.Fade(appearTiming, duration, fade, fade);
-            oneFail.Fade(duration + 1, 0);
-
-            tenFail.Fade(appearTiming, 0);
-            tenFail.Fade(appearTiming + frameDelayTen, duration, fade, fade);
-            tenFail.Fade(duration + 1, 0);
-
-            hundredFail.Fade(appearTiming, 0);
-            hundredFail.Fade(appearTiming + frameDelayHundred, duration, fade, fade);
-            hundredFail.Fade(duration + 1, 0);
+            // oneFail.ScaleVec(appearTiming, scale.X, scale.Y);
+            // tenFail.ScaleVec(appearTiming, scale.X, scale.Y);
+            // hundredFail.ScaleVec(appearTiming, scale.X, scale.Y);
 
 
-            if (randomHundredFail > 0)
-            {
-                string[] result = { $"You gained: -{randomHundredFail}{randomTenFail}{randomOneFail} points" };
-                this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // // positions
 
-                int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, randomOneFail };
-                pointSystem.AddFailPoints(sectionPoints);
-            }
-            else if (randomTenFail == 0 && randomOneFail == 0)
-            {
-                string[] result = { $"You gained: -{randomHundredFail}00 points" };
-                this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // oneFail.Move(appearTiming, posOne.X - (numberWidth * 1.5f), posOne.Y);
+            // oneFail.Move(appearTiming + frameDelayTen, posOne.X - numberWidth, posOne.Y);
+            // oneFail.Move(appearTiming + frameDelayHundred, posOne.X - (numberWidth / 2), posOne.Y);
 
-                int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
-                pointSystem.AddFailPoints(sectionPoints);
-            }
-            else if (randomTenFail == 0)
-            {
-                string[] result = { $"You gained: -{randomHundredFail}0{randomOneFail} points" };
-                this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // tenFail.Move(appearTiming, posTen.X - (numberWidth * 1.5f), posTen.Y);
+            // tenFail.Move(appearTiming + frameDelayTen, posTen.X - numberWidth, posTen.Y);
+            // tenFail.Move(appearTiming + frameDelayHundred, posTen.X - (numberWidth / 2), posTen.Y);
 
-                int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
-                pointSystem.AddFailPoints(sectionPoints);
-            }
-            else if (randomOneFail == 0)
-            {
-                string[] result = { $"You gained: -{randomHundredFail}{randomTenFail}0 points" };
-                this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
-                    fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // hundredFail.Move(appearTiming, posHundred.X - (numberWidth * 1.5f), posHundred.Y);
+            // hundredFail.Move(appearTiming + frameDelayTen, posHundred.X - numberWidth, posHundred.Y);
+            // hundredFail.Move(appearTiming + frameDelayHundred, posHundred.X - (numberWidth / 2), posHundred.Y);
 
-                int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
-                pointSystem.AddFailPoints(sectionPoints);
-            }
 
-            string[] pts2 = { "pts" };
+            // // opacity
 
-            var PTS = true;
-            if (PTS == true)
-            {
-                this.pointsFail.Setup(this, font2, appearTiming, appearTiming + frameDelayTen, "Points Fail", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
-            }
+            // oneFail.Fade(appearTiming, 0);
+            // oneFail.Fade(appearTiming, duration, fade, fade);
+            // oneFail.Fade(duration + 1, 0);
 
-            if (PTS == true)
-            {
-                this.pointsFail.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Fail", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
-            }
+            // tenFail.Fade(appearTiming, 0);
+            // tenFail.Fade(appearTiming + frameDelayTen, duration, fade, fade);
+            // tenFail.Fade(duration + 1, 0);
 
-            if (PTS == true)
-            {
-                this.pointsFail.Setup(this, font2, appearTiming + frameDelayHundred, duration, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
-                    fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
-                    DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
-                this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
-            }
+            // hundredFail.Fade(appearTiming, 0);
+            // hundredFail.Fade(appearTiming + frameDelayHundred, duration, fade, fade);
+            // hundredFail.Fade(duration + 1, 0);
 
-            oneFail.EndGroup();
-            tenFail.EndGroup();
-            hundredFail.EndGroup();
 
-            Log($"Pass/Fail:                         {pointSystem.pointsPass} ; {pointSystem.pointsFail}");
+            // if (randomHundredFail > 0)
+            // {
+            //     string[] result = { $"You gained: -{randomHundredFail}{randomTenFail}{randomOneFail} points" };
+            //     this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+            //         fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+
+            //     int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, randomOneFail };
+            //     pointSystem.AddFailPoints(sectionPoints);
+            // }
+            // else if (randomTenFail == 0 && randomOneFail == 0)
+            // {
+            //     string[] result = { $"You gained: -{randomHundredFail}00 points" };
+            //     this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+            //         fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+
+            //     int[] sectionPoints = new int[] { 0, randomHundredFail, 0, 0 };
+            //     pointSystem.AddFailPoints(sectionPoints);
+            // }
+            // else if (randomTenFail == 0)
+            // {
+            //     string[] result = { $"You gained: -{randomHundredFail}0{randomOneFail} points" };
+            //     this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+            //         fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+
+            //     int[] sectionPoints = new int[] { 0, randomHundredFail, 0, randomOneFail };
+            //     pointSystem.AddFailPoints(sectionPoints);
+            // }
+            // else if (randomOneFail == 0)
+            // {
+            //     string[] result = { $"You gained: -{randomHundredFail}{randomTenFail}0 points" };
+            //     this.pointsFail.Setup(this, font, appearTiming + delay, durationText, "Points Fail", pos.X, pos.Y - (numberHeight / 4), true,
+            //         fontSize, 0.7f, 50, 1000, ColorFail, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(result, 50, 1000, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+
+            //     int[] sectionPoints = new int[] { 0, randomHundredFail, randomTenFail, 0 };
+            //     pointSystem.AddFailPoints(sectionPoints);
+            // }
+
+            // string[] pts2 = { "pts" };
+
+            // var PTS = true;
+            // if (PTS == true)
+            // {
+            //     this.pointsFail.Setup(this, font2, appearTiming, appearTiming + frameDelayTen, "Points Fail", pos.X - (numberWidth * 1.5f) + (numberWidth * 2.7f), pos.Y - 2, true,
+            //         fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // }
+
+            // if (PTS == true)
+            // {
+            //     this.pointsFail.Setup(this, font2, appearTiming + frameDelayTen, appearTiming + frameDelayHundred, "Points Fail", pos.X - numberWidth + (numberWidth * 2.7f), pos.Y - 2, true,
+            //         fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // }
+
+            // if (PTS == true)
+            // {
+            //     this.pointsFail.Setup(this, font2, appearTiming + frameDelayHundred, duration, "Points Fail", pos.X - (numberWidth / 2) + (numberWidth * 2.7f), pos.Y - 2, true,
+            //         fontSize2, 0.7f, 0, 0, Color4.White, false, 0.3f, Color4.Black, "Points Fail", 300, "sb/sfx/blank.ogg",
+            //         DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None);
+            //     this.pointsFail.Generate(pts2, 0, 0, startTriggerGroup, "Failing", noteStartFail, noteEndFail, triggerGroup + 1);
+            // }
+
+            // oneFail.EndGroup();
+            // tenFail.EndGroup();
+            // hundredFail.EndGroup();
+
+            // Log($"Pass/Fail:                         {pointSystem.pointsPass} ; {pointSystem.pointsFail}");
+            Log($"Pass:                         {pointSystem.pointsPass}");
         }
 
 
@@ -846,7 +857,7 @@ namespace StorybrewScripts
                 rain.MoveY(i, i + speed, StartPosY, EndPosY);
                 // rain.Rotate(i, i + speed, 0, Rotation);
 
-                
+
 
                 if (speed >= 5000)
                 {
@@ -884,6 +895,8 @@ namespace StorybrewScripts
         public void ResultsPass(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
                            bool startTriggerGroup = false)
         {
+            langClass = new Language();
+
             var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
             var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
 
@@ -897,7 +910,7 @@ namespace StorybrewScripts
             var ShadowThickness = 0;
             var OutlineThickness = 0;
             // var font = LoadFont("sb/dialog/txt/pass/1/jp", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/pass/1", new FontDescription() // english
+            var font = LoadFont("sb/dialog/txt/results/1", new FontDescription() // english
             {
                 // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
                 FontPath = "Microsoft Yi Baiti", // english
@@ -925,16 +938,42 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
 
+            if (Language == language.English)
+            {
+                langClass.chooseLanguage(true);
 
-            // DIALOG 1 -----------------------------------------
-            string[] result = { "The system is safe from collapse and our",
-                                "mappers are back to normal again!" };
-            this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
-                fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-                DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
-            this.pointsPass.Generate(result, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+                if (langClass.setEnglish == true)
+                {
+                    // DIALOG 1 -----------------------------------------
+                    string[] result = { "The system is safe from collapse and our",
+                                    "mappers are back to normal again!" };
+                    this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
+                        fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                        DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
+                    this.pointsPass.Generate(result, 50, 100, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
 
-            var font2 = LoadFont("sb/dialog/txt/pass/1/skip", new FontDescription() // english
+                    Log("LANGUAGE ............ English");
+                }
+            }
+
+            else if (Language == language.Japanese)
+            {
+                langClass.chooseLanguage(false);
+
+                if (langClass.setEnglish == false)
+                {
+                    // DIALOG 2 -----------------------------------------
+                    string[] result = { "システムが崩壊する前に無事にマッパー達も通常に戻り、" };
+                    this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
+                        fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                        DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
+                    this.pointsPass.Generate(result, 50, 100, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+
+                    Log("LANGUAGE ............ Japanese");
+                }
+            }
+
+            var font2 = LoadFont("sb/dialog/txt/results/1/skip", new FontDescription() // english
             {
                 // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
                 FontPath = "Yu Gothic", // english
@@ -962,29 +1001,44 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
 
-            // DIALOG 2 -----------------------------------------
-            string[] text = { "DON'T SKIP YET" };
-            var dialog = new DialogManager(this, font2, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
-                fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-                DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
+            if (Language == language.English)
+            {
+                langClass.chooseLanguage(true);
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] result = { "システムが崩壊する前に無事にマッパー達も通常に戻り、" };
-            // this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 340, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
-            // this.pointsPass.Generate(result, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+                if (langClass.setEnglish == true)
+                {
+                    // DIALOG 3 -----------------------------------------
+                    string[] text = { "DON'T SKIP YET" };
+                    var dialog = new DialogManager(this, font2, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
+                        fontSize, 1, 50, 100, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                        DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
 
-            // // DIALOG 2 -----------------------------------------
-            // string[] text = { "DON'T SKIP YET" };
-            // var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
-            //     fontSize, 1, 50, 50, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
+                    Log("LANGUAGE ............ English");
+                }
+            }
+
+            else if (Language == language.Japanese)
+            {
+                langClass.chooseLanguage(false);
+
+                if (langClass.setEnglish == false)
+                {
+                    // DIALOG 4 -----------------------------------------
+                    string[] text = { "DON'T SKIP YET" };
+                    var dialog = new DialogManager(this, font, 490192, 490192 + 18000, "Dialog - Text", 320, 340, true,
+                        fontSize, 1, 50, 100, Color4.IndianRed, false, 0.7f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                        DialogBoxes.Pointer.None, DialogBoxes.Push.Right, text);
+
+                    Log("LANGUAGE ............ Japanese");
+                }
+            }
         }
 
         public void ResultsPass2(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
                            bool startTriggerGroup = false)
         {
+            langClass = new Language();
+
             var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
             var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
 
@@ -998,7 +1052,7 @@ namespace StorybrewScripts
             var ShadowThickness = 0;
             var OutlineThickness = 0;
             // var font = LoadFont("sb/dialog/txt/pass/2/jp", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/pass/2", new FontDescription() // english
+            var font = LoadFont("sb/dialog/txt/results/2", new FontDescription() // english
             {
                 // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
                 FontPath = "Microsoft Yi Baiti", // english
@@ -1026,142 +1080,162 @@ namespace StorybrewScripts
                 Color = ShadowColor,
             });
 
-            // DIALOG 1 -----------------------------------------
-            string[] result2 = { "You have saved the mission and have completed",
-                                 "the map! Thank you for playing!" };
-            this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
-                fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-                DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
-            this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+            if (Language == language.English)
+            {
+                langClass.chooseLanguage(true);
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] result2 = { "そしてあなたはミッションを成し遂げマップをクリアすることができました！",
-            //                      "プレイをしていただきありがとうございました！" };
-            // this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
-            // this.pointsPass.Generate(result2, 50, 50, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+                if (langClass.setEnglish == true)
+                {
+                    // DIALOG 1 -----------------------------------------
+                    string[] result2 = { "You have saved the mission and have completed",
+                                    "the map! Thank you for playing!" };
+                    this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
+                        fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                        DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
+                    this.pointsPass.Generate(result2, 50, 100, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+
+                    Log("LANGUAGE ............ English");
+                }
+            }
+
+            else if (Language == language.Japanese)
+            {
+                langClass.chooseLanguage(false);
+
+                if (langClass.setEnglish == false)
+                {
+                    // DIALOG 1 -----------------------------------------
+                    string[] result2 = { "そしてあなたはミッションを成し遂げマップをクリアすることができました！",
+                                     "プレイをしていただきありがとうございました！" };
+                    this.pointsPass.Setup(this, font, appearTiming, duration, "Dialog - Text", 330, 270, true,
+                        fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+                        DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Right);
+                    this.pointsPass.Generate(result2, 50, 100, startTriggerGroup, "HitSound", noteStartPass, noteEndPass, 51);
+
+                    Log("LANGUAGE ............ Japanese");
+                }
+            }
         }
 
-        public void ResultsFail(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
-                           bool startTriggerGroup = false)
-        {
-            var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
-            var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
+        // public void ResultsFail(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
+        //                    bool startTriggerGroup = false)
+        // {
+        //     var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
+        //     var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
 
-            var duration = endTime - noteStartPass; // duration for the TriggerGroup
-            var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
+        //     var duration = endTime - noteStartPass; // duration for the TriggerGroup
+        //     var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
 
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 15; //  japanese
-            var fontSize = 20; // english
-            var GlowRadius = 0;
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/fail/1/jp", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/fail/1", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Regular,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = true ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = OutlineColor,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = ShadowColor,
-            });
-            
-            // DIALOG 1 -----------------------------------------
-            string[] result = { "Perhaps a system restore is due for all of us...",
-                                "Unfortunately you have failed to save the mission." };
-            this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
-                fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-                DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
-            this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
-            
-            // // DIALOG 1 -----------------------------------------
-            // string[] result = { "おそらくシステムの復元を私たちのためにしなければなりません...",
-            //                     "残念ながらミッションを成し遂げることができませんでした。" };
-            // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
-            // this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
-        }
+        //     // DIALOG BOXES STARTS HERE
+        //     // var fontSize = 15; //  japanese
+        //     var fontSize = 20; // english
+        //     var GlowRadius = 0;
+        //     var ShadowThickness = 0;
+        //     var OutlineThickness = 0;
+        //     // var font = LoadFont("sb/dialog/txt/fail/1/jp", new FontDescription() // japanese
+        //     var font = LoadFont("sb/dialog/txt/fail/1", new FontDescription() // english
+        //     {
+        //         // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+        //         FontPath = "Microsoft Yi Baiti", // english
+        //         FontSize = fontSize,
+        //         Color = Color4.White,
+        //         Padding = Vector2.Zero,
+        //         FontStyle = FontStyle.Regular,
+        //         TrimTransparency = true,
+        //         EffectsOnly = false,
+        //         Debug = false,
+        //     },
+        //     new FontGlow()
+        //     {
+        //         Radius = true ? 0 : GlowRadius,
+        //         Color = GlowColor,
+        //     },
+        //     new FontOutline()
+        //     {
+        //         Thickness = OutlineThickness,
+        //         Color = OutlineColor,
+        //     },
+        //     new FontShadow()
+        //     {
+        //         Thickness = ShadowThickness,
+        //         Color = ShadowColor,
+        //     });
 
-        public void ResultsFail2(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
-                           bool startTriggerGroup = false)
-        {
-            var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
-            var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
+        //     // DIALOG 1 -----------------------------------------
+        //     string[] result = { "Perhaps a system restore is due for all of us...",
+        //                         "Unfortunately you have failed to save the mission." };
+        //     this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
+        //         fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+        //         DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
+        //     this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
 
-            var duration = endTime - noteStartPass; // duration for the TriggerGroup
-            var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
+        //     // // DIALOG 1 -----------------------------------------
+        //     // string[] result = { "おそらくシステムの復元を私たちのためにしなければなりません...",
+        //     //                     "残念ながらミッションを成し遂げることができませんでした。" };
+        //     // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 350, 270, true,
+        //     //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+        //     //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
+        //     // this.pointsFail.Generate(result, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
+        // }
 
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 15; //  japanese
-            var fontSize = 20; // english
-            var GlowRadius = 0;
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/fail/2/jp", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/fail/2", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Regular,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = true ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = OutlineColor,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = ShadowColor,
-            });
+        // public void ResultsFail2(int NoteStart, int NoteEnd, int startTime, int endTime, int speed,
+        //                    bool startTriggerGroup = false)
+        // {
+        //     var noteStartPass = NoteStart - 5; // start range of the first note in milliseconds
+        //     var noteEndPass = NoteEnd + 5; // end range of the last note in milliseconds
 
-            // DIALOG 1 -----------------------------------------
-            string[] result2 = { "Do try the map again for a better grade!" };
-            this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
-                fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-                DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
-            this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
+        //     var duration = endTime - noteStartPass; // duration for the TriggerGroup
+        //     var appearTiming = startTime - noteStartPass; // the duration value between the note(s) and the break start
 
-            // // DIALOG 1 -----------------------------------------
-            // string[] result2 = { "良い成績を取るにはもう一度プレイをしてみてください！" };
-            // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
-            //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
-            // this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
-        }
+        //     // DIALOG BOXES STARTS HERE
+        //     // var fontSize = 15; //  japanese
+        //     var fontSize = 20; // english
+        //     var GlowRadius = 0;
+        //     var ShadowThickness = 0;
+        //     var OutlineThickness = 0;
+        //     // var font = LoadFont("sb/dialog/txt/fail/2/jp", new FontDescription() // japanese
+        //     var font = LoadFont("sb/dialog/txt/fail/2", new FontDescription() // english
+        //     {
+        //         // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
+        //         FontPath = "Microsoft Yi Baiti", // english
+        //         FontSize = fontSize,
+        //         Color = Color4.White,
+        //         Padding = Vector2.Zero,
+        //         FontStyle = FontStyle.Regular,
+        //         TrimTransparency = true,
+        //         EffectsOnly = false,
+        //         Debug = false,
+        //     },
+        //     new FontGlow()
+        //     {
+        //         Radius = true ? 0 : GlowRadius,
+        //         Color = GlowColor,
+        //     },
+        //     new FontOutline()
+        //     {
+        //         Thickness = OutlineThickness,
+        //         Color = OutlineColor,
+        //     },
+        //     new FontShadow()
+        //     {
+        //         Thickness = ShadowThickness,
+        //         Color = ShadowColor,
+        //     });
+
+        //     // DIALOG 1 -----------------------------------------
+        //     string[] result2 = { "Do try the map again for a better grade!" };
+        //     this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
+        //         fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+        //         DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
+        //     this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
+
+        //     // // DIALOG 1 -----------------------------------------
+        //     // string[] result2 = { "良い成績を取るにはもう一度プレイをしてみてください！" };
+        //     // this.pointsFail.Setup(this, font, appearTiming, duration, "Dialog - Text", 360, 270, true,
+        //     //     fontSize, 1, 50, 50, TextColor, true, 0.8f, BoxColor, "Dialog - Box", 0, "sb/sfx/blank.ogg",
+        //     //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left);
+        //     // this.pointsFail.Generate(result2, 50, 50, startTriggerGroup, "Failing", noteStartPass, noteEndPass, 57);
+        // }
 
         public void Avatars()
         {

@@ -26,39 +26,7 @@ namespace StorybrewScripts
         public Color4 TochiColor = Color4.Cyan;
 
         [Configurable]
-        public Color4 BoxColorText = new Color4(255, 255, 255, 255);
-
-        [Configurable]
-        public Color4 BoxColorNarratorText = new Color4(255, 255, 255, 255);
-
-        [Configurable]
-        public Color4 BoxColorTochi = new Color4(255, 255, 255, 255);
-
-        [Configurable]
-        public Color4 BoxColorOthers = new Color4(255, 255, 255, 255);
-
-        [Configurable]
-        public Color4 BoxColorNarrator = new Color4(255, 255, 255, 255);
-
-        [Configurable]
         public Color4 TorchGlowColor = new Color4(255, 255, 255, 255);
-
-        [Configurable]
-        public Color4 GlowColor = new Color4(255, 255, 255, 255);
-
-        [Configurable]
-        public Color4 OutlineColor = new Color4(50, 50, 50, 200);
-
-        [Configurable]
-        public Color4 ShadowColor = new Color4(0, 0, 0, 200);
-
-        private DialogManager dialog;
-
-        private DialogManager dialog2;
-
-        private DialogManager dialog3;
-
-        private DialogManager dialog4;
 
         public override void Generate()
         {
@@ -66,8 +34,6 @@ namespace StorybrewScripts
             Background();
             CyanRain(0.3f, "RainFront", Random(5000, 10000), 0.15f, (float)Random(0.2f, 0.5f));
             CyanRain(0.2f, "RainBack", Random(500, 1000), 0.1f, (float)Random(0.1f, 0.5f));
-            Dialog();
-            DialogNarrator();
             Torch();
             Credits();
         }
@@ -280,156 +246,6 @@ namespace StorybrewScripts
             credits4.Fade(startTime + (duration * 4) - 1000, startTime + (duration * 4), 1, 0);
             credits4.ScaleVec(OsbEasing.OutElasticQuarter, startTime + (duration * 3), startTime + (duration * 3) + 2000, 0.4, 0, 0.3, 0.3);
             credits4.MoveY(OsbEasing.In, startTime + (duration * 3), startTime + (duration * 4), 100, 230);
-        }
-
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 15; //  japanese
-            var fontSize = 20; // english
-            var GlowRadius = 0;
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Regular,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = true ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = OutlineColor,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = ShadowColor,
-            });
-
-            
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Hello, and welcome to World TQR-f3!",
-                                  "My name is -Tochi, and I will serve as",
-                                  "your assistant for today's missions!" };
-            this.dialog = new DialogManager(this, font, 3245, 12475, "Dialog - Text", 150, 190, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
-            
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Please, follow me!" };
-            this.dialog2 = new DialogManager(this, font, 14495, 15822, "Dialog - Text", 370, 200, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopLeft, DialogBoxes.Push.Right, sentence2);
-            
-            // DIALOG 3 -----------------------------------------
-            string[] sentence3 = { "I have assembled a team of mappers for you ",
-                                   "that will help you complete this map. Do",
-                                   "acquaint with them well, as your synergy will",
-                                   "determine the final grading of your performance." };
-            this.dialog3 = new DialogManager(this, font, 16399, 26437, "Dialog - Text", 390, 170, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
-            
-            // DIALOG 4 -----------------------------------------
-            string[] sentence4 = { "In accordiance to your performance on each section,",
-                                   "points will be awarded. You can only complete the ",
-                                   "map if your score surpasses 30,000." };
-            this.dialog4 = new DialogManager(this, font, 26783, 37168, "Dialog - Text", 400, 170, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
-            
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "こんにちは、そして異世界TQR-f3にようこそ！",
-            //                       "私の名前は-Tochi、今日のミッションのために",
-            //                       "あなたのアシスタントを努めます！" };
-            // this.dialog = new DialogManager(this, font, 3245, 12475, "Dialog - Text", 130, 190, true,
-            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.Right, sentence);
-            
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "では、ついてきてください！" };
-            // this.dialog2 = new DialogManager(this, font, 14322, 17091, "Dialog - Text", 370, 205, true,
-            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopLeft, DialogBoxes.Push.Right, sentence2);
-            
-            // // DIALOG 3 -----------------------------------------
-            // string[] sentence3 = { "この譜面を終わらせるためにマッパーのチームを構成しました。",
-            //                        "彼たちと仲間になり、全員の協力によりあなたの業績が最終評価になります。" };
-            // this.dialog3 = new DialogManager(this, font, 18476, 27706, "Dialog - Text", 430, 170, true,
-            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence3);
-            
-            // // DIALOG 4 -----------------------------------------
-            // string[] sentence4 = { "各セクションのあなたのプレイに従い、ポイントが与えられます。",
-            //                        "合計点数が30,000を超えるのみに譜面を完成出来ます。" };
-            // this.dialog4 = new DialogManager(this, font, 28206, 37168, "Dialog - Text", 400, 170, true,
-            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, BoxColorTochi, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.CentreLeft, DialogBoxes.Push.Left, sentence4);
-        }
-
-        public void DialogNarrator()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 15; //  japanese
-            var fontSize = 20; // english
-            var GlowRadius = 0;
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/system", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/system", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Regular,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = true ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = OutlineColor,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = ShadowColor,
-            });
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Get ready!",
-                                  "Your mission is about to begin." };
-            this.dialog = new DialogManager(this, font, 40630, 48937, "Dialog - Text Narrator", 40, 430, true,
-                fontSize, 1, 50, 50, BoxColorText, true, 0.8f, Color4.Black, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.None, DialogBoxes.Push.Right, sentence);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "準備してください！",
-            //                       "あなたのミッションはもうすぐ始まります。" };
-            // this.dialog = new DialogManager(this, font, 40630, 48937, "Dialog - Text Narrator", 40, 430, true,
-            //     fontSize, 1, 50, 50, BoxColorText, true, 0.8f, Color4.Black, "Dialog - Box", 0, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.None, DialogBoxes.Push.Right, sentence);
         }
 
         public void Avatars()

@@ -52,8 +52,8 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include="CV.cs" />
     <Compile Include="DeleteBackground.cs" />
+    <Compile Include="Dialogues.cs" />
     <Compile Include="ImportOsb.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="IntroParticles.cs" />
@@ -71,8 +71,7 @@
     <Compile Include="scriptslibrary/DialogManager.cs" />
     <Compile Include="scriptslibrary/HUD.cs" />
     <Compile Include="scriptslibrary/ItemCollect.cs" />
-    <Compile Include="scriptslibrary/Mission1.cs" />
-    <Compile Include="scriptslibrary/Mission4.cs" />
+    <Compile Include="scriptslibrary/Language.cs" />
     <Compile Include="scriptslibrary/PointSystem.cs" />
   </ItemGroup>
   <ItemGroup />

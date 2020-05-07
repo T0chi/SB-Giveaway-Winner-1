@@ -1,0 +1,36 @@
+﻿FormatVersion: 6
+Name: "CV and Text"
+Script: "Dialogues"
+Config:
+  fontEN:
+    Type: "System.String"
+    Value: "Microsoft Yi Baiti"
+  fontJP:
+    Type: "System.String"
+    Value: "font/jp/KozGoPro-Light.otf"
+  Language:
+    Type: "System.Int32"
+    Value: "1"
+    AllowedValues:
+      English: "0"
+      Japanese: "1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  aaf47d3139384949bb1ba7e556a64840:
+    Name: "Voiceover"
+    OsbLayer: Background
+    DiffSpecific: Yes
+    Visible: No
+  a27d1464883d4675b7c9e9119728a2c3:
+    Name: "Box"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes
+  41d2d56fbb2d42b4abd7f90c435a736e:
+    Name: "Text"
+    OsbLayer: Foreground
+    DiffSpecific: No
+    Visible: Yes

@@ -21,14 +21,12 @@ namespace StorybrewScripts
 
         public override void Generate()
         {
-            Dialog();
             Lyrics();
             Lyrics2();
             Avatar();
             SwingingBars(311006, 331111);
             ObjectHighlight(311006, 331111);
             Blank(303310, 307237);
-            Tochi(280529, 305980);
             SnowChaos(290896, 301425, 1000);
             SnowChaos(303310, 311006, 500);
             HUD(283671, 329854, 290901, "Mission #6", "Strahv", "sb/HUD/txt/nameTag/Heilia.png", 4500, "sb/avatars/HeiliaProfile.png");
@@ -413,109 +411,6 @@ namespace StorybrewScripts
                     lastY = (int)nextY;
                 }
             }
-        }
-
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
-            var GlowRadius = 15;
-            var GlowColor = new Color4(150, 150, 150, 255);
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/2", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/2", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = false ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = Color4.Black,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = Color4.Black,
-            });
-
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "These machine parts will be useful, your assistance is greatly appreciated.",
-                                  "The next mission will involve some general rhythmic sense and musical knowledge." };
-            this.dialog = new DialogManager(this, font, 280529, 291451, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Your mapper will guide you with singing at the start,",
-                                   "but you do have to continue by yourself in the second phase of this section.",
-                                   "The more inconsistent you are, the more your points will be compromised.",
-                                   "Take care." };
-            this.dialog2 = new DialogManager(this, font, 291451, 305980, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "あれらの機械の部品はきっと使い物になる、あなたの助けに本当に感謝します！",
-            //                       "次のミッションはリズム感と音楽の知識が必要になります。" };
-            // this.dialog = new DialogManager(this, font, 280529, 288854, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "始めはマッパーが歌いあなたのことを支えますが、2番目はあなた自身で続けなければなりません。",
-            //                        "適当にしてしまうと、ポイントに影響が与えられます。",
-            //                        "気を付けて。" };
-            // this.dialog2 = new DialogManager(this, font, 288854, 300483, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-        }
-
-        public void Tochi(int startTime, int endTime)
-        {
-            var Hoveduration = 5000;
-            var loopCount = (endTime - startTime) / Hoveduration;
-            var pos = new Vector2(320, 240);
-            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
-            var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
-
-            avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.6);
-            avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime, endTime + 500, 1, 0);
-
-            avatar.StartLoopGroup(startTime, loopCount + 1);
-            avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            avatar.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            avatar.EndGroup();
-
-            ring.MoveX(startTime, 64);
-            ring.Scale(startTime, 0.3);
-            ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime, endTime + 500, 1, 0);
-            var rotation = MathHelper.DegreesToRadians(180);
-            ring.Rotate(startTime, endTime, -rotation, rotation);
-
-            ring.StartLoopGroup(startTime, loopCount + 1);
-            ring.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            ring.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            ring.EndGroup();
         }
     }
 }

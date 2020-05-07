@@ -42,9 +42,7 @@ namespace StorybrewScripts
 
         public override void Generate()
         {
-            Dialog();
             Mission(172011, 211525);
-            Tochi(163062 - 5385, 187868 - 5385);
             Background(160662, 211525, 167640);
             HUD(160662, 211525, 167640, "Mission #3", "Central Nucleus", "sb/HUD/txt/nameTag/ScubDomino.png", 2000, "sb/avatars/ScubDominoProfile.png");
         }
@@ -121,108 +119,6 @@ namespace StorybrewScripts
         public void HUD(int startTime, int endTime, int loadingTextEndtime, string mission, string songName, string nameTag, int progressBarDelay, string avatar)
         {
             var hud = new HUD(this, startTime, endTime, loadingTextEndtime, mission, songName, nameTag, progressBarDelay, avatar);
-        }
-
-        public void Dialog()
-        {
-            // DIALOG BOXES STARTS HERE
-            // var fontSize = 13; //  japanese
-            var fontSize = 15; // english
-            var GlowRadius = 15;
-            var GlowColor = new Color4(150, 150, 150, 255);
-            var ShadowThickness = 0;
-            var OutlineThickness = 0;
-            // var font = LoadFont("sb/dialog/txt/jp/4", new FontDescription() // japanese
-            var font = LoadFont("sb/dialog/txt/4", new FontDescription() // english
-            {
-                // FontPath = "font/jp/KozGoPro-Light.otf", // japanese
-                FontPath = "Microsoft Yi Baiti", // english
-                FontSize = fontSize,
-                Color = Color4.White,
-                Padding = Vector2.Zero,
-                FontStyle = FontStyle.Bold,
-                TrimTransparency = true,
-                EffectsOnly = false,
-                Debug = false,
-            },
-            new FontGlow()
-            {
-                Radius = false ? 0 : GlowRadius,
-                Color = GlowColor,
-            },
-            new FontOutline()
-            {
-                Thickness = OutlineThickness,
-                Color = Color4.Black,
-            },
-            new FontShadow()
-            {
-                Thickness = ShadowThickness,
-                Color = Color4.Black,
-            });
-
-            // DIALOG 1 -----------------------------------------
-            string[] sentence = { "Thank you for faithfully completing your errands.",
-                                  "The next mission requires a lot more stamina; you'll be activating your sword-",
-                                  "wielding mapper to perform bug fixes within our systems.",
-                                  "Do take note that the difficulty does amp up after the bass drops." };
-            this.dialog = new DialogManager(this, font, 163062 - 5385, 181011 - 5385, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 50, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // DIALOG 2 -----------------------------------------
-            string[] sentence2 = { "Slash the Stygian viral shapes to complete the mission.",
-                                   "There are risks so proceed with caution!" };
-            this.dialog2 = new DialogManager(this, font, 181011 - 5385, 187868 - 5385, "-Tochi", 105, 326, false,
-                fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-                DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-
-            // // DIALOG 1 -----------------------------------------
-            // string[] sentence = { "忠実に取り組んでくれてありがとう。",
-            //                       "次のミッションは体力がもっと必要になります;　剣を振っているマッパーを使い、私たちのシステムのバグを直してください。",
-            //                       "サビのベースドロップが始まった後に難易度が上がります！" };
-            // this.dialog = new DialogManager(this, font, 163062 - 5385, 178611 - 5385, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 500, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence);
-
-            // // DIALOG 2 -----------------------------------------
-            // string[] sentence2 = { "ダークウィルスの形の物を斬りつけてミッションを完了してください。",
-            //                        "これらはまたリスクがあるので注意してください！" };
-            // this.dialog2 = new DialogManager(this, font, 179982 - 5385, 187868 - 5385, "-Tochi", 105, 326, false,
-            //     fontSize, 1, 50, 250, Color4.White, false, 0.3f, Color4.Black, "-Tochi", 300, "sb/sfx/message-1.ogg",
-            //     DialogBoxes.Pointer.TopRight, DialogBoxes.Push.None, sentence2);
-        }
-
-        public void Tochi(int startTime, int endTime)
-        {
-            var Hoveduration = 5000;
-            var loopCount = (endTime - startTime) / Hoveduration;
-            var pos = new Vector2(320, 240);
-            // var avatar = GetLayer("-Tochi").CreateSprite("sb/avatars/-TochiProfile.png", OsbOrigin.Centre);
-            var avatar = GetLayer("-Tochi").CreateAnimation("sb/avatars/hologram/2/-TochiProfile.png", 31, 50, OsbLoopType.LoopForever, OsbOrigin.Centre);
-            var ring = GetLayer("-Tochi").CreateSprite("sb/ring2.png", OsbOrigin.Centre);
-
-            avatar.MoveX(startTime, 64);
-            avatar.Scale(startTime, 0.6);
-            avatar.Fade(startTime, startTime + 500, 0, 1);
-            avatar.Fade(endTime, endTime + 500, 1, 0);
-
-            avatar.StartLoopGroup(startTime, loopCount + 1);
-            avatar.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            avatar.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            avatar.EndGroup();
-
-            ring.MoveX(startTime, 64);
-            ring.Scale(startTime, 0.3);
-            ring.Fade(startTime, startTime + 500, 0, 1);
-            ring.Fade(endTime, endTime + 500, 1, 0);
-            var rotation = MathHelper.DegreesToRadians(180);
-            ring.Rotate(startTime, endTime, -rotation, rotation);
-
-            ring.StartLoopGroup(startTime, loopCount + 1);
-            ring.MoveY(OsbEasing.InOutSine, 0, Hoveduration / 2, 335, 345);
-            ring.MoveY(OsbEasing.InOutSine, Hoveduration / 2, Hoveduration, 345, 335);
-            ring.EndGroup();
         }
 
         public void Mission(int startTime, int endTime)

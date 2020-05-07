@@ -11,33 +11,9 @@ Config:
   TochiColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,1,1,1"
-  BoxColorText:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
-  BoxColorNarratorText:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,0.6543843,0.3559785,1"
-  BoxColorTochi:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
-  BoxColorOthers:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
-  BoxColorNarrator:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "0,0,0,1"
   TorchGlowColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "1,0.3605128,0.3605128,1"
-  GlowColor:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
-  OutlineColor:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "0,0,0,0.7843137"
-  ShadowColor:
-    Type: "OpenTK.Graphics.Color4"
-    Value: "0,0,0,1"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
@@ -60,11 +36,6 @@ Layers:
     Visible: Yes
   8cc75724919645e4b9c8aade79ebbbf4:
     Name: "Torches - Glow"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
-  8e56f49691bb47a0935ecf27ba4ca5f8:
-    Name: "Dialog - Box"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
@@ -108,11 +79,6 @@ Layers:
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
-  229244e85fe54b2f92c0e2534b264ddd:
-    Name: "Dialog - Text"
-    OsbLayer: Foreground
-    DiffSpecific: No
-    Visible: Yes
   7e361741990d4a3bb1df33e7307e2c8a:
     Name: "-Tochi"
     OsbLayer: Foreground
@@ -130,11 +96,6 @@ Layers:
     Visible: Yes
   6160bac76b3643eba7bb18e35a764855:
     Name: "nameTag"
-    OsbLayer: Foreground
-    DiffSpecific: No
-    Visible: Yes
-  02986ec18b104d52acba255d19357d91:
-    Name: "Dialog - Text Narrator"
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

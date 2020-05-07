@@ -1,0 +1,276 @@
+﻿FontPath: "font/jp/KozGoPro-Light.otf"
+FontSize: 15
+ColorR: 1
+ColorG: 1
+ColorB: 1
+ColorA: 1
+PaddingX: 0
+PaddingY: 0
+FontStyle: Regular
+TrimTransparency: Yes
+EffectsOnly: No
+Debug: No
+Effects:
+  - Type: "StorybrewCommon.Subtitles.FontGlow"
+    Radius: 0
+    Power: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 0
+  - Type: "StorybrewCommon.Subtitles.FontOutline"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+  - Type: "StorybrewCommon.Subtitles.FontShadow"
+    Thickness: 0
+    ColorR: 0
+    ColorG: 0
+    ColorB: 0
+    ColorA: 1
+Cache:
+  - Text: "準"
+    Path: "sb/dialog/txt/system/jp/6e96.png"
+    Hash: "384c211621cbbc3fa855dadd165888b6"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "備"
+    Path: "sb/dialog/txt/system/jp/5099.png"
+    Hash: "de7f748fa4c242781e703ff26f7bff30"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "し"
+    Path: "sb/dialog/txt/system/jp/3057.png"
+    Hash: "a79facc1f06d67a44a4285b543b1daec"
+    OffsetX: 4
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 20
+  - Text: "て"
+    Path: "sb/dialog/txt/system/jp/3066.png"
+    Hash: "74688825b7db50cb92c1a44e5edc57ae"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "く"
+    Path: "sb/dialog/txt/system/jp/304f.png"
+    Hash: "6c410a801ab4bfc2fb2a8ea705ba075a"
+    OffsetX: 3
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 13
+    Height: 20
+  - Text: "だ"
+    Path: "sb/dialog/txt/system/jp/3060.png"
+    Hash: "d9715c4ff51afc51758f9c5c901671d1"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "さ"
+    Path: "sb/dialog/txt/system/jp/3055.png"
+    Hash: "2652f8ded254579893f43f3dee7ae723"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "い"
+    Path: "sb/dialog/txt/system/jp/3044.png"
+    Hash: "280ac9f61baa099fee316ea08164e1cd"
+    OffsetX: 0
+    OffsetY: 2
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 17
+  - Text: "！"
+    Path: "sb/dialog/txt/system/jp/ff01.png"
+    Hash: "fd4e532a2e19093cb6dc55aa28942ad7"
+    OffsetX: 8
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 5
+    Height: 18
+  - Text: "あ"
+    Path: "sb/dialog/txt/system/jp/3042.png"
+    Hash: "2c40abd9343e98a7af535b64ca46e386"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "な"
+    Path: "sb/dialog/txt/system/jp/306a.png"
+    Hash: "63a4a7d9b681796712e132245f01db51"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "た"
+    Path: "sb/dialog/txt/system/jp/305f.png"
+    Hash: "7be1e8bdfb97a3ad5018b9ca07e40f53"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 20
+  - Text: "の"
+    Path: "sb/dialog/txt/system/jp/306e.png"
+    Hash: "efa12f382bcef2f9a43aca7c6b25778f"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "ミ"
+    Path: "sb/dialog/txt/system/jp/30df.png"
+    Hash: "5c18800a0ee848ca9a217b40a5c39cbf"
+    OffsetX: 2
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 19
+  - Text: "ッ"
+    Path: "sb/dialog/txt/system/jp/30c3.png"
+    Hash: "199afb955dfb64c59862b9ea0638280d"
+    OffsetX: 2
+    OffsetY: 4
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 16
+  - Text: "シ"
+    Path: "sb/dialog/txt/system/jp/30b7.png"
+    Hash: "ca4e97e090f86fa9a8c82c4eaf39be32"
+    OffsetX: 0
+    OffsetY: 1
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 19
+  - Text: "ョ"
+    Path: "sb/dialog/txt/system/jp/30e7.png"
+    Hash: "1858c1631296aa98295dc5ed575a5347"
+    OffsetX: 3
+    OffsetY: 5
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 14
+    Height: 15
+  - Text: "ン"
+    Path: "sb/dialog/txt/system/jp/30f3.png"
+    Hash: "b483cdf3244754964ef775a70bcb711d"
+    OffsetX: 1
+    OffsetY: 2
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 18
+  - Text: "は"
+    Path: "sb/dialog/txt/system/jp/306f.png"
+    Hash: "2a9b7845a7c60992690f0ef386932d6b"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "も"
+    Path: "sb/dialog/txt/system/jp/3082.png"
+    Hash: "901cbc2c035ecb14b677a715d9b49123"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 18
+    Height: 20
+  - Text: "う"
+    Path: "sb/dialog/txt/system/jp/3046.png"
+    Hash: "f28dbe6d7387e4b4cfc4f9df55922dc3"
+    OffsetX: 2
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 16
+    Height: 20
+  - Text: "す"
+    Path: "sb/dialog/txt/system/jp/3059.png"
+    Hash: "cd505036ac9d255f9c6eead19052624d"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "ぐ"
+    Path: "sb/dialog/txt/system/jp/3050.png"
+    Hash: "aeb568b628f2d49699a5b3196c9deef1"
+    OffsetX: 3
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 17
+    Height: 20
+  - Text: "始"
+    Path: "sb/dialog/txt/system/jp/59cb.png"
+    Hash: "e49d48296a27b1574529187c29fa6abf"
+    OffsetX: 0
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 20
+    Height: 21
+  - Text: "ま"
+    Path: "sb/dialog/txt/system/jp/307e.png"
+    Hash: "cd7260f7156d5958a3d0d584218087e9"
+    OffsetX: 1
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 19
+    Height: 20
+  - Text: "り"
+    Path: "sb/dialog/txt/system/jp/308a.png"
+    Hash: "7135476e87012d7217d3e928e50b583c"
+    OffsetX: 3
+    OffsetY: 0
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 14
+    Height: 20
+  - Text: "。"
+    Path: "sb/dialog/txt/system/jp/3002.png"
+    Hash: "5d691c23d94632e277203f77ac991512"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 20
+    BaseHeight: 40
+    Width: 8
+    Height: 9

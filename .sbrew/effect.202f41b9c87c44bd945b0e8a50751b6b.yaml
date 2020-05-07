@@ -45,13 +45,13 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  459bef69261a40b385d1d6c85a662b49:
-    Name: "Aircraft 1 & 2 Front - Smoke"
+  78ac764d8bfc40419e49a1a9f0b3217f:
+    Name: "Aircraft 1 & 2 Front"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  78ac764d8bfc40419e49a1a9f0b3217f:
-    Name: "Aircraft 1 & 2 Front"
+  459bef69261a40b385d1d6c85a662b49:
+    Name: "Aircraft 1 & 2 Front - Smoke"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
@@ -82,11 +82,6 @@ Layers:
     Visible: Yes
   e56490fa074f4320bb7366c5d2e9edbd:
     Name: "HUD"
-    OsbLayer: Foreground
-    DiffSpecific: No
-    Visible: Yes
-  642ef0f821eb4696b72c67ba48774ed3:
-    Name: "-Tochi"
     OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
