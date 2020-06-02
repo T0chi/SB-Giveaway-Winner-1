@@ -1,0 +1,2 @@
+Please press F5 if the new difficulties doesn't show up.
+It may take a while to refresh all beatmaps if you have many.
