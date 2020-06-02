@@ -10,7 +10,7 @@ Config:
     Value: "font/jp/KozGoPro-Light.otf"
   Language:
     Type: "System.Int32"
-    Value: "1"
+    Value: "0"
     AllowedValues:
       English: "0"
       Japanese: "1"

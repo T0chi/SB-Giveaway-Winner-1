@@ -571,7 +571,7 @@ namespace StorybrewScripts
             this.timing.start = 257955;
             this.timing.end = 268278;
             this.position = new Vector2(105, 326);
-            Dialog(sentence);
+            Dialog(sentence2);
             Tochi(252193, 268278);
         }
 
@@ -601,7 +601,7 @@ namespace StorybrewScripts
             this.timing.start = 291451;
             this.timing.end = 305980;
             this.position = new Vector2(105, 326);
-            Dialog(sentence);
+            Dialog(sentence2);
             Tochi(280529, 305980);
         }
 
@@ -629,7 +629,7 @@ namespace StorybrewScripts
             this.timing.start = 337394;
             this.timing.end = 348176;
             this.position = new Vector2(105, 326);
-            Dialog(sentence);
+            Dialog(sentence2);
             Tochi(331111, 348176);
         }
 

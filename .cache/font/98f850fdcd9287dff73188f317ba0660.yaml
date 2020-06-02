@@ -31,345 +31,210 @@ Effects:
     ColorB: 0
     ColorA: 0.7843137
 Cache:
-  - Text: "そ"
-    Path: "sb/dialog/txt/results/2/305d.png"
-    Hash: "95e10a2cce3a3a4f8015f1f23d9fab98"
+  - Text: "Y"
+    Path: "sb/dialog/txt/results/2/0059.png"
+    Hash: "ded0961a03b9fa6c1e854a613fed4155"
     OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 20
-    BaseHeight: 28
-    Width: 20
-    Height: 25
-  - Text: "し"
-    Path: "sb/dialog/txt/results/2/3057.png"
-    Hash: "dedc2e71dad3718c4d4be39daf371f67"
-    OffsetX: 3
-    OffsetY: 1
-    BaseWidth: 20
-    BaseHeight: 28
-    Width: 17
-    Height: 24
-  - Text: "て"
-    Path: "sb/dialog/txt/results/2/3066.png"
-    Hash: "1c77613ac7a0a572102b905a088efd5c"
-    OffsetX: 0
-    OffsetY: 2
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 21
-    Height: 23
-  - Text: "あ"
-    Path: "sb/dialog/txt/results/2/3042.png"
-    Hash: "5bad9efcdcd7a6d30c3123ae14f262d8"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 22
-    BaseHeight: 28
-    Width: 21
-    Height: 26
-  - Text: "な"
-    Path: "sb/dialog/txt/results/2/306a.png"
-    Hash: "e06d33cb48e23fb145b3e5d4c3bada6d"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 23
-    BaseHeight: 28
-    Width: 22
-    Height: 26
-  - Text: "た"
-    Path: "sb/dialog/txt/results/2/305f.png"
-    Hash: "99e21dfa40b7644b1f523c2ebc0a4462"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 21
-    Height: 25
-  - Text: "は"
-    Path: "sb/dialog/txt/results/2/306f.png"
-    Hash: "5f8493bef0763d9dc8cdbc098c4a5cd4"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 23
-    BaseHeight: 28
-    Width: 22
-    Height: 25
-  - Text: "ミ"
-    Path: "sb/dialog/txt/results/2/30df.png"
-    Hash: "68790082285fdd8055bb1f29a270282a"
-    OffsetX: 1
-    OffsetY: 1
-    BaseWidth: 16
-    BaseHeight: 28
-    Width: 15
-    Height: 25
-  - Text: "ッ"
-    Path: "sb/dialog/txt/results/2/30c3.png"
-    Hash: "c0ea8f1450bb29256f24e4b5d9d5d83b"
-    OffsetX: 0
-    OffsetY: 6
-    BaseWidth: 16
-    BaseHeight: 28
-    Width: 16
-    Height: 20
-  - Text: "シ"
-    Path: "sb/dialog/txt/results/2/30b7.png"
-    Hash: "e1d3b41b1a52903b77dfe4f3b977ed7b"
-    OffsetX: 1
-    OffsetY: 1
-    BaseWidth: 22
-    BaseHeight: 28
-    Width: 21
-    Height: 25
-  - Text: "ョ"
-    Path: "sb/dialog/txt/results/2/30e7.png"
-    Hash: "0b3d3e09c391618699ef1ca6bcf7b719"
-    OffsetX: 0
-    OffsetY: 7
+    OffsetY: 8
     BaseWidth: 14
-    BaseHeight: 28
-    Width: 13
-    Height: 18
-  - Text: "ン"
-    Path: "sb/dialog/txt/results/2/30f3.png"
-    Hash: "54f85428bd5d6feadae3afd1a0999209"
-    OffsetX: 1
-    OffsetY: 2
-    BaseWidth: 20
-    BaseHeight: 28
-    Width: 19
-    Height: 24
-  - Text: "を"
-    Path: "sb/dialog/txt/results/2/3092.png"
-    Hash: "b365c91983645d925dd948428cdd1483"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 21
-    Height: 26
-  - Text: "成"
-    Path: "sb/dialog/txt/results/2/6210.png"
-    Hash: "70838dd1e03b0ca3b47abfcbe0c5f16a"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 27
-    BaseHeight: 28
-    Width: 27
-    Height: 27
-  - Text: "遂"
-    Path: "sb/dialog/txt/results/2/9042.png"
-    Hash: "996a3ce1d7319d210f210f3010ae71b4"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 27
-    BaseHeight: 28
-    Width: 27
-    Height: 26
-  - Text: "げ"
-    Path: "sb/dialog/txt/results/2/3052.png"
-    Hash: "c72e9431ce21ec8e15d0f6e8cf8769f9"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 23
-    BaseHeight: 28
-    Width: 22
-    Height: 26
-  - Text: "マ"
-    Path: "sb/dialog/txt/results/2/30de.png"
-    Hash: "6285709b66004f9ea3ec753bbb2e65f4"
-    OffsetX: 0
-    OffsetY: 4
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 20
-    Height: 21
-  - Text: "プ"
-    Path: "sb/dialog/txt/results/2/30d7.png"
-    Hash: "4bd6dd2ad106ab2808736ab466a5a9cd"
-    OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 21
-    Height: 26
-  - Text: "ク"
-    Path: "sb/dialog/txt/results/2/30af.png"
-    Hash: "e7a8e0cbc515c84bfea6d70bdc9e71c7"
-    OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 19
-    BaseHeight: 28
-    Width: 18
-    Height: 25
-  - Text: "リ"
-    Path: "sb/dialog/txt/results/2/30ea.png"
-    Hash: "32793078a42dc79005fea0055cfa9b6f"
-    OffsetX: 1
-    OffsetY: 1
-    BaseWidth: 16
-    BaseHeight: 28
+    BaseHeight: 27
     Width: 14
-    Height: 25
-  - Text: "ア"
-    Path: "sb/dialog/txt/results/2/30a2.png"
-    Hash: "0e0cf895175b3806127b6415ce294002"
+    Height: 16
+  - Text: "o"
+    Path: "sb/dialog/txt/results/2/006f.png"
+    Hash: "f98e73c5c4fe82137b26bff8bd0d2a29"
     OffsetX: 0
-    OffsetY: 2
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 20
-    Height: 24
-  - Text: "す"
-    Path: "sb/dialog/txt/results/2/3059.png"
-    Hash: "1a63aec51e2cafc1b80d0bc39793ef2e"
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "u"
+    Path: "sb/dialog/txt/results/2/0075.png"
+    Hash: "99b1d59933f77ffe62bd647b89da260e"
     OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 23
-    BaseHeight: 28
-    Width: 23
-    Height: 27
-  - Text: "る"
-    Path: "sb/dialog/txt/results/2/308b.png"
-    Hash: "71d26b974c20e9b48f6ae00361a9a6f9"
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "h"
+    Path: "sb/dialog/txt/results/2/0068.png"
+    Hash: "f580252a34e633dbac1153b04effb80e"
     OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 20
-    Height: 25
-  - Text: "こ"
-    Path: "sb/dialog/txt/results/2/3053.png"
-    Hash: "ddac6c477d4e99959fb0be96ca1cd8c3"
-    OffsetX: 1
-    OffsetY: 3
-    BaseWidth: 19
-    BaseHeight: 28
-    Width: 18
-    Height: 21
-  - Text: "と"
-    Path: "sb/dialog/txt/results/2/3068.png"
-    Hash: "fd3e38bceefc4468ae7ae7cfa99589d6"
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 16
+  - Text: "a"
+    Path: "sb/dialog/txt/results/2/0061.png"
+    Hash: "58e79b178fa147bac1c7739b275f7ed5"
     OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 17
-    BaseHeight: 28
-    Width: 17
-    Height: 24
-  - Text: "が"
-    Path: "sb/dialog/txt/results/2/304c.png"
-    Hash: "5bca0032c385403f4089604f425a8d00"
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "v"
+    Path: "sb/dialog/txt/results/2/0076.png"
+    Hash: "6df98ff5193da0bed267dc936d081feb"
     OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 23
-    BaseHeight: 28
-    Width: 23
-    Height: 26
-  - Text: "で"
-    Path: "sb/dialog/txt/results/2/3067.png"
-    Hash: "82c57182f1aeed67979d17c9ea9e4e69"
+    OffsetY: 12
+    BaseWidth: 10
+    BaseHeight: 27
+    Width: 10
+    Height: 12
+  - Text: "e"
+    Path: "sb/dialog/txt/results/2/0065.png"
+    Hash: "744300598a28c1b2b8567e8eed2e0f9a"
     OffsetX: 0
-    OffsetY: 2
-    BaseWidth: 22
-    BaseHeight: 28
-    Width: 22
-    Height: 23
-  - Text: "き"
-    Path: "sb/dialog/txt/results/2/304d.png"
-    Hash: "4be397fc4a08f13cd9841c84c7721778"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 19
-    Height: 25
-  - Text: "ま"
-    Path: "sb/dialog/txt/results/2/307e.png"
-    Hash: "ca4d908e87591f043f9fa3689703c77c"
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 12
+    Height: 12
+  - Text: "s"
+    Path: "sb/dialog/txt/results/2/0073.png"
+    Hash: "7738c9a8ba8d45ff790ee1dd38d824ca"
     OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 20
-    Height: 26
-  - Text: "！"
-    Path: "sb/dialog/txt/results/2/ff01.png"
-    Hash: "ba70fd79c9ba310d203b392e8b43e7ce"
-    OffsetX: 7
+    OffsetY: 12
+    BaseWidth: 10
+    BaseHeight: 27
+    Width: 10
+    Height: 12
+  - Text: "d"
+    Path: "sb/dialog/txt/results/2/0064.png"
+    Hash: "b9f5770a8d5e7044d8c77f54cb2a4265"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 16
+  - Text: "t"
+    Path: "sb/dialog/txt/results/2/0074.png"
+    Hash: "b32e0f58f7ab38d4ec2ace00b33b89cb"
+    OffsetX: 0
     OffsetY: 9
-    BaseWidth: 19
-    BaseHeight: 28
+    BaseWidth: 6
+    BaseHeight: 27
+    Width: 6
+    Height: 15
+  - Text: "m"
+    Path: "sb/dialog/txt/results/2/006d.png"
+    Hash: "2199b84f52e78020bd01be495c9fb834"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 17
+    BaseHeight: 27
+    Width: 17
+    Height: 12
+  - Text: "i"
+    Path: "sb/dialog/txt/results/2/0069.png"
+    Hash: "79814b0f6dada8a3b5232efdb036dbaf"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 5
+    BaseHeight: 27
+    Width: 4
+    Height: 16
+  - Text: "n"
+    Path: "sb/dialog/txt/results/2/006e.png"
+    Hash: "a25aa09a10940b69fc52778577e1047c"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 12
+  - Text: "c"
+    Path: "sb/dialog/txt/results/2/0063.png"
+    Hash: "d648582544b67403b052feea20c4c6fa"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 10
+    BaseHeight: 27
+    Width: 10
+    Height: 12
+  - Text: "p"
+    Path: "sb/dialog/txt/results/2/0070.png"
+    Hash: "2708bf4f260a24e9eec6e5fc75f0e988"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 15
+  - Text: "l"
+    Path: "sb/dialog/txt/results/2/006c.png"
+    Hash: "98e6146f47e7f3ad058ce89afed99d03"
+    OffsetX: 0
+    OffsetY: 8
+    BaseWidth: 5
+    BaseHeight: 27
+    Width: 4
+    Height: 16
+  - Text: "!"
+    Path: "sb/dialog/txt/results/2/0021.png"
+    Hash: "88746e2ab9ecd26b943f81bca49e01eb"
+    OffsetX: 2
+    OffsetY: 8
+    BaseWidth: 9
+    BaseHeight: 27
     Width: 5
     Height: 16
-  - Text: "レ"
-    Path: "sb/dialog/txt/results/2/30ec.png"
-    Hash: "da07ea640777c69a9d51ea3cc1e7a68b"
-    OffsetX: 2
-    OffsetY: 1
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 19
-    Height: 24
-  - Text: "イ"
-    Path: "sb/dialog/txt/results/2/30a4.png"
-    Hash: "ac13402d6fbc676316fed17e012b615a"
+  - Text: "T"
+    Path: "sb/dialog/txt/results/2/0054.png"
+    Hash: "2b021524837aa0e83c8d13842180732a"
     OffsetX: 0
-    OffsetY: 1
-    BaseWidth: 20
-    BaseHeight: 28
-    Width: 18
-    Height: 25
-  - Text: "い"
-    Path: "sb/dialog/txt/results/2/3044.png"
-    Hash: "6502027849b46e9fa2dc20f583027e35"
-    OffsetX: 1
-    OffsetY: 3
-    BaseWidth: 22
-    BaseHeight: 28
-    Width: 21
-    Height: 22
-  - Text: "だ"
-    Path: "sb/dialog/txt/results/2/3060.png"
-    Hash: "b51c622970a596eef46036c2771f1597"
+    OffsetY: 8
+    BaseWidth: 13
+    BaseHeight: 27
+    Width: 13
+    Height: 16
+  - Text: "k"
+    Path: "sb/dialog/txt/results/2/006b.png"
+    Hash: "746ae58a04f8d5075c7678c4893cdefc"
     OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 21
-    Height: 25
-  - Text: "り"
-    Path: "sb/dialog/txt/results/2/308a.png"
-    Hash: "69eff2b5ec3ee6e3b41222c5efd61dbd"
-    OffsetX: 1
-    OffsetY: 1
-    BaseWidth: 17
-    BaseHeight: 28
-    Width: 16
-    Height: 25
-  - Text: "う"
-    Path: "sb/dialog/txt/results/2/3046.png"
-    Hash: "e0f0a3d3675cf35986b26f942d48cdbd"
+    OffsetY: 8
+    BaseWidth: 10
+    BaseHeight: 27
+    Width: 10
+    Height: 16
+  - Text: "y"
+    Path: "sb/dialog/txt/results/2/0079.png"
+    Hash: "e5da914e6d2f2db80e7887e11e976116"
     OffsetX: 0
-    OffsetY: 0
-    BaseWidth: 16
-    BaseHeight: 28
-    Width: 16
-    Height: 27
-  - Text: "ご"
-    Path: "sb/dialog/txt/results/2/3054.png"
-    Hash: "dcd0809c32a0b820249e2f737028d700"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 20
-    Height: 24
-  - Text: "ざ"
-    Path: "sb/dialog/txt/results/2/3056.png"
-    Hash: "519a017ae3df88fc9fcd9f94d9edef64"
-    OffsetX: 1
-    OffsetY: 0
-    BaseWidth: 21
-    BaseHeight: 28
-    Width: 20
-    Height: 26
+    OffsetY: 12
+    BaseWidth: 10
+    BaseHeight: 27
+    Width: 10
+    Height: 15
+  - Text: "f"
+    Path: "sb/dialog/txt/results/2/0066.png"
+    Hash: "9ab83e034aaa3204db4e1982561824ce"
+    OffsetX: 0
+    OffsetY: 7
+    BaseWidth: 6
+    BaseHeight: 27
+    Width: 6
+    Height: 17
+  - Text: "r"
+    Path: "sb/dialog/txt/results/2/0072.png"
+    Hash: "0e2f8ac3bf1b6368fa10951b8042c39c"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 7
+    BaseHeight: 27
+    Width: 7
+    Height: 12
+  - Text: "g"
+    Path: "sb/dialog/txt/results/2/0067.png"
+    Hash: "ec01d779c646c111c937a8f0dad45c4e"
+    OffsetX: 0
+    OffsetY: 12
+    BaseWidth: 12
+    BaseHeight: 27
+    Width: 11
+    Height: 15

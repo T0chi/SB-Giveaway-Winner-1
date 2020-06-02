@@ -265,3 +265,12 @@ Cache:
     BaseHeight: 21
     Width: 36
     Height: 38
+  - Text: "Y"
+    Path: "sb/dialog/txt/7/0059.png"
+    Hash: "698550faa2aa100b39e4b4b6cce49bf3"
+    OffsetX: -12
+    OffsetY: -8
+    BaseWidth: 11
+    BaseHeight: 21
+    Width: 35
+    Height: 38

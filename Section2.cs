@@ -221,7 +221,7 @@ namespace StorybrewScripts
             // var jetSound2 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet-3.ogg", startTime, 70);
             // var jetSound3 = GetLayer("Aircraft 3 Front").CreateSample("sb/sfx/jet_passing-1.ogg", 700, 100);
             var aircraft = GetLayer("Aircraft 3 Back").CreateSprite("sb/missions/1/aircrafts/3_back.png", OsbOrigin.Centre);
-            var enemy = GetLayer("Aircraft 1 & 2 Front").CreateSprite("sb/missions/1/aircrafts/" + Random(1, 3) + "_back.png", OsbOrigin.Centre);
+            var enemy = GetLayer("Aircraft 1 & 2 Front").CreateSprite("sb/missions/1/aircrafts/2_back.png", OsbOrigin.Centre);
 
             aircraft.Scale(OsbEasing.Out, startTime, startTime + 4000, 4, 0.3);
             aircraft.Fade(OsbEasing.Out, startTime, startTime + 2000, 0, 1);

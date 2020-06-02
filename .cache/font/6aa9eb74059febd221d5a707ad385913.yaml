@@ -256,3 +256,30 @@ Cache:
     BaseHeight: 21
     Width: 18
     Height: 19
+  - Text: "T"
+    Path: "sb/dialog/txt/8/0054.png"
+    Hash: "90cb6c1247a8839faf38e83d777f06df"
+    OffsetX: -12
+    OffsetY: -9
+    BaseWidth: 10
+    BaseHeight: 21
+    Width: 34
+    Height: 39
+  - Text: "y"
+    Path: "sb/dialog/txt/8/0079.png"
+    Hash: "d96b502c819e5e6a645b9b841f3bf81c"
+    OffsetX: -14
+    OffsetY: -5
+    BaseWidth: 8
+    BaseHeight: 21
+    Width: 36
+    Height: 38
+  - Text: "S"
+    Path: "sb/dialog/txt/8/0053.png"
+    Hash: "f684d8e9d3019294e3577d95b5d47d2c"
+    OffsetX: -13
+    OffsetY: -9
+    BaseWidth: 11
+    BaseHeight: 21
+    Width: 38
+    Height: 41
