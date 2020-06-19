@@ -2,6 +2,9 @@
 
 `@above text ↑ last updated on @March 13th, 2020 (03:51) UTC+1`
 
+# Teaser
+[![Teaser | Feryquitous - Songs Compilation | Storyboard Project](https://img.youtube.com/vi/eflNPeDjIhU/0.jpg)](https://www.youtube.com/watch?v=eflNPeDjIhU)
+
 # Map
 - [Feryquitous - Songs Compilation](https://osu.ppy.sh/beatmapsets/1124097#osu/2348896 "Feryquitous - Songs Compilation") (by Acyl)
 - Outro song: Kaname Shigeyoshi - The Rain Turned to Autumn Leaves
