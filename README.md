@@ -185,7 +185,7 @@ Graphics:
 - ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes "@ScubDominoes") // *making the map banner*
 
 # Socials
-Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://twitter.com/TochiOsu "@tochiosu"), and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
+Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://twitter.com/TochiOsu "@tochiiDesign"), and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
 
 // *osu! storyboarder banquet*
 
@@ -198,12 +198,6 @@ Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://
 // *Visit me and PoNo's website!*
 
 [![-Tochi & PoNo's Coffee Room](https://i.imgur.com/KUfhZWf.png "-Tochi & PoNo's Coffee Room")](https://pochivisuals.com/ "-Tochi & PoNo's Coffee Room")
-
-// *Giveaways:
-https://pochivisuals.com/giveaway/*
-
-// *Donate and get exclusive benefits:
-https://pochivisuals.com/home/donation/*
 
 // *Subscribe to my youtube channel!
 https://www.youtube.com/channel/UCyUoC6AP7V8GPKQBDIJoqGQ*
