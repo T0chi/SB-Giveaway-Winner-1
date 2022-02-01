@@ -185,7 +185,7 @@ Graphics:
 - ScubDomino [@ScubDominoes](https://twitter.com/ScubDominoes "@ScubDominoes") // *making the map banner*
 
 # Socials
-Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://twitter.com/TochiOsu "@tochiiDesign"), and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
+Follow me on Twitter for updates and giveaway announcements [@tochiiDesign](https://twitter.com/tochiiDesign "@tochiiDesign"), and join these osu! storyboarding discord servers to learn or get help on storyboading basics!
 
 // *osu! storyboarder banquet*
 
