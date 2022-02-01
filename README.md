@@ -197,7 +197,7 @@ Follow me on Twitter for updates and giveaway announcements [@tochiosu](https://
 
 // *Visit me and PoNo's website!*
 
-[![-Tochi & PoNo's Coffee Room](https://i.imgur.com/KUfhZWf.png "-Tochi & PoNo's Coffee Room")](https://pochivisuals.com/ "-Tochi & PoNo's Coffee Room")
+[![-Tochi & PoNo's Coffee Room](https://i.imgur.com/KUfhZWf.png "pochii")](https://pochiii.com/ "pochii")
 
 // *Subscribe to my youtube channel!
 https://www.youtube.com/channel/UCyUoC6AP7V8GPKQBDIJoqGQ*
